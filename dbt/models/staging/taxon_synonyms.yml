@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: taxon_synonyms
+    description: "A table containing vernacular or common names for various taxa taken from GBIF. This model provides common names for taxonids, allowing for filtration by language as well."
+    columns: 
+      - name: TAXONID
+        description: "Unique GBIF identifier for the taxon record."
+        data_tests:
+          - not_null
+
+      - name: VERNACULARNAME
+        description: "The common or layman term for a scientific name."
+        data_tests:
+          - not_null
+
+      - name: LANGUAGE
+        description: "The ISO 639-1 two-letter code for the language of the vernacular name."

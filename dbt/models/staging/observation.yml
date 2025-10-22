@@ -1,0 +1,125 @@
+version: 2
+
+models:
+  - name: observation
+    description: >
+      Plant observation data from GBIF (Global Biodiversity Information Facility).
+      This model processes raw observation data and adds hierarchical H3 spatial indexing
+      for efficient geographic distance calculations and spatial analysis.
+      
+      The H3 cells provide multi-resolution spatial indexing:
+      - H3 level 6: ~36km resolution (regional analysis)
+      - H3 level 7: ~5km resolution (local area analysis) 
+      - H3 level 8: ~0.7km resolution (neighborhood analysis)
+      - H3 level 9: ~0.1km resolution (precise locality analysis)
+      - H3 level 10: ~0.01km resolution (micro-locality analysis)
+      
+    columns:
+      - name: gbifid
+        description: "Unique GBIF identifier for the observation record"
+        data_tests:
+          - unique
+          - not_null
+        
+      - name: taxonkey
+        description: "GBIF taxonomic key linking to species/taxon information"
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('taxon')
+              field: taxonid
+              config:
+                severity: warn # todo ?
+                
+      - name: eventdate
+        description: "Date when the observation was recorded"
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= '1800-01-01'"
+          - dbt_utils.expression_is_true:
+              expression: "<= current_date()"
+        
+      - name: dayofyear
+        description: "Day of year (1-366) extracted from eventdate for phenological analysis"
+        data_tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 1 AND dayofyear <= 366"
+        
+      - name: year
+        description: "Year extracted from eventdate"
+        data_tests:
+          - dbt_utils.expression_is_true:
+              expression: ">= 1800 AND year <= year(current_date())"
+        
+      - name: basisofrecord
+        description: "The specific nature of the data record"
+        data_tests:
+          - accepted_values:
+              values: ['HUMAN_OBSERVATION', 'PRESERVED_SPECIMEN', 'MACHINE_OBSERVATION', 'MATERIAL_SAMPLE', 'LITERATURE', 'LIVING_SPECIMEN', 'FOSSIL_SPECIMEN', 'OBSERVATION']
+        
+      - name: countrycode
+        description: "ISO 3166-1 alpha-2 country code"
+        data_tests:
+          - not_null
+        
+      - name: stateprovince
+        description: "State or province where observation was made"
+        
+      - name: lat
+        description: "Decimal latitude coordinate (WGS84)"
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= -90 AND lat <= 90"
+        
+      - name: lon
+        description: "Decimal longitude coordinate (WGS84)"
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= -180"
+          - dbt_utils.expression_is_true:
+              expression: "<= 180"
+
+      - name: h3_cell_6
+        description: "H3 hexagonal cell at resolution 6 (~36km area) for regional spatial analysis"
+        data_tests:
+          - not_null
+        
+      - name: h3_cell_7
+        description: "H3 hexagonal cell at resolution 7 (~5km area) for local area spatial analysis"
+        data_tests:
+          - not_null
+        
+      - name: h3_cell_8
+        description: "H3 hexagonal cell at resolution 8 (~0.7km area) for neighborhood spatial analysis"
+        data_tests:
+          - not_null
+        
+      - name: h3_cell_9
+        description: "H3 hexagonal cell at resolution 9 (~0.1km area) for precise locality spatial analysis"
+        data_tests:
+          - not_null
+        
+      - name: h3_cell_10
+        description: "H3 hexagonal cell at resolution 10 (~0.01km area) for micro-locality spatial analysis"
+        data_tests:
+          - not_null
+
+    data_tests:
+      - dbt_utils.expression_is_true:
+          name: valid_coordinate_pair
+          expression: "lat IS NOT NULL AND lon IS NOT NULL"
+      - dbt_utils.expression_is_true:
+          name: realistic_coordinates
+          expression: "NOT (lat = 0 AND lon = 0)"  # Exclude null island coordinates
+
+  - name: observation_10k
+    description: "Sample of 10,000 plant observations for development and testing"
+    
+  - name: observation_100k  
+    description: "Sample of 100,000 plant observations for performance testing"
+    
+  - name: observation_1m
+    description: "Sample of 1,000,000 plant observations for large-scale analysis and benchmarking"

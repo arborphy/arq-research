@@ -1,0 +1,39 @@
+version: 2
+
+sources:
+  - name: gbif
+    database: team_arq
+    schema: source
+    description: "GBIF (Global Biodiversity Information Facility) data sources"
+    tables:
+      - name: observation
+        identifier: gbif_observation
+        description: "Raw plant observation data from GBIF"
+
+      - name: taxon
+        identifier: gbif_taxon
+        description: "Taxonomic information and hierarchy from GBIF"
+      
+      - name: vernacular_name
+        identifier: gbif_vernacular_name
+        description: "Vernacular (common) names for taxa from GBIF"
+
+      - name: description
+        identifier: gbif_description
+        description: "Descriptive information about taxa from GBIF"
+
+      - name: distribution
+        identifier: gbif_distribution
+        description: "Geographic distribution and occurrence status of taxa"
+
+      - name: multimedia
+        identifier: gbif_multimedia
+        description: "Multimedia resources (images, audio, etc.) associated with taxa"
+
+      - name: reference
+        identifier: gbif_reference
+        description: "Bibliographic references and citations for taxa"
+
+      - name: types_and_specimen
+        identifier: gbif_types_and_specimen
+        description: "Type specimens and specimen designations for taxa"

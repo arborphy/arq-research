@@ -1,0 +1,78 @@
+version: 2
+
+models:
+  - name: taxon
+    description: >
+      Taxonomic information for plant species from GBIF (Global Biodiversity Information Facility).
+      This model contains the complete taxonomic hierarchy and nomenclatural information
+      for all taxa referenced in the observation data.
+      
+    columns:
+      - name: taxonid
+        description: "Unique GBIF identifier for the taxon record"
+        data_tests:
+          - unique
+          - not_null
+        
+      - name: datasetid
+        description: "Identifier of the dataset that provided this taxonomic information"
+
+      - name: parentnameusageid
+        description: "Taxon ID of the parent taxon in the taxonomic hierarchy"
+
+      - name: scientificname
+        description: "Complete scientific name including authorship"
+
+      - name: scientificnameauthorship
+        description: "Authorship information for the scientific name"
+        
+      - name: canonicalname
+        description: "Canonical form of the scientific name without authorship"
+
+      - name: genericname
+        description: "Generic part of the scientific name"
+        
+      - name: specificepithet
+        description: "Specific epithet (species name) part of the scientific name"
+        
+      - name: infraspecificepithet
+        description: "Infraspecific epithet for subspecies, varieties, etc."
+        
+      - name: taxonrank
+        description: "Taxonomic rank of this taxon"
+        data_tests:
+          - not_null
+
+      - name: nameaccordingto
+        description: "Reference for the taxonomic concept"
+        
+      - name: namepublishedin
+        description: "Publication where the name was first published"
+        
+      - name: taxonomicstatus
+        description: "Status of the taxonomic name"
+
+      - name: nomenclaturalstatus
+        description: "Nomenclatural status of the name"
+
+      - name: taxonremarks
+        description: "Additional remarks about the taxon"
+        
+      # Taxonomic hierarchy columns
+      - name: kingdom
+        description: "Kingdom name in the taxonomic hierarchy"
+
+      - name: phylum
+        description: "Phylum name in the taxonomic hierarchy"
+        
+      - name: class
+        description: "Class name in the taxonomic hierarchy"
+        
+      - name: order
+        description: "Order name in the taxonomic hierarchy"
+        
+      - name: family
+        description: "Family name in the taxonomic hierarchy"
+        
+      - name: genus
+        description: "Genus name in the taxonomic hierarchy"

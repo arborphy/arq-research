@@ -1,0 +1,16 @@
+[project]
+name = "arq-starter"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "dbt-core>=1.8.8",
+    "dbt-snowflake>=1.8.4",
+    "relationalai==0.11.2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.2",
+]
