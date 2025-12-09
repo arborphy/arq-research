@@ -38,10 +38,7 @@ def define_solstice_equinox(m: rai.Model, source: Table):
     m.Solstice.summer = m.Property("{Solstice} is in the summer for {Hemisphere}")
     m.Solstice.winter = m.Property("{Solstice} is in the winter for {Hemisphere}")
     def_solstice = lambda col, summer, winter: rai.define(
-        s := m.Solstice.new(
-            year=source.year,
-            datetime=col,
-        ),
+        s := m.Solstice.new(datetime=col),
         s.summer(summer),
         s.winter(winter),
     )
@@ -52,10 +49,7 @@ def define_solstice_equinox(m: rai.Model, source: Table):
     m.Equinox.spring = m.Property("{Equinox} is in the spring for {Hemisphere}")
     m.Equinox.fall = m.Property("{Equinox} is in the fall for {Hemisphere}")
     def_equinox = lambda col, spring, fall: rai.define(
-        e := m.Equinox.new(
-            year=source.year,
-            datetime=col,
-        ),
+        e := m.Equinox.new(datetime=col),
         e.spring(spring),
         e.fall(fall),
     )

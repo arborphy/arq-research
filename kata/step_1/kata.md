@@ -32,16 +32,17 @@ Then I can run a query that provides species names along with their genus, famil
 Functional Query Definition:
 ```sql
 SELECT
-    s.canonical_name as species_name,
-    g.canonical_name as genus_name,
-    f.canonical_name as family_name,
-    o.canonical_name as order_name
+    s.canonicalname as species_name,
+    g.canonicalname as genus_name,
+    f.canonicalname as family_name,
+    o.canonicalname as order_name
 FROM
-    taxa s
-JOIN taxa g ON s.parent_id = g.taxon_id AND g.rank = 'genus'
-JOIN taxa f ON g.parent_id = f.taxon_id AND f.rank = 'family'
-JOIN taxa o ON f.parent_id = o.taxon_id AND o.rank = 'order'
+    taxon s
+JOIN taxon g ON s.parentnameusageid = g.taxonid AND g.taxonrank = 'genus'
+JOIN taxon f ON g.parentnameusageid = f.taxonid AND f.taxonrank = 'family'
+JOIN taxon o ON f.parentnameusageid = o.taxonid AND o.taxonrank = 'order'
 WHERE
-    s.rank = 'species'
-    AND g.canonical_name = 'Acaena'
+    s.taxonrank = 'species'
+    AND g.canonicalname = 'Acaena'
+;
 ```

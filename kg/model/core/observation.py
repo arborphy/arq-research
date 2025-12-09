@@ -41,7 +41,6 @@ def define_observation(m: rai.Model, source: Table):
 
     # Relationships
     m.Observation.classification = m.Property("{Observation} is classified as {Taxon}")
-    m.Observation.hemisphere = m.Relationship("{Observation} is in {Hemisphere}")  # populated in derived/observation.py
 
     # Bind source data to concepts
     rai.define(m.Observation.new(id=source.GBIFID))
