@@ -31,15 +31,15 @@ Then I can run a query that counts distinct species and total observations per c
 Functional Query Definition:
 ```sql
 SELECT
-    country_code,
-    COUNT(DISTINCT CASE WHEN rank = 'species' THEN taxon_id END) as species_count,
+    countrycode,
+    COUNT(DISTINCT CASE WHEN t.taxonrank = 'species' THEN taxonid END) as species_count,
     COUNT(*) as observation_count
 FROM
-    observations o
+    observation_10k o
 JOIN
-    taxa t ON o.taxon_id = t.taxon_id
+    taxon t ON o.taxonkey = t.taxonid
 GROUP BY
-    country_code
+    countrycode
 ORDER BY
     species_count DESC
 LIMIT 10;

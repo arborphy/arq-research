@@ -53,9 +53,18 @@ class Hemisphere(Protocol):
     id: rai.Relationship
 
 
+class Latitude(Protocol):
+    hemisphere: rai.Relationship
+
+
+class Longitude(Protocol):
+    hemisphere: rai.Relationship
+
+
 class CalendarEvent(Protocol):
-    year: rai.Relationship
     datetime: rai.Relationship
+    year: rai.Relationship
+    day_of_year: rai.Relationship
 
 
 class Solstice(Protocol):
@@ -115,9 +124,15 @@ class ARQModel(Protocol):
     BasisOfRecord: rai.Concept
     CountryCode: rai.Concept
     StateProvince: rai.Concept
-    Latitude: rai.Concept
-    Longitude: rai.Concept
+    Latitude: Latitude
+    Longitude: Longitude
     H3Cell: rai.Concept
+
+    # Hemisphere instances
+    HemisphereNorth: Hemisphere
+    HemisphereSouth: Hemisphere
+    HemisphereEast: Hemisphere
+    HemisphereWest: Hemisphere
 
     # Entity concepts
     Taxon: Taxon
@@ -126,12 +141,6 @@ class ARQModel(Protocol):
     CalendarEvent: CalendarEvent
     Solstice: Solstice
     Equinox: Equinox
-
-    # Hemisphere instances
-    HemisphereNorth: Hemisphere
-    HemisphereSouth: Hemisphere
-    HemisphereEast: Hemisphere
-    HemisphereWest: Hemisphere
 
     # Taxonomic hierarchy concepts
     Species: Species

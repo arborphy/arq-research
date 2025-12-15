@@ -10,30 +10,10 @@ def define_derived_observation(m: rai.Model):
     such as hemisphere assignments based on latitude and longitude.
     """
     # Derived relationship: hemisphere based on latitude and longitude
-    # Each observation can be in multiple hemispheres (e.g., north AND east)
-    # Northern hemisphere: latitude >= 0, Southern hemisphere: latitude < 0
-    # Eastern hemisphere: longitude >= 0, Western hemisphere: longitude < 0
-
+    m.Observation.hemisphere = m.Relationship("{Observation} is in {Hemisphere}")  # populated in derived/observation.py
     rai.define(
-        m.Observation.hemisphere(m.HemisphereNorth)
-    ).where(
-        m.Observation.latitude >= 0
+        m.Observation.hemisphere(m.Observation.latitude.hemisphere)
     )
-
     rai.define(
-        m.Observation.hemisphere(m.HemisphereSouth)
-    ).where(
-        m.Observation.latitude < 0
-    )
-
-    rai.define(
-        m.Observation.hemisphere(m.HemisphereEast)
-    ).where(
-        m.Observation.longitude >= 0
-    )
-
-    rai.define(
-        m.Observation.hemisphere(m.HemisphereWest)
-    ).where(
-        m.Observation.longitude < 0
+        m.Observation.hemisphere(m.Observation.longitude.hemisphere)
     )
