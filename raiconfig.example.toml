@@ -1,0 +1,47 @@
+active_profile = "teamarq"
+
+# Copy this file to `raiconfig.toml` (which is gitignored) and fill in values.
+#
+# If you want to use a Snowflake Programmatic Access Token (PAT):
+# - Generate a PAT in Snowsight (Governance & security → Users & roles → <user> → Programmatic access tokens)
+# - Snowflake supports using a PAT as a password for drivers/clients.
+# - Recommended: do NOT put the token secret into this file. Instead, set it at runtime:
+#     export SNOWFLAKE_PAT_FILE="$HOME/.config/snowflake/pat.token"
+#     export password="$(cat "$SNOWFLAKE_PAT_FILE")"
+# - Keep this file out of git and rotate tokens regularly.
+
+[profile.teamarq]
+platform = "snowflake"
+
+# Use standard Snowflake password auth, but supply a PAT secret as the password.
+# This avoids interactive MFA prompts.
+authenticator = "snowflake"
+
+# Snowflake identity / session settings
+user = "YOUR_USER"
+account = "YOUR_ORG-YOUR_ACCOUNT"  # e.g. "ABCD123-XY98765"
+role = "YOUR_ROLE"                # e.g. "TEAM_ARQ"
+warehouse = "YOUR_WAREHOUSE"      # e.g. "TEAM_ARQ"
+
+# Leave blank unless using username+password+MFA.
+passcode = ""
+
+# RAI app settings
+rai_app_name = "RELATIONALAI"
+engine = ""
+engine_size = "HIGHMEM_X64_S"
+use_direct_access = false
+
+[profile.default]
+# Optional: point default at teamarq
+platform = "snowflake"
+authenticator = "snowflake"
+user = "YOUR_USER"
+account = "YOUR_ORG-YOUR_ACCOUNT"
+role = "YOUR_ROLE"
+warehouse = "YOUR_WAREHOUSE"
+passcode = ""
+rai_app_name = "RELATIONALAI"
+engine = ""
+engine_size = "HIGHMEM_X64_S"
+use_direct_access = false

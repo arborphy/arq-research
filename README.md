@@ -22,6 +22,54 @@ uv sync
 uvx --from snowflake-cli snow connection add
 uvx --from snowflake-cli snow connection set-default <name>
 
+# Programmatic Access Tokens (PAT)
+# Snowflake supports using a PAT secret anywhere you'd normally paste a password.
+# Prereq: your user must be subject to a network policy to *use* a PAT (and service
+# users must be subject to a network policy to *generate* one).
+# https://docs.snowflake.com/en/user-guide/programmatic-access-tokens
+#
+# If you have `ACCOUNTADMIN`, the usual setup is:
+#
+# 1) Create a network policy that allows your IPs (recommended), then attach it to your user.
+#    NOTE: adjust IPs to match your NAT/egress; if you're on a dynamic IP/VPN, include the
+#    right ranges.
+#
+#    CREATE NETWORK POLICY arq_pat_policy
+#      ALLOWED_IP_LIST = ('203.0.113.10/32')
+#      COMMENT = 'Allow PAT usage from approved egress IPs';
+#
+#    ALTER USER <your_user> SET NETWORK_POLICY = arq_pat_policy;
+#
+# 2) If you use an authentication policy that restricts allowed methods, ensure it includes
+#    PROGRAMMATIC_ACCESS_TOKEN:
+#
+#    ALTER AUTHENTICATION POLICY <your_auth_policy>
+#      SET AUTHENTICATION_METHODS = ('OAUTH', 'PASSWORD', 'PROGRAMMATIC_ACCESS_TOKEN');
+#
+# Suggested pattern:
+# - Generate a PAT in Snowsight (Governance & security → Users & roles → <user> → Programmatic access tokens)
+# - Store it in a secrets manager or environment variable (do not commit it)
+# - Use it as the “password” for:
+#   - Snowflake CLI connections
+#   - dbt profiles (password: "{{ env_var('SNOWFLAKE_PAT') }}")
+#   - `raiconfig.toml` used by `rai` / this repo (see `raiconfig.example.toml`)
+
+# Quickstart (recommended)
+# Use the setup script to:
+# - save your PAT secret locally (not in git)
+# - generate `raiconfig.toml` without embedding secrets
+# - print the env vars to use the PAT with this repo + snowflake-cli
+#
+#   ./script/setup_pat.sh \
+#     --user <your_user> \
+#     --account <your_account_identifier> \
+#     --role <your_role> \
+#     --warehouse <your_warehouse> \
+#     --snow-connection <pat_connection_name>
+#
+# Optional (only if you need to change Snowflake-side policy prerequisites):
+#   --admin-connection <accountadmin_connection_name>
+
 # create ARQ role, db, and warehouse. the code assumes these exist
 uvx --from snowflake-cli snow sql -f script/team_arq.sql
 
