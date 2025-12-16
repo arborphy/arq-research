@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: plants
+    description: "Plant master table loaded into Snowflake from local SQLite export."
+
+  - name: plant_characteristics
+    description: "Plant characteristics table loaded into Snowflake from local SQLite export."
+
+  - name: plant_native_statuses
+    description: "Plant native status table loaded into Snowflake from local SQLite export."

@@ -84,9 +84,39 @@ uvx --from snowflake-cli snow sql -f script/gbif_backbone.sql -D "path=/Users/ag
 # download & unzip this file, and give the script the full path to the file
 uvx --from snowflake-cli snow sql -f script/gbif_observation.sql -D "path=/Users/agarrard/arq/data/gbif_observation.csv"
 
+# Plants (SQLite → Snowflake)
+# This repo includes a local SQLite database `plants.db`. To use this data in Snowflake + dbt:
+#
+# 1) Export CSVs from SQLite (writes to ./.local/plants_csv, which is gitignored)
+python script/export_plants_sqlite_to_csv.py --db ./plants.db
+
+# 2) Load raw tables into team_arq.source (SnowSQL)
+uvx --from snowflake-cli snow sql -f script/plants.sql -D "path=./.local/plants_csv"
+
+# 3) Build dbt staging tables (materialized in team_arq.public)
+uv run dbt build --select plants plant_characteristics plant_native_statuses
+
+# Optional: if you host the CSVs at static URLs (e.g. Google Drive direct download links)
+# you can load from links instead of exporting locally:
+#   export PLANTS_CSV_URL='https://.../plants.csv'
+#   export PLANT_CHARACTERISTICS_CSV_URL='https://.../plant_characteristics.csv'
+#   export PLANT_NATIVE_STATUSES_CSV_URL='https://.../plant_native_statuses.csv'
+#   ./script/load_plants_from_links.sh
+#
+# Note: `./script/load_plants_from_links.sh` is also pre-configured with default
+# Google Drive file IDs for this repo; if those links remain valid, you can run it
+# without setting any env vars.
+
 # DBT
 # create a config file https://docs.getdbt.com/docs/core/connect-data-platform/snowflake-setup
-# dbt_project.yaml assumes a profile named "default" which targets the schema "team_arq.public"
+# dbt_project.yaml assumes a profile named "default".
+# This repo includes a repo-local `./profiles.yml` (gitignored) that is configured
+# for PAT auth (no interactive prompts) by reading the `password` env var.
+#
+# Recommended: use the wrapper so dbt picks up the repo-local profile automatically:
+#   export SNOWFLAKE_PAT_FILE="$HOME/.config/snowflake/pat.token"
+#   ./script/dbt_pat.sh deps
+#   ./script/dbt_pat.sh build
 uv run dbt deps
 uv run dbt build
 

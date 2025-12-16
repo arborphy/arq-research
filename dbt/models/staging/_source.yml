@@ -37,3 +37,20 @@ sources:
       - name: types_and_specimen
         identifier: gbif_types_and_specimen
         description: "Type specimens and specimen designations for taxa"
+
+  - name: plants
+    database: team_arq
+    schema: source
+    description: "Plant tables loaded from local SQLite exports"
+    tables:
+      - name: plants
+        identifier: plants
+        description: "Raw plant/taxon table (from SQLite)"
+
+      - name: plant_characteristics
+        identifier: plant_characteristics
+        description: "Raw plant characteristics table (from SQLite)"
+
+      - name: plant_native_statuses
+        identifier: plant_native_statuses
+        description: "Raw plant native status table (from SQLite)"
