@@ -8,7 +8,7 @@ from kg.model.core.geography import define_geography
 from kg.model.core.soleq import define_solstice_equinox
 from kg.model.core.taxon import define_taxon
 from kg.model.core.observation import define_observation
-from kg.model.derived.taxonomy import define_taxonomy
+from kg.model.derived.taxonomy import define_taxonomy, define_taxonomy_graphical
 from kg.model.derived.observation import define_derived_observation
 
 
@@ -152,7 +152,12 @@ class ARQModel(Protocol):
     Kingdom: Kingdom
 
 
-def define_arq(m: rai.Model, db: str = "TEAM_ARQ", schema: str = "PUBLIC") -> ARQModel:
+def define_arq(
+    m: rai.Model,
+    db: str = "TEAM_ARQ",
+    schema: str = "PUBLIC",
+    taxonomy_mode: str = "strict",
+) -> ARQModel:
     """Define the ARQ knowledge graph model.
 
     Args:
@@ -176,7 +181,10 @@ def define_arq(m: rai.Model, db: str = "TEAM_ARQ", schema: str = "PUBLIC") -> AR
     define_solstice_equinox(m, source("ASTROPIXELS_SOLEQ"))
 
     # Define derived concepts
-    define_taxonomy(m)
+    if taxonomy_mode == "ancestor":
+        define_taxonomy_graphical(m)
+    else:
+        define_taxonomy(m)
     define_derived_observation(m)
 
     return m

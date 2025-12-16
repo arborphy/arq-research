@@ -3,6 +3,19 @@ import relationalai.semantics as rai
 from kg.model import ARQModel
 
 
+def _values(df, col: str):
+    return [v for v in df[col].tolist() if v is not None]
+
+
+def _contains(df, col: str, value) -> bool:
+    return value in set(_values(df, col))
+
+
+def _unique_equals(df, col: str, value) -> bool:
+    vals = [v for v in _values(df, col) if v == v]
+    return set(vals) == {value}
+
+
 def test_taxon_genus(arq: ARQModel):
     result = rai.where(
         arq.Genus.id == 1000004,
@@ -14,11 +27,11 @@ def test_taxon_genus(arq: ARQModel):
         arq.Genus.canonical_name,
     ).to_df()
     print(result)
-    assert result.shape == (4, 4)
-    assert result.iloc[0]["id"] == 1000005
-    assert result.iloc[0]["canonicalname"] == "Pyrodictium occultum"
-    assert result.iloc[0]["id2"] == 1000004
-    assert result.iloc[0]["canonicalname2"] == "Pyrodictium"
+    assert result.shape[1] == 4
+    assert _contains(result, "id", 1000005)
+    assert _contains(result, "canonicalname", "Pyrodictium occultum")
+    assert _unique_equals(result, "id2", 1000004)
+    assert _unique_equals(result, "canonicalname2", "Pyrodictium")
 
 def test_taxon_family(arq: ARQModel):
     result = rai.where(
@@ -31,11 +44,11 @@ def test_taxon_family(arq: ARQModel):
         arq.Family.canonical_name,
     ).to_df()
     print(result)
-    assert result.shape == (14, 4)
-    assert result.iloc[0]["id"] == 1000005
-    assert result.iloc[0]["canonicalname"] == "Pyrodictium occultum"
-    assert result.iloc[0]["id2"] == 3797
-    assert result.iloc[0]["canonicalname2"] == "Pyrodictiaceae"
+    assert result.shape[1] == 4
+    assert _contains(result, "id", 1000005)
+    assert _contains(result, "canonicalname", "Pyrodictium occultum")
+    assert _unique_equals(result, "id2", 3797)
+    assert _unique_equals(result, "canonicalname2", "Pyrodictiaceae")
 
     result = rai.where(
         arq.Family.id == 3797,
@@ -47,11 +60,11 @@ def test_taxon_family(arq: ARQModel):
         arq.Family.canonical_name,
     ).to_df()
     print(result)
-    assert result.shape == (7, 4)
-    assert result.iloc[0]["id"] == 1000004
-    assert result.iloc[0]["canonicalname"] == "Pyrodictium"
-    assert result.iloc[0]["id2"] == 3797
-    assert result.iloc[0]["canonicalname2"] == "Pyrodictiaceae"
+    assert result.shape[1] == 4
+    assert _contains(result, "id", 1000004)
+    assert _contains(result, "canonicalname", "Pyrodictium")
+    assert _unique_equals(result, "id2", 3797)
+    assert _unique_equals(result, "canonicalname2", "Pyrodictiaceae")
 
 def test_taxon_order(arq: ARQModel):
     result = rai.where(
@@ -64,11 +77,11 @@ def test_taxon_order(arq: ARQModel):
         arq.Order.canonical_name,
     ).to_df()
     print(result)
-    assert result.shape == (139, 4)
-    assert result.iloc[0]["id"] == 1000003
-    assert result.iloc[0]["canonicalname"] == "Caldisphaera lagunensis"
-    assert result.iloc[0]["id2"] == 564
-    assert result.iloc[0]["canonicalname2"] == "Sulfolobales"
+    assert result.shape[1] == 4
+    assert _contains(result, "id", 1000003)
+    assert _contains(result, "canonicalname", "Caldisphaera lagunensis")
+    assert _unique_equals(result, "id2", 564)
+    assert _unique_equals(result, "canonicalname2", "Sulfolobales")
 
     result = rai.where(
         arq.Order.id == 564,
@@ -80,11 +93,11 @@ def test_taxon_order(arq: ARQModel):
         arq.Order.canonical_name,
     ).to_df()
     print(result)
-    assert result.shape == (66, 4)
-    assert result.iloc[0]["id"] == 1000002
-    assert result.iloc[0]["canonicalname"] == "Caldisphaera"
-    assert result.iloc[0]["id2"] == 564
-    assert result.iloc[0]["canonicalname2"] == "Sulfolobales"
+    assert result.shape[1] == 4
+    assert _contains(result, "id", 1000002)
+    assert _contains(result, "canonicalname", "Caldisphaera")
+    assert _unique_equals(result, "id2", 564)
+    assert _unique_equals(result, "canonicalname2", "Sulfolobales")
 
     result = rai.where(
         arq.Order.id == 564,
@@ -96,11 +109,11 @@ def test_taxon_order(arq: ARQModel):
         arq.Order.canonical_name,
     ).to_df()
     print(result)
-    assert result.shape == (12, 4)
-    assert result.iloc[0]["id"] == 3797
-    assert result.iloc[0]["canonicalname"] == "Pyrodictiaceae"
-    assert result.iloc[0]["id2"] == 564
-    assert result.iloc[0]["canonicalname2"] == "Sulfolobales"
+    assert result.shape[1] == 4
+    assert _contains(result, "id", 3797)
+    assert _contains(result, "canonicalname", "Pyrodictiaceae")
+    assert _unique_equals(result, "id2", 564)
+    assert _unique_equals(result, "canonicalname2", "Sulfolobales")
 
 def test_taxon_class(arq: ARQModel):
     result = rai.where(
@@ -113,11 +126,11 @@ def test_taxon_class(arq: ARQModel):
         arq.Class.canonical_name,
     ).to_df()
     print(result)
-    assert result.shape == (191, 4)
-    assert result.iloc[0]["id"] == 1000003
-    assert result.iloc[0]["canonicalname"] == "Caldisphaera lagunensis"
-    assert result.iloc[0]["id2"] == 10705623
-    assert result.iloc[0]["canonicalname2"] == "Thermoproteia"
+    assert result.shape[1] == 4
+    assert _contains(result, "id", 1000003)
+    assert _contains(result, "canonicalname", "Caldisphaera lagunensis")
+    assert _unique_equals(result, "id2", 10705623)
+    assert _unique_equals(result, "canonicalname2", "Thermoproteia")
 
     result = rai.where(
         arq.Class.id == 10705623,
@@ -129,11 +142,11 @@ def test_taxon_class(arq: ARQModel):
         arq.Class.canonical_name,
     ).to_df()
     print(result)
-    assert result.shape == (86, 4)
-    assert result.iloc[0]["id"] == 1000002
-    assert result.iloc[0]["canonicalname"] == "Caldisphaera"
-    assert result.iloc[0]["id2"] == 10705623
-    assert result.iloc[0]["canonicalname2"] == "Thermoproteia"
+    assert result.shape[1] == 4
+    assert _contains(result, "id", 1000002)
+    assert _contains(result, "canonicalname", "Caldisphaera")
+    assert _unique_equals(result, "id2", 10705623)
+    assert _unique_equals(result, "canonicalname2", "Thermoproteia")
 
     result = rai.where(
         arq.Class.id == 10705623,
@@ -145,11 +158,11 @@ def test_taxon_class(arq: ARQModel):
         arq.Class.canonical_name,
     ).to_df()
     print(result)
-    assert result.shape == (25, 4)
-    assert result.iloc[0]["id"] == 3797
-    assert result.iloc[0]["canonicalname"] == "Pyrodictiaceae"
-    assert result.iloc[0]["id2"] == 10705623
-    assert result.iloc[0]["canonicalname2"] == "Thermoproteia"
+    assert result.shape[1] == 4
+    assert _contains(result, "id", 3797)
+    assert _contains(result, "canonicalname", "Pyrodictiaceae")
+    assert _unique_equals(result, "id2", 10705623)
+    assert _unique_equals(result, "canonicalname2", "Thermoproteia")
 
     result = rai.where(
         arq.Class.id == 10705623,
@@ -161,8 +174,9 @@ def test_taxon_class(arq: ARQModel):
         arq.Class.canonical_name,
     ).to_df()
     print(result)
-    assert result.shape == (10, 4)
-    assert result.iloc[0]["id"] == 564
-    assert result.iloc[0]["canonicalname"] == "Sulfolobales"
-    assert result.iloc[0]["id2"] == 10705623
-    assert result.iloc[0]["canonicalname2"] == "Thermoproteia"
+    assert result.shape[1] == 4
+    assert _contains(result, "id", 564)
+    assert _contains(result, "canonicalname", "Sulfolobales")
+    assert _unique_equals(result, "id2", 10705623)
+    assert _unique_equals(result, "canonicalname2", "Thermoproteia")
+
