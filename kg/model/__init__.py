@@ -8,6 +8,7 @@ from kg.model.core.geography import define_geography
 from kg.model.core.soleq import define_solstice_equinox
 from kg.model.core.taxon import define_taxon
 from kg.model.core.observation import define_observation
+from kg.model.core.plant import define_plants
 from kg.model.derived.taxonomy import define_taxonomy
 from kg.model.derived.observation import define_derived_observation
 
@@ -28,6 +29,7 @@ class Taxon(Protocol):
     class_: rai.Relationship
     phylum: rai.Relationship
     kingdom: rai.Relationship
+    usda_plant: rai.Relationship
 
 
 class Observation(Protocol):
@@ -47,6 +49,20 @@ class Observation(Protocol):
     h3_cell_10: rai.Relationship
     classification: rai.Relationship
     hemisphere: rai.Relationship
+    usda_plant: rai.Relationship
+    visible_trait: rai.Relationship
+
+
+class Plant(Protocol):
+    id: rai.Relationship
+    scientific_name: rai.Relationship
+    reference: rai.Relationship
+    trait: rai.Relationship
+
+
+class Trait(Protocol):
+    name: rai.Relationship
+    value: rai.Relationship
 
 
 class Hemisphere(Protocol):
@@ -137,6 +153,16 @@ class ARQModel(Protocol):
     # Entity concepts
     Taxon: Taxon
     Observation: Observation
+
+    PlantId: rai.Concept
+    PlantScientificName: rai.Concept
+    PlantReference: rai.Concept
+    TraitName: rai.Concept
+    TraitValue: rai.Concept
+
+    Plant: Plant
+    Trait: Trait
+
     Hemisphere: Hemisphere
     CalendarEvent: CalendarEvent
     Solstice: Solstice
@@ -173,6 +199,7 @@ def define_arq(m: rai.Model, db: str = "TEAM_ARQ", schema: str = "PUBLIC") -> AR
     # Define core model and bindings
     define_taxon(m, source("TAXON"))
     define_observation(m, source("OBSERVATION_10k"))
+    define_plants(m, source("PLANTS"), source("PLANT_TRAITS"))
     define_solstice_equinox(m, source("ASTROPIXELS_SOLEQ"))
 
     # Define derived concepts

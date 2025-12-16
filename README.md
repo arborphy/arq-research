@@ -94,7 +94,7 @@ python script/export_plants_sqlite_to_csv.py --db ./plants.db
 uvx --from snowflake-cli snow sql -f script/plants.sql -D "path=./.local/plants_csv"
 
 # 3) Build dbt staging tables (materialized in team_arq.public)
-uv run dbt build --select plants plant_characteristics plant_native_statuses
+uv run dbt build --select plants plant_characteristics plant_native_statuses plant_traits
 
 # Optional: if you host the CSVs at static URLs (e.g. Google Drive direct download links)
 # you can load from links instead of exporting locally:
@@ -129,6 +129,26 @@ uv run pytest
 # Run apps
 uv run -m kg.apps.observation_eda observations_per_genus --threshold 100
 uv run -m kg.apps.observation_eda nearby_observations
+
+# Nearby traits (lat/lon)
+#
+# This app takes a latitude/longitude (decimal degrees) and returns a table of
+# USDA traits inferred to be "nearby" by looking at GBIF observations in an H3
+# neighborhood, mapping:
+#   Observation -> Taxon (canonical name) -> USDA Plants -> Plant Traits
+#
+# Lat/lon format:
+# - Decimal degrees as floats.
+# - North/East are positive; South/West are negative.
+# - Latitude must be in [-90, 90], longitude in [-180, 180].
+#
+# Auth:
+# Uses Snowflake CLI (snow) under the hood. Recommended PAT setup:
+#   export SNOWFLAKE_PAT_FILE="$HOME/.config/snowflake/pat.token"
+#
+# Example runs:
+uv run -m kg.apps.nearby_traits --lat 37.6125 --lon -77.5652777778 --limit 20
+uv run -m kg.apps.nearby_traits --lat 41.2369444444 --lon -73.5680555556 --limit 20
 ```
 
 ## AI Assistance

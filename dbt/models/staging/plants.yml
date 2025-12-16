@@ -9,3 +9,6 @@ models:
 
   - name: plant_native_statuses
     description: "Plant native status table loaded into Snowflake from local SQLite export."
+
+  - name: plant_traits
+    description: "Unpivoted traits extracted from plant_characteristics (plant_id, trait_name, trait_value)."
