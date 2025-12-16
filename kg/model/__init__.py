@@ -1,4 +1,4 @@
-from typing import Protocol
+from typing import Protocol, cast
 
 import relationalai.semantics as rai
 from relationalai.semantics.snowflake import Table
@@ -9,6 +9,7 @@ from kg.model.core.soleq import define_solstice_equinox
 from kg.model.core.taxon import define_taxon
 from kg.model.core.observation import define_observation
 from kg.model.core.plant import define_plants
+from kg.model.core.trait import define_traits
 from kg.model.derived.taxonomy import define_taxonomy
 from kg.model.derived.observation import define_derived_observation
 
@@ -199,11 +200,12 @@ def define_arq(m: rai.Model, db: str = "TEAM_ARQ", schema: str = "PUBLIC") -> AR
     # Define core model and bindings
     define_taxon(m, source("TAXON"))
     define_observation(m, source("OBSERVATION_10k"))
-    define_plants(m, source("PLANTS"), source("PLANT_TRAITS"))
+    define_plants(m, source("PLANTS"))
+    define_traits(m, source("PLANT_TRAITS"))
     define_solstice_equinox(m, source("ASTROPIXELS_SOLEQ"))
 
     # Define derived concepts
     define_taxonomy(m)
     define_derived_observation(m)
 
-    return m
+    return cast(ARQModel, m)
