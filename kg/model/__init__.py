@@ -12,6 +12,7 @@ from kg.model.core.plant import define_plants
 from kg.model.core.trait import define_traits
 from kg.model.derived.taxonomy import define_taxonomy
 from kg.model.derived.observation import define_derived_observation
+from kg.model._generated_protocols import Observation as ObservationGenerated
 
 
 # Protocol definitions for the attributes dynamically assigned to the model
@@ -33,25 +34,19 @@ class Taxon(Protocol):
     usda_plant: rai.Relationship
 
 
-class Observation(Protocol):
-    id: rai.Relationship
-    event_datetime: rai.Relationship
-    day_of_year: rai.Relationship
-    year: rai.Relationship
-    basis_of_record: rai.Relationship
-    country_code: rai.Relationship
-    state_province: rai.Relationship
-    latitude: rai.Relationship
-    longitude: rai.Relationship
-    h3_cell_6: rai.Relationship
-    h3_cell_7: rai.Relationship
-    h3_cell_8: rai.Relationship
-    h3_cell_9: rai.Relationship
-    h3_cell_10: rai.Relationship
-    classification: rai.Relationship
+class ObservationExtras(Protocol):
+    """Non-source-backed observation relationships.
+
+    These are defined in derived modules (not from the ObservationSpec binding).
+    """
+
     hemisphere: rai.Relationship
     usda_plant: rai.Relationship
     visible_trait: rai.Relationship
+
+
+class Observation(ObservationGenerated, ObservationExtras, Protocol):
+    pass
 
 
 class Plant(Protocol):
@@ -156,7 +151,6 @@ class ARQModel(Protocol):
     Observation: Observation
 
     PlantId: rai.Concept
-    PlantScientificName: rai.Concept
     PlantReference: rai.Concept
     TraitName: rai.Concept
     TraitValue: rai.Concept

@@ -20,7 +20,7 @@ def define_derived_observation(m: rai.Model):
 
     # Derived relationship: the USDA plant matched via the observation's GBIF taxon
     # (Taxon.usda_plant is defined in core/plant.py)
-    m.Observation.usda_plant = m.Property("{Observation} matches USDA plant {Plant}")
+    m.Observation.usda_plant = m.Relationship("{Observation} matches USDA plant {Plant}")
     rai.define(
         m.Observation.usda_plant(m.Observation.classification.usda_plant)
     )

@@ -1,63 +1,127 @@
 import relationalai.semantics as rai
 from relationalai.semantics.snowflake import Table
 
+from kg.model.compiler import EntitySpec, Key, Prop, Ref, compile_entity
+
+
 # Sourced from dbt/models/staging/observation.sql
 
 
-def define_observation(m: rai.Model, source: Table):
-    """Define the Observation concept representing GBIF plant observation records.
+class ObservationSpec(EntitySpec):
+    """Declarative ground-truth spec for Observation.
 
-    An Observation represents a documented occurrence of a plant species at a specific
-    location and time. It includes taxonomic identification, spatial coordinates,
-    temporal information, and observation metadata.
+    This spec is meant to be the single place you edit for the common case.
+    The compiler generates:
+    - Concepts/Properties on the RAI model
+    - Source bindings from a `Table`
+
+    Overrides (column names, target keys) are explicit here.
     """
 
-    # Define ID and main concept
-    m.ObservationId = m.Concept("ObservationId", extends=[rai.Integer])
-    m.Observation = m.Concept("Observation", identify_by={"id": m.ObservationId})
+    __entity__ = "Observation"
 
-    # Define value concepts for observation attributes
-    m.EventDateTime = m.Concept("EventDateTime", extends=[rai.DateTime])
-    m.BasisOfRecord = m.Concept("BasisOfRecord", extends=[rai.String])
-    m.CountryCode = m.Concept("CountryCode", extends=[rai.String])
-    m.StateProvince = m.Concept("StateProvince", extends=[rai.String])
+    id = Key(label="{Observation} has id {ObservationId}", column="GBIFID", id_concept="ObservationId", id_extends=rai.Integer)
 
-    # Define properties
-    m.Observation.event_datetime = m.Property("{Observation} occurred on {EventDateTime}")
-    m.Observation.day_of_year = m.Property("{Observation} occurred on day {DayOfYear}")
-    m.Observation.year = m.Property("{Observation} occurred in year {Year}")
-    m.Observation.basis_of_record = m.Property("{Observation} has basis of record {BasisOfRecord}")
-    m.Observation.country_code = m.Property("{Observation} was recorded in country {CountryCode}")
-    m.Observation.state_province = m.Property("{Observation} was recorded in state/province {StateProvince}")
-    m.Observation.latitude = m.Property("{Observation} has latitude {Latitude}")
-    m.Observation.longitude = m.Property("{Observation} has longitude {Longitude}")
-
-    # H3 spatial index properties
-    m.Observation.h3_cell_6 = m.Property("{Observation} is in H3 cell (~36km^2) {H3Cell}")
-    m.Observation.h3_cell_7 = m.Property("{Observation} is in H3 cell (~5km^2) {H3Cell}")
-    m.Observation.h3_cell_8 = m.Property("{Observation} is in H3 cell (~0.7km^2) {H3Cell}")
-    m.Observation.h3_cell_9 = m.Property("{Observation} is in H3 cell (~0.1km^2) {H3Cell}")
-    m.Observation.h3_cell_10 = m.Property("{Observation} is in H3 cell (~0.01km^2) {H3Cell}")
-
-    # Relationships
-    m.Observation.classification = m.Property("{Observation} is classified as {Taxon}")
-
-    # Bind source data to concepts
-    rai.define(m.Observation.new(id=source.GBIFID))
-    obs = rai.where(m.Observation.id == source.GBIFID)
-    obs.define(m.Observation.event_datetime(source.EVENTDATE))
-    obs.define(m.Observation.day_of_year(source.DAYOFYEAR))
-    obs.define(m.Observation.year(source.YEAR))
-    obs.define(m.Observation.basis_of_record(source.BASISOFRECORD))
-    obs.define(m.Observation.country_code(source.COUNTRYCODE))
-    obs.define(m.Observation.state_province(source.STATEPROVINCE))
-    obs.define(m.Observation.latitude(source.LAT))
-    obs.define(m.Observation.longitude(source.LON))
-    obs.define(m.Observation.h3_cell_6(source.H3_CELL_6))
-    obs.define(m.Observation.h3_cell_7(source.H3_CELL_7))
-    obs.define(m.Observation.h3_cell_8(source.H3_CELL_8))
-    obs.define(m.Observation.h3_cell_9(source.H3_CELL_9))
-    obs.define(m.Observation.h3_cell_10(source.H3_CELL_10))
-    obs.define(
-        m.Observation.classification(m.Taxon.filter_by(id=source.TAXONKEY))
+    event_datetime = Prop(
+        label="{Observation} occurred on {EventDateTime}",
+        column="EVENTDATE",
+        value_concept="EventDateTime",
+        value_extends=rai.DateTime,
     )
+
+    # These value concepts come from foundational modules (calendar/geography)
+    day_of_year = Prop(
+        label="{Observation} occurred on day {DayOfYear}",
+        column="DAYOFYEAR",
+        value_concept="DayOfYear",
+        create_value_concept=False,
+    )
+
+    year = Prop(
+        label="{Observation} occurred in year {Year}",
+        column="YEAR",
+        value_concept="Year",
+        create_value_concept=False,
+    )
+
+    basis_of_record = Prop(
+        label="{Observation} has basis of record {BasisOfRecord}",
+        column="BASISOFRECORD",
+        value_concept="BasisOfRecord",
+        value_extends=rai.String,
+    )
+
+    country_code = Prop(
+        label="{Observation} was recorded in country {CountryCode}",
+        column="COUNTRYCODE",
+        value_concept="CountryCode",
+        value_extends=rai.String,
+    )
+
+    state_province = Prop(
+        label="{Observation} was recorded in state/province {StateProvince}",
+        column="STATEPROVINCE",
+        value_concept="StateProvince",
+        value_extends=rai.String,
+    )
+
+    latitude = Prop(
+        label="{Observation} has latitude {Latitude}",
+        column="LAT",
+        value_concept="Latitude",
+        create_value_concept=False,
+    )
+
+    longitude = Prop(
+        label="{Observation} has longitude {Longitude}",
+        column="LON",
+        value_concept="Longitude",
+        create_value_concept=False,
+    )
+
+    h3_cell_6 = Prop(
+        label="{Observation} is in H3 cell (~36km^2) {H3Cell}",
+        column="H3_CELL_6",
+        value_concept="H3Cell",
+        create_value_concept=False,
+    )
+    h3_cell_7 = Prop(
+        label="{Observation} is in H3 cell (~5km^2) {H3Cell}",
+        column="H3_CELL_7",
+        value_concept="H3Cell",
+        create_value_concept=False,
+    )
+    h3_cell_8 = Prop(
+        label="{Observation} is in H3 cell (~0.7km^2) {H3Cell}",
+        column="H3_CELL_8",
+        value_concept="H3Cell",
+        create_value_concept=False,
+    )
+    h3_cell_9 = Prop(
+        label="{Observation} is in H3 cell (~0.1km^2) {H3Cell}",
+        column="H3_CELL_9",
+        value_concept="H3Cell",
+        create_value_concept=False,
+    )
+    h3_cell_10 = Prop(
+        label="{Observation} is in H3 cell (~0.01km^2) {H3Cell}",
+        column="H3_CELL_10",
+        value_concept="H3Cell",
+        create_value_concept=False,
+    )
+
+    classification = Ref(
+        label="{Observation} is classified as {Taxon}",
+        column="TAXONKEY",
+        target="Taxon",
+        target_key="id",
+    )
+
+
+def define_observation(m: rai.Model, source: Table) -> None:
+    """Define + bind Observation using the declarative compiler.
+
+    Common-case edits should happen in `ObservationSpec`.
+    """
+
+    compile_entity(m=m, source=source, spec=ObservationSpec)

@@ -23,20 +23,20 @@ def define_plants(m: rai.Model, plants: Table):
     m.PlantId = m.Concept("PlantId", extends=[rai.Integer])
     m.Plant = m.Concept("Plant", identify_by={"id": m.PlantId})
 
-    m.PlantScientificName = m.Concept("PlantScientificName", extends=[rai.String])
     m.PlantReference = m.Concept("PlantReference", extends=[rai.String])
 
-    m.Plant.scientific_name = m.Property("{Plant} has scientific name {PlantScientificName}")
-    m.Plant.reference = m.Property("{Plant} has reference {PlantReference}")
+    # Use the same value concept as Taxon.canonical_name so we can join without
+    # cross-type comparisons.
+    m.Plant.scientific_name = m.Relationship("{Plant} has scientific name {CanonicalName}")
+    m.Plant.reference = m.Relationship("{Plant} has reference {PlantReference}")
 
     rai.define(m.Plant.new(id=plants.ID))
     plant = rai.where(m.Plant.id == plants.ID)
     plant.define(m.Plant.scientific_name(plants.SCIENTIFIC_NAME))
     plant.define(m.Plant.reference(plants.REFERENCE))
-
     # Taxon -> Plant linkage (by canonical name match)
     # Note: this assumes m.Taxon + m.Taxon.canonical_name have already been defined.
-    m.Taxon.usda_plant = m.Property("{Taxon} matches USDA plant {Plant}")
+    m.Taxon.usda_plant = m.Relationship("{Taxon} matches USDA plant {Plant}")
 
     p = m.Plant.ref()
     tx = m.Taxon.ref()

@@ -24,7 +24,7 @@ def define_traits(m: rai.Model, plant_traits: Table):
 
     # Plant -> Trait relationship
     # Note: this assumes Plant has already been defined.
-    m.Plant.trait = m.Property("{Plant} has trait {Trait}")
+    m.Plant.trait = m.Relationship("{Plant} has trait {Trait}")
 
     p = m.Plant.ref()
     t = m.Trait.ref()
