@@ -10,6 +10,11 @@ class _Field:
     label: str
     column: Optional[str] = None
 
+    # Cardinality behavior
+    # - functional=True  => Property (subject maps to at most one object)
+    # - functional=False => Relationship (subject may map to many objects)
+    functional: bool = True
+
     # Value concept behavior
     value_concept: Optional[str] = None
     value_extends: Optional[Any] = None  # typically rai.String / rai.Integer / ...
@@ -52,11 +57,13 @@ class Prop(_Field):
         value_concept: str,
         value_extends: Any | None = None,
         create_value_concept: bool = True,
+        functional: bool = True,
     ):
         super().__init__(
             kind="prop",
             label=label,
             column=column,
+            functional=functional,
             value_concept=value_concept,
             value_extends=value_extends,
             create_value_concept=create_value_concept,
@@ -71,13 +78,63 @@ class Ref(_Field):
         column: str,
         target: str,
         target_key: str = "id",
+        functional: bool = True,
     ):
         super().__init__(
             kind="ref",
             label=label,
             column=column,
+            functional=functional,
             target=target,
             target_key=target_key,
+        )
+
+
+class Rel(Prop):
+    """Non-functional value edge.
+
+    Convenience wrapper around Prop(functional=False).
+    """
+
+    def __init__(
+        self,
+        *,
+        label: str,
+        column: str,
+        value_concept: str,
+        value_extends: Any | None = None,
+        create_value_concept: bool = True,
+    ):
+        super().__init__(
+            label=label,
+            column=column,
+            value_concept=value_concept,
+            value_extends=value_extends,
+            create_value_concept=create_value_concept,
+            functional=False,
+        )
+
+
+class RelRef(Ref):
+    """Non-functional reference edge.
+
+    Convenience wrapper around Ref(functional=False).
+    """
+
+    def __init__(
+        self,
+        *,
+        label: str,
+        column: str,
+        target: str,
+        target_key: str = "id",
+    ):
+        super().__init__(
+            label=label,
+            column=column,
+            target=target,
+            target_key=target_key,
+            functional=False,
         )
 
 

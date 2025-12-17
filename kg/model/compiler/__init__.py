@@ -8,7 +8,7 @@ Goal:
 This is intentionally minimal (v0) and currently used only for Observation.
 """
 
-from .dsl import EntitySpec, Key, Prop, Ref
+from .dsl import EntitySpec, Key, Prop, Ref, Rel, RelRef
 from .compile import compile_entity
 
-__all__ = ["EntitySpec", "Key", "Prop", "Ref", "compile_entity"]
+__all__ = ["EntitySpec", "Key", "Prop", "Ref", "Rel", "RelRef", "compile_entity"]

@@ -7,12 +7,13 @@ from kg.model.core.calendar import define_calendar
 from kg.model.core.geography import define_geography
 from kg.model.core.soleq import define_solstice_equinox
 from kg.model.core.taxon import define_taxon
-from kg.model.core.observation import define_observation
+from kg.model.core.observation import ObservationSpec
 from kg.model.core.plant import define_plants
 from kg.model.core.trait import define_traits
 from kg.model.derived.taxonomy import define_taxonomy
 from kg.model.derived.observation import define_derived_observation
 from kg.model._generated_protocols import Observation as ObservationGenerated
+from kg.model.plan import ModelPlan, NoSourceStep, TableStep, EntitySpecStep
 
 
 # Protocol definitions for the attributes dynamically assigned to the model
@@ -173,6 +174,23 @@ class ARQModel(Protocol):
     Kingdom: Kingdom
 
 
+ARQ_PLAN = ModelPlan(
+    steps=(
+        NoSourceStep(name="calendar", fn=define_calendar),
+        NoSourceStep(name="geography", fn=define_geography),
+
+        TableStep(name="taxon", fn=define_taxon, table="TAXON"),
+        EntitySpecStep(name="observation", spec=ObservationSpec, table="OBSERVATION_10k"),
+        TableStep(name="plants", fn=define_plants, table="PLANTS"),
+        TableStep(name="traits", fn=define_traits, table="PLANT_TRAITS"),
+        TableStep(name="soleq", fn=define_solstice_equinox, table="ASTROPIXELS_SOLEQ"),
+
+        NoSourceStep(name="taxonomy", fn=define_taxonomy),
+        NoSourceStep(name="derived_observation", fn=define_derived_observation),
+    )
+)
+
+
 def define_arq(m: rai.Model, db: str = "TEAM_ARQ", schema: str = "PUBLIC") -> ARQModel:
     """Define the ARQ knowledge graph model.
 
@@ -184,22 +202,6 @@ def define_arq(m: rai.Model, db: str = "TEAM_ARQ", schema: str = "PUBLIC") -> AR
     Returns:
         The typed ARQ model
     """
-    # Define source table binding helper
-    source = lambda t: Table(f"{db}.{schema}.{t}")
-
-    # Define foundational concepts first (used by other modules)
-    define_calendar(m)
-    define_geography(m)
-
-    # Define core model and bindings
-    define_taxon(m, source("TAXON"))
-    define_observation(m, source("OBSERVATION_10k"))
-    define_plants(m, source("PLANTS"))
-    define_traits(m, source("PLANT_TRAITS"))
-    define_solstice_equinox(m, source("ASTROPIXELS_SOLEQ"))
-
-    # Define derived concepts
-    define_taxonomy(m)
-    define_derived_observation(m)
+    ARQ_PLAN.apply(m, db=db, schema=schema)
 
     return cast(ARQModel, m)

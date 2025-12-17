@@ -76,9 +76,8 @@ def compile_entity(*, m: rai.Model, source: Table, spec: Type[EntitySpec]) -> No
             continue
 
         if field.kind in ("prop", "ref"):
-            # Default: treat both as functional properties.
-            # If we later need a non-functional relationship, we can introduce a separate DSL primitive.
-            rel = m_any.Property(field.label)
+            rel_factory = m_any.Property if field.functional else m_any.Relationship
+            rel = rel_factory(field.label)
             setattr(entity_concept, attr, rel)
         else:
             raise ValueError(f"Unknown field kind: {field.kind}")
