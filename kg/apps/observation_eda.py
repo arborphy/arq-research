@@ -33,14 +33,14 @@ def observations_per_genus(arq: ARQModel, threshold: int = 10) -> rai.Fragment:
 
     return rai.where(
         arq.Observation.classification(arq.Taxon),
-        arq.Taxon.genus(arq.Genus),
-        obs_count := rai.count(arq.Observation).per(arq.Genus),
+        arq.Taxon.genus(arq.TaxonGenus),
+        obs_count := rai.count(arq.Observation).per(arq.TaxonGenus),
         obs_count > threshold
     ).select(
         obs_count.alias("observation_count"),
         rai.sum(obs_count),
-        arq.Genus.canonical_name.alias("genus_name"),
-        arq.Genus.id.alias("genus_id"),
+        arq.TaxonGenus.canonical_name.alias("genus_name"),
+        arq.TaxonGenus.id.alias("genus_id"),
     )
 
 
@@ -89,15 +89,16 @@ def species_before_summer_solstice_by_class(arq: ARQModel, year: int = 2025) -> 
     return rai.where(
         arq.Observation.country_code("US"),
         arq.Observation.year(year),
-        arq.Observation.classification(arq.Species),
-        arq.Species.class_(arq.Class),
+        arq.Observation.classification(arq.Taxon),
+        arq.Taxon.species(arq.Species),
+        arq.Species.class_(arq.TaxonClass),
         arq.Solstice.year(year),
         arq.Solstice.summer(arq.HemisphereNorth),
         arq.Observation.event_datetime < arq.Solstice.datetime,
-        species_count := rai.count(arq.Species).per(arq.Class),
+        species_count := rai.count(arq.Species).per(arq.TaxonClass),
     ).select(
         species_count.alias("species_count"),
-        arq.Class.canonical_name.alias("class_name"),
+        arq.TaxonClass.canonical_name.alias("class_name"),
     )
 
 ## ↓ brought to you by Claude

@@ -18,15 +18,8 @@ def define_derived_observation(m: rai.Model):
         m.Observation.hemisphere(m.Observation.longitude.hemisphere)
     )
 
-    # Derived relationship: the USDA plant matched via the observation's GBIF taxon
-    # (Taxon.usda_plant is defined in core/plant.py)
-    m.Observation.usda_plant = m.Relationship("{Observation} matches USDA plant {Plant}")
-    rai.define(
-        m.Observation.usda_plant(m.Observation.classification.usda_plant)
-    )
-
-    # Derived relationship: visible traits implied by the matched plant
+    # Derived relationship: visible traits implied by the matched species
     m.Observation.visible_trait = m.Relationship("{Observation} has visible trait {Trait}")
     rai.define(
-        m.Observation.visible_trait(m.Observation.usda_plant.trait)
+        m.Observation.visible_trait(m.Observation.species.trait)
     )

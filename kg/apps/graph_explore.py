@@ -107,38 +107,50 @@ def query_siblings_by_parent(*, arq, canonical_name: str | None, taxon_id: int |
 
 
 def query_siblings_by_genus(*, arq, canonical_name: str | None, taxon_id: int | None):
-    # This query is most meaningful when the anchor is a Species.
+    # This query is most meaningful when the anchor is a (unified) Species.
     anchor = arq.Species.ref()
     sibling = arq.Species.ref()
-    genus = arq.Genus.ref()
+    genus = arq.TaxonGenus.ref()
 
-    where = [
-        *(_anchor_taxon_constraints(arq=arq, taxon=anchor, canonical_name=canonical_name, taxon_id=taxon_id)),
-        anchor.genus(genus),
-        sibling.genus(genus),
-        anchor != sibling,
-    ]
+    where = []
+    if canonical_name is not None:
+        where.append(anchor.name == canonical_name)
+    elif taxon_id is not None:
+        tx = arq.Taxon.ref()
+        where.extend([tx.id == taxon_id, tx.species(anchor)])
+    else:
+        raise ValueError("Must provide --canonical-name or --taxon-id")
+
+    where.extend(
+        [
+            anchor.genus(genus),
+            sibling.genus(genus),
+            anchor != sibling,
+        ]
+    )
 
     return rai.where(*where).select(
         genus.canonical_name,
-        anchor.canonical_name,
-        sibling.canonical_name,
-        sibling.id,
+        anchor.name,
+        sibling.name,
     ).to_df()
 
 
 def query_usda_plant(*, arq, canonical_name: str | None, taxon_id: int | None):
     taxon = arq.Taxon.ref()
+    species = arq.Species.ref()
     plant = arq.Plant.ref()
 
     where = [
         *(_anchor_taxon_constraints(arq=arq, taxon=taxon, canonical_name=canonical_name, taxon_id=taxon_id)),
-        taxon.usda_plant(plant),
+        taxon.species(species),
+        species.plant(plant),
     ]
 
     return rai.where(*where).select(
         taxon.id,
         taxon.canonical_name,
+        species.name,
         plant.id,
         plant.scientific_name,
         plant.reference,
@@ -147,18 +159,18 @@ def query_usda_plant(*, arq, canonical_name: str | None, taxon_id: int | None):
 
 def query_traits(*, arq, canonical_name: str | None, taxon_id: int | None):
     taxon = arq.Taxon.ref()
-    plant = arq.Plant.ref()
+    species = arq.Species.ref()
     trait = arq.Trait.ref()
 
     where = [
         *(_anchor_taxon_constraints(arq=arq, taxon=taxon, canonical_name=canonical_name, taxon_id=taxon_id)),
-        taxon.usda_plant(plant),
-        plant.trait(trait),
+        taxon.species(species),
+        species.trait(trait),
     ]
 
     return rai.where(*where).select(
         taxon.canonical_name,
-        plant.scientific_name,
+        species.name,
         trait.name,
         trait.value,
     ).to_df()

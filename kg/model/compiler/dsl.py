@@ -165,3 +165,12 @@ class EntitySpec(metaclass=EntitySpecMeta):
 
     __entity__: ClassVar[str]
     __fields__: ClassVar[Dict[str, _Field]]
+
+    # Optional composite identity.
+    #
+    # If provided, the compiler will create the entity concept using
+    # identify_by=<mapping> instead of requiring a single Key field.
+    #
+    # Example:
+    #   __identify_by__ = {"name": "TraitName", "value": "TraitValue"}
+    __identify_by__: ClassVar[Dict[str, str] | None] = None

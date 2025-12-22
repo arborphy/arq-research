@@ -1,68 +1,85 @@
 import relationalai.semantics as rai
 from relationalai.semantics.snowflake import Table
 
+from kg.model.compiler import EntitySpec, Key, Prop, compile_entity
+
+
 # Sourced from dbt/models/staging/taxon.sql
 
-def define_taxon(m: rai.Model, source: Table):
-    """Define the Taxon concept representing elements of the GBIF taxonomy.
 
-    A Taxon represents a taxonomic unit (species, genus, family, etc.) in the
-    GBIF taxonomic backbone. It includes the scientific nomenclature, taxonomic
-    hierarchy, and relationships to parent taxa.
+class TaxonSpec(EntitySpec):
+    """Declarative ground-truth spec for Taxon (core source bindings only).
+
+    The common-case bindings live here. More nuanced graph logic stays explicit
+    in `define_taxon` (e.g., parent-edge filtering and rank-derived concepts).
     """
 
-    # Define ID and main concept
-    m.TaxonId = m.Concept("TaxonId", extends=[rai.Integer])
-    m.Taxon = m.Concept("Taxon", identify_by={"id": m.TaxonId})
+    __entity__ = "Taxon"
 
-    # Define value concepts for taxon attributes
-    m.ScientificName = m.Concept("ScientificName", extends=[rai.String])
-    m.CanonicalName = m.Concept("CanonicalName", extends=[rai.String])
-    m.TaxonRank = m.Concept("TaxonRank", extends=[rai.String])
-    
-    # Define properties/relationships
-    m.Taxon.scientific_name = m.Property("{Taxon} has scientific name {ScientificName}")
-    m.Taxon.canonical_name = m.Property("{Taxon} has canonical name {CanonicalName}")
-    m.Taxon.rank = m.Property("{Taxon} has taxonomic rank {TaxonRank}")
+    id = Key(label="{Taxon} has id {TaxonId}", column="TAXONID", id_concept="TaxonId", id_extends=rai.Integer)
+
+    scientific_name = Prop(
+        label="{Taxon} has scientific name {ScientificName}",
+        column="SCIENTIFICNAME",
+        value_concept="ScientificName",
+        value_extends=rai.String,
+    )
+
+    canonical_name = Prop(
+        label="{Taxon} has canonical name {CanonicalName}",
+        column="CANONICALNAME",
+        value_concept="CanonicalName",
+        value_extends=rai.String,
+    )
+
+    rank = Prop(
+        label="{Taxon} has taxonomic rank {TaxonRank}",
+        column="TAXONRANK",
+        value_concept="TaxonRank",
+        value_extends=rai.String,
+    )
+
+
+def define_taxon(m: rai.Model, source: Table) -> None:
+    """Define the Taxon concept representing elements of the GBIF taxonomy."""
+
+    # 1) Core schema + bindings
+    compile_entity(m=m, source=source, spec=TaxonSpec)
+
+    # 2) Parent edge (kept explicit to avoid accidental self-loops)
     m.Taxon.parent = m.Property("{Taxon} has parent taxon {Taxon}")
-
-    # Bind source data to concepts
-    rai.define(m.Taxon.new(id=source.TAXONID))
-    taxon = rai.where(m.Taxon.id == source.TAXONID)
-    taxon.define(m.Taxon.scientific_name(source.SCIENTIFICNAME))
-    taxon.define(m.Taxon.canonical_name(source.CANONICALNAME))
-    taxon.define(m.Taxon.rank(source.TAXONRANK))
 
     t1 = m.Taxon.ref()
     t2 = m.Taxon.ref()
-    rai.define(
-        t1.parent(t2)
-    ).where(
+    rai.define(t1.parent(t2)).where(
         t1 != t2,
         t1.id == source.TAXONID,
         t2.id == source.PARENTNAMEUSAGEID,
     )
 
-    # Define taxonomic rank concepts
-    m.Species = m.Concept("Species", extends=[m.Taxon])
-    rai.define(m.Species.new(id=source.TAXONID)).where(source.TAXONRANK == "species")
+    # 3) Rank-derived taxonomy concepts
+    # NOTE: these are “taxonomy-rank views” over Taxon. The user-facing species
+    # abstraction is defined separately as `Species` (name-identified) in
+    # `kg.model.derived.species`.
+    m.TaxonSpecies = m.Concept("TaxonSpecies", extends=[m.Taxon])
+    rai.define(m.TaxonSpecies.new(id=source.TAXONID)).where(source.TAXONRANK == "species")
 
-    m.Genus = m.Concept("Genus", extends=[m.Taxon])
-    rai.define(m.Genus.new(id=source.TAXONID)).where(source.TAXONRANK == "genus")
+    m.TaxonGenus = m.Concept("TaxonGenus", extends=[m.Taxon])
+    rai.define(m.TaxonGenus.new(id=source.TAXONID)).where(source.TAXONRANK == "genus")
 
-    m.Family = m.Concept("Family", extends=[m.Taxon])
-    rai.define(m.Family.new(id=source.TAXONID)).where(source.TAXONRANK == "family")
+    m.TaxonFamily = m.Concept("TaxonFamily", extends=[m.Taxon])
+    rai.define(m.TaxonFamily.new(id=source.TAXONID)).where(source.TAXONRANK == "family")
 
-    m.Order = m.Concept("Order", extends=[m.Taxon])
-    rai.define(m.Order.new(id=source.TAXONID)).where(source.TAXONRANK == "order")
+    m.TaxonOrder = m.Concept("TaxonOrder", extends=[m.Taxon])
+    rai.define(m.TaxonOrder.new(id=source.TAXONID)).where(source.TAXONRANK == "order")
 
-    m.Class = m.Concept("Class", extends=[m.Taxon])
-    rai.define(m.Class.new(id=source.TAXONID)).where(source.TAXONRANK == "class")
+    m.TaxonClass = m.Concept("TaxonClass", extends=[m.Taxon])
+    rai.define(m.TaxonClass.new(id=source.TAXONID)).where(source.TAXONRANK == "class")
 
-    m.Phylum = m.Concept("Phylum", extends=[m.Taxon])
-    rai.define(m.Phylum.new(id=source.TAXONID)).where(source.TAXONRANK == "phylum")
+    m.TaxonPhylum = m.Concept("TaxonPhylum", extends=[m.Taxon])
+    rai.define(m.TaxonPhylum.new(id=source.TAXONID)).where(source.TAXONRANK == "phylum")
 
-    m.Kingdom = m.Concept("Kingdom", extends=[m.Taxon])
-    rai.define(m.Kingdom.new(id=source.TAXONID)).where(source.TAXONRANK == "kingdom")
+    m.TaxonKingdom = m.Concept("TaxonKingdom", extends=[m.Taxon])
+    rai.define(m.TaxonKingdom.new(id=source.TAXONID)).where(source.TAXONRANK == "kingdom")
 
 

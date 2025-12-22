@@ -1,8 +1,40 @@
 import relationalai.semantics as rai
 from relationalai.semantics.snowflake import Table
 
+from kg.model.compiler import EntitySpec, Prop, compile_entity
+
 
 # Sourced from dbt/models/staging/plant_traits.sql
+
+
+class TraitSpec(EntitySpec):
+    """Declarative ground-truth spec for Trait.
+
+    Trait is identified by (name, value). The compiler binds the entity itself.
+    The Plant->Trait relationship is still defined explicitly in `define_traits`
+    because it is a multi-column join (plant_id + trait name + trait value).
+    """
+
+    __entity__ = "Trait"
+
+    __identify_by__ = {
+        "name": "TraitName",
+        "value": "TraitValue",
+    }
+
+    name = Prop(
+        label="{Trait} has trait name {TraitName}",
+        column="TRAIT_NAME",
+        value_concept="TraitName",
+        value_extends=rai.String,
+    )
+
+    value = Prop(
+        label="{Trait} has trait value {TraitValue}",
+        column="TRAIT_VALUE",
+        value_concept="TraitValue",
+        value_extends=rai.String,
+    )
 
 
 def define_traits(m: rai.Model, plant_traits: Table):
@@ -16,11 +48,7 @@ def define_traits(m: rai.Model, plant_traits: Table):
     """
 
     # Trait entity (name + value)
-    m.TraitName = m.Concept("TraitName", extends=[rai.String])
-    m.TraitValue = m.Concept("TraitValue", extends=[rai.String])
-    m.Trait = m.Concept("Trait", identify_by={"name": m.TraitName, "value": m.TraitValue})
-
-    rai.define(m.Trait.new(name=plant_traits.TRAIT_NAME, value=plant_traits.TRAIT_VALUE))
+    compile_entity(m=m, source=plant_traits, spec=TraitSpec)
 
     # Plant -> Trait relationship
     # Note: this assumes Plant has already been defined.

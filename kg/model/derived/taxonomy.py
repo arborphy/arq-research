@@ -8,177 +8,149 @@ def define_taxonomy(m: rai.Model):
     parent-child relationships in the source data.
     """
 
-    # Define hierarchical relationships
-    # References for each taxonomic rank
-    s = m.Species.ref()
-    g = m.Genus.ref()
-    f = m.Family.ref()
-    o = m.Order.ref()
-    c = m.Class.ref()
-    p = m.Phylum.ref()
-    k = m.Kingdom.ref()
+    # Define hierarchical relationships in the GBIF taxonomy backbone.
+    #
+    # NOTE: these are *taxonomy-rank views* over Taxon.
+    # The unified, user-facing Species abstraction is `m.Species` (name-based)
+    # and is mapped to the taxonomy backbone in `kg.model.derived.species`.
+    ts = m.TaxonSpecies.ref()
+    tg = m.TaxonGenus.ref()
+    tf = m.TaxonFamily.ref()
+    to = m.TaxonOrder.ref()
+    tc = m.TaxonClass.ref()
+    tp = m.TaxonPhylum.ref()
+    tk = m.TaxonKingdom.ref()
 
     # Genus relationships
-    m.Taxon.genus = m.Property("{Taxon} comprises {Genus}")
-    rai.define(
-        s.genus(g)
-    ).where(
-        s.parent(g)
-    )
-    rai.define(g.genus(g))
+    m.Taxon.genus = m.Property("{Taxon} comprises {TaxonGenus}")
+    rai.define(ts.genus(tg)).where(ts.parent(tg))
+    rai.define(tg.genus(tg))
 
 
     # Family relationships
-    m.Taxon.family = m.Property("{Taxon} comprises {Family}")
-    rai.define(
-        s.family(f)
-    ).where(
-        s.parent(g),
-        g.parent(f)
+    m.Taxon.family = m.Property("{Taxon} comprises {TaxonFamily}")
+    rai.define(ts.family(tf)).where(
+        ts.parent(tg),
+        tg.parent(tf),
     )
-    rai.define(
-        g.family(f)
-    ).where(
-        g.parent(f),
-    )
-    rai.define(f.family(f))
+    rai.define(tg.family(tf)).where(tg.parent(tf))
+    rai.define(tf.family(tf))
 
     # Order relationships
-    m.Taxon.order = m.Property("{Taxon} comprises {Order}")
-    rai.define(
-        s.order(o)
-    ).where(
-        s.parent(g),
-        g.parent(f),
-        f.parent(o)
+    m.Taxon.order = m.Property("{Taxon} comprises {TaxonOrder}")
+    rai.define(ts.order(to)).where(
+        ts.parent(tg),
+        tg.parent(tf),
+        tf.parent(to),
     )
-    rai.define(
-        g.order(o)
-    ).where(
-        g.parent(f),
-        f.parent(o)
+    rai.define(tg.order(to)).where(
+        tg.parent(tf),
+        tf.parent(to),
     )
-    rai.define(
-        f.order(o)
-    ).where(
-        f.parent(o),
-    )
-    rai.define(o.order(o))
+    rai.define(tf.order(to)).where(tf.parent(to))
+    rai.define(to.order(to))
 
     # Class relationships
-    m.Taxon.class_ = m.Property("{Taxon} comprises {Class}")
-    rai.define(
-        s.class_(c)
-    ).where(
-        s.parent(g),
-        g.parent(f),
-        f.parent(o),
-        o.parent(c)
+    m.Taxon.class_ = m.Property("{Taxon} comprises {TaxonClass}")
+    rai.define(ts.class_(tc)).where(
+        ts.parent(tg),
+        tg.parent(tf),
+        tf.parent(to),
+        to.parent(tc),
     )
-    rai.define(
-        g.class_(c)
-    ).where(
-        g.parent(f),
-        f.parent(o),
-        o.parent(c)
+    rai.define(tg.class_(tc)).where(
+        tg.parent(tf),
+        tf.parent(to),
+        to.parent(tc),
     )
-    rai.define(
-        f.class_(c)
-    ).where(
-        f.parent(o),
-        o.parent(c)
+    rai.define(tf.class_(tc)).where(
+        tf.parent(to),
+        to.parent(tc),
     )
-    rai.define(
-        o.class_(c)
-    ).where(
-        o.parent(c),
-    )
-    rai.define(c.class_(c))
+    rai.define(to.class_(tc)).where(to.parent(tc))
+    rai.define(tc.class_(tc))
 
     # Phylum relationships
-    m.Taxon.phylum = m.Property("{Taxon} comprises {Phylum}")
-    rai.define(
-        s.phylum(p)
-    ).where(
-        s.parent(g),
-        g.parent(f),
-        f.parent(o),
-        o.parent(c),
-        c.parent(p)
+    m.Taxon.phylum = m.Property("{Taxon} comprises {TaxonPhylum}")
+    rai.define(ts.phylum(tp)).where(
+        ts.parent(tg),
+        tg.parent(tf),
+        tf.parent(to),
+        to.parent(tc),
+        tc.parent(tp),
     )
-    rai.define(
-        g.phylum(p)
-    ).where(
-        g.parent(f),
-        f.parent(o),
-        o.parent(c),
-        c.parent(p)
+    rai.define(tg.phylum(tp)).where(
+        tg.parent(tf),
+        tf.parent(to),
+        to.parent(tc),
+        tc.parent(tp),
     )
-    rai.define(
-        f.phylum(p)
-    ).where(
-        f.parent(o),
-        o.parent(c),
-        c.parent(p)
+    rai.define(tf.phylum(tp)).where(
+        tf.parent(to),
+        to.parent(tc),
+        tc.parent(tp),
     )
-    rai.define(
-        o.phylum(p)
-    ).where(
-        o.parent(c),
-        c.parent(p)
+    rai.define(to.phylum(tp)).where(
+        to.parent(tc),
+        tc.parent(tp),
     )
-    rai.define(
-        c.phylum(p)
-    ).where(
-        c.parent(p),
-    )
-    rai.define(p.phylum(p))
+    rai.define(tc.phylum(tp)).where(tc.parent(tp))
+    rai.define(tp.phylum(tp))
 
     # Kingdom relationships
-    m.Taxon.kingdom = m.Property("{Taxon} comprises {Kingdom}")
-    rai.define(
-        s.kingdom(k)
-    ).where(
-        s.parent(g),
-        g.parent(f),
-        f.parent(o),
-        o.parent(c),
-        c.parent(p),
-        p.parent(k)
+    m.Taxon.kingdom = m.Property("{Taxon} comprises {TaxonKingdom}")
+    rai.define(ts.kingdom(tk)).where(
+        ts.parent(tg),
+        tg.parent(tf),
+        tf.parent(to),
+        to.parent(tc),
+        tc.parent(tp),
+        tp.parent(tk),
     )
-    rai.define(
-        g.kingdom(k)
-    ).where(
-        g.parent(f),
-        f.parent(o),
-        o.parent(c),
-        c.parent(p),
-        p.parent(k)
+    rai.define(tg.kingdom(tk)).where(
+        tg.parent(tf),
+        tf.parent(to),
+        to.parent(tc),
+        tc.parent(tp),
+        tp.parent(tk),
     )
-    rai.define(
-        f.kingdom(k)
-    ).where(
-        f.parent(o),
-        o.parent(c),
-        c.parent(p),
-        p.parent(k)
+    rai.define(tf.kingdom(tk)).where(
+        tf.parent(to),
+        to.parent(tc),
+        tc.parent(tp),
+        tp.parent(tk),
     )
-    rai.define(
-        o.kingdom(k)
-    ).where(
-        o.parent(c),
-        c.parent(p),
-        p.parent(k)
+    rai.define(to.kingdom(tk)).where(
+        to.parent(tc),
+        tc.parent(tp),
+        tp.parent(tk),
     )
-    rai.define(
-        c.kingdom(k)
-    ).where(
-        c.parent(p),
-        p.parent(k)
+    rai.define(tc.kingdom(tk)).where(
+        tc.parent(tp),
+        tp.parent(tk),
     )
-    rai.define(
-        p.kingdom(k)
-    ).where(
-        p.parent(k),
-    )
-    rai.define(k.kingdom(k))
+    rai.define(tp.kingdom(tk)).where(tp.parent(tk))
+    rai.define(tk.kingdom(tk))
+
+    # ---- Unified Species hierarchy edges ----
+    # Define Species -> Taxon* edges via Species.taxon (defined in derived/species).
+    sp = m.Species.ref()
+    tx = m.TaxonSpecies.ref()
+
+    m.Species.genus = m.Relationship("{Species} has genus {TaxonGenus}")
+    rai.define(sp.genus(tg)).where(sp.taxon(tx), tx.genus(tg))
+
+    m.Species.family = m.Relationship("{Species} has family {TaxonFamily}")
+    rai.define(sp.family(tf)).where(sp.taxon(tx), tx.family(tf))
+
+    m.Species.order = m.Relationship("{Species} has order {TaxonOrder}")
+    rai.define(sp.order(to)).where(sp.taxon(tx), tx.order(to))
+
+    m.Species.class_ = m.Relationship("{Species} has class {TaxonClass}")
+    rai.define(sp.class_(tc)).where(sp.taxon(tx), tx.class_(tc))
+
+    m.Species.phylum = m.Relationship("{Species} has phylum {TaxonPhylum}")
+    rai.define(sp.phylum(tp)).where(sp.taxon(tx), tx.phylum(tp))
+
+    m.Species.kingdom = m.Relationship("{Species} has kingdom {TaxonKingdom}")
+    rai.define(sp.kingdom(tk)).where(sp.taxon(tx), tx.kingdom(tk))

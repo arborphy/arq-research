@@ -4,6 +4,13 @@ from typing import Protocol
 
 import relationalai.semantics as rai
 
+class Taxon(Protocol):
+    id: rai.Relationship
+    scientific_name: rai.Relationship
+    canonical_name: rai.Relationship
+    rank: rai.Relationship
+
+
 class Observation(Protocol):
     id: rai.Relationship
     event_datetime: rai.Relationship
@@ -20,3 +27,14 @@ class Observation(Protocol):
     h3_cell_9: rai.Relationship
     h3_cell_10: rai.Relationship
     classification: rai.Relationship
+
+
+class Plant(Protocol):
+    id: rai.Relationship
+    scientific_name: rai.Relationship
+    reference: rai.Relationship
+
+
+class Trait(Protocol):
+    name: rai.Relationship
+    value: rai.Relationship

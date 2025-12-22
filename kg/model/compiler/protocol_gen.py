@@ -16,9 +16,21 @@ def _render_entity_protocol(spec: Type[EntitySpec]) -> str:
     entity = spec.__entity__
     fields: dict[str, _Field] = dict(spec.__fields__)
 
+    has_key = any(f.kind == "key" for f in fields.values())
+    composite_identify_by = getattr(spec, "__identify_by__", None)
+
     # Always present
     lines: list[str] = [f"class {entity}(Protocol):"]
-    lines.append("    id: rai.Relationship")
+
+    if has_key:
+        lines.append("    id: rai.Relationship")
+    elif composite_identify_by:
+        # Composite identity entities do not have an implicit `id` key.
+        pass
+    else:
+        # If the spec doesn't define Key or __identify_by__, compilation would fail,
+        # but keep the generator robust.
+        pass
 
     for attr, field in fields.items():
         if field.kind == "key":

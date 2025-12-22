@@ -1,47 +1,38 @@
 import relationalai.semantics as rai
 from relationalai.semantics.snowflake import Table
 
+from kg.model.compiler import EntitySpec, Key, Prop, compile_entity
+
 
 # Sourced from dbt/models/staging/plants.sql
 
 
 
-def define_plants(m: rai.Model, plants: Table):
-    """Define Plant concepts sourced from the USDA-style plants table.
+class PlantSpec(EntitySpec):
+  """Declarative ground-truth spec for Plant (USDA-style plants table)."""
 
-    The overall linking pattern we want is:
-      Observation -> Taxon (GBIF) -> Plant (USDA plants table) -> Trait
+  __entity__ = "Plant"
 
-    Where the linkage between GBIF Taxon and Plant is done by matching:
-      Taxon.canonical_name == Plant.scientific_name
+  id = Key(label="{Plant} has id {PlantId}", column="ID", id_concept="PlantId", id_extends=rai.Integer)
 
-    Trait definitions and Plant->Trait relationships are defined separately in
-    `kg.model.core.trait`.
-    """
+  # Use the same value concept as Taxon.canonical_name so we can join without
+  # cross-type comparisons.
+  scientific_name = Prop(
+    label="{Plant} has scientific name {CanonicalName}",
+    column="SCIENTIFIC_NAME",
+    value_concept="CanonicalName",
+    create_value_concept=False,
+  )
 
-    # Plant entity
-    m.PlantId = m.Concept("PlantId", extends=[rai.Integer])
-    m.Plant = m.Concept("Plant", identify_by={"id": m.PlantId})
+  reference = Prop(
+    label="{Plant} has reference {PlantReference}",
+    column="REFERENCE",
+    value_concept="PlantReference",
+    value_extends=rai.String,
+  )
 
-    m.PlantReference = m.Concept("PlantReference", extends=[rai.String])
 
-    # Use the same value concept as Taxon.canonical_name so we can join without
-    # cross-type comparisons.
-    m.Plant.scientific_name = m.Relationship("{Plant} has scientific name {CanonicalName}")
-    m.Plant.reference = m.Relationship("{Plant} has reference {PlantReference}")
+def define_plants(m: rai.Model, plants: Table) -> None:
+  """Define Plant concepts sourced from the USDA-style plants table."""
 
-    rai.define(m.Plant.new(id=plants.ID))
-    plant = rai.where(m.Plant.id == plants.ID)
-    plant.define(m.Plant.scientific_name(plants.SCIENTIFIC_NAME))
-    plant.define(m.Plant.reference(plants.REFERENCE))
-    # Taxon -> Plant linkage (by canonical name match)
-    # Note: this assumes m.Taxon + m.Taxon.canonical_name have already been defined.
-    m.Taxon.usda_plant = m.Relationship("{Taxon} matches USDA plant {Plant}")
-
-    p = m.Plant.ref()
-    tx = m.Taxon.ref()
-    rai.define(
-        tx.usda_plant(p)
-    ).where(
-        tx.canonical_name == p.scientific_name,
-    )
+  compile_entity(m=m, source=plants, spec=PlantSpec)
