@@ -1,0 +1,131 @@
+{
+  "Anther length": "0.2-0.6 mm",
+  "Anther number": "2",
+  "Awn on glume": "the glume has no awn",
+  "Bristles below spikelets": "no",
+  "Floret lower bract texture": "the lemma is hard and firm",
+  "Floret number": "3-7",
+  "Floret types within spikelet": "all the florets within a spikelet are similar",
+  "Glume awn length": "0 mm",
+  "Glume relative length": "neither glume is quite as long as all of the florets",
+  "Glume veins": "1",
+  "Glumes per spikelet": "2",
+  "Inflorescence arrangement": "the spikelets are uniform",
+  "Inflorescence axis orientation": [
+    "the inflorescence axis bends downwards or hangs",
+    "the inflorescence axis is arched or curved outward",
+    "the inflorescence axis is straight"
+  ],
+  "Inflorescence branch length": "5-13 cm",
+  "Inflorescence branch roughness": "the inflorescence branches are somewhat to very rough",
+  "Inflorescence branches": "the flowers are attached to branches rather than to the main axis of the inflorescence",
+  "Inflorescence crowding": "the panicle is somewhat to very spread out, with clearly-evident branches",
+  "Inflorescence length": "60-250 mm",
+  "Inflorescence length to width ratio": "1.2-2.4",
+  "Inflorescence type (general)": "the spikelets are borne on stalks or on branches",
+  "Inflorescence type (specific)": "the inflorescence is branched, and the branches do NOT both grow from the same side of the plant AND look like spikes",
+  "Inflorescence width": "25-210 mm",
+  "Inforescence position": "the spikelets are mainly carried at the end of the stem",
+  "Lemma awn base": null,
+  "Lemma awn coiled": null,
+  "Lemma awn length": "0 mm",
+  "Lemma awn number": "the lemma has no awn",
+  "Lemma awn orientation": null,
+  "Lemma base hair length": "0 mm",
+  "Lemma base hairs": "the lemma is hairless or feels just a tiny bit rough at the base",
+  "Lemma cross-section": "the lemma is flat or rounded if you cut across the midpoint",
+  "Lemma hairs": "the lemma is hairless between the veins",
+  "Lemma keel hairs": null,
+  "Lemma marginal vein hairs": "the marginal vein of the lemma is hairless",
+  "Lemma surface": "the surface of the lemma is relatively smooth (not counting any longitudinal veins or hairs)",
+  "Lemma tip": [
+    "the lemma tip has a ragged edge",
+    "the lemma tip is a simple point, with or without an awn (long narrow extension ending in a point)"
+  ],
+  "Lemma tip shape": [
+    "the lemma tip is rounded off or truncate (ends abruptly in a more or less straight line as though cut off); it may or may not also have an awn or teeth at the tip",
+    "the lemma tip tapers to a broad point (it may or may not also have an awn or teeth at the tip)",
+    "the lemma tip tapers to a narrow point (it may or may not also have an awn or teeth at the tip)"
+  ],
+  "Lemma vein number": "7 or more",
+  "Lemma vein orientation": "the veins on the lemma stay roughly parallel throughout",
+  "Lower glume length": "0.5-1 mm",
+  "Lower glume relative length": "the lower glume is one third to three quarters as long as the upper glume",
+  "One or more florets": "there is more than one floret per spikelet",
+  "Palea relative length": "palea is one half to fully as long as lemma",
+  "Reproductive system": "all the flowers on the plant have both carpels and stamens (synoecious)",
+  "Spikelet axis tip": "there is no extension of the spikelet axis beyond the tip of the spikelet",
+  "Spikelet disintegration": "the spikelet breaks off above the glumes, so that after the florets fall off, the glumes remain",
+  "Spikelet length": "2-4.5 mm",
+  "Spikelet number per node": "0",
+  "Spikelet pedicel": "the spikelets have pedicels",
+  "Spikelet pedicel length": "0.5-7 mm",
+  "Spikelet position": [
+    "the spikelets emerge from both the upper and lower halves of the inflorescence branches",
+    "the spikelets emerge mainly from the upper halves of the inflorescence branches"
+  ],
+  "Spikelet shape": "the spikelets are ovate (egg-shaped, widest below the middle with rounded ends) in profile",
+  "Spikelet width": "1.2-2.9 mm",
+  "Spikelets per panicle branch": "15-50",
+  "Spikelets spiny": "the spikelets do not appear spiny",
+  "Tip of glume": [
+    "the tip of the glume is divided into two or more points",
+    "the tip of the glume is not divided (though it may have an awn on it)"
+  ],
+  "Upper glume length": "0.8-1.3 mm",
+  "Upper glume shape": "the upper glume is widest at or below the middle",
+  "Seed length": "0.5-2 mm",
+  "Lifespan": "the plant lives more than two years",
+  "Rhizomes": "yes",
+  "Roots": "the plant has rhizomes (horizontal underground stem with roots growing from it)",
+  "Leaf auricles": "the leaves do not have auricles",
+  "Leaf blade cross-section": "the leaf blade is more or less flat in cross-section, or slightly folded or rolled inwards",
+  "Leaf blade hairs": "the leaf blade is hairless, but it may have tiny prickles that give it a sand-papery feel",
+  "Leaf blade length": "12-30 cm",
+  "Leaf blade texture": [
+    "the leaf blade is rough and sandpapery",
+    "the leaf blade is smooth, or it may have soft hairs"
+  ],
+  "Leaf blade width": "2-6 mm",
+  "Leaf ligule length": "1-4 mm",
+  "Leaf ligule type": "the leaf ligule is in the form of a membrane",
+  "Leaf margin glands": "there are no glands along the edges of the leaf blade",
+  "Leaf sheath closed around stem": "the margins of the leaf sheath are fused together and form a closed tube except (possibly) at the very top",
+  "Leaf sheath hair type": "there are no hairs on the surface of the leaf sheath",
+  "Leaf sheath hairs": "there are no hairs on the surface of the leaf sheath",
+  "Habitat": "wetlands",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "edges of wetlands",
+    "in lakes or ponds",
+    "marshes",
+    "shores of rivers or lakes",
+    "swamps"
+  ],
+  "Hairs at nodes": "the stem nodes are hairless or they have very sparse hairs",
+  "Plant height": "20-80 cm",
+  "Roots at lower stem nodes": [
+    "no",
+    "yes"
+  ],
+  "Stem hairs": "the stem is nearly to completely hairless",
+  "Stem orientation": [
+    "the stems are upright",
+    "the stems trail at the base, but turn upwards at the tips"
+  ],
+  "Stem spacing": [
+    "the stems grow close together in compact clusters or tufts",
+    "the stems grow singly or a few together (they may form diffuse colonies)"
+  ],
+  "Stem thickness at base": "1.5-3.5 mm",
+  "scientific_name": "Glyceria striata striata",
+  "url": "https://gobotany.nativeplanttrust.org/species/glyceria/striata/",
+  "source": "web"
+}

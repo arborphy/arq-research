@@ -1,0 +1,104 @@
+{
+  "Anther color (dry)": "the anthers range in color from white to tan or yellow to yellow-brown",
+  "Anther length": "0.7-1.5 mm",
+  "Floral bristle color": "the bristles are pale brown to brown",
+  "Floral bristle number": "1-4",
+  "Floral bristle relative length": [
+    "the bristles are between one tenth as long as the achene, and equal in length to the achene",
+    "there are no bristles, or they are very tiny (less than one tenth as long as the achene)"
+  ],
+  "Floral bristles": "the bristles are straight or slightly curved",
+  "Floral scale hairs": "there are no hairs on the floral scales",
+  "Floral scale length": "1.5-3.5 mm",
+  "Floral scale nerves": [
+    "0",
+    "1"
+  ],
+  "Floral scale shape": "the floral scales are ovate (roughly egg-shaped)",
+  "Floral scale translucent": "the floral scales are translucent",
+  "Flower number per cluster": [
+    "2-5",
+    "5-20"
+  ],
+  "Inflorescence bract angle": null,
+  "Inflorescence bract number": null,
+  "Inflorescence bract position (Sparganium)": null,
+  "Inflorescence bracts": null,
+  "Inflorescence branching": "the inflorescence is on one or more stems with no branches",
+  "Inflorescence crowding": [
+    "NA",
+    "the inflorescence is crowded together in one tight cluster"
+  ],
+  "Inflorescence position": "the inflorescence is at the tip of the plant",
+  "Inflorescence shape": "the aggregations within the inflorescence are roughly circular (not flattened) in cross-section",
+  "Inflorescence type": "there is one spike or raceme at the tip of the stem",
+  "Perianth composition": [
+    "there are bristles attached at the base of the achene",
+    "there is no perianth on the plant"
+  ],
+  "Stamen number": "3",
+  "Stigma number": "3",
+  "Style division": "the top two thirds of the style is divided",
+  "floral bristle barbs": "the bristles have tiny barbs on them",
+  "plantlets budding at flower bases": "no",
+  "Achene beak length": "0 mm",
+  "Achene surface texture": "the achene has stripes or ridges that run from end to end",
+  "Achene tubercle relative width": "the tubercle is one half or less as wide as the achene",
+  "Achene tubercle width": "0.15-0.25 mm",
+  "Capsule relative length": null,
+  "Fruit cross-section": "the fruit is triangular to terete (circular) in cross-section",
+  "Fruit length": "0.7-1.1 mm",
+  "Fruit type (general)": "the fruit is like a seed, and surrounded by scales",
+  "Fruit type (specific)": "the fruit is an achene (dry, seed-like fruit) with a tubercle (a swelling or projection, usually of a different color or texture) on it",
+  "Locules in capsule": null,
+  "Seed length": "0 mm",
+  "Seed tail relative length": "0 mm",
+  "Seed tails": null,
+  "Tubercle height": "0.05-0.2 mm",
+  "Lifespan": "the plant lives more than two years",
+  "Rhizome thickness": "0.25-0.5 mm",
+  "Underground organs": [
+    "the plant has a rhizome (a horizontal underground stem with roots growing from it)",
+    "the plant has one or more swollen storage organs underground, such as bulbs or tubers"
+  ],
+  "Auricle length": "0 mm",
+  "Auricle texture": null,
+  "Auricles": "there are no auricles on the leaf sheath",
+  "Leaf blade cross-section": null,
+  "Leaf blade length": "0 mm",
+  "Leaf blade width": "0 mm",
+  "Leaf form": "all the leaves hold their form out of water",
+  "Leaf position on plant": "the attachment points of all the leaves are at or near the base of the plant",
+  "Leaf septa": null,
+  "Leaf sheath hairs": "the leaf sheathes are without hairs",
+  "Pedicel length (Typha)": "0 mm",
+  "Stem leaf blade ligules": null,
+  "Stem leaf blades": "there are no leaves on the main stem, or there is a small tooth or tiny blade, or a leaf sheath with no blade",
+  "Width of seed-producing inflorescence": "1-2 mm",
+  "Habitat": [
+    "aquatic",
+    "wetlands"
+  ],
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "in lakes or ponds",
+    "in rivers or streams",
+    "meadows or fields",
+    "river or stream floodplains",
+    "shores of rivers or lakes"
+  ],
+  "Plant height": "1-60 cm",
+  "Stem shape in cross-section": "the stem is round or oval in cross-section",
+  "Stem texture near tip": "the stem feels smooth near the tip",
+  "Stem thickness at midpoint": "0.2-0.7 mm",
+  "scientific_name": "Eleocharis acicularis",
+  "url": "https://gobotany.nativeplanttrust.org/species/eleocharis/acicularis/",
+  "source": "web"
+}

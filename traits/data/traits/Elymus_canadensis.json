@@ -1,0 +1,167 @@
+{
+  "Anther length": "2-3.5 mm",
+  "Anther number": "3",
+  "Awn on glume": "the glume has an awn",
+  "Bristles below spikelets": "no",
+  "Floret lower bract texture": "the lemma is thin and flexible",
+  "Floret number": "2-7",
+  "Floret types within spikelet": "there are at least two distinct forms of florets within one spikelet",
+  "Glume awn length": "5-27 mm",
+  "Glume keel": null,
+  "Glume relative length": [
+    "neither glume is quite as long as all of the florets",
+    "one or both glumes are as long or longer than all of the florets"
+  ],
+  "Glume shape": "the glume is flat or curved in cross-section",
+  "Glume veins": [
+    "3",
+    "5"
+  ],
+  "Glumes per spikelet": "2",
+  "Inflorescence arrangement": "the spikelets are uniform",
+  "Inflorescence axis hairs": [
+    "the inflorescence axis is hairy but not rough or sand-papery feeling",
+    "the inflorescence axis is rough and feels like sand-paper"
+  ],
+  "Inflorescence axis orientation": [
+    "the inflorescence axis bends downwards or hangs",
+    "the inflorescence axis is arched or curved outward"
+  ],
+  "Inflorescence branch length": "0 cm",
+  "Inflorescence branch roughness": null,
+  "Inflorescence branches": "there are no branch points between the base of the inflorescence axis and the flowers, or they are not obvious",
+  "Inflorescence branches coming off the lowest stem node": "0",
+  "Inflorescence crowding": null,
+  "Inflorescence length": "60-300 mm",
+  "Inflorescence length to width ratio": "2-4.3",
+  "Inflorescence type (general)": "the inflorescence is a spike, or is spike-like, lacking obvious branches",
+  "Inflorescence type (specific)": "the inflorescence is a spike (a long unbranched stem with flowers along it that lack stalks)",
+  "Inflorescence width": "30-70 mm",
+  "Inforescence position": "the spikelets are mainly carried at the end of the stem",
+  "Lemma awn base": "the awn is attached right at the tip of the lemma",
+  "Lemma awn coiled": [
+    "the lemma awn is coiled at least one half turn",
+    "the lemma awn is straight or twisted, but not coiled one half turn"
+  ],
+  "Lemma awn length": "10-50 mm",
+  "Lemma awn number": "the lemma has one awn on it",
+  "Lemma awn orientation": "the awn of the lemma on dried or older plants is curved or bent outwards",
+  "Lemma cross-section": "the lemma is flat or rounded if you cut across the midpoint",
+  "Lemma hairs": [
+    "the lemma has fine hairs between the veins",
+    "the lemma is hairless between the veins"
+  ],
+  "Lemma keel hairs": null,
+  "Lemma marginal vein hairs": [
+    "the marginal vein of the lemma has fine hairs on it",
+    "the marginal vein of the lemma is hairless"
+  ],
+  "Lemma surface": "the surface of the lemma is relatively smooth (not counting any longitudinal veins or hairs)",
+  "Lemma tip": "the lemma tip is a simple point, with or without an awn (long narrow extension ending in a point)",
+  "Lemma tip shape": "the lemma tip tapers to a narrow point (it may or may not also have an awn or teeth at the tip)",
+  "Lemma vein number": "5",
+  "Lemma vein orientation": "the veins on the lemma stay roughly parallel throughout",
+  "Lower glume length": "6-14 mm",
+  "Lower glume relative length": "the lower glume is nearly as long, or as long as, the upper glume",
+  "One or more florets": "there is more than one floret per spikelet",
+  "Palea length": "7-13 mm",
+  "Palea relative length": "palea is one half to fully as long as lemma",
+  "Reproductive system": "all the flowers on the plant have both carpels and stamens (synoecious)",
+  "Spikelet axis tip": "there is no extension of the spikelet axis beyond the tip of the spikelet",
+  "Spikelet disintegration": [
+    "the spikelet breaks off above the glumes, so that after the florets fall off, the glumes remain",
+    "the spikelet breaks off below the glumes"
+  ],
+  "Spikelet length": "12-20 mm",
+  "Spikelet number per node": "Up to 5",
+  "Spikelet pedicel": "the spikelets do not have pedicels",
+  "Spikelet pedicel length": "0 mm",
+  "Spikelet position": null,
+  "Spikelet shape": [
+    "the spikelets are elliptic (widest in the middle, tapering to the ends) in profile",
+    "the spikelets are oblong (rectangular, but with rounded ends) in profile"
+  ],
+  "Spikelets per panicle branch": "0",
+  "Spikelets spiny": "the spikelets do not appear spiny",
+  "Tip of glume": "the tip of the glume is not divided (though it may have an awn on it)",
+  "Upper glume length": "6-14 mm",
+  "Upper glume relative length": "the upper glume is more than one half as long as the lowest lemma",
+  "Upper glume shape": [
+    "the upper glume is widest above the middle",
+    "the upper glume is widest at or below the middle"
+  ],
+  "Groove on seed": "the caryopsis has a groove running most of its length",
+  "Horizontal rooting stem": "no",
+  "Lifespan": "the plant lives more than two years",
+  "Rhizomes": [
+    "no",
+    "yes"
+  ],
+  "Roots": [
+    "the plant has rhizomes (horizontal underground stem with roots growing from it)",
+    "there are only slender roots on the plant"
+  ],
+  "Basal leaves": "the plant has few or no leaves coming from the base of the flowering stem",
+  "Leaf auricles": "the leaves have auricles",
+  "Leaf basal lobe hairy": "the lobes at the base of the leaf blades are hairless",
+  "Leaf blade cross-section": [
+    "the leaf blade is clearly folded or rolled inwards",
+    "the leaf blade is more or less flat in cross-section, or slightly folded or rolled inwards"
+  ],
+  "Leaf blade hairs": [
+    "the leaf blade is hairless, but it may have tiny prickles that give it a sand-papery feel",
+    "the leaf blade is hairy"
+  ],
+  "Leaf blade length": "15-40 cm",
+  "Leaf blade texture": [
+    "the leaf blade is rough and sandpapery",
+    "the leaf blade is smooth, or it may have soft hairs"
+  ],
+  "Leaf blade width": "3-15 mm",
+  "Leaf ligule length": "0.5-2 mm",
+  "Leaf ligule type": "the leaf ligule is in the form of a membrane with fine hairs",
+  "Leaf margin glands": "there are no glands along the edges of the leaf blade",
+  "Leaf sheath closed around stem": "the margins of the leaf sheath are overlapping and not fused together except in the basal half (or less)",
+  "Leaf sheath hair type": [
+    "there are hairs on the surface of the leaf sheath, but the hairs do not have blisters at their bases",
+    "there are no hairs on the surface of the leaf sheath"
+  ],
+  "Leaf sheath hairs": [
+    "there are hairs on the surface of the leaf sheath",
+    "there are no hairs on the surface of the leaf sheath"
+  ],
+  "Orientation of topmost leaf": [
+    "the flag leaf is held outward at more than a 45 degree angle from the stem, or it curves downwards from the horizontal",
+    "the flag leaf is held upright, or at less than a 45 degree angle out from the stem"
+  ],
+  "Habitat": "terrestrial",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "cliffs, balds, or ledges",
+    "forests",
+    "ridges or ledges",
+    "river or stream floodplains",
+    "shores of rivers or lakes",
+    "talus or rocky slopes"
+  ],
+  "Hairs at nodes": "the stem nodes are hairless or they have very sparse hairs",
+  "Plant height": "40-180 cm",
+  "Stem node number": "4-10",
+  "Stem orientation": [
+    "the stems are upright",
+    "the stems trail at the base, but turn upwards at the tips"
+  ],
+  "Stem spacing": [
+    "the stems grow close together in compact clusters or tufts",
+    "the stems grow singly or a few together (they may form diffuse colonies)"
+  ],
+  "scientific_name": "Elymus canadensis",
+  "url": "https://gobotany.nativeplanttrust.org/species/elymus/canadensis/",
+  "source": "web"
+}

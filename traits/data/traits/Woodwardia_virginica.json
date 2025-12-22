@@ -1,0 +1,58 @@
+{
+  "Life form": "the plant is herbaceous and terrestrial",
+  "Life stage": "the plant is visible as a typical leaf-bearing fern (sporophyte)",
+  "Spore-bearing leaflets": "the spore-bearing fronds are similar in size and shape to the sterile fronds",
+  "Features of leaves": "there are no special features on the leaves",
+  "Leaf blade length": "28-60 cm",
+  "Leaf blade shape": "the leaf blades are widest above the base, then taper narrowly towards the tip (lanceolate)",
+  "Leaf blade width": "At least 12 cm",
+  "Leaf divisions": [
+    "the leaf blade is compound (divided into leaflets)",
+    "the leaf blade is twice compound (divided into leaflets, which are further divided into leaflets)"
+  ],
+  "Leaf lifespan": "the leaves drop off in winter",
+  "Leaf stalk color": "yellow to brown",
+  "Leaf stalk hairs": "there are no hairs on the leaf stalk",
+  "Leaf stalk length": "230-805 mm",
+  "Leaf stalk relative length": "the leaf stalk is more than three quarters as long as the blade",
+  "Leaf stalk scale location": "the scales are present only on the lower half of the leaf stalk",
+  "Leaf stalk scales": "the leaf stalk has scales",
+  "Leaf stalk vessels": "3 to 9 bundles",
+  "Leaf vein branching": "the secondary veins of the leaf blade split and rejoin to form a netlike pattern",
+  "Leaf vein tips": "the veins go all the way to the edge of the leaf blade",
+  "Leaflet relative size": "the bottom leaflets are about half as long as, to slightly longer than, the leaflets from the middle of the frond",
+  "Leaflet stalks": "the leaflets do not have stalks",
+  "Lobe or leaflet length": "60-160 mm",
+  "Lobe or leaflet pairs": "12-23",
+  "Lobe or leaflet shape": [
+    "the lobe or leaflet is extremely narrow, thread-like",
+    "the lobe or leaflet is widest below the middle and tapering at both ends; lance-shaped"
+  ],
+  "Lobe or leaflet width": "10-35 mm",
+  "Plant growth form": "the leaves grow from a rhizome growing at or below the ground",
+  "final leaf segment margin": "the topmost lobe or leaflet of the leaf blade has an edge with teeth",
+  "Habitat": "terrestrial",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "bogs",
+    "edges of wetlands",
+    "human-disturbed or -maintained habitats",
+    "marshes",
+    "swamps"
+  ],
+  "Sorus features": "there are no special features on the sorus",
+  "Sorus shape": "the sori are long and narrow, and straight",
+  "Sporangia location": "the spores are clustered on sori on the lower surface of the leaf blade",
+  "Sporangium type": "the sporangia are opaque without an annulus and usually without a stalk (leptosporangiate)",
+  "Spore forms": "there is only one type of spore present",
+  "scientific_name": "Woodwardia virginica",
+  "url": "https://gobotany.nativeplanttrust.org/species/woodwardia/virginica/",
+  "source": "web"
+}

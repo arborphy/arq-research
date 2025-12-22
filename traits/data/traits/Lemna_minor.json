@@ -1,0 +1,38 @@
+{
+  "Scale surrounding flower": "yes",
+  "Stamen number": "2",
+  "Fruit length": "0.8-1 mm",
+  "Seed surface ribbed": "the seed surface has ribs running from end to end",
+  "Root length": "Up to 150 mm",
+  "Root number": "1",
+  "Root sheath winged at base": "no",
+  "Roots": "there is approximately one root per thallus",
+  "Roots perforating basal scale": "there is no basal scale on the plant",
+  "Thallus dimensions": "1.3-2",
+  "Thallus edge": "the edge of the thallus is smooth (without teeth) near the tip",
+  "Thallus length": "1-8 mm",
+  "Thallus shape": "the thallus is ovate (egg-shaped)",
+  "Thallus shape in cross-section": "the thallus is somewhat flattened on at least one side in cross-section",
+  "Thallus stalks": "the thallus does not have a stalk",
+  "Thallus width": "0.5-6.2 mm",
+  "Thallus with red pigment": "yes",
+  "Turions": "no",
+  "Papilla on thallus": "no",
+  "Veins on upper surface": "3-5",
+  "Habitat": "aquatic",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "in lakes or ponds",
+    "in rivers or streams"
+  ],
+  "scientific_name": "Lemna minor",
+  "url": "https://gobotany.nativeplanttrust.org/species/lemna/minor/",
+  "source": "web"
+}

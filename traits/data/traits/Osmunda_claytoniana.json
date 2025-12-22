@@ -1,0 +1,70 @@
+{
+  "Life form": "the plant is herbaceous and terrestrial",
+  "Life stage": "the plant is visible as a typical leaf-bearing fern (sporophyte)",
+  "Spore-bearing leaflets": "the spore-bearing fronds are slightly different from the sterile fronds",
+  "Features of leaves": "there are no special features on the leaves",
+  "Leaf blade length": "45-90 cm",
+  "Leaf blade shape": [
+    "the leaf blades are longer than wide, with roughly parallel sides (oblong)",
+    "the leaf blades are widest near the middle and tapered towards the base and tip (elliptic)"
+  ],
+  "Leaf blade tip shape": "the tip of the leaf blade is rounded",
+  "Leaf blade width": "At least 15 cm",
+  "Leaf divisions": [
+    "the leaf blade is compound (divided into leaflets)",
+    "the leaf blade is twice compound (divided into leaflets, which are further divided into leaflets)"
+  ],
+  "Leaf lifespan": "the leaves drop off in winter",
+  "Leaf stalk color": [
+    "green",
+    "yellow to brown"
+  ],
+  "Leaf stalk hairs": [
+    "the leaf stalk has hairs",
+    "there are no hairs on the leaf stalk"
+  ],
+  "Leaf stalk length": "106-533 mm",
+  "Leaf stalk relative length": "the leaf stalk is more than a quarter, but less than three quarters as long as the blade",
+  "Leaf stalk scale location": "there are no scales on the leaf stalk",
+  "Leaf stalk scales": "there are no scales on the leaf stalk",
+  "Leaf stalk vessels": "1 bundle, U-shaped",
+  "Leaf vein branching": "the secondary veins of the leaf blade branch dichotomously (two equal branches at each branch point)",
+  "Leaf vein tips": "the veins go all the way to the edge of the leaf blade",
+  "Leaflet relative size": "the bottom leaflets are about half as long as, to slightly longer than, the leaflets from the middle of the frond",
+  "Leaflet stalks": [
+    "the leaflets are stalked",
+    "the leaflets do not have stalks"
+  ],
+  "Lobe or leaflet length": "60-150 mm",
+  "Lobe or leaflet pairs": "10-25",
+  "Lobe or leaflet shape": "the lobe or leaflet is rectangular but with rounded ends (oblong)",
+  "Lobe or leaflet width": "20-30 mm",
+  "Plant growth form": "the leaves grow from a rhizome growing at or below the ground",
+  "final leaf segment margin": "the topmost lobe or leaflet of the leaf blade has a smooth or lobed edge",
+  "Habitat": [
+    "terrestrial",
+    "wetlands"
+  ],
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "edges of wetlands",
+    "forests",
+    "shores of rivers or lakes",
+    "swamps"
+  ],
+  "Sorus features": "there are no special features on the sorus",
+  "Sorus shape": "there are no sori, or they are concealed in leaf segments or hardened, capsule-like structures derived from a modified leaflet",
+  "Sporangia location": "the spores cover the surfaces of modified leaves or leaflets",
+  "Sporangium type": "the sporangia are opaque without an annulus and usually without a stalk (leptosporangiate)",
+  "Spore forms": "there is only one type of spore present",
+  "scientific_name": "Osmunda claytoniana",
+  "url": "https://gobotany.nativeplanttrust.org/species/osmunda/claytoniana/",
+  "source": "web"
+}

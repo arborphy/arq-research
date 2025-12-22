@@ -1,0 +1,101 @@
+{
+  "Bumps on fruit": "there are no papillae on the perigynium surface",
+  "Inflorescence length": "20-45 mm",
+  "Length of scale": "the scale is shorter than the perigynium",
+  "Lowest spike length": "4-8 mm",
+  "Lowest spike stalk length": "0 mm",
+  "Lowest spike width": "4-8 mm",
+  "Perigynium beak": "the perigynium has a beak",
+  "Perigynium beak orientation": "the beak of the perigynium is straight, and in line with the perigynium",
+  "Perigynium beak serrations": "the perigynium beak has tiny serrations along the edges",
+  "Perigynium beak teeth": "the perigynium beak is divided at the top into two teeth",
+  "Perigynium color": [
+    "green",
+    "tan"
+  ],
+  "Perigynium cross-section": "the perigynium is planoconvex (flat on one surface and rounded on the other) in cross-section",
+  "Perigynium hairs": "the perigynium has no hairs",
+  "Perigynium length": "2.7-4 mm",
+  "Perigynium nerve number": "5-12",
+  "Perigynium nerve texture": "the nerves on the perigynium are raised, even after drying the perigynium",
+  "Perigynium nerves lower side": "3-6",
+  "Perigynium nerves upper side": "2-6",
+  "Perigynium orientation": [
+    "the perigynia are angled outwards",
+    "the perigynia are curved or bent downwards or backwards along the axis",
+    "the perigynia are oriented vertically or pressed against the axis or adjacent perigynia"
+  ],
+  "Perigynium puffy": "the achene is tightly enclosed by the perigynium",
+  "Perigynium shape": [
+    "the perigynium body is elliptic (widest near the middle and tapering at both ends)",
+    "the perigynium body is ovate (egg-shaped)"
+  ],
+  "Perigynium width": "1-1.7 mm",
+  "Perigynium winged": "the perigynium has wings on it",
+  "Pollen- and seed-producing spikes": "some of the spikes produce perigynia",
+  "Pollen-producing spike length": "0 mm",
+  "Pollen-producing spike number": "0",
+  "Pollen-producing spike peduncle length": "0 mm",
+  "Pollen-producing spike width": "0 mm",
+  "Scale awn": "The carpellate scale does not have an awn (it may have a short point)",
+  "Scale awn texture": null,
+  "Scale color": [
+    "brown",
+    "white or translucent"
+  ],
+  "Scale length": "1.6-2.3 mm",
+  "Scale tip": "the carpellate scale tip is rounded to retuse (blunt or rounded, with a notch at the tip)",
+  "Spike on stalk": "the lowest spike on the plant is not borne on a peduncle",
+  "Spike orientation": "the spikes are oriented vertically or pressed against the axis",
+  "Spikes per stem": "2-15",
+  "Stigma branching": "the stigmas have two branches",
+  "Top spike": "the uppermost spike contains both staminate and carpellate flowers, with the staminate flowers located below the carpellate flowers",
+  "Achene dimples": "the achene has no folds or dimples",
+  "Achene length": "1.2-1.5 mm",
+  "Achene width": "0.6-0.8 mm",
+  "Style persistence": "the style falls off the mature achenes",
+  "Rhizomes": "there are no rhizomes, or the rhizomes are very short",
+  "Leaf arrangement": "the leaves are mostly produced higher up on the plant",
+  "Leaf blade cross-section": "The leaf blade is folded lengthwise, with one prominent midvien",
+  "Leaf blade length to width ratio": "48-53",
+  "Leaf blade texture": "the leaf blade is smooth and hairless, or rough and sandpapery",
+  "Leaf bumps": "the upper surface of the leaf blade does not have papillae",
+  "Leaf sheath bumps": "there are no papillae at the top edge of the leaf sheath",
+  "Leaf sheath color": "the leaf sheath has no pink, red or purple tinting",
+  "Leaf sheath dots": "there are no dots on the leaf sheathes",
+  "Leaf sheath folds": "there are no corrugations on the leaf sheath",
+  "Leaf sheath texture": "the leaf sheath feels smooth, and has no hairs",
+  "Ligule length": "4-10 mm",
+  "Lowest bract sheath": "the lowest bract has no sheath (or a very short sheath up to four millimeters in length)",
+  "Lowest leaf blade width": "3-7.5 mm",
+  "Lowest leaf sheath texture": "the leaf sheath feels smooth (it may have soft hairs)",
+  "stem leaf blade width": "3-7.5 mm",
+  "Habitat": [
+    "terrestrial",
+    "wetlands"
+  ],
+  "New England state": [
+    "Connecticut",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "marshes",
+    "meadows or fields",
+    "shores of rivers or lakes",
+    "swamps"
+  ],
+  "Plant height": "30-100 cm",
+  "Relative stem height": [
+    "the main stem is equal to or shorter than the leaves",
+    "the main stem is taller than the leaves"
+  ],
+  "Spike internode length": "2-6 mm",
+  "Stem cross-section": "the main stem is roughly triangular in cross-section",
+  "Stem spacing": "the stems grow close together in compact clusters or tufts",
+  "scientific_name": "Carex cristatella",
+  "url": "https://gobotany.nativeplanttrust.org/species/carex/cristatella/",
+  "source": "web"
+}

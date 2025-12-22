@@ -1,0 +1,159 @@
+{
+  "Bract color": "the bracts are not colored or tinged with pink, red or purple",
+  "Bract cycle number": "there are three or more cycles of bracts",
+  "Bract outer side hair type": "the bracts are hairy on their outer surfaces, with hairs having glands (a swelling at the tip of the hair)",
+  "Bract outer side hairs": "the bracts are hairy on their outer surfaces",
+  "Bract shape": [
+    "the main bracts are lanceolate (widest above the base, then taper narrowly towards the tip)",
+    "the main bracts are ovate (egg-shaped)"
+  ],
+  "Bract spines": "there is just one simple spine at the tip of the bract",
+  "Bract tip color": "the tips are a different color from the center of the bract",
+  "Bract tip extension appearance": [
+    "NA",
+    "the projections from the bract tips are simple, but may be a different color than the bract"
+  ],
+  "Bract tip orientation": [
+    "the bracts are pressed against the plant, or spreading out at the tips",
+    "the tips of the bracts curve outwards and downwards from the plant"
+  ],
+  "Bracts": "there are at least two distinct forms of bracts in different cycles",
+  "Disk flower color": [
+    "blue to purple",
+    "pink to red",
+    "white"
+  ],
+  "Disk flower number": [
+    "21-50",
+    "more than 50"
+  ],
+  "Disk flower reproductive parts": "the disk flower has both pollen- and seed-producing parts",
+  "Disk flower shape": "the disk flower is tube-shaped (cylindrical), or gradually widening like a funnel",
+  "Flower head number": [
+    "each flowering stem has four or more flower heads on it",
+    "each flowering stem has only one to three flower heads on it"
+  ],
+  "Flower head outer flowers": "at the outer edge of the flower head, the flowers have no enlarged lobe or strap, and are of similar size as those in the center of the disk",
+  "Flower head platform": "the base has fine, short hairs on it",
+  "Flower head platform surface": null,
+  "Flower head position": "each of the flower heads is separate on its own peduncle (stalk), not clustered in groups",
+  "Flower head profile": [
+    "the disk is flat or nearly flat across the top",
+    "the disk is rounded across the top"
+  ],
+  "Flower head shape": "the sides of the flower head are roughly parallel, like a cylinder",
+  "Flower type in flower heads": "the flower head has disk flowers only, and lacks the strap-shaped flowers",
+  "Height of flower head base": "20-40 mm",
+  "Inflorescence  branching (Solidago)": null,
+  "Inflorescence shape": [
+    "the flower heads grow in clusters from the axils of the branches or leaves",
+    "the inflorescence is flat-topped in profile",
+    "the inflorescence is not flat-topped but appears rounded, with some flower heads distinctly higher than others"
+  ],
+  "Ovary cross-section": "the ovary is compressed (flattened)",
+  "Ovary hair type": "the ovary has no hairs on it",
+  "Ovary hairs": "the ovary has no hairs on it",
+  "Ovary lines or ribs": "there are no lines or ribs visible on the ovary",
+  "Ovary profile": "in profile, the ovary is roughly egg-shaped",
+  "Ovary surface": "the ovary surface has no points, bumps or wrinkles, though it may have lines, ribs or wings",
+  "Peduncle length": "0-50 mm",
+  "Ray flower color": null,
+  "Ray flower reproductive parts": null,
+  "Ray flowers": "0",
+  "Reproductive system": "all the flowers on the plant contain both carpels and stamens",
+  "Rim at top of ovary": "the central flowers have a disk-shaped platform above the ovary",
+  "Scale tip": null,
+  "Style branch number": "the style has two branches",
+  "Width of flower head base": "15-30 mm",
+  "Ovary length in developed fruit": "4-5 mm",
+  "Seed hair tuft color": "the pappus hairs are white or off-white",
+  "Seed hair tuft details": "the pappus hairs have smaller hairs along their sides",
+  "Seed hair tuft length": "18-25 mm",
+  "Seed hairs uniform": "all the pappus hairs are approximately the same length",
+  "Seed tuft type": "the pappus is made of very fine hairs or bristles",
+  "Top of disk flower ovary": null,
+  "Tuft or plume on fruit": "at least a part of the plume is made up of fine bristles",
+  "Bract resin": "the bracts have no resin or resin glands",
+  "Leaf blade glands": "the leaf blades have no glandular (translucent) dots or scales",
+  "Sap": "the sap is clear and watery",
+  "Growth form": "the plant has one or more free-standing stems",
+  "Plant lifespan": [
+    "the plant is biennial, it appears as either first year (non-reproductive) plants or second year plants with flowers or fruit",
+    "the plant is perennial, it shows evidence of previous year's leaves, stems or stem bases"
+  ],
+  "Spines on plant": "there are spines on the plant",
+  "Underground organs": [
+    "there are only slender roots on the plant",
+    "there is a thickened taproot on the plant"
+  ],
+  "Hairs on underside of leaf blade": "the underside of the leaf is fuzzy or hairy",
+  "Hairs on upper side of leaf blade": "the upper side of the leaf is fuzzy or hairy",
+  "Leaf arrangement": [
+    "alternate: there is one leaf per node along the stem",
+    "basal:  the leaves are growing only at the base of the plant"
+  ],
+  "Leaf blade base": [
+    "the leaf has a distinct petiole",
+    "the leaf has no petiole",
+    "the leaf has no petiole and at the base it clasps the stem, or goes all the way around the stem so the stem appears to pierce the leaf"
+  ],
+  "Leaf blade base shape": "the base of the leaf blade is cuneate (wedge-shaped, tapers to the base with relatively straight, converging edges), or narrow",
+  "Leaf blade bloom": "the underside of the leaf has no noticeable bloom",
+  "Leaf blade edges": [
+    "the edge of the leaf blade has lobes, or it has both teeth and lobes",
+    "the edge of the leaf blade has no teeth or lobes",
+    "the edge of the leaf blade has teeth"
+  ],
+  "Leaf blade flatness": "the edges of the leaf are curled under",
+  "Leaf blade hairs": "the leaf blade has tangled or woolly-looking hairs",
+  "Leaf blade length": "100-500 mm",
+  "Leaf blade shape": [
+    "the leaf blade is elliptic (widest near the middle and tapering at both ends)",
+    "the leaf blade is lanceolate (lance-shaped; widest below the middle and tapering at both ends)",
+    "the leaf blade is linear (very narrow with more or less parallel sides)",
+    "the leaf blade is oblanceolate (lance-shaped, but with the widest point above the middle of the leaf blade)",
+    "the leaf blade is ovate (widest below the middle and broadly tapering at both ends)"
+  ],
+  "Leaf blade tip": [
+    "the tip of the leaf blade is acuminate (tapers to a long, thin point)",
+    "the tip of the leaf blade is acute (sharply pointed)"
+  ],
+  "Leaf blade veins": "the leaf blade has one main vein running from the base towards the tip",
+  "Leaf blade width": "10-250 mm",
+  "Leaf disposition": "the leaves are nearly similar in size, prominence of teeth, and length of stalks throughout the stem",
+  "Leaf spines": "there are spines along the leaf edges",
+  "Leaf tip extension": null,
+  "Leaf type": "leaves are simple (i.e., lobed or unlobed but not separated into leaflets)",
+  "Leaflet number": "0",
+  "Specific leaf type": "the leaf has a row of two or more lobes on each side of the central axis",
+  "Habitat": [
+    "terrestrial",
+    "wetlands"
+  ],
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "human-disturbed or -maintained habitats",
+    "meadows or fields"
+  ],
+  "Leaves on stem": "there is at least one full leaf above the base of the flowering stem",
+  "Stem internode hair direction": [
+    "NA",
+    "the hairs point mostly upwards to outwards"
+  ],
+  "Stem internode hair type": [
+    "the hairs on the stem are plain, without glands or branches, and not tangled",
+    "the stem has no hairs between the nodes"
+  ],
+  "Stem internode hairs": "the stem has hairs between the nodes",
+  "Stem wings": "the stem does not have wings on it",
+  "scientific_name": "Cirsium discolor",
+  "url": "https://gobotany.nativeplanttrust.org/species/cirsium/discolor/",
+  "source": "web"
+}

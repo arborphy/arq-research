@@ -1,0 +1,39 @@
+{
+  "Scale surrounding flower": "no",
+  "Stamen number": "1",
+  "Seed surface ribbed": "the seed surface is nearly smooth",
+  "Root length": "0 mm",
+  "Root number": "0",
+  "Root sheath winged at base": null,
+  "Roots": "there are no roots on the plant",
+  "Roots perforating basal scale": null,
+  "Thallus dimensions": "1-1.5",
+  "Thallus edge": "the edge of the thallus is smooth (without teeth) near the tip",
+  "Thallus length": "0.5-1.6 mm",
+  "Thallus shape": [
+    "the thallus is elliptic (widest near the middle and tapering at both ends)",
+    "the thallus is oblong (rectangular but with rounded ends)",
+    "the thallus is ovate (egg-shaped)"
+  ],
+  "Thallus shape in cross-section": "the thallus is somewhat flattened on at least one side in cross-section",
+  "Thallus stalks": "the thallus does not have a stalk",
+  "Thallus width": "0.2-0.5 mm",
+  "Thallus with red pigment": "no",
+  "Turions": "yes",
+  "Papilla on thallus": "yes",
+  "Veins on upper surface": "0",
+  "Habitat": "aquatic",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "Rhode Island"
+  ],
+  "Specific habitat": [
+    "in lakes or ponds",
+    "in rivers or streams"
+  ],
+  "scientific_name": "Wolffia brasiliensis",
+  "url": "https://gobotany.nativeplanttrust.org/species/wolffia/brasiliensis/",
+  "source": "web"
+}

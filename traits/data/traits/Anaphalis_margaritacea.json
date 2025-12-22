@@ -1,0 +1,132 @@
+{
+  "Bases of bract appendages": null,
+  "Bract color": "the bracts are not colored or tinged with pink, red or purple",
+  "Bract cycle number": "there are three or more cycles of bracts",
+  "Bract outer side hair type": "the bracts are hairy on their outer surfaces, with curled, tangled, matted, or woolly hairs",
+  "Bract shape": [
+    "the main bracts are linear (long and very narrow)",
+    "the main bracts are ovate (egg-shaped)"
+  ],
+  "Disk flower color": "yellow",
+  "Disk flower number": [
+    "21-50",
+    "more than 50"
+  ],
+  "Disk flower reproductive parts": "the disk flower has either only pollen- or only seed-producing parts",
+  "Flower head outer flowers": "at the outer edge of the flower head, the flowers have no enlarged lobe or strap, and are of similar size as those in the center of the disk",
+  "Flower head platform": "the base has no bristles or papery scales",
+  "Flower head platform surface": null,
+  "Flower head profile": [
+    "the disk is flat or nearly flat across the top",
+    "the disk is rounded across the top"
+  ],
+  "Flower head width": "Up to 10 mm",
+  "Flower type in flower heads": "the flower head has disk flowers only, and lacks the strap-shaped flowers",
+  "Height of flower head base": "5-7 mm",
+  "Inflorescence  branching (Solidago)": null,
+  "Inflorescence shape": "the inflorescence is flat-topped in profile",
+  "Ovary attachment": "the ovary is attached at or near the base",
+  "Ovary beak": "there is no beak on the ovary",
+  "Ovary profile": "in profile, the ovary is oblong (roughly rectangular but rounded at the ends)",
+  "Ovary surface": "the ovary surface is textured with tiny points, bumps or wrinkles",
+  "Ray flower color": null,
+  "Ray flower reproductive parts": null,
+  "Ray flowers": "0",
+  "Ray length": "0 mm",
+  "Reproductive system": "the flowers on the plant may have either carpels or stamens, but always in separate flowers",
+  "Scale tip": null,
+  "Smaller bracts at base of bracts": "there is no smaller, outer cycle of bracts",
+  "Width of flower head base": "6-10 mm",
+  "Ovary beak length": "0 mm",
+  "Ovary length in developed fruit": "0.5-1 mm",
+  "Seed hair tuft bases": "the pappus hairs are not attached to one another near the base",
+  "Seed hair tuft details": "the pappus hairs are hooked or barbed",
+  "Seed hair tuft tips": "the pappus hairs are slender",
+  "Seed hairs uniform": "all the pappus hairs are approximately the same length",
+  "Seed tuft scale number": "0",
+  "Seed tuft type": "the pappus is made of very fine hairs or bristles",
+  "Top of disk flower ovary": null,
+  "Tuft or plume on fruit": "at least a part of the plume is made up of fine bristles",
+  "Leaf blade glands": [
+    "the leaf blades have glandular (translucent) dots or scales",
+    "the leaf blades have no glandular (translucent) dots or scales"
+  ],
+  "Sap": "the sap is clear and watery",
+  "Growth form": "the plant has one or more free-standing stems",
+  "Horizontal rooting stem": "there are no stolons",
+  "Plant lifespan": "the plant is perennial, it shows evidence of previous year's leaves, stems or stem bases",
+  "Spines on plant": "the plant has no spines",
+  "Underground organs": "the plant has a rhizome (a horizontal underground stem with roots growing from it)",
+  "Final leaf segment length (compound lvs only)": "0 mm",
+  "Final leaf segment width (compound lvs only)": "0 mm",
+  "Hairs on underside of leaf blade": "the underside of the leaf is fuzzy or hairy",
+  "Hairs on upper side of leaf blade": "the upper side of the leaf is not hairy, or has very few hairs",
+  "Leaf arrangement": "alternate: there is one leaf per node along the stem",
+  "Leaf blade base": [
+    "the leaf has no petiole",
+    "the leaf has no petiole and at the base it clasps the stem, or goes all the way around the stem so the stem appears to pierce the leaf"
+  ],
+  "Leaf blade base shape": "the base of the leaf blade is cuneate (wedge-shaped, tapers to the base with relatively straight, converging edges), or narrow",
+  "Leaf blade bloom": "the underside of the leaf has no noticeable bloom",
+  "Leaf blade edges": "the edge of the leaf blade has no teeth or lobes",
+  "Leaf blade flatness": "the edges of the leaf are curled under",
+  "Leaf blade hairs": [
+    "the leaf blade has hairs with glands at their tips",
+    "the leaf blade has simple hairs with no glands, and not tangled or wooly",
+    "the leaf blade has tangled or woolly-looking hairs"
+  ],
+  "Leaf blade length": "75-120 mm",
+  "Leaf blade shape": [
+    "the leaf blade is lanceolate (lance-shaped; widest below the middle and tapering at both ends)",
+    "the leaf blade is linear (very narrow with more or less parallel sides)",
+    "the leaf blade is oblanceolate (lance-shaped, but with the widest point above the middle of the leaf blade)"
+  ],
+  "Leaf blade surface colors": "there is no noticeable color variation on the upper surface of the leaf",
+  "Leaf blade veins": [
+    "the leaf blade has one main vein running from the base towards the tip",
+    "the leaf blade has three main veins running from the base towards the tip"
+  ],
+  "Leaf blade width": "Up to 20 mm",
+  "Leaf disposition": "the leaves are nearly similar in size, prominence of teeth, and length of stalks throughout the stem",
+  "Leaf spines": "there are no spines on the leaf edges",
+  "Leaf stalk": "the leaves have no leaf stalks, but attach directly to the stem",
+  "Leaf stalk length": "0 mm",
+  "Leaf tip extension": null,
+  "Leaf type": "leaves are simple (i.e., lobed or unlobed but not separated into leaflets)",
+  "Leaflet number": "0",
+  "Specific leaf type": "the leaves are simple (i.e., lobed or unlobed but not separated into leaflets",
+  "Teeth per side of leaf blade": "0",
+  "Habitat": [
+    "terrestrial",
+    "wetlands"
+  ],
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "human-disturbed or -maintained habitats",
+    "meadows or fields",
+    "shores of rivers or lakes"
+  ],
+  "Plant odor": [
+    "the plant does not have much of an odor",
+    "the plant has a pleasant odor, such as licorice, fruit or resin"
+  ],
+  "Flowering stem cross-section": "the flowering stem is circular, or with lots of small angles",
+  "Leaves on stem": "there is at least one full leaf above the base of the flowering stem",
+  "Stem bloom": "there is no powdery or waxy film on the stem",
+  "Stem internode hair type": "at least some of the hairs on the stem are tangled, matted or woolly",
+  "Stem internode hairs": "the stem has hairs between the nodes",
+  "Stem wings": [
+    "the stem does not have wings on it",
+    "the stem has wings on it that run down the stem from the leaf nodes"
+  ],
+  "scientific_name": "Anaphalis margaritacea",
+  "url": "https://gobotany.nativeplanttrust.org/species/anaphalis/margaritacea/",
+  "source": "web"
+}

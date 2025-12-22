@@ -1,0 +1,103 @@
+{
+  "Bud scale number": [
+    "there are three or more scales on the winter bud, and they overlap like shingles, with one edge covered and the other edge exposed",
+    "there are two scales on the winter bud, and their edges meet"
+  ],
+  "Bud scar shape (Fraxinus)": null,
+  "Collateral buds": "there are no collateral buds on the sides of the branches",
+  "Superposed buds": "there are no superposed buds on the branch",
+  "Terminal bud": "there is no terminal bud on the branch",
+  "Carpels fused": "the carpels are fused to one another",
+  "Enlarged sterile flowers": "there are no enlarged sterile flowers on the plant",
+  "Flower petal color": [
+    "white",
+    "yellow or green"
+  ],
+  "Flower symmetry": "there are two or more ways to evenly divide the flower (the flower is radially symmetrical)",
+  "Hairs on ovary (Amelanchier)": null,
+  "Hypanthium present": "the flower does not have a hypanthium",
+  "Inflorescence type": [
+    "the flowers grow out of the axil (point where a branch or leaf is attached to the main stem)",
+    "the inflorescence is a dichasial cyme (an axis with a terminal flower, below it a pair of branches, each with a terminal flower, these branches may in turn each have a pair of branches and so on)"
+  ],
+  "Number of pistils": "1",
+  "Ovary position": "the ovary is above the point of petal and/or sepal  attachment",
+  "Petal and sepal arrangement": "the flower includes two cycles of petal- or sepal-like structures",
+  "Petal appearance": "the petals are thin and delicate, and pigmented (colored other than green or brown)",
+  "Petal fusion": "the perianth parts are separate",
+  "Sepal cilia (Ilex)": null,
+  "Sepals fused only to sepals": "the sepals are separate from one another",
+  "Stamen number": [
+    "10",
+    "11",
+    "12",
+    "13 or more"
+  ],
+  "Stamens fused": "the stamens are fused to one another at or near their bases",
+  "Berry color": null,
+  "Fruit tissue origin": "there are no flower parts that form part of the fruit",
+  "Fruit type (general)": [
+    "the fruit is dry but does not split open when ripe",
+    "the fruit is fleshy"
+  ],
+  "Fruit type (specific)": "the fruit is a drupe (fleshy, with a firm inner ovary wall that encloses a single seed)",
+  "Nut with spines (Fagaceae)": null,
+  "Wings on fruit": "there are no wings on the fruit",
+  "Sap color": "the sap is clear and watery",
+  "Stalked glands on fruit (Rosa)": null,
+  "Growth form": "the plant is a tree",
+  "Hairs on upper side of leaf blade": "the upper side of the leaf is not hairy, or has very few hairs",
+  "Leaf blade base shape": "The base of the leaf blade is cordate (heart-shaped, with rounded lobes)",
+  "Leaf blade edges": "the edge of the leaf blade has teeth",
+  "Leaf blade edges (Acer)": null,
+  "Leaf blade flatness": "the leaf is flat (planar) at the edges",
+  "Leaf blade hairs": [
+    "at least some of the hairs on the leaf blade are reddish-brown, and they do not have glands",
+    "the hairs on the leaf blade are different from the choices given"
+  ],
+  "Leaf blade length": "30-120 mm",
+  "Leaf blade scales": "there are no scales on the leaf blades",
+  "Leaf blade shape": "the leaf blade is orbicular (roughly circular, as wide as long)",
+  "Leaf blade texture": "the leaf blade is herbaceous (has a leafy texture)",
+  "Leaf blade translucent dots": "there are no translucent dots on the leaf blade",
+  "Leaf duration": "the leaves drop off in winter (or they wither but persist on the plant)",
+  "Leaf lobe tips (Quercus)": null,
+  "Leaf midrib glands": "the midrib of the leaf blade lacks glands on the upper surface",
+  "Leaf stalk": "the leaves have leaf stalks",
+  "Leaf stalk nectaries": "there are no nectaries on the leaf stalk",
+  "Leaf teeth": "the leaf blade margin is serrate (with forward-pointing) or dentate (with outward-pointing) with medium-sized to coarse teeth",
+  "Leaf teeth hairs (Carya)": null,
+  "Leaf type": "the leaf blade is simple (i.e., lobed or unlobed but not separated into leaflets)",
+  "Leaves per node": "there is one leaf per node along the stem",
+  "Specific leaf type": "the leaves are simple (i.e., lobed or unlobed but not separated into leaflets",
+  "Habitat": "terrestrial",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "edges of forests",
+    "forests",
+    "human-disturbed or -maintained habitats"
+  ],
+  "Plant odor": "the plant does not have much of an odor, or it has an unpleasant or repellant odor",
+  "Aerial roots": "the plant has no aerial roots",
+  "Bark texture": "the bark of an adult plant is ridged or plated",
+  "Branch brittleness (willows only)": null,
+  "Branch cross-section": "the branch is circular in cross-section, or it has five or more sides, so that there are no sharp angles",
+  "First-year cane (Rubus)": null,
+  "Pith shape": "the outline of the pith in a twig is roughly round",
+  "Twig papillae (Vaccinium species only)": null,
+  "Twig winter color": [
+    "brown",
+    "red"
+  ],
+  "Wings on branch": "the branch does not have wings on it",
+  "armature on plant": "the plant does not have spines, prickles, or thorns",
+  "scientific_name": "Tilia cordata",
+  "url": "https://gobotany.nativeplanttrust.org/species/tilia/cordata/",
+  "source": "web"
+}

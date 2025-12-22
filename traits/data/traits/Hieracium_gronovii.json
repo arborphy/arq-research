@@ -1,0 +1,94 @@
+{
+  "Bract cycle number": "there are two main cycles of bracts",
+  "Bract outer side hair type": [
+    "the bracts are hairy on their outer surfaces, with hairs having glands (a swelling at the tip of the hair)",
+    "the bracts are hairy, with simple hairs on their outer surface",
+    "the bracts are not hairy on their outer surface"
+  ],
+  "Bract outer side hairs": "the bracts are hairy on their outer surfaces",
+  "Disk flower color": null,
+  "Disk flower lobe number": null,
+  "Disk flower number": "0",
+  "Disk flower proportions": null,
+  "Disk flower reproductive parts": null,
+  "Disk flower shape": null,
+  "Flower head number": [
+    "each flowering stem has four or more flower heads on it",
+    "each flowering stem has only one to three flower heads on it"
+  ],
+  "Flower head outer flowers": "at the outer edge of the flower head, each flower has a single enlarged lobe or strap",
+  "Flower head platform": "the base has no bristles or papery scales",
+  "Flower head profile": "the disk is flat or nearly flat across the top",
+  "Flower type in flower heads": "the flower head has ray flowers only, meaning all of the individual flowers of the flower head have a strap-shaped ray, which may or may not have teeth at the very tip of the ray",
+  "Height of flower head base": "7-10 mm",
+  "Inflorescence shape": "the inflorescence is not flat-topped but appears rounded, with some flower heads distinctly higher than others",
+  "Ovary cross-section": "the ovary has five or more corners in cross-section",
+  "Ovary hair type": "the ovary has no hairs on it",
+  "Ovary hairs": "the ovary has no hairs on it",
+  "Ovary profile": "in profile, the ovary is another shape",
+  "Ray flower color": "yellow",
+  "Ray flower reproductive parts": "the ray flowers have both carpels and stamens",
+  "Ray flowers": "11-15",
+  "Ray length": "8-9 mm",
+  "Reproductive system": null,
+  "Ovary length in developed fruit": "3.5-4.5 mm",
+  "Seed hair tuft color": [
+    "the pappus hairs are tan to dark brown",
+    "the pappus hairs are white or off-white"
+  ],
+  "Seed hair tuft details": "the pappus hairs are hooked or barbed",
+  "Seed hair tuft length": "4.5-7 mm",
+  "Seed hair tuft tips": "the pappus hairs are slender",
+  "Seed tuft type": "the pappus is made of very fine hairs or bristles",
+  "Tuft or plume on fruit": "at least a part of the plume is made up of fine bristles",
+  "Sap": "the sap is clear and watery",
+  "Growth form": "the plant has one or more free-standing stems",
+  "Horizontal rooting stem": "there are no stolons",
+  "Plant lifespan": "the plant is perennial, it shows evidence of previous year's leaves, stems or stem bases",
+  "Spines on plant": "the plant has no spines",
+  "Underground organs": "there is a thickened taproot on the plant",
+  "Hairs on underside of leaf blade": "the underside of the leaf is fuzzy or hairy",
+  "Hairs on upper side of leaf blade": "the upper side of the leaf is fuzzy or hairy",
+  "Leaf arrangement": "alternate: there is one leaf per node along the stem",
+  "Leaf blade base": "the leaf has a distinct petiole",
+  "Leaf blade base shape": [
+    "the base of the leaf blade is cuneate (wedge-shaped, tapers to the base with relatively straight, converging edges), or narrow",
+    "the base of the leaf blade is rounded"
+  ],
+  "Leaf blade edges": "the edge of the leaf blade has no teeth or lobes",
+  "Leaf blade hairs": "the leaf blade has simple hairs with no glands, and not tangled or wooly",
+  "Leaf blade length": "20-90 mm",
+  "Leaf blade shape": [
+    "the leaf blade is elliptic (widest near the middle and tapering at both ends)",
+    "the leaf blade is oblanceolate (lance-shaped, but with the widest point above the middle of the leaf blade)",
+    "the leaf blade is obovate (egg-shaped, but with the widest point above the middle of the leaf blade)"
+  ],
+  "Leaf blade tip": [
+    "the tip of the leaf blade is acute (sharply pointed)",
+    "the tip of the leaf blade is rounded, with no point"
+  ],
+  "Leaf blade width": "10-50 mm",
+  "Leaf disposition": "the leaves are nearly similar in size, prominence of teeth, and length of stalks throughout the stem",
+  "Leaf spines": "there are no spines on the leaf edges",
+  "Leaf stalk": "the leaves have leaf stalks",
+  "Leaf type": "leaves are simple (i.e., lobed or unlobed but not separated into leaflets)",
+  "Specific leaf type": "the leaves are simple (i.e., lobed or unlobed but not separated into leaflets",
+  "Habitat": "terrestrial",
+  "New England state": [
+    "Connecticut",
+    "Massachusetts",
+    "Rhode Island"
+  ],
+  "Specific habitat": [
+    "edges of forests",
+    "human-disturbed or -maintained habitats",
+    "meadows or fields"
+  ],
+  "Leaves on stem": "the flowering stem has no leaves above the base",
+  "Stem internode hair direction": "the hairs point mostly upwards to outwards",
+  "Stem internode hair type": "the hairs on the stem are plain, without glands or branches, and not tangled",
+  "Stem internode hairs": "the stem has hairs between the nodes",
+  "scientific_name": "Hieracium gronovii",
+  "url": "https://gobotany.nativeplanttrust.org/species/hieracium/gronovii/",
+  "source": "web"
+}

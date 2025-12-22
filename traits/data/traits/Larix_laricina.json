@@ -1,0 +1,50 @@
+{
+  "Winter bud shape": "the winter buds are globose (spherical, globe-shaped)",
+  "Seed cone base": null,
+  "Seed cone bracts": "the bracts protrude beyond the seed cone scales",
+  "Seed cone form": "the seed cone is longer than wide, with woody scales attached at the base",
+  "Seed cone scales": null,
+  "Seed cone shape": [
+    "the seed cone is globose (spherical)",
+    "the seed cone is ovoid (egg-shaped)"
+  ],
+  "Seed cone symmetry": "the seed cone is symmetrical",
+  "Seed cone umbo position": "there is no raised portion on the seed cone scale",
+  "Seed cone umbo spine": null,
+  "Seed wings": "the seeds have wing-like projections",
+  "Growth form": "the plant is a tree",
+  "Leaf arrangement": "the needle-like leaves are in clusters or held on short shoots",
+  "Leaf base": null,
+  "Leaf clustering": "the needle-like leaves are densely clustered on short shoots",
+  "Leaf cross-section": "the needle-like leaves are flattened (can't be rolled between the fingers)",
+  "Leaf duration": "the needle-like leaves fall off in winter",
+  "Leaf form": "the leaves are needle-like",
+  "Leaf glands": "there are no glands on the underside of the needle-like leaves",
+  "Leaf stalks": "the needle-like leaves do not have a leaf stalk",
+  "Leaf types": "there is only one type of needle-like leaf on the twig",
+  "Leaves overlapping": "the needle-like leaves are separate and do not hide the twig surface",
+  "Habitat": [
+    "terrestrial",
+    "wetlands"
+  ],
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "bogs",
+    "fens"
+  ],
+  "Bark resin blisters": "there are no resin blisters on the bark",
+  "Leaves on shoots": "there are needle-like leaves growing in tight clusters on a short, knob-like shoot",
+  "Twig bloom": "there is no bloom on the twig",
+  "Twig hair type": "the twigs have few or no hairs on them",
+  "Twig hairs": "the twig does not have hairs",
+  "scientific_name": "Larix laricina",
+  "url": "https://gobotany.nativeplanttrust.org/species/larix/laricina/",
+  "source": "web"
+}

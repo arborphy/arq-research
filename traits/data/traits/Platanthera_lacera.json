@@ -1,0 +1,103 @@
+{
+  "Flower petal color": [
+    "green",
+    "white",
+    "yellow"
+  ],
+  "Flower symmetry": "there is only one way to evenly divide the flower (the flower is bilaterally symmetrical)",
+  "Flowering date": [
+    "August",
+    "July",
+    "June",
+    "September"
+  ],
+  "Flowers per inflorescence": "4-56",
+  "Form of lower petal": "the labellum does not have a pouch-like shape",
+  "Hairs on inflorescence axis": "the main stem of the inflorescence is hairless",
+  "Inflorescence length": "50-200 mm",
+  "Inflorescence type": "the inflorescence is a raceme (a long unbranched stem with stalked flowers growing along it)",
+  "Inflorescence width": "30-50 mm",
+  "Labellum position": "the labellum is in the lower position on the flower",
+  "Length of flower stalk": "0 mm",
+  "Lobes at base of lower petal": "0 mm",
+  "Lower petal characteristics": [
+    "the labellum has spurs on it",
+    "the labellum is fringed",
+    "the labellum is lobed"
+  ],
+  "Lower petal length": "10-17 mm",
+  "Lower petal outline": "the labellum is fringed (it may or may not be lobed)",
+  "Lower petal strongly red-veined": "no",
+  "Main color of lower petal": [
+    "green to brown",
+    "white",
+    "yellow"
+  ],
+  "Nectar spur": "the flower has at least one nectar spur on it",
+  "Nectar spur length": "11-23 mm",
+  "Number of stamens": "1",
+  "Pollen sacs": "the pollinia remain intact and do not fragment into smaller parts",
+  "Self-pollinating flowers": "there are no cleistogamous flowers on this plant",
+  "Sepal length": "4.5-7 mm",
+  "Sepals fused only to sepals": "the sepals are separate from one another",
+  "Shape of viscidium": "the viscidium is long and narrow",
+  "Spots on lower petal": "no",
+  "Spur opening membrane": "there is no membrane over the spur opening",
+  "Seed capsule orientation": "the capsule points upwards or is angled outwards",
+  "Plant green or not": "the plant is chlorophyllous (it has green parts)",
+  "Roots": "the rhizomes do not resemble coral",
+  "Underground organs": [
+    "the plant has one or more swollen storage organs underground, such as bulbs, tubers or corms",
+    "there are only slender roots on the plant"
+  ],
+  "Bract relative length": "the bract is shorter than the associated flower",
+  "Features of leaves": "the leaf does not have any of the mentioned special features",
+  "Leaf arrangement": "alternate: there is one leaf per node along the stem",
+  "Leaf blade edges": "the edges of the leaf blade have no teeth",
+  "Leaf blade length": "70-230 mm",
+  "Leaf blade length to width ratio": "4.6-10",
+  "Leaf blade shape": [
+    "the leaf blade is lanceolate (lance-shaped; widest below the middle and tapering at both ends)",
+    "the leaf blade is linear (very narrow with more or less parallel sides)",
+    "the leaf blade is oblong (rectangular but with rounded ends)",
+    "the leaf blade is obovate (egg-shaped, but with the widest point above the middle of the leaf blade)"
+  ],
+  "Leaf blade tip": [
+    "the tip of the leaf blade is acute (sharply pointed)",
+    "the tip of the leaf blade is obtuse (bluntly pointed)"
+  ],
+  "Leaf blade width": "7-50 mm",
+  "Leaves during flowering": "there are leaves on the plant when it is flowering",
+  "Number of bracts on stem": "1-4",
+  "Number of leaves on stem": [
+    "four",
+    "one",
+    "three",
+    "two"
+  ],
+  "Habitat": [
+    "terrestrial",
+    "wetlands"
+  ],
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "edges of wetlands",
+    "forests",
+    "grasslands",
+    "human-disturbed or -maintained habitats",
+    "marshes",
+    "meadows or fields",
+    "river or stream floodplains",
+    "swamps"
+  ],
+  "scientific_name": "Platanthera lacera",
+  "url": "https://gobotany.nativeplanttrust.org/species/platanthera/lacera/",
+  "source": "web"
+}

@@ -1,0 +1,71 @@
+{
+  "Anther length": "0.7-1 mm",
+  "Anther number": "0-3",
+  "Awn on glume": [
+    "the glume has an awn",
+    "the glume has no awn"
+  ],
+  "Floret lower bract texture": "the lemma is thin and flexible",
+  "Glume relative length": "one or both glumes are as long or longer than all of the florets",
+  "Glume shape": "the glume is flat or curved in cross-section",
+  "Glume veins": [
+    "3",
+    "5",
+    "7 or more"
+  ],
+  "Inflorescence arrangement": "the spikelets are uniform",
+  "Inflorescence axis orientation": [
+    "the inflorescence axis is arched or curved outward",
+    "the inflorescence axis is straight"
+  ],
+  "Inflorescence branches": "the flowers are attached to branches rather than to the main axis of the inflorescence",
+  "Inflorescence crowding": null,
+  "Inflorescence type (general)": "the spikelets are borne on stalks or on branches",
+  "Inflorescence type (specific)": "the inflorescence has pairs (or trios) of spikelets that are similar to each other in structure and size, with at least one of the spikelets on a stalk",
+  "Lemma awn base": "the awn is attached right at the tip of the lemma",
+  "Lemma awn length": "2-15 mm",
+  "Lemma awn number": [
+    "the lemma has no awn",
+    "the lemma has one awn on it"
+  ],
+  "Lemma cross-section": "the lemma is flat or rounded if you cut across the midpoint",
+  "Lemma surface": "the surface of the lemma is relatively smooth (not counting any longitudinal veins or hairs)",
+  "Lemma tip": "the lemma tip is split into two or more points",
+  "One or more florets": "there is one floret per spikelet",
+  "Spikelet axis tip": "there is no extension of the spikelet axis beyond the tip of the spikelet",
+  "Spikelet disintegration": "the spikelet breaks off below the glumes",
+  "Spikelet length": "3.7-6.5 mm",
+  "Spikelets spiny": "the spikelets do not appear spiny",
+  "Leaf auricles": "the leaves do not have auricles",
+  "Leaf blade width": "8-15 mm",
+  "Leaf ligule length": "0.5-0.8 mm",
+  "Leaf ligule type": "the leaf ligule is in the form of a membrane",
+  "Leaf sheath closed around stem": "the margins of the leaf sheath are overlapping and not fused together except in the basal half (or less)",
+  "Leaf sheath hairs": "there are no hairs on the surface of the leaf sheath",
+  "Habitat": [
+    "aquatic",
+    "terrestrial",
+    "wetlands"
+  ],
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "forests",
+    "fresh tidal marshes or flats",
+    "human-disturbed or -maintained habitats",
+    "meadows or fields",
+    "river or stream floodplains",
+    "shores of rivers or lakes"
+  ],
+  "Stem orientation": "the stems are upright",
+  "Stem spacing": "the stems grow singly or a few together (they may form diffuse colonies)",
+  "scientific_name": "Microstegium vimineum",
+  "url": "https://gobotany.nativeplanttrust.org/species/microstegium/vimineum/",
+  "source": "web"
+}

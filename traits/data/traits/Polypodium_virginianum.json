@@ -1,0 +1,63 @@
+{
+  "Life form": "the plant is herbaceous and terrestrial",
+  "Life stage": "the plant is visible as a typical leaf-bearing fern (sporophyte)",
+  "Spore-bearing leaflets": "the spore-bearing fronds are similar in size and shape to the sterile fronds",
+  "Features of leaves": "there are nectaries near the base of the leaf blade",
+  "Leaf blade length": "5-25 cm",
+  "Leaf blade shape": [
+    "the leaf blades are longer than wide, with roughly parallel sides (oblong)",
+    "the leaf blades are widest above the base, then taper narrowly towards the tip (lanceolate)"
+  ],
+  "Leaf blade tip shape": [
+    "the tip of the leaf blade is a sharp point (acute)",
+    "the tip of the leaf blade is rounded"
+  ],
+  "Leaf blade width": "At least 2 cm",
+  "Leaf divisions": [
+    "the leaf blade is compound (divided into leaflets)",
+    "the leaf blade is lobed"
+  ],
+  "Leaf lifespan": "the leaves remain green all year round, or are green in winter",
+  "Leaf stalk color": "yellow to brown",
+  "Leaf stalk hairs": "there are no hairs on the leaf stalk",
+  "Leaf stalk length": "30-150 mm",
+  "Leaf stalk relative length": "the leaf stalk is more than a quarter, but less than three quarters as long as the blade",
+  "Leaf stalk scale location": "the scales are present only on the lower half of the leaf stalk",
+  "Leaf stalk scales": "the leaf stalk has scales",
+  "Leaf stalk vessels": "3 to 9 bundles",
+  "Leaf vein branching": "the secondary veins of the leaf blade branch dichotomously (two equal branches at each branch point)",
+  "Leaf vein tips": "the veins end in small round expanded areas, and do not reach the edge of the leaf blade",
+  "Leaflet relative size": "the bottom leaflets are about half as long as, to slightly longer than, the leaflets from the middle of the frond",
+  "Leaflet stalks": "the leaflets do not have stalks",
+  "Lobe or leaflet length": "9-64 mm",
+  "Lobe or leaflet pairs": "10-20",
+  "Lobe or leaflet shape": "the lobe or leaflet is rectangular but with rounded ends (oblong)",
+  "Lobe or leaflet width": "3-7 mm",
+  "Plant growth form": "the leaves grow from a rhizome growing at or below the ground",
+  "final leaf segment margin": [
+    "the topmost lobe or leaflet of the leaf blade has a smooth or lobed edge",
+    "the topmost lobe or leaflet of the leaf blade has an edge with teeth"
+  ],
+  "Habitat": "terrestrial",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "cliffs, balds, or ledges",
+    "ridges or ledges",
+    "talus or rocky slopes"
+  ],
+  "Sorus features": "the sorus is partly covered by tissue derived from modified sporangium (sporangiasters)",
+  "Sorus shape": "the sori are circular or kidney-shaped",
+  "Sporangia location": "the spores are clustered on sori on the lower surface of the leaf blade",
+  "Sporangium type": "the sporangia are opaque without an annulus and usually without a stalk (leptosporangiate)",
+  "Spore forms": "there is only one type of spore present",
+  "scientific_name": "Polypodium virginianum",
+  "url": "https://gobotany.nativeplanttrust.org/species/polypodium/virginianum/",
+  "source": "web"
+}

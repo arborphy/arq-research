@@ -1,0 +1,102 @@
+{
+  "Anther length": "1.8-3.6 mm",
+  "Bumps on fruit": "there are no papillae on the perigynium surface",
+  "Length of scale": "the scale is shorter than the perigynium",
+  "Lowest spike length": "5-29 mm",
+  "Lowest spike stalk length": "At least 0 mm",
+  "Lowest spike width": "3.1-10.2 mm",
+  "Perigynium beak": "the perigynium has no beak, or an extremely short beak",
+  "Perigynium beak length": "0-0.2 mm",
+  "Perigynium beak orientation": "the beak of the perigynium is straight, and in line with the perigynium",
+  "Perigynium beak serrations": "the perigynium beak has no serrations",
+  "Perigynium beak teeth": "the perigynium beak is not divided at the tip into two teeth, or the teeth are very tiny",
+  "Perigynium beak teeth length": "0 mm",
+  "Perigynium color": [
+    "brown",
+    "yellow"
+  ],
+  "Perigynium cross-section": "the perigynium is relatively round in cross-section",
+  "Perigynium hairs": "the perigynium has no hairs",
+  "Perigynium length": "2.5-4.3 mm",
+  "Perigynium nerve number": "17-25",
+  "Perigynium nerve texture": "the nerves on the perigynium are flat or concave after drying",
+  "Perigynium nerves lower side": "8-12",
+  "Perigynium nerves upper side": "8-12",
+  "Perigynium orientation": "the perigynia are oriented vertically or pressed against the axis or adjacent perigynia",
+  "Perigynium puffy": "the perigynium is inflated (there is space between the perigynium and the achene)",
+  "Perigynium shape": [
+    "the perigynium body is oblong (rectangular but with rounded ends)",
+    "the perigynium body is obovate (egg-shaped, but with the widest point above the middle of the leaf blade)",
+    "the perigynium body is ovate (egg-shaped)"
+  ],
+  "Perigynium width": "1.2-1.8 mm",
+  "Perigynium winged": "the perigynium has no wings",
+  "Pollen- and seed-producing spikes": "some of the spikes produce perigynia",
+  "Pollen-producing spike length": "5-30 mm",
+  "Pollen-producing spike number": "1",
+  "Pollen-producing spike peduncle length": "2.9-103 mm",
+  "Pollen-producing spike width": "1-4.2 mm",
+  "Scale awn": "the carpellate scale has an awn on it",
+  "Scale awn texture": "the carpellate scale awn has tiny teeth",
+  "Scale color": [
+    "red-brown",
+    "white or translucent"
+  ],
+  "Scale length": "2.4-4.7 mm",
+  "Scale tip": "the carpellate scale tip is acuminate (tapered to a narrow point)",
+  "Spike on stalk": [
+    "the lowest spike on the plant has a peduncle",
+    "the lowest spike on the plant is not borne on a peduncle"
+  ],
+  "Spike orientation": "the spikes are oriented vertically or pressed against the axis",
+  "Spikes per stem": "2-15",
+  "Staminate scale tip": "the staminate scale tip is obtuse (has a blunt point)",
+  "Stigma branching": "the stigmas have three branches",
+  "Top spike": "the uppermost spike contains only staminate flowers",
+  "Achene dimples": "the achene has no folds or dimples",
+  "Achene length": "1.8-2.6 mm",
+  "Achene width": "1-1.4 mm",
+  "Style persistence": "the style falls off the mature achenes",
+  "Rhizomes": [
+    "there are long rhizomes present",
+    "there are no rhizomes, or the rhizomes are very short"
+  ],
+  "Leaf arrangement": "the leaves are all produced from the base of the plant",
+  "Leaf blade cross-section": "the leaf blade is flat or M-shaped, with two prominent side-veins",
+  "Leaf blade texture": "the leaf blade is smooth and hairless, or rough and sandpapery",
+  "Leaf bumps": "the upper surface of the leaf blade does not have papillae",
+  "Leaf sheath bumps": "there are no papillae at the top edge of the leaf sheath",
+  "Leaf sheath color": "the leaf sheath has no pink, red or purple tinting",
+  "Leaf sheath dots": "there are no dots on the leaf sheathes",
+  "Leaf sheath folds": "there are no corrugations on the leaf sheath",
+  "Leaf sheath texture": "the leaf sheath feels smooth, and has no hairs",
+  "Ligule length": "0.8-3.7 mm",
+  "Lowest bract sheath": "the lowest bract has a sheath longer than four millimeters",
+  "Lowest leaf blade width": "2.3-5.6 mm",
+  "Lowest leaf sheath texture": "the leaf sheath feels smooth (it may have soft hairs)",
+  "stem leaf blade width": "2.3-5.6 mm",
+  "Habitat": [
+    "terrestrial",
+    "wetlands"
+  ],
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "human-disturbed or -maintained habitats",
+    "meadows or fields",
+    "shores of rivers or lakes"
+  ],
+  "Plant height": "2-75 cm",
+  "Relative stem height": "the main stem is taller than the leaves",
+  "Stem cross-section": "the main stem is roughly triangular in cross-section",
+  "Stem spacing": "the stems grow close together in compact clusters or tufts",
+  "scientific_name": "Carex conoidea",
+  "url": "https://gobotany.nativeplanttrust.org/species/carex/conoidea/",
+  "source": "web"
+}

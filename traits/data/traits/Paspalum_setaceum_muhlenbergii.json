@@ -1,0 +1,88 @@
+{
+  "Anther number": "3",
+  "Awn on glume": "the glume has no awn",
+  "Bristles below spikelets": "no",
+  "Floret lower bract texture": "the lemma is hard and firm",
+  "Floret number": "1-2",
+  "Floret types within spikelet": [
+    "NA",
+    "there are at least two distinct forms of florets within one spikelet"
+  ],
+  "Glume relative length": "one or both glumes are as long or longer than all of the florets",
+  "Glume veins": [
+    "0",
+    "1",
+    "3",
+    "5"
+  ],
+  "Inflorescence axis orientation": [
+    "the inflorescence axis is arched or curved outward",
+    "the inflorescence axis is straight"
+  ],
+  "Inflorescence branches": [
+    "the flowers are attached to branches rather than to the main axis of the inflorescence",
+    "there are no branch points between the base of the inflorescence axis and the flowers, or they are not obvious"
+  ],
+  "Inflorescence type (general)": [
+    "the inflorescence is a spike, or is spike-like, lacking obvious branches",
+    "the spikelets are borne on stalks or on branches"
+  ],
+  "Inflorescence type (specific)": [
+    "the inflorescence has pairs (or trios) of spikelets that are similar to each other in structure and size, with at least one of the spikelets on a stalk",
+    "the inflorescence is branched and the branches all grow from the same side of the plant and look like spikes"
+  ],
+  "Lemma awn base": null,
+  "Lemma awn coiled": null,
+  "Lemma awn length": "0 mm",
+  "Lemma awn number": "the lemma has no awn",
+  "Lemma awn orientation": null,
+  "Lemma cross-section": "the lemma is flat or rounded if you cut across the midpoint",
+  "Lemma surface": "the surface of the lemma is relatively smooth (not counting any longitudinal veins or hairs)",
+  "Lemma tip": "the lemma tip is a simple point, with or without an awn (long narrow extension ending in a point)",
+  "Lemma vein number": [
+    "3",
+    "5"
+  ],
+  "One or more florets": [
+    "there is more than one floret per spikelet",
+    "there is one floret per spikelet"
+  ],
+  "Palea relative length": "palea is one half to fully as long as lemma",
+  "Spikelet axis tip": "there is no extension of the spikelet axis beyond the tip of the spikelet",
+  "Spikelet length": "1.4-2.5 mm",
+  "Spikelets spiny": "the spikelets do not appear spiny",
+  "Leaf auricles": "the leaves do not have auricles",
+  "Leaf blade hairs": "the leaf blade is hairy",
+  "Leaf blade width": "1.5-10.2 mm",
+  "Leaf ligule length": "0.2-0.5 mm",
+  "Leaf ligule type": "the leaf ligule is in the form of a membrane",
+  "Leaf sheath closed around stem": "the margins of the leaf sheath are overlapping and not fused together except in the basal half (or less)",
+  "Leaf sheath hairs": [
+    "there are hairs on the surface of the leaf sheath",
+    "there are no hairs on the surface of the leaf sheath"
+  ],
+  "Habitat": "terrestrial",
+  "New England state": [
+    "Connecticut",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "edges of forests",
+    "human-disturbed or -maintained habitats",
+    "meadows or fields"
+  ],
+  "Stem orientation": [
+    "the stems are upright",
+    "the stems trail along the ground or on other plants through most or all of their length"
+  ],
+  "Stem spacing": [
+    "the stems grow close together in compact clusters or tufts",
+    "the stems grow singly or a few together (they may form diffuse colonies)"
+  ],
+  "scientific_name": "Paspalum setaceum muhlenbergii",
+  "url": "https://gobotany.nativeplanttrust.org/species/paspalum/setaceum/",
+  "source": "web"
+}

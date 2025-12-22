@@ -1,0 +1,69 @@
+{
+  "Anther length": "0.2-0.5 mm",
+  "Anther number": "3",
+  "Awn on glume": "the glume has no awn",
+  "Floret lower bract texture": "the lemma is thin and flexible",
+  "Floret types within spikelet": "all the florets within a spikelet are similar",
+  "Glume relative length": "neither glume is quite as long as all of the florets",
+  "Glume veins": "1",
+  "Inflorescence arrangement": "the spikelets are uniform",
+  "Inflorescence axis orientation": [
+    "the inflorescence axis is arched or curved outward",
+    "the inflorescence axis is straight"
+  ],
+  "Inflorescence branches": "the flowers are attached to branches rather than to the main axis of the inflorescence",
+  "Inflorescence length": "60-200 mm",
+  "Inflorescence type (general)": "the spikelets are borne on stalks or on branches",
+  "Inflorescence type (specific)": "the inflorescence is branched, and the branches do NOT both grow from the same side of the plant AND look like spikes",
+  "Lemma awn base": null,
+  "Lemma awn length": "0 mm",
+  "Lemma awn number": "the lemma has no awn",
+  "Lemma base hairs": "the lemma is hairless or feels just a tiny bit rough at the base",
+  "Lemma cross-section": "the lemma is V-shaped if you cut across the midpoint",
+  "Lemma marginal vein hairs": "the marginal vein of the lemma is hairless",
+  "Lemma surface": [
+    "the surface of the lemma is covered with small wart-like projections",
+    "the surface of the lemma is relatively smooth (not counting any longitudinal veins or hairs)"
+  ],
+  "Lemma tip": "the lemma tip is a simple point, with or without an awn (long narrow extension ending in a point)",
+  "Lemma vein number": "3",
+  "One or more florets": "there is more than one floret per spikelet",
+  "Palea relative length": "palea is one half to fully as long as lemma",
+  "Spikelet axis tip": "there is no extension of the spikelet axis beyond the tip of the spikelet",
+  "Spikelet length": "6-20 mm",
+  "Spikelets spiny": "the spikelets do not appear spiny",
+  "Upper glume shape": "the upper glume is widest at or below the middle",
+  "Leaf auricles": "the leaves do not have auricles",
+  "Leaf blade width": "1-10 mm",
+  "Leaf ligule length": "0.4-0.8 mm",
+  "Leaf ligule type": [
+    "the leaf ligule is in the form of a membrane with fine hairs",
+    "the leaf ligule is in the form of fine hairs"
+  ],
+  "Leaf margin glands": "the leaf blade has glands along the edges",
+  "Leaf sheath closed around stem": "the margins of the leaf sheath are overlapping and not fused together except in the basal half (or less)",
+  "Leaf sheath hair type": [
+    "there are hairs on the surface of the leaf sheath, but the hairs do not have blisters at their bases",
+    "there are no hairs on the surface of the leaf sheath"
+  ],
+  "Leaf sheath hairs": [
+    "there are hairs on the surface of the leaf sheath",
+    "there are no hairs on the surface of the leaf sheath"
+  ],
+  "Habitat": "terrestrial",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": "human-disturbed or -maintained habitats",
+  "Roots at lower stem nodes": "no",
+  "Stem orientation": "the stems are upright",
+  "Stem spacing": "the stems grow close together in compact clusters or tufts",
+  "scientific_name": "Eragrostis cilianensis",
+  "url": "https://gobotany.nativeplanttrust.org/species/eragrostis/cilianensis/",
+  "source": "web"
+}

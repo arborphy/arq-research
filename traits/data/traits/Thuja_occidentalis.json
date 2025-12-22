@@ -1,0 +1,52 @@
+{
+  "Seed cone base": null,
+  "Seed cone bracts": null,
+  "Seed cone form": "the seed cone is longer than wide, with woody scales attached at the base",
+  "Seed cone scales": null,
+  "Seed cone shape": "the seed cone is ellipsoid (oval, tapering to rounded ends)",
+  "Seed cone symmetry": "the seed cone is symmetrical",
+  "Seed cone umbo position": "there is no raised portion on the seed cone scale",
+  "Seed cone umbo spine": null,
+  "Seed wings": "the seeds have wing-like projections",
+  "Growth form": "the plant is a tree",
+  "Leaf arrangement": "there are two needle-like leaves per node",
+  "Leaf base": null,
+  "Leaf clustering": "the needle-like leaves are single, with two per node",
+  "Leaf cross-section": "the needle-like leaves are flattened (can't be rolled between the fingers)",
+  "Leaf duration": "the needle-like leaves remain green all winter",
+  "Leaf form": "the leaves are scale-like",
+  "Leaf glands": "the needle-like leaves have glands on the underside",
+  "Leaf stalks": "the needle-like leaves do not have a leaf stalk",
+  "Leaf types": "there are two distinct types of needle-like leaves on the twig",
+  "Leaves overlapping": "the needle-like leaves are tightly overlapping so that they hide the twig surface",
+  "Habitat": [
+    "terrestrial",
+    "wetlands"
+  ],
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "cliffs, balds, or ledges",
+    "fens",
+    "forests",
+    "ridges or ledges",
+    "shores of rivers or lakes",
+    "swamps",
+    "woodlands"
+  ],
+  "Bark resin blisters": "there are no resin blisters on the bark",
+  "Branchlet thickness": "1-2 mm",
+  "Leaves on shoots": "the needle-like leaves do not grow in tight clusters on a short, knob-like shoot",
+  "Twig bloom": "there is no bloom on the twig",
+  "Twig hair type": "the twigs have few or no hairs on them",
+  "Twig hairs": "the twig does not have hairs",
+  "scientific_name": "Thuja occidentalis",
+  "url": "https://gobotany.nativeplanttrust.org/species/thuja/occidentalis/",
+  "source": "web"
+}

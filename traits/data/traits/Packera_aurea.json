@@ -1,0 +1,137 @@
+{
+  "Bases of bract appendages": null,
+  "Bract color": [
+    "the bracts are colored, or at least tinged with, pink, red or purple",
+    "the bracts are not colored or tinged with pink, red or purple"
+  ],
+  "Bract cycle number": "there is one main cycle of bracts",
+  "Bract outer side hairs": [
+    "the bracts are hairy on their outer surfaces",
+    "the bracts are not hairy on their outer surfaces"
+  ],
+  "Bract texture": "the bracts have a similar texture to a leaf",
+  "Disk flower color": "yellow",
+  "Disk flower lobe number": "5",
+  "Disk flower number": "more than 50",
+  "Disk flower reproductive parts": "the disk flower has both pollen- and seed-producing parts",
+  "Disk width": "5-12 mm",
+  "Flower head number": "each flowering stem has four or more flower heads on it",
+  "Flower head outer flowers": "at the outer edge of the flower head, each flower has a single enlarged lobe or strap",
+  "Flower head platform": "the base has no bristles or papery scales",
+  "Flower head platform surface": null,
+  "Flower head profile": "the disk is flat or nearly flat across the top",
+  "Flower type in flower heads": "the flower head has tubular disk flowers in the center and ray flowers, these often strap-shaped, around the periphery",
+  "Height of flower head base": "5-8 mm",
+  "Inflorescence  branching (Solidago)": null,
+  "Inflorescence shape": "the inflorescence is flat-topped in profile",
+  "Number of bracts at flower head base": "13-21",
+  "Ovary cross-section": "the ovary has five or more corners in cross-section",
+  "Ovary hair type": "the ovary has no hairs on it",
+  "Ovary hairs": "the ovary has no hairs on it",
+  "Ovary profile": "in profile, the ovary is oblong (roughly rectangular but rounded at the ends)",
+  "Peduncle hairs": [
+    "the peduncles are hairy",
+    "the peduncles have no hairs"
+  ],
+  "Ray flower color": [
+    "orange",
+    "yellow"
+  ],
+  "Ray flower reproductive parts": "the ray flowers have carpels or stamens, but not both",
+  "Ray flowers": [
+    "11-15",
+    "6-10"
+  ],
+  "Ray length": "8-10 mm",
+  "Reproductive system": "some of the flowers on the plant have only carpels or stamens, while others have both carpels and stamens",
+  "Scale tip": null,
+  "Style branches": "the style branch is wider at the tip and has a flattened end, or the style branches are wider at the tips and have flattened ends",
+  "Width of flower head base": "6-12 mm",
+  "Ovary length in developed fruit": "1-1.5 mm",
+  "Ovary width in developed fruit": "0.5-0.6 mm",
+  "Seed hair tuft color": "the pappus hairs are white or off-white",
+  "Seed hair tuft details": "the pappus hairs are hooked or barbed",
+  "Seed hair tuft length": "4.5-5.5 mm",
+  "Seed hair tuft tips": "the pappus hairs are slender",
+  "Seed tuft scale number": "0",
+  "Seed tuft type": "the pappus is made of very fine hairs or bristles",
+  "Top of disk flower ovary": null,
+  "Tuft or plume on fruit": "at least a part of the plume is made up of fine bristles",
+  "Leaf blade glands": "the leaf blades have no glandular (translucent) dots or scales",
+  "Sap": "the sap is clear and watery",
+  "Growth form": "the plant has one or more free-standing stems",
+  "Horizontal rooting stem": "there are stolons on some plants",
+  "Plant lifespan": "the plant is perennial, it shows evidence of previous year's leaves, stems or stem bases",
+  "Spines on plant": "the plant has no spines",
+  "Underground organs": [
+    "the plant has a caudex (the root mass is firm and hardened at the top)",
+    "the plant has a rhizome (a horizontal underground stem with roots growing from it)"
+  ],
+  "Final leaf segment length (compound lvs only)": "0 mm",
+  "Final leaf segment width (compound lvs only)": "0 mm",
+  "Hairs on underside of leaf blade": "the underside of the leaf is not hairy, or has very few hairs",
+  "Hairs on upper side of leaf blade": "the upper side of the leaf is not hairy, or has very few hairs",
+  "Leaf arrangement": "alternate: there is one leaf per node along the stem",
+  "Leaf blade base": [
+    "the leaf has a distinct petiole",
+    "the leaf has no petiole"
+  ],
+  "Leaf blade base shape": "the base of the leaf is cordate (heart-shaped) or sagittate (arrow-shaped)",
+  "Leaf blade bloom": "the underside of the leaf has no noticeable bloom",
+  "Leaf blade edges": [
+    "the edge of the leaf blade has lobes, or it has both teeth and lobes",
+    "the edge of the leaf blade has teeth"
+  ],
+  "Leaf blade hairs": null,
+  "Leaf blade length": "20-60 mm",
+  "Leaf blade shape": [
+    "the leaf blade is elliptic (widest near the middle and tapering at both ends)",
+    "the leaf blade is lanceolate (lance-shaped; widest below the middle and tapering at both ends)",
+    "the leaf blade is oblong (rectangular but with rounded ends)",
+    "the leaf blade is ovate (widest below the middle and broadly tapering at both ends)"
+  ],
+  "Leaf blade surface colors": "there is no noticeable color variation on the upper surface of the leaf",
+  "Leaf blade tip": [
+    "the tip of the leaf blade is acute (sharply pointed)",
+    "the tip of the leaf blade is rounded, with no point"
+  ],
+  "Leaf blade width": "20-60 mm",
+  "Leaf disposition": "the lower leaves are larger, toothier, and/or on longer stalks than the upper leaves",
+  "Leaf spines": "there are no spines on the leaf edges",
+  "Leaf stalk": [
+    "the leaves have leaf stalks",
+    "the leaves have no leaf stalks, but attach directly to the stem"
+  ],
+  "Leaf stalk length": "At least 0 mm",
+  "Leaf tip extension": null,
+  "Leaf type": "leaves are simple (i.e., lobed or unlobed but not separated into leaflets)",
+  "Leaflet number": "0",
+  "Specific leaf type": "the leaves are simple (i.e., lobed or unlobed but not separated into leaflets",
+  "Habitat": "wetlands",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "edges of wetlands",
+    "meadows or fields",
+    "shores of rivers or lakes",
+    "swamps"
+  ],
+  "Plant odor": "the plant does not have much of an odor",
+  "Flowering stem cross-section": "the flowering stem is circular, or with lots of small angles",
+  "Leaves on stem": "there is at least one full leaf above the base of the flowering stem",
+  "Stem bloom": "there is no powdery or waxy film on the stem",
+  "Stem internode hair direction": null,
+  "Stem internode hair length": "0 mm",
+  "Stem internode hair type": "the stem has no hairs between the nodes",
+  "Stem internode hairs": "the stem has no hairs between the nodes",
+  "Stem wings": "the stem does not have wings on it",
+  "scientific_name": "Packera aurea",
+  "url": "https://gobotany.nativeplanttrust.org/species/packera/aurea/",
+  "source": "web"
+}

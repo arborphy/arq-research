@@ -1,0 +1,47 @@
+{
+  "Seed cone base": null,
+  "Seed cone bracts": null,
+  "Seed cone form": "the seed cone is formed from a berry-like cone with leathery scales",
+  "Seed cone scales": null,
+  "Seed cone shape": "the seed cone is globose (spherical)",
+  "Seed cone symmetry": "the seed cone is symmetrical",
+  "Seed cone umbo position": null,
+  "Seed cone umbo spine": null,
+  "Seed wings": "there are no wings on the seeds",
+  "Growth form": [
+    "the plant is a shrub (with multiple stems, or prostrate, growing close to the ground)",
+    "the plant is a tree"
+  ],
+  "Leaf arrangement": "there are two needle-like leaves per node",
+  "Leaf base": null,
+  "Leaf clustering": "the needle-like leaves are single, with two per node",
+  "Leaf cross-section": "the needle-like leaves are flattened (can't be rolled between the fingers)",
+  "Leaf duration": "the needle-like leaves remain green all winter",
+  "Leaf form": "the leaves are scale-like",
+  "Leaf glands": "the needle-like leaves have glands on the underside",
+  "Leaf stalks": "the needle-like leaves do not have a leaf stalk",
+  "Leaf types": "there are two distinct types of needle-like leaves on the twig",
+  "Leaves overlapping": "the needle-like leaves are tightly overlapping so that they hide the twig surface",
+  "Habitat": "terrestrial",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "forests",
+    "meadows or fields",
+    "woodlands"
+  ],
+  "Bark resin blisters": "there are no resin blisters on the bark",
+  "Leaves on shoots": "the needle-like leaves do not grow in tight clusters on a short, knob-like shoot",
+  "Twig bloom": "there is no bloom on the twig",
+  "Twig hair type": "the twigs have few or no hairs on them",
+  "Twig hairs": "the twig does not have hairs",
+  "scientific_name": "Juniperus virginiana",
+  "url": "https://gobotany.nativeplanttrust.org/species/juniperus/virginiana/",
+  "source": "web"
+}

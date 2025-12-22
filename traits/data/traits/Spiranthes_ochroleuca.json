@@ -1,0 +1,88 @@
+{
+  "Flower petal color": [
+    "green",
+    "white",
+    "yellow"
+  ],
+  "Flower symmetry": "there is only one way to evenly divide the flower (the flower is bilaterally symmetrical)",
+  "Flowering date": [
+    "August",
+    "October",
+    "September"
+  ],
+  "Form of lower petal": "the labellum does not have a pouch-like shape",
+  "Hairs on flower stalk": null,
+  "Hairs on inflorescence axis": "at least some of the hairs on the main stem of the inflorescence have glands",
+  "Inflorescence length": "75-120 mm",
+  "Inflorescence type": "the inflorescence is a spike (a long unbranched stem with flowers along it that lack stalks)",
+  "Labellum position": "the labellum is in the lower position on the flower",
+  "Length of flower stalk": "0 mm",
+  "Length of narrowed base of lower petal": "0.8-1.5 mm",
+  "Lobes at base of lower petal": "0 mm",
+  "Lower petal characteristics": "the labellum is simple in form",
+  "Lower petal length": "7-12 mm",
+  "Lower petal outline": "the labellum is simple in form",
+  "Lower petal strongly red-veined": "no",
+  "Main color of lower petal": [
+    "green to brown",
+    "white",
+    "yellow"
+  ],
+  "Nectar spur": "there are no nectar spurs on the flower",
+  "Nectar spur length": "0 mm",
+  "Number of stamens": "1",
+  "Orientation of side petals": [
+    "the lateral petals are angled steeply upwards",
+    "the lateral petals slant somewhat downward"
+  ],
+  "Self-pollinating flowers": "there are no cleistogamous flowers on this plant",
+  "Sepal length": "6-14 mm",
+  "Sepals fused only to sepals": "the sepals are separate from one another",
+  "Shape of viscidium": "the viscidium is long and narrow",
+  "Spots on lower petal": "no",
+  "Spur opening membrane": null,
+  "Spur opening shape": null,
+  "Seed capsule orientation": "the capsule points upwards or is angled outwards",
+  "Plant green or not": "the plant is chlorophyllous (it has green parts)",
+  "Roots": "the rhizomes do not resemble coral",
+  "Underground organs": "there are only slender roots on the plant",
+  "Bract relative length": "the bract is shorter than the associated flower",
+  "Features of leaves": "the leaf does not have any of the mentioned special features",
+  "Leaf arrangement": [
+    "alternate: there is one leaf per node along the stem",
+    "basal:  the leaves are growing only at the base of the plant"
+  ],
+  "Leaf blade edges": "the edges of the leaf blade have no teeth",
+  "Leaf blade length": "50-210 mm",
+  "Leaf blade shape": [
+    "the leaf blade is elliptic (widest near the middle and tapering at both ends)",
+    "the leaf blade is linear (very narrow with more or less parallel sides)",
+    "the leaf blade is oblanceolate (lance-shaped, but with the widest point above the middle of the leaf blade)"
+  ],
+  "Leaf blade tip": "the tip of the leaf blade is acute (sharply pointed)",
+  "Leaf blade width": "Up to 20 mm",
+  "Leaves during flowering": "there are leaves on the plant when it is flowering",
+  "Habitat": [
+    "terrestrial",
+    "wetlands"
+  ],
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "edges of wetlands",
+    "grasslands",
+    "human-disturbed or -maintained habitats",
+    "meadows or fields",
+    "swamps",
+    "woodlands"
+  ],
+  "scientific_name": "Spiranthes ochroleuca",
+  "url": "https://gobotany.nativeplanttrust.org/species/spiranthes/ochroleuca/",
+  "source": "web"
+}

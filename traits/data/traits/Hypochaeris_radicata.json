@@ -1,0 +1,99 @@
+{
+  "Bract cycle number": "there are three or more cycles of bracts",
+  "Bract outer side hair type": [
+    "the bracts are hairy, with simple hairs on their outer surface",
+    "the bracts are not hairy on their outer surface"
+  ],
+  "Bract outer side hairs": [
+    "the bracts are hairy on their outer surfaces",
+    "the bracts are not hairy on their outer surfaces"
+  ],
+  "Bract shape": [
+    "the main bracts are lanceolate (widest above the base, then taper narrowly towards the tip)",
+    "the main bracts are linear (long and very narrow)"
+  ],
+  "Disk flower color": null,
+  "Disk flower lobe number": null,
+  "Disk flower number": "0",
+  "Disk flower proportions": null,
+  "Disk flower reproductive parts": null,
+  "Disk flower shape": null,
+  "Flower head platform": "the base has papery scales on it",
+  "Flower head profile": "the disk is flat or nearly flat across the top",
+  "Flower head shape": [
+    "NA",
+    "the sides of the flower head are roughly parallel, like a cylinder"
+  ],
+  "Flower type in flower heads": "the flower head has ray flowers only, meaning all of the individual flowers of the flower head have a strap-shaped ray, which may or may not have teeth at the very tip of the ray",
+  "Height of flower head base": "10-25 mm",
+  "Ovary beak": "there is a beak on the ovary",
+  "Ovary cross-section": "the ovary has five or more corners in cross-section",
+  "Ovary profile": "in profile, the ovary is another shape",
+  "Ovary surface": "the ovary surface is textured with tiny points, bumps or wrinkles",
+  "Ray flower color": [
+    "green to brown",
+    "yellow"
+  ],
+  "Ray flowers": [
+    "11-15",
+    "6-10"
+  ],
+  "Smaller bracts at base of bracts": "there is no smaller, outer cycle of bracts",
+  "Width of flower head base": "5-20 mm",
+  "Ovary length in developed fruit": "8-17 mm",
+  "Seed hair tuft details": "the pappus hairs have smaller hairs along their sides",
+  "Tuft or plume on fruit": "at least a part of the plume is made up of fine bristles",
+  "Sap": "the sap is milky and opaque, and may be white or colored",
+  "Growth form": "the plant has one or more free-standing stems",
+  "Plant lifespan": "the plant is perennial, it shows evidence of previous year's leaves, stems or stem bases",
+  "Spines on plant": "the plant has no spines",
+  "Underground organs": [
+    "the plant has a caudex (the root mass is firm and hardened at the top)",
+    "there are only slender roots on the plant",
+    "there is a thickened taproot on the plant"
+  ],
+  "Hairs on underside of leaf blade": "the underside of the leaf is fuzzy or hairy",
+  "Leaf arrangement": "basal:  the leaves are growing only at the base of the plant",
+  "Leaf blade base": [
+    "the leaf has a distinct petiole",
+    "the leaf has no petiole"
+  ],
+  "Leaf blade base shape": [
+    "the base of the leaf blade is cuneate (wedge-shaped, tapers to the base with relatively straight, converging edges), or narrow",
+    "the base of the leaf blade is truncate (ends abruptly in a more or less straight line as though cut off)"
+  ],
+  "Leaf blade edges": [
+    "the edge of the leaf blade has lobes, or it has both teeth and lobes",
+    "the edge of the leaf blade has teeth"
+  ],
+  "Leaf blade length": "50-350 mm",
+  "Leaf blade shape": [
+    "NA",
+    "the leaf blade is oblanceolate (lance-shaped, but with the widest point above the middle of the leaf blade)"
+  ],
+  "Leaf blade width": "5-30 mm",
+  "Leaf disposition": "the lower leaves are larger, toothier, and/or on longer stalks than the upper leaves",
+  "Leaf type": "leaves are simple (i.e., lobed or unlobed but not separated into leaflets)",
+  "Specific leaf type": "the leaf has a row of two or more lobes on each side of the central axis",
+  "Habitat": "terrestrial",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "human-disturbed or -maintained habitats",
+    "meadows or fields"
+  ],
+  "Leaves on stem": "the flowering stem has no leaves above the base",
+  "Stem internode hairs": [
+    "the stem has hairs between the nodes",
+    "the stem has no hairs between the nodes"
+  ],
+  "scientific_name": "Hypochaeris radicata",
+  "url": "https://gobotany.nativeplanttrust.org/species/hypochaeris/radicata/",
+  "source": "web"
+}

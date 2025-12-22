@@ -1,0 +1,96 @@
+{
+  "Flower petal color": [
+    "brown",
+    "green",
+    "red",
+    "yellow"
+  ],
+  "Flower symmetry": "there is only one way to evenly divide the flower (the flower is bilaterally symmetrical)",
+  "Flowering date": [
+    "July",
+    "June",
+    "May"
+  ],
+  "Flowers per inflorescence": "At least 1",
+  "Form of lower petal": "the labellum has a pouch-like shape",
+  "Hairs on inflorescence axis": null,
+  "Inflorescence type": "the inflorescence has only one flower or a pair of flowers on it",
+  "Labellum position": "the labellum is in the lower position on the flower",
+  "Length of flower stalk": "0 mm",
+  "Length of narrowed base of lower petal": "0 mm",
+  "Length of peduncle": "150-610 mm",
+  "Lobes at base of lower petal": "0 mm",
+  "Lower petal characteristics": "the labellum is in the shape of a pouch",
+  "Lower petal length": "30-67 mm",
+  "Lower petal outline": "the labellum is simple in form",
+  "Lower petal strongly red-veined": [
+    "no",
+    "yes"
+  ],
+  "Main color of lower petal": [
+    "pink to red",
+    "white"
+  ],
+  "Nectar spur": "there are no nectar spurs on the flower",
+  "Nectar spur length": "0 mm",
+  "Number of stamens": "2",
+  "Orientation of side petals": "the lateral petals slant somewhat downward",
+  "Pollen sacs": null,
+  "Self-pollinating flowers": "there are no cleistogamous flowers on this plant",
+  "Sepal length": "19-52 mm",
+  "Sepals fused only to sepals": "the sepals are fused to each other (not other flower parts), at least near their bases",
+  "Shape of viscidium": null,
+  "Spots on lower petal": "no",
+  "Spur opening membrane": null,
+  "Spur opening shape": null,
+  "Seed capsule orientation": "the capsule points upwards or is angled outwards",
+  "Plant green or not": "the plant is chlorophyllous (it has green parts)",
+  "Roots": "the rhizomes do not resemble coral",
+  "Underground organs": [
+    "there are only slender roots on the plant",
+    "this plant has a rhizome (a horizontal underground stem with roots growing from it)"
+  ],
+  "Bract relative length": "the bract is longer than the associated flower",
+  "Features of leaves": [
+    "the leaf does not have any of the mentioned special features",
+    "the leaf is pleated or folded back and forth along its length"
+  ],
+  "Leaf arrangement": "basal:  the leaves are growing only at the base of the plant",
+  "Leaf blade edges": "the edges of the leaf blade have no teeth",
+  "Leaf blade length": "90-300 mm",
+  "Leaf blade length to width ratio": "2-3.6",
+  "Leaf blade shape": [
+    "the leaf blade is elliptic (widest near the middle and tapering at both ends)",
+    "the leaf blade is oblong (rectangular but with rounded ends)",
+    "the leaf blade is obovate (egg-shaped, but with the widest point above the middle of the leaf blade)",
+    "the leaf blade is ovate (widest below the middle and broadly tapering at both ends)"
+  ],
+  "Leaf blade tip": "the tip of the leaf blade is obtuse (bluntly pointed)",
+  "Leaf blade width": "25-150 mm",
+  "Leaves during flowering": "there are leaves on the plant when it is flowering",
+  "Number of bracts on stem": "0",
+  "Number of leaves on stem": "absent",
+  "Habitat": [
+    "terrestrial",
+    "wetlands"
+  ],
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "bogs",
+    "edges of forests",
+    "forests",
+    "human-disturbed or -maintained habitats",
+    "swamps",
+    "woodlands"
+  ],
+  "scientific_name": "Cypripedium acaule",
+  "url": "https://gobotany.nativeplanttrust.org/species/cypripedium/acaule/",
+  "source": "web"
+}

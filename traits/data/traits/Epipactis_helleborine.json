@@ -1,0 +1,106 @@
+{
+  "Flower bract length": "10-70 mm",
+  "Flower petal color": [
+    "green",
+    "pink",
+    "purple",
+    "yellow"
+  ],
+  "Flower symmetry": "there is only one way to evenly divide the flower (the flower is bilaterally symmetrical)",
+  "Flowering date": [
+    "August",
+    "July",
+    "June",
+    "October",
+    "September"
+  ],
+  "Flowers per inflorescence": "15-50",
+  "Form of lower petal": "the labellum has a pouch-like shape",
+  "Hairs on inflorescence axis": "the main stem of the inflorescence has hairs entirely without glands",
+  "Inflorescence length": "100-300 mm",
+  "Inflorescence type": "the inflorescence is a raceme (a long unbranched stem with stalked flowers growing along it)",
+  "Labellum position": "the labellum is in the lower position on the flower",
+  "Length of narrowed base of lower petal": "0 mm",
+  "Lobes at base of lower petal": "0 mm",
+  "Lower petal characteristics": "the labellum is in the shape of a pouch",
+  "Lower petal length": "9-12 mm",
+  "Lower petal outline": "the labellum is lobed but not fringed",
+  "Lower petal strongly red-veined": "no",
+  "Main color of lower petal": [
+    "blue to purple",
+    "green to brown",
+    "pink to red"
+  ],
+  "Nectar spur": "there are no nectar spurs on the flower",
+  "Nectar spur length": "0 mm",
+  "Number of stamens": "1",
+  "Orientation of side petals": [
+    "the lateral petals are angled steeply upwards",
+    "the lateral petals slant outward"
+  ],
+  "Pollen sacs": "the pollinia remain intact and do not fragment into smaller parts",
+  "Self-pollinating flowers": "there are no cleistogamous flowers on this plant",
+  "Sepal length": "10-13 mm",
+  "Sepals fused only to sepals": "the sepals are separate from one another",
+  "Spots on lower petal": "no",
+  "Spur opening membrane": null,
+  "Spur opening shape": null,
+  "Fruit length": "9-14 mm",
+  "Seed capsule orientation": [
+    "the capsule bends downwards or hangs downwards",
+    "the capsule points upwards or is angled outwards"
+  ],
+  "Plant green or not": "the plant is chlorophyllous (it has green parts)",
+  "Roots": "the rhizomes do not resemble coral",
+  "Underground organs": [
+    "there are only slender roots on the plant",
+    "this plant has a rhizome (a horizontal underground stem with roots growing from it)"
+  ],
+  "Bract relative length": "the bract is longer than the associated flower",
+  "Features of leaves": [
+    "the leaf does not have any of the mentioned special features",
+    "the leaf is pleated or folded back and forth along its length"
+  ],
+  "Leaf arrangement": "alternate: there is one leaf per node along the stem",
+  "Leaf blade edges": "the edges of the leaf blade have no teeth",
+  "Leaf blade length": "40-180 mm",
+  "Leaf blade length to width ratio": "2.1-2.7",
+  "Leaf blade shape": [
+    "the leaf blade is elliptic (widest near the middle and tapering at both ends)",
+    "the leaf blade is lanceolate (lance-shaped; widest below the middle and tapering at both ends)",
+    "the leaf blade is orbicular (roughly circular, as wide as long)"
+  ],
+  "Leaf blade tip": [
+    "the tip of the leaf blade is acute (sharply pointed)",
+    "the tip of the leaf blade is obtuse (bluntly pointed)"
+  ],
+  "Leaf blade width": "15-85 mm",
+  "Leaves during flowering": "there are leaves on the plant when it is flowering",
+  "Number of leaves on stem": [
+    "five",
+    "four",
+    "six or more",
+    "three"
+  ],
+  "Habitat": [
+    "terrestrial",
+    "wetlands"
+  ],
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "edges of forests",
+    "forests",
+    "human-disturbed or -maintained habitats",
+    "shores of rivers or lakes"
+  ],
+  "scientific_name": "Epipactis helleborine",
+  "url": "https://gobotany.nativeplanttrust.org/species/epipactis/helleborine/",
+  "source": "web"
+}

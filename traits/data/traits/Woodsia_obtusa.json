@@ -1,0 +1,64 @@
+{
+  "Life form": "the plant is herbaceous and terrestrial",
+  "Life stage": "the plant is visible as a typical leaf-bearing fern (sporophyte)",
+  "Spore-bearing leaflets": "the spore-bearing fronds are similar in size and shape to the sterile fronds",
+  "Features of leaves": "there are no special features on the leaves",
+  "Leaf blade length": "10-40 cm",
+  "Leaf blade shape": [
+    "the leaf blades are widest above the base, then taper broadly towards the tip (ovate)",
+    "the leaf blades are widest above the base, then taper narrowly towards the tip (lanceolate)"
+  ],
+  "Leaf blade tip shape": "the tip of the leaf blade is a sharp point (acute)",
+  "Leaf blade width": "At least 2 cm",
+  "Leaf divisions": "the leaf blade is twice compound (divided into leaflets, which are further divided into leaflets)",
+  "Leaf lifespan": "the leaves drop off in winter",
+  "Leaf stalk color": "yellow to brown",
+  "Leaf stalk hairs": "the leaf stalk has hairs",
+  "Leaf stalk length": "20-175 mm",
+  "Leaf stalk relative length": "the leaf stalk is more than a quarter, but less than three quarters as long as the blade",
+  "Leaf stalk scale location": "the scales are present on both the lower and upper halves of the leaf stalk",
+  "Leaf stalk scales": "the leaf stalk has scales",
+  "Leaf stalk vessels": "2 bundles",
+  "Leaf vein branching": "the secondary veins of the leaf blade branch dichotomously (two equal branches at each branch point)",
+  "Leaf vein tips": "the veins end in small round expanded areas, and do not reach the edge of the leaf blade",
+  "Leaflet relative size": "the bottom leaflets are about half as long as, to slightly longer than, the leaflets from the middle of the frond",
+  "Leaflet stalks": [
+    "the leaflets are stalked",
+    "the leaflets do not have stalks"
+  ],
+  "Lobe or leaflet length": "8-60 mm",
+  "Lobe or leaflet pairs": "8-20",
+  "Lobe or leaflet shape": [
+    "the lobe or leaflet is roughly triangular with the stalk in the center of the widest side (broad-triangular)",
+    "the lobe or leaflet is shaped like an ellipse; widest near the middle and tapering at both ends",
+    "the lobe or leaflet is widest below the middle and broadly tapering at both ends; egg-shaped"
+  ],
+  "Lobe or leaflet width": "5-27 mm",
+  "Plant growth form": "the leaves grow from a rhizome growing at or below the ground",
+  "final leaf segment margin": [
+    "the topmost lobe or leaflet of the leaf blade has a smooth or lobed edge",
+    "the topmost lobe or leaflet of the leaf blade has an edge with teeth"
+  ],
+  "Habitat": "terrestrial",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "cliffs, balds, or ledges",
+    "ridges or ledges",
+    "talus or rocky slopes"
+  ],
+  "Sorus features": "there are no special features on the sorus",
+  "Sorus shape": "the sori are circular or kidney-shaped",
+  "Sporangia location": "the spores are clustered on sori on the lower surface of the leaf blade",
+  "Sporangium type": "the sporangia are opaque without an annulus and usually without a stalk (leptosporangiate)",
+  "Spore forms": "there is only one type of spore present",
+  "scientific_name": "Woodsia obtusa",
+  "url": "https://gobotany.nativeplanttrust.org/species/woodsia/obtusa/",
+  "source": "web"
+}

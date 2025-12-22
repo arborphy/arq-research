@@ -1,0 +1,105 @@
+{
+  "Bud scale number": "there are two scales on the winter bud, and their edges meet",
+  "Bud scar shape (Fraxinus)": null,
+  "Collateral buds": "there are no collateral buds on the sides of the branches",
+  "Superposed buds": "there are no superposed buds on the branch",
+  "Carpels fused": "the carpels are fused to one another",
+  "Enlarged sterile flowers": "there are no enlarged sterile flowers on the plant",
+  "Flower petal color": null,
+  "Flower symmetry": "there are two or more ways to evenly divide the flower (the flower is radially symmetrical)",
+  "Hairs on ovary (Amelanchier)": null,
+  "Hypanthium present": "the flower does not have a hypanthium",
+  "Inflorescence type": [
+    "the inflorescence is a raceme (a long unbranched stem with stalked flowers growing along it)",
+    "the inflorescence is an ament (catkin; slender, usually pendulous inflorescence with crowded unisexual flowers)"
+  ],
+  "Number of pistils": "1",
+  "Ovary position": "the ovary is below the point of petal and/or sepal attachment",
+  "Petal and sepal arrangement": "the flower includes only one cycle of petals or sepals",
+  "Petal appearance": null,
+  "Petal fusion": null,
+  "Sepal cilia (Ilex)": null,
+  "Stamen number": "13 or more",
+  "Stamen position relative to petals": null,
+  "Berry color": null,
+  "Fruit tissue origin": "there are no flower parts that form part of the fruit",
+  "Fruit type (general)": "the fruit is dry but does not split open when ripe",
+  "Fruit type (specific)": [
+    "the fruit is a drupe (fleshy, with a firm inner ovary wall that encloses a single seed)",
+    "the fruit is a nut (dry and indehiscent, with a hard wall, usually containing only one seed and usually subtended by an involucre)"
+  ],
+  "Nut with spines (Fagaceae)": null,
+  "Wings on fruit": "there are no wings on the fruit",
+  "Sap color": "the sap is clear and watery",
+  "Stalked glands on fruit (Rosa)": null,
+  "Growth form": "the plant is a tree",
+  "Hairs on upper side of leaf blade": [
+    "the upper side of the leaf is fuzzy or hairy",
+    "the upper side of the leaf is not hairy, or has very few hairs"
+  ],
+  "Leaf blade base shape": "the base of the leaf blade is truncate (ends abruptly in a more or less straight line as though cut off)",
+  "Leaf blade edges": "the edge of the leaf blade has teeth",
+  "Leaf blade edges (Acer)": null,
+  "Leaf blade flatness": "the leaf is flat (planar) at the edges",
+  "Leaf blade hairs": [
+    "NA",
+    "at least some of the hairs on the leaf blade are branched",
+    "at least some of the hairs on the leaf blade have glands at their tips"
+  ],
+  "Leaf blade length": "200-600 mm",
+  "Leaf blade scales": [
+    "there are no scales on the leaf blades",
+    "there are scales on the leaf blades"
+  ],
+  "Leaf blade shape": "the leaf blade is oblong (rectangular but with rounded ends)",
+  "Leaf blade texture": [
+    "the leaf blade is coriaceous (has a firm, leathery texture)",
+    "the leaf blade is herbaceous (has a leafy texture)"
+  ],
+  "Leaf blade translucent dots": "there are no translucent dots on the leaf blade",
+  "Leaf duration": "the leaves drop off in winter (or they wither but persist on the plant)",
+  "Leaf lobe tips (Quercus)": null,
+  "Leaf midrib glands": "the midrib of the leaf blade lacks glands on the upper surface",
+  "Leaf stalk": "the leaves have leaf stalks",
+  "Leaf stalk nectaries": "there are no nectaries on the leaf stalk",
+  "Leaf teeth": "the leaf blade margin is serrate (with forward-pointing) or dentate (with outward-pointing) with medium-sized to coarse teeth",
+  "Leaf teeth hairs (Carya)": null,
+  "Leaf type": "the leaf blade is compound (i.e., made up of two or more discrete leaflets",
+  "Leaves per node": "there is one leaf per node along the stem",
+  "Specific leaf type": "the leaf is compound, with a single terminal leaflet and more than two additional leaflets",
+  "Habitat": "terrestrial",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "forests",
+    "human-disturbed or -maintained habitats",
+    "meadows or fields"
+  ],
+  "Plant odor": [
+    "the plant does not have much of an odor, or it has an unpleasant or repellant odor",
+    "the plant has a pleasantly aromatic odor"
+  ],
+  "Aerial roots": "the plant has no aerial roots",
+  "Bark texture": "the bark of an adult plant is ridged or plated",
+  "Branch brittleness (willows only)": null,
+  "Branch cross-section": "the branch is circular in cross-section, or it has five or more sides, so that there are no sharp angles",
+  "First-year cane (Rubus)": null,
+  "Pith type": "the pith inside the twig is chambered (there are hollow sections with walls between them)",
+  "Twig papillae (Vaccinium species only)": null,
+  "Twig winter color": [
+    "brown",
+    "gray",
+    "red"
+  ],
+  "Wings on branch": "the branch does not have wings on it",
+  "armature on plant": "the plant does not have spines, prickles, or thorns",
+  "scientific_name": "Juglans nigra",
+  "url": "https://gobotany.nativeplanttrust.org/species/juglans/nigra/",
+  "source": "web"
+}

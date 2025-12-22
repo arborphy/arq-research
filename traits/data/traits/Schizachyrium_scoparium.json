@@ -1,0 +1,137 @@
+{
+  "Anther number": "2-3",
+  "Awn on glume": [
+    "the glume has an awn",
+    "the glume has no awn"
+  ],
+  "Bristles below spikelets": "no",
+  "Floret lower bract texture": "the lemma is thin and flexible",
+  "Floret number": "1",
+  "Floret types within spikelet": "there are at least two distinct forms of florets within one spikelet",
+  "Glume awn length": "0 mm",
+  "Glume relative length": "one or both glumes are as long or longer than all of the florets",
+  "Glume shape": "the glume is flat or curved in cross-section",
+  "Glume veins": [
+    "1",
+    "3",
+    "5",
+    "7 or more"
+  ],
+  "Glumes per spikelet": "2",
+  "Inflorescence arrangement": "the plant has  two types of spikelets with different reproductive structures",
+  "Inflorescence axis orientation": "the inflorescence axis is straight",
+  "Inflorescence branches": [
+    "the flowers are attached to branches rather than to the main axis of the inflorescence",
+    "there are no branch points between the base of the inflorescence axis and the flowers, or they are not obvious"
+  ],
+  "Inflorescence crowding": null,
+  "Inflorescence length": "20-80 mm",
+  "Inflorescence type (general)": [
+    "the inflorescence is a spike, or is spike-like, lacking obvious branches",
+    "the spikelets are borne on stalks or on branches"
+  ],
+  "Inflorescence type (specific)": "the inflorescence has pairs (or trios) of spikelets, but with one always either missing a stalk or on a shorter stalk than the other",
+  "Inforescence position": [
+    "the spikelets are mainly carried at the end of the stem",
+    "the spikelets are mainly found at the nodes, in the axils of leaves, along the stem"
+  ],
+  "Lemma awn base": [
+    "NA",
+    "the awn is attached right at the tip of the lemma"
+  ],
+  "Lemma awn length": "0-17 mm",
+  "Lemma awn number": [
+    "the lemma has no awn",
+    "the lemma has one awn on it"
+  ],
+  "Lemma awn orientation": "the awn of the lemma is straight",
+  "Lemma base hair length": "Up to 2.5 mm",
+  "Lemma base hairs": "the lemma has hairs at the base",
+  "Lemma cross-section": "the lemma is flat or rounded if you cut across the midpoint",
+  "Lemma surface": "the surface of the lemma is relatively smooth (not counting any longitudinal veins or hairs)",
+  "Lemma tip": "the lemma tip is split into two or more points",
+  "Lemma vein number": [
+    "1",
+    "3"
+  ],
+  "Lower glume length": "5-10 mm",
+  "Lower glume relative length": "the lower glume is nearly as long, or as long as, the upper glume",
+  "One or more florets": "there is one floret per spikelet",
+  "Reproductive system": "all the flowers on the plant have both carpels and stamens (synoecious)",
+  "Spikelet axis length": "0 mm",
+  "Spikelet axis tip": "there is no extension of the spikelet axis beyond the tip of the spikelet",
+  "Spikelet disintegration": "the spikelet breaks off below the glumes",
+  "Spikelet length": "3-11 mm",
+  "Spikelet number per node": "0",
+  "Spikelet pedicel": [
+    "the spikelets do not have pedicels",
+    "the spikelets have pedicels"
+  ],
+  "Spikelet pedicel length": "0-7.5 mm",
+  "Spikelet position": "the spikelets emerge from both the upper and lower halves of the inflorescence branches",
+  "Spikelets per panicle branch": "0",
+  "Spikelets spiny": "the spikelets do not appear spiny",
+  "Upper glume length": "5-10 mm",
+  "Upper glume relative length": "the upper glume is more than one half as long as the lowest lemma",
+  "Upper glume shape": "the upper glume is widest at or below the middle",
+  "Horizontal rooting stem": "no",
+  "Lifespan": "the plant lives more than two years",
+  "Rhizomes": [
+    "no",
+    "yes"
+  ],
+  "Roots": [
+    "the plant has rhizomes (horizontal underground stem with roots growing from it)",
+    "there are only slender roots on the plant"
+  ],
+  "Basal leaves": "the plant has large or prominent tufts of leaves at the base of the flowering stem",
+  "Leaf auricles": "the leaves do not have auricles",
+  "Leaf basal lobe hairy": null,
+  "Leaf blade cross-section": "the leaf blade is more or less flat in cross-section, or slightly folded or rolled inwards",
+  "Leaf blade hairs": [
+    "the leaf blade is hairless, but it may have tiny prickles that give it a sand-papery feel",
+    "the leaf blade is hairy"
+  ],
+  "Leaf blade length": "9-45 cm",
+  "Leaf blade texture": "the leaf blade is rough and sandpapery",
+  "Leaf blade width": "1.5-9 mm",
+  "Leaf ligule length": "0.5-2 mm",
+  "Leaf ligule type": "the leaf ligule is in the form of a membrane",
+  "Leaf margin glands": "there are no glands along the edges of the leaf blade",
+  "Leaf sheath closed around stem": "the margins of the leaf sheath are overlapping and not fused together except in the basal half (or less)",
+  "Leaf sheath hairs": [
+    "there are hairs on the surface of the leaf sheath",
+    "there are no hairs on the surface of the leaf sheath"
+  ],
+  "Habitat": [
+    "terrestrial",
+    "wetlands"
+  ],
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "cliffs, balds, or ledges",
+    "edges of wetlands",
+    "grasslands",
+    "human-disturbed or -maintained habitats",
+    "meadows or fields",
+    "ridges or ledges",
+    "woodlands"
+  ],
+  "Hairs at nodes": "the stem nodes are hairless or they have very sparse hairs",
+  "Plant height": "30-210 cm",
+  "Roots at lower stem nodes": "no",
+  "Stem hairs": "the stem is nearly to completely hairless",
+  "Stem orientation": "the stems are upright",
+  "Stem spacing": "the stems grow close together in compact clusters or tufts",
+  "Stem thickness at base": "1-3 mm",
+  "scientific_name": "Schizachyrium scoparium",
+  "url": "https://gobotany.nativeplanttrust.org/species/schizachyrium/scoparium/",
+  "source": "web"
+}

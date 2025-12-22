@@ -1,0 +1,88 @@
+{
+  "Flower bract length": "3-30 mm",
+  "Flower petal color": [
+    "pink",
+    "white"
+  ],
+  "Flower symmetry": "there is only one way to evenly divide the flower (the flower is bilaterally symmetrical)",
+  "Flowering date": [
+    "August",
+    "July",
+    "June"
+  ],
+  "Flowers per inflorescence": "1-25",
+  "Form of lower petal": "the labellum does not have a pouch-like shape",
+  "Hairs on flower stalk": null,
+  "Hairs on inflorescence axis": "the main stem of the inflorescence is hairless",
+  "Inflorescence length": "100-380 mm",
+  "Inflorescence type": "the inflorescence is a spike (a long unbranched stem with flowers along it that lack stalks)",
+  "Labellum position": "the labellum is in the upper position on the flower",
+  "Length of flower stalk": "0 mm",
+  "Length of narrowed base of lower petal": "0 mm",
+  "Lobes at base of lower petal": "0 mm",
+  "Lower petal characteristics": "the labellum is lobed",
+  "Lower petal length": "11-23 mm",
+  "Lower petal outline": "the labellum is lobed but not fringed",
+  "Lower petal strongly red-veined": "no",
+  "Main color of lower petal": [
+    "pink to red",
+    "white"
+  ],
+  "Nectar spur": "there are no nectar spurs on the flower",
+  "Nectar spur length": "0 mm",
+  "Number of stamens": "1",
+  "Pollen sacs": "the pollinia remain intact and do not fragment into smaller parts",
+  "Self-pollinating flowers": "there are no cleistogamous flowers on this plant",
+  "Sepal length": "13-31 mm",
+  "Sepals fused only to sepals": "the sepals are separate from one another",
+  "Shape of viscidium": null,
+  "Spots on lower petal": "no",
+  "Spur opening membrane": null,
+  "Spur opening shape": null,
+  "Fruit length": "13-30 mm",
+  "Fruit width": "5-10 mm",
+  "Seed capsule orientation": "the capsule points upwards or is angled outwards",
+  "Plant green or not": "the plant is chlorophyllous (it has green parts)",
+  "Roots": "the rhizomes do not resemble coral",
+  "Underground organs": [
+    "the plant has one or more swollen storage organs underground, such as bulbs, tubers or corms",
+    "there are only slender roots on the plant"
+  ],
+  "Bract relative length": "the bract is shorter than the associated flower",
+  "Features of leaves": "the leaf has a strong bend or joint (articulation) in it",
+  "Leaf arrangement": "basal:  the leaves are growing only at the base of the plant",
+  "Leaf blade edges": "the edges of the leaf blade have no teeth",
+  "Leaf blade length": "30-500 mm",
+  "Leaf blade length to width ratio": "10-15",
+  "Leaf blade shape": [
+    "the leaf blade is elliptic (widest near the middle and tapering at both ends)",
+    "the leaf blade is lanceolate (lance-shaped; widest below the middle and tapering at both ends)",
+    "the leaf blade is linear (very narrow with more or less parallel sides)"
+  ],
+  "Leaf blade width": "2-50 mm",
+  "Leaves during flowering": "there are leaves on the plant when it is flowering",
+  "Number of bracts on stem": "2-3",
+  "Number of leaves on stem": "absent",
+  "Habitat": [
+    "terrestrial",
+    "wetlands"
+  ],
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "bogs",
+    "edges of wetlands",
+    "fens",
+    "meadows or fields",
+    "swamps"
+  ],
+  "scientific_name": "Calopogon tuberosus tuberosus",
+  "url": "https://gobotany.nativeplanttrust.org/species/calopogon/tuberosus/",
+  "source": "web"
+}

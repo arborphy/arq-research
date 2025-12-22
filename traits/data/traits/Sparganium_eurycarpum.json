@@ -1,0 +1,116 @@
+{
+  "Axillary bulblets": "there are no bulblets being produced in axils",
+  "Anther attachment": "the anther is attached by its base to the filament",
+  "Bulblets replace flowers": "there are no bulblets where the flowers are located",
+  "Carpels fused": "the carpels are fused (the number of carpels equals the number of locules)",
+  "Flower bracts": "there are bracts associated with the flower",
+  "Flower petal color": [
+    "green to brown",
+    "white"
+  ],
+  "Flower symmetry": "there are two or more ways to evenly divide the flower (the flower is radially symmetrical)",
+  "Form of style": "the style is lobed at the tip, and unbranched",
+  "Fringed petal edges": "the petals are not fringed",
+  "Hairs on flower stalk": null,
+  "Inflorescence type": "the flowers grow out of the axil (point where a branch or leaf is attached to the main stem)",
+  "Marks on petals": "there are no noticeable marks on the petals",
+  "Nectar spur": "the flower has no nectar spurs",
+  "Number of carpels": "2",
+  "Number of pistils": "1",
+  "Number of sepals and/or petals": [
+    "there are five petals, sepals or tepals in the flower",
+    "there are four petals, sepals or tepals in the flower",
+    "there are six petals, sepals or tepals in the flower",
+    "there are three petals, sepals or tepals in the flower"
+  ],
+  "Number of styles": "1",
+  "Ovary position": "the ovary is above the point of petal and/or sepal  attachment",
+  "Petal appearance": "the petals are green and/or leafy in texture",
+  "Petal fusion": "the perianth parts are separate",
+  "Sepal appearance": "the sepals resemble leaves in color and texture",
+  "Sepals fused only to sepals": "the sepals are separate from one another",
+  "Spathe": "the plant does not have a spathe",
+  "Spathe form": null,
+  "Spathe length": "0 mm",
+  "Stamen number": [
+    "1 or 2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8"
+  ],
+  "Stamen position relative to petals": null,
+  "Stamens fused outwards": "the stamens are not fused to the petals or tepals",
+  "Style petal-like": "the style is not broad and flattened like a petal",
+  "Tepals": "the petals and sepals are similar in size and color",
+  "Berry color": null,
+  "Capsule ridges": null,
+  "Fruit beak length": "2-4 mm",
+  "Fruit compartments": "there are two locules in the fruit",
+  "Fruit cross-section": "the fruit is roughly triangular in cross-section",
+  "Fruit length": "5-10 mm",
+  "Fruit type (general)": "the fruit is dry but does not split open when ripe",
+  "Fruit type (specific)": [
+    "the fruit is a drupe (fleshy, with a firm inner ovary wall that encloses a single seed)",
+    "the fruit is an achene (dry, usually 1-seeded, does not separate or split open at maturity)"
+  ],
+  "Other markings on berry": null,
+  "Sap": "the sap is clear and watery",
+  "Lifespan": "the plant lives more than two years",
+  "Root septa": "the roots do not have transverse septa",
+  "Underground organs": [
+    "the plant has a rhizome (a horizontal underground stem with roots growing from it)",
+    "there are only slender roots on the plant"
+  ],
+  "Leaf arrangement": [
+    "alternate: there is one leaf per node along the stem",
+    "basal:  the leaves are growing only at the base of the plant"
+  ],
+  "Leaf blade basal lobes": "the leaf blades do not have basal lobes",
+  "Leaf blade cross-section": [
+    "the leaf blade is U- or V-shaped",
+    "the leaf blade is more or less flat in cross-section"
+  ],
+  "Leaf blade faces": "both surfaces of the leaf blade are exposed",
+  "Leaf blade form": "Fully-formed (i.e., expanded), +/- green leaf blades are found somewhere on the plant",
+  "Leaf blade length": "Up to 2500 mm",
+  "Leaf blade shape": "the leaf blade is linear (very narrow with more or less parallel sides)",
+  "Leaf blade surface colors": "the upper side of the leaf blade is relatively uniform in color",
+  "Leaf blade tip": [
+    "the tip of the leaf blade is obtuse (bluntly pointed)",
+    "the tip of the leaf blade is retuse (blunt or rounded, with a notch at the tip)",
+    "the tip of the leaf blade is rounded, with no point"
+  ],
+  "Leaf blade veins": "the lateral veins are parallel or slightly arched in the direction of the tip",
+  "Leaf blade width": "6-20 mm",
+  "Leaf type": "the leaves are simple (i.e., lobed or unlobed but not separated into leaflets",
+  "Leaflet number": "0",
+  "Stipule twining": null,
+  "Stipules": "there are no stipules on this plant",
+  "Habitat": [
+    "aquatic",
+    "wetlands"
+  ],
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "in lakes or ponds",
+    "in rivers or streams",
+    "shores of rivers or lakes"
+  ],
+  "Plant odor": "the leaves have no particular smell",
+  "Flowering stem growth form": "the flowering stem is held upright",
+  "Flowering stem leaves": "there is at least one fully-formed leaf on the flowering stem",
+  "Stem hairs": "the stem is nearly or completely hairless",
+  "scientific_name": "Sparganium eurycarpum",
+  "url": "https://gobotany.nativeplanttrust.org/species/sparganium/eurycarpum/",
+  "source": "web"
+}

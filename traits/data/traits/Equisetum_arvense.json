@@ -1,0 +1,51 @@
+{
+  "Leaf length": "1-3.5 mm",
+  "Leaves per node": "4-14",
+  "Sheath border color": "the border of the leaf sheath is dark, or with a narrow white edge",
+  "Sheath color": "the leaf sheath is mainly black",
+  "Sheathes on older stems": "the leaf sheathes persist in older stems",
+  "Habitat": [
+    "terrestrial",
+    "wetlands"
+  ],
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "edges of forests",
+    "edges of wetlands",
+    "fens",
+    "forests",
+    "human-disturbed or -maintained habitats",
+    "meadows or fields",
+    "shores of rivers or lakes",
+    "swamps"
+  ],
+  "Cone length": "17-40 mm",
+  "Cone tip shape": "The tip of the spore cone is blunt",
+  "Spore form": "the spores are green and spherical",
+  "Branch grooves": "the interior of the grrove is C-shaped",
+  "Branches": "there are branches off the main stem, but these branches are not branched",
+  "How hollow is stem": "At least 25",
+  "Length of branch section": "the first internode of the branch is equal to or longer than the associated stem sheath",
+  "Number of stem ridges": "4-14",
+  "Plant height": "20-1000 mm",
+  "Stem cavities": "12",
+  "Stem color": [
+    "the aerial stem color is green",
+    "the aerial stem color is pink to light brown"
+  ],
+  "Stem cross-section": "up to half of the stem diameter is occupied by the hollow central cavity",
+  "Stem differences": "the vegetative and reproductive stems differ in appearance",
+  "Stem form": "the stem is relatively straight",
+  "Stem texture": "the stem feels smooth or slightly rough",
+  "Stem thickness": "0.8-4.5 mm",
+  "scientific_name": "Equisetum arvense",
+  "url": "https://gobotany.nativeplanttrust.org/species/equisetum/arvense/",
+  "source": "web"
+}

@@ -1,0 +1,60 @@
+{
+  "Life form": "the plant is herbaceous and terrestrial",
+  "Life stage": "the plant is visible as a typical leaf-bearing fern (sporophyte)",
+  "Spore-bearing leaflets": "the spore-bearing fronds are similar in size and shape to the sterile fronds",
+  "Features of leaves": "there are no special features on the leaves",
+  "Leaf blade length": "12.5-23 cm",
+  "Leaf blade shape": "the leaf blades are roughly triangular",
+  "Leaf blade tip shape": [
+    "the tip of the leaf blade is a sharp point (acute)",
+    "the tip of the leaf blade is rounded"
+  ],
+  "Leaf divisions": [
+    "the leaf blade is compound (divided into leaflets)",
+    "the leaf blade is lobed"
+  ],
+  "Leaf lifespan": "the leaves remain green all year round, or are green in winter",
+  "Leaf stalk color": "yellow to brown",
+  "Leaf stalk hairs": "there are no hairs on the leaf stalk",
+  "Leaf stalk length": "80-145 mm",
+  "Leaf stalk scale location": "the scales are present only on the lower half of the leaf stalk",
+  "Leaf stalk scales": "the leaf stalk has scales",
+  "Leaf stalk vessels": "3 to 9 bundles",
+  "Leaf vein branching": "the secondary veins of the leaf blade branch dichotomously (two equal branches at each branch point)",
+  "Leaf vein tips": "the veins end in small round expanded areas, and do not reach the edge of the leaf blade",
+  "Leaflet stalks": "the leaflets do not have stalks",
+  "Lobe or leaflet length": "29-50 mm",
+  "Lobe or leaflet pairs": "10-21",
+  "Lobe or leaflet shape": [
+    "the lobe or leaflet is extremely narrow, thread-like",
+    "the lobe or leaflet is rectangular but with rounded ends (oblong)"
+  ],
+  "Lobe or leaflet width": "6-10 mm",
+  "Plant growth form": "the leaves grow from a rhizome growing at or below the ground",
+  "final leaf segment margin": [
+    "the topmost lobe or leaflet of the leaf blade has a smooth or lobed edge",
+    "the topmost lobe or leaflet of the leaf blade has an edge with teeth"
+  ],
+  "Habitat": "terrestrial",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "cliffs, balds, or ledges",
+    "ridges or ledges",
+    "talus or rocky slopes"
+  ],
+  "Sorus features": "the sorus is partly covered by tissue derived from modified sporangium (sporangiasters)",
+  "Sorus shape": "the sori are circular or kidney-shaped",
+  "Sporangia location": "the spores are clustered on sori on the lower surface of the leaf blade",
+  "Sporangium type": "the sporangia are opaque without an annulus and usually without a stalk (leptosporangiate)",
+  "Spore forms": "there is only one type of spore present",
+  "scientific_name": "Polypodium appalachianum",
+  "url": "https://gobotany.nativeplanttrust.org/species/polypodium/appalachianum/",
+  "source": "web"
+}

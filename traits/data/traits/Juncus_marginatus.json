@@ -1,0 +1,93 @@
+{
+  "Anther color (dry)": "the anthers range in color from white to tan or yellow to yellow-brown",
+  "Anther length": "0.2-0.7 mm",
+  "Floral bristle color": null,
+  "Floral bristle number": null,
+  "Floral bristle relative length": null,
+  "Floral bristles": null,
+  "Floral scale hairs": null,
+  "Floral scale length": "0 mm",
+  "Floral scale nerves": null,
+  "Flower number per cluster": [
+    "1",
+    "2-5",
+    "5-20"
+  ],
+  "Inflorescence bract angle": "the bracts are vertical or angled only slightly outwards",
+  "Inflorescence bract number": "there are two to five bracts per inflorescence",
+  "Inflorescence bract position (Sparganium)": null,
+  "Inflorescence bracts": "there are at least two bracts, and they are either flat or folded or rolled in at the edges",
+  "Inflorescence branching": "the inflorescence is branched",
+  "Inflorescence crowding": [
+    "the inflorescence is at least somewhat spread out, with at least one branch coming from the main stem",
+    "the inflorescence is crowded together in one tight cluster"
+  ],
+  "Inflorescence position": "the inflorescence is at the tip of the plant",
+  "Inflorescence shape": "the aggregations within the inflorescence are roughly circular (not flattened) in cross-section",
+  "Inflorescence type": "there are two or more flowers, spikes or flower clusters on a branched inflorescence",
+  "Perianth composition": "the perianth is green or brown, with six sepal-like parts, and a leafy texture",
+  "Stamen length": "1.4-3.7 mm",
+  "Stamen number": "3",
+  "Stigma number": "3",
+  "floral bristle barbs": null,
+  "Achene beak length": "0 mm",
+  "Achene surface texture": null,
+  "Achene tubercle relative width": null,
+  "Achene tubercle width": "0 mm",
+  "Capsule relative length": [
+    "the capsule is about equal to the perianth",
+    "the capsule is longer thant he perianth",
+    "the capsule is shorter than the perianth"
+  ],
+  "Fruit cross-section": "the fruit is triangular to terete (circular) in cross-section",
+  "Fruit length": "1.8-2.9 mm",
+  "Fruit type (general)": "the fruit is a capsule, with at least three seeds in it",
+  "Fruit type (specific)": "the fruit is a capsule (splits along two or more seams, apical teeth or pores when dry, to release two or more seeds)",
+  "Locules in capsule": "the capsule has three locules",
+  "Seed length": "0.4-0.7 mm",
+  "Seed tail relative length": "0.4-0.7 mm",
+  "Seed tails": "there is no tail on the seeds",
+  "Tubercle height": "0 mm",
+  "Lifespan": "the plant lives more than two years",
+  "Underground organs": [
+    "the plant has a rhizome (a horizontal underground stem with roots growing from it)",
+    "there are only slender roots on the plant"
+  ],
+  "Auricle length": "0.5-1.5 mm",
+  "Auricle texture": "the auricles are weak, papery and translucent",
+  "Auricles": "the leaf sheath has auricles on it",
+  "Leaf blade cross-section": "the leaf blade is flat or rolled in at the edges",
+  "Leaf blade length": "200-450 mm",
+  "Leaf blade width": "1.3-3.5 mm",
+  "Leaf form": "all the leaves hold their form out of water",
+  "Leaf position on plant": [
+    "some leaf attachment points are above the midpoint of the stem",
+    "the attachment points of all the leaves are at or near the base of the plant"
+  ],
+  "Leaf septa": "the leaf blades do not have transverse septa",
+  "Leaf sheath hairs": "the leaf sheathes are without hairs",
+  "Pedicel length (Typha)": "0 mm",
+  "Stem leaf blade ligules": "there are no ligules at the leaf blade bases",
+  "Stem leaf blades": "there are fully-developed leaves with leaf blades on the main stem",
+  "Habitat": "wetlands",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "edges of wetlands",
+    "human-disturbed or -maintained habitats",
+    "meadows or fields",
+    "shores of rivers or lakes"
+  ],
+  "Plant height": "30-130 cm",
+  "Stem shape in cross-section": "the stem is round or oval in cross-section",
+  "Stem texture near tip": "the stem feels smooth near the tip",
+  "scientific_name": "Juncus marginatus",
+  "url": "https://gobotany.nativeplanttrust.org/species/juncus/marginatus/",
+  "source": "web"
+}

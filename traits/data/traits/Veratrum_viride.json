@@ -1,0 +1,127 @@
+{
+  "Axillary bulblets": "there are no bulblets being produced in axils",
+  "Anther attachment": "the anther is attached by its base to the filament",
+  "Bulblets replace flowers": "there are no bulblets where the flowers are located",
+  "Carpels fused": "the carpels are fused (the number of carpels equals the number of locules)",
+  "Flower bracts": "there are bracts associated with the flower",
+  "Flower orientation": "the flowers point upward or spread or curve outward",
+  "Flower petal color": [
+    "green to brown",
+    "yellow"
+  ],
+  "Flower petal length": "6-10 mm",
+  "Flower shape": [
+    "the flower is bell-shaped",
+    "the flower is flattened or platter-shaped"
+  ],
+  "Flower symmetry": "there are two or more ways to evenly divide the flower (the flower is radially symmetrical)",
+  "Fringed petal edges": "the petals are not fringed",
+  "Inflorescence hair glands": "the axis of the inflorescence has hairs entirely without glands",
+  "Inflorescence length": "300-700 mm",
+  "Inflorescence type": "the inflorescence is a panicle (branched with the individual flowers on stalks)",
+  "Length of flower stalk": "2-10 mm",
+  "Marks on petals": "there are no noticeable marks on the petals",
+  "Nectar spur": "the flower has no nectar spurs",
+  "Number of carpels": "3",
+  "Number of sepals and/or petals": "there are six petals, sepals or tepals in the flower",
+  "Number of styles": "3",
+  "Ovary position": "the ovary is above the point of petal and/or sepal  attachment",
+  "Petal appearance": "the petals are thin and delicate, and pigmented (colored other than green or brown)",
+  "Petal base": "the petal narrows abruptly at the base",
+  "Petal fusion": "the perianth parts are separate",
+  "Petal hairs on inner/upper surface": "there are hairs on the inner/upper petal surface",
+  "Petal nectaries": "there are nectaries at the petal bases",
+  "Sepal appearance": "the sepals resemble petals in color and texture",
+  "Sepal length": "6-10 mm",
+  "Sepal orientation": [
+    "the sepals are pressed against the plant, or jutting stiffly upward",
+    "the sepals are slightly curved outwards from the plant"
+  ],
+  "Sepals fused only to sepals": "the sepals are separate from one another",
+  "Spathe": "the plant does not have a spathe",
+  "Spathe form": null,
+  "Spathe length": "0 mm",
+  "Stamen number": "6",
+  "Stamen position relative to petals": null,
+  "Stamens fused": "the stamens are not fused to one another",
+  "Stamens fused outwards": "the stamens are not fused to the petals or tepals",
+  "Style petal-like": "the style is not broad and flattened like a petal",
+  "Tepals": "the petals and sepals are similar in size and color",
+  "Berry color": null,
+  "Capsule ridges": "there are three ribs or wings on the capsule",
+  "Fruit compartments": "there are three locules in the fruit",
+  "Fruit cross-section": "the fruit is at least somewhat flattened",
+  "Fruit length": "20-30 mm",
+  "Fruit type (general)": "the fruit is dry and splits open when ripe",
+  "Fruit type (specific)": "the fruit is a capsule (splits along two or more seams, apical teeth or pores when dry, to release two or more seeds)",
+  "Other markings on berry": null,
+  "Sap": "the sap is clear and watery",
+  "Lifespan": "the plant lives more than two years",
+  "Root septa": "the roots do not have transverse septa",
+  "Underground organs": [
+    "the plant has a rhizome (a horizontal underground stem with roots growing from it)",
+    "the plant has one or more swollen storage organs underground, such as bulbs, tubers or corms",
+    "there are only slender roots on the plant"
+  ],
+  "Hairs on underside of leaf blade": [
+    "the underside of the leaf is fuzzy or hairy",
+    "the underside of the leaf is not hairy, or has very few hairs"
+  ],
+  "Hairs on upper side of leaf blade": [
+    "the upper side of the leaf is fuzzy or hairy",
+    "the upper side of the leaf is not hairy, or has very few hairs"
+  ],
+  "Leaf arrangement": "alternate: there is one leaf per node along the stem",
+  "Leaf blade basal lobes": "the leaf blades do not have basal lobes",
+  "Leaf blade base": [
+    "the leaf blade clasps the stem at the base, or the leaf blade goes all the way around the stem, so that the stem appears to pierce the leaf blade",
+    "the leaf has no stalk"
+  ],
+  "Leaf blade cross-section": "the leaf blade is more or less flat in cross-section",
+  "Leaf blade faces": "both surfaces of the leaf blade are exposed",
+  "Leaf blade form": "Fully-formed (i.e., expanded), +/- green leaf blades are found somewhere on the plant",
+  "Leaf blade length": "150-350 mm",
+  "Leaf blade shape": [
+    "the leaf blade is elliptic (widest near the middle and tapering at both ends)",
+    "the leaf blade is lanceolate (lance-shaped; widest below the middle and tapering at both ends)",
+    "the leaf blade is ovate (widest below the middle and broadly tapering at both ends)"
+  ],
+  "Leaf blade surface colors": "the upper side of the leaf blade is relatively uniform in color",
+  "Leaf blade veins": "the lateral veins are parallel or slightly arched in the direction of the tip",
+  "Leaf blade width": "100-180 mm",
+  "Leaf stalk length": "0 mm",
+  "Leaf type": "the leaves are simple (i.e., lobed or unlobed but not separated into leaflets",
+  "Leaflet number": "0",
+  "Stipule twining": null,
+  "Stipules": "there are no stipules on this plant",
+  "Habitat": [
+    "terrestrial",
+    "wetlands"
+  ],
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "edges of wetlands",
+    "forests",
+    "marshes",
+    "river or stream floodplains",
+    "swamps"
+  ],
+  "Plant odor": "the leaves have no particular smell",
+  "Flowering stem growth form": "the flowering stem is held upright",
+  "Flowering stem interior": "the flowering stem is hollow",
+  "Flowering stem leaves": "there is at least one fully-formed leaf on the flowering stem",
+  "Stem hairs": [
+    "the stem has hairs on it",
+    "the stem is nearly or completely hairless"
+  ],
+  "scientific_name": "Veratrum viride",
+  "url": "https://gobotany.nativeplanttrust.org/species/veratrum/viride/",
+  "source": "web"
+}

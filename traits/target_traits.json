@@ -1,0 +1,127 @@
+{
+  "twig": {
+    "Leaf scar arrangement": "there are two leaf scars per node on the stem or twig",
+    "Leaves per node": "there are two leaves per node along the stem",
+    "Leaf arrangement": "opposite: there are two leaves per node along the stem",
+     "Lenticels on twigs": "there are clearly lenticels on the twigs",
+    "Pith type": "the pith inside the twig is solid, completely filled with spongy tissue",
+    "Twig bloom": "there is no bloom on the twig",
+    "Twig papillae (Vaccinium species only)": null,
+    "Twig scales": "there are no scales on the twig surface",
+    "Twig winter color": [
+      "gray",
+      "red"
+    ]
+  },
+  "bud": {
+      "Winter bud shape": [
+    "the winter buds are lanceoloid (lance-shaped, widest below the middle and tapering to the ends)",
+    "the winter buds are ovoid (egg-shaped)"
+  ],
+  "Winter bud stalks": [
+    "the winter buds have no stalks",
+    "the winter buds have short stalks"
+  ]
+  },
+  "flower": {
+    "Enlarged sterile flowers": "there are no enlarged sterile flowers on the plant",
+    "Flower petal color": "red",
+    "Flower symmetry": "there are two or more ways to evenly divide the flower (the flower is radially symmetrical)",
+      "Inflorescence type": [
+    "the inflorescence differs from the choices given",
+    "the inflorescence is a fascicle (compact cluster of flowers)",
+    "the inflorescence is an umbel (with an axis so short it appears the flowers all originate from the same point)"
+  ],
+    "Petal and sepal arrangement": "the flower includes two cycles of petal- or sepal-like structures",
+  "Petal appearance": "the petals are thin and delicate, and pigmented (colored other than green or brown)",
+  },
+  "fruit": {
+      "Berry color": null,
+       "Fruit type (general)": "the fruit is dry and splits open when ripe",
+  "Fruit type (specific)": [
+    "the fruit is a schizocarp (when dry it splits into sections, each holding one or more seeds)",
+    "the fruit is an achene (dry, usually 1-seeded, does not separate or split open at maturity)"
+  ],
+  "Nut with spines (Fagaceae)": null,
+  "Wings on fruit": "the fruit has one or more wings on it"
+  },
+  "general": {
+    "Sap color": "the sap is clear and watery"
+  },
+  "habit": {
+    "Growth form": "the plant is a tree",
+     "Branch cross-section": "the branch is circular in cross-section, or it has five or more sides, so that there are no sharp angles"
+  },
+  "leaf": {
+    "leaf_blade": {
+        "Leaf blade base shape": "The base of the leaf blade is cordate (heart-shaped, with rounded lobes)",
+        "Leaf blade base symmetry": "the leaf blade base is symmetrical",
+        "Leaf blade bloom": "there is a noticeable powdery or waxy bloom on the underside of the leaf",
+        "Leaf blade edges": "the edge of the leaf blade has lobes, or it has both teeth and lobes",
+        "Leaf blade edges (Acer)": "the leaves have teeth throughout the leaf blade, including between the lobes",
+        "Leaf blade flatness": "the leaf is flat (planar) at the edges",
+        "Leaf blade hairs": [
+          "NA",
+          "the hairs on the leaf blade are different from the choices given"
+        ],
+        "Leaf blade length": "60-100 mm",
+        "Leaf blade scales": "there are no scales on the leaf blades",
+        "Leaf blade shape": [
+          "the leaf blade is orbicular (roughly circular, as wide as long)",
+          "the leaf blade is ovate (widest below the middle and broadly tapering at both ends)",
+          "the leaf blade is triangular, with the stalk or attachment point on one of the sides"
+        ],
+        "Leaf blade texture": "the leaf blade is herbaceous (has a leafy texture)",
+        "Leaf blade translucent dots": "there are no translucent dots on the leaf blade",
+        "Leaf blade vein pattern": "the main veins of the leaf blade are palmate (radiate out from the base, like a hand)",
+        "Leaf blade veins": "the leaf blade has three or more main veins running from the base (or near the base) towards the tip",
+        "Leaf blade width": "60-150 mm",
+              "Hairs on underside of leaf blade": [
+              "the underside of the leaf has hairs on it",
+              "the underside of the leaf has no hairs"
+            ],
+        "Hairs on upper side of leaf blade": "the upper side of the leaf is not hairy, or has very few hairs",
+        "Leaf form": "the plant is broad-leaved (with broadly flattened leaf blades)",
+        "Leaf teeth": [
+        "the leaf blade margin is crenate (with rounded teeth) or crenulate (with tiny, rounded teeth)",
+        "the leaf blade margin is serrate (with forward-pointing) or dentate (with outward-pointing) with medium-sized to coarse teeth"
+      ],
+      "Leaf type": "the leaf blade is simple (i.e., lobed or unlobed but not separated into leaflets)",
+      "Specific leaf type": "the leaves are simple (i.e., lobed or unlobed but not separated into leaflets"
+    },
+    "leaf_stalk": {
+       "Leaf stalk": "the leaves have leaf stalks",
+      "Leaf stalk attachment to leaf": "the petiole attaches at the basal margin of the leaf blade",
+      "Leaf stalk nectaries": "there are no nectaries on the leaf stalk",
+      "Leaf stalk shape": "the leaf stalk is not flattened"
+    },
+    "Leaf duration": "the leaves drop off in winter (or they wither but persist on the plant)",
+    "Stipules": "there are no stipules on the plant, or they fall off as the leaf expands"
+  },
+  "Habitat": [
+    "terrestrial",
+    "wetlands"
+  ],
+  "Specific habitat": [
+    "edges of forests",
+    "edges of wetlands",
+    "forests",
+    "meadows or fields",
+    "shores of rivers or lakes",
+    "swamps",
+    "woodlands"
+  ],
+  "Plant odor": "the plant does not have much of an odor, or it has an unpleasant or repellant odor",
+  "Bark": {
+      "Bark texture": [
+    "the bark of an adult plant is ridged or plated",
+    "the bark of an adult plant is thin and smooth"
+  ]
+  },
+
+  "Wings on branch": "the branch does not have wings on it",
+  "armature on plant": "the plant does not have spines, prickles, or thorns",
+  "scientific_name": "Acer rubrum",
+  "url": "https://gobotany.nativeplanttrust.org/species/acer/rubrum/",
+  "source": "local"
+}

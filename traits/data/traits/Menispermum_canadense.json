@@ -1,0 +1,89 @@
+{
+  "Bud scar shape (Fraxinus)": null,
+  "Enlarged sterile flowers": "there are no enlarged sterile flowers on the plant",
+  "Flower petal color": "white",
+  "Flower symmetry": "there are two or more ways to evenly divide the flower (the flower is radially symmetrical)",
+  "Hairs on ovary (Amelanchier)": null,
+  "Inflorescence type": "the inflorescence is a panicle (branched with the individual flowers on stalks)",
+  "Number of pistils": [
+    "2",
+    "3",
+    "4"
+  ],
+  "Petal and sepal arrangement": "the flower includes two cycles of petal- or sepal-like structures",
+  "Petal appearance": "the petals are thin and delicate, and pigmented (colored other than green or brown)",
+  "Petal fusion": "the perianth parts are separate",
+  "Sepal cilia (Ilex)": null,
+  "Stamen number": [
+    "12",
+    "13 or more"
+  ],
+  "Berry color": [
+    "black",
+    "blue"
+  ],
+  "Fruit tissue origin": "there are no flower parts that form part of the fruit",
+  "Fruit type (specific)": "the fruit is a drupe (fleshy, with a firm inner ovary wall that encloses a single seed)",
+  "Nut with spines (Fagaceae)": null,
+  "Sap color": "the sap is clear and watery",
+  "Stalked glands on fruit (Rosa)": null,
+  "Growth form": "the plant is a liana (i.e., a woody plant with a vine-like growth form)",
+  "Hairs on upper side of leaf blade": "the upper side of the leaf is not hairy, or has very few hairs",
+  "Leaf blade base shape": [
+    "the base of the leaf blade is rounded",
+    "the base of the leaf blade is truncate (ends abruptly in a more or less straight line as though cut off)"
+  ],
+  "Leaf blade edges": "the edge of the leaf blade has lobes, or it has both teeth and lobes",
+  "Leaf blade edges (Acer)": null,
+  "Leaf blade flatness": "the leaf is flat (planar) at the edges",
+  "Leaf blade hairs": [
+    "NA",
+    "the hairs on the leaf blade are different from the choices given"
+  ],
+  "Leaf blade length": "100-200 mm",
+  "Leaf blade scales": "there are no scales on the leaf blades",
+  "Leaf blade shape": [
+    "the leaf blade is orbicular (roughly circular, as wide as long)",
+    "the leaf blade is ovate (widest below the middle and broadly tapering at both ends)"
+  ],
+  "Leaf blade translucent dots": "there are no translucent dots on the leaf blade",
+  "Leaf blade width": "100-150 mm",
+  "Leaf duration": "the leaves drop off in winter (or they wither but persist on the plant)",
+  "Leaf lobe tips (Quercus)": null,
+  "Leaf midrib glands": "the midrib of the leaf blade lacks glands on the upper surface",
+  "Leaf stalk": "the leaves have leaf stalks",
+  "Leaf stalk nectaries": "there are no nectaries on the leaf stalk",
+  "Leaf teeth": [
+    "the edge of the leaf blade is entire (has no teeth or lobes)",
+    "the leaf blade margin is undulate (wavy), but does not have teeth"
+  ],
+  "Leaf teeth hairs (Carya)": null,
+  "Leaf type": "the leaf blade is simple (i.e., lobed or unlobed but not separated into leaflets)",
+  "Leaves per node": "there is one leaf per node along the stem",
+  "Specific leaf type": "the leaves are simple (i.e., lobed or unlobed but not separated into leaflets",
+  "Habitat": "terrestrial",
+  "New England state": [
+    "Connecticut",
+    "Massachusetts",
+    "New Hampshire",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "cliffs, balds, or ledges",
+    "forests",
+    "ridges or ledges",
+    "woodlands"
+  ],
+  "Plant odor": "the plant does not have much of an odor, or it has an unpleasant or repellant odor",
+  "Aerial roots": "the plant has no aerial roots",
+  "Bark texture": "the bark of an adult plant is thin and smooth",
+  "Branch brittleness (willows only)": null,
+  "Branch cross-section": "the branch is circular in cross-section, or it has five or more sides, so that there are no sharp angles",
+  "First-year cane (Rubus)": null,
+  "Twig papillae (Vaccinium species only)": null,
+  "Wings on branch": "the branch does not have wings on it",
+  "armature on plant": "the plant does not have spines, prickles, or thorns",
+  "scientific_name": "Menispermum canadense",
+  "url": "https://gobotany.nativeplanttrust.org/species/menispermum/canadense/",
+  "source": "web"
+}

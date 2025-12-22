@@ -1,0 +1,63 @@
+{
+  "Gemma arrangement": null,
+  "Gemma shape": null,
+  "Gemma width": "0 mm",
+  "Leaf differences": "the vegetative leaves within a node are all similar in size and shape",
+  "Leaf length": "4-6 mm",
+  "Leaf orientation": [
+    "the vegetative leaves spread away from the stem",
+    "the vegetative leaves spread slightly away from the stem, at a steep angle"
+  ],
+  "Leaf outline": "the vegetative leaves are long and very narrow (linear)",
+  "Leaf ranks": "12 or more",
+  "Leaf shape": "the vegetative leaves are short and scale-like",
+  "Spore leaf length": "1.5-3.1 mm",
+  "Teeth on leaf edges": [
+    "the edges of the vegetative leaves have no teeth",
+    "the edges of the vegetative leaves have tiny teeth"
+  ],
+  "Habitat": "terrestrial",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "edges of forests",
+    "forests",
+    "human-disturbed or -maintained habitats",
+    "meadows or fields"
+  ],
+  "Cone base at stem": "the base of the spore-cone has a distinct stalk",
+  "Cone stalk branching": "the stalks bearing the spore cones have rows of branches emerging from them",
+  "Cone width": "3-6 mm",
+  "Length of cone": "15-55 mm",
+  "Number of cones": "1-5",
+  "Quillwort itssue covering spores": null,
+  "Same or different spores": "there is only one type of spore present",
+  "Spore girdle": null,
+  "Spore leaf arrangement": "the sporophylls are located on spore cones at the tips of the shoots or branches",
+  "Spore leaf lifespan": "the sporophylls wither and fall off at the end of the growing season",
+  "Spore leaf orientation": "the sporophylls are pressed against the spore cone",
+  "Spore leaf shape": "the spore-bearing leaves are small and scale-like",
+  "Spore leaf teeth": [
+    "The edges of the spore-bearing leaves are smooth, and without teeth",
+    "the edges of the spore-bearing leaves have tiny teeth"
+  ],
+  "Spore texture": "the spore surface has a net-like pattern on it (reticulate)",
+  "Sterile tip of cone": "the spore cone does not have a slender, sterile tip (the whole cone produces spores)",
+  "Branch cross-section": "the outermost level of branches are round, elliptic or semicircular in cross-section",
+  "Branch form": "the branches are smaller than the main stem",
+  "Constriction zones": [
+    "there are constricted zones on the horizontal stem where the leaves are smaller smaller or closer together",
+    "there are constricted zones on the vertical stem where the leaves are smaller smaller or closer together"
+  ],
+  "Form of shoot": "the plant has an upright stem, and the stem has simple branches",
+  "Horizontal stem": "the horizontal stem is on the surface of the ground",
+  "scientific_name": "Lycopodium clavatum",
+  "url": "https://gobotany.nativeplanttrust.org/species/lycopodium/clavatum/",
+  "source": "web"
+}

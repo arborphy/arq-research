@@ -1,0 +1,89 @@
+{
+  "Bud scale number": "there are two scales on the winter bud, and their edges meet",
+  "Bud scar shape (Fraxinus)": null,
+  "Collateral buds": "there are no collateral buds on the sides of the branches",
+  "Superposed buds": "there are no superposed buds on the branch",
+  "Carpels fused": "the carpels are fused to one another",
+  "Enlarged sterile flowers": "there are no enlarged sterile flowers on the plant",
+  "Flower petal color": [
+    "blue",
+    "purple"
+  ],
+  "Flower symmetry": "there are two or more ways to evenly divide the flower (the flower is radially symmetrical)",
+  "Hairs on ovary (Amelanchier)": null,
+  "Inflorescence type": [
+    "the flowers grow out of the axil (point where a branch or leaf is attached to the main stem)",
+    "the inflorescence has only one flower on it"
+  ],
+  "Number of pistils": "1",
+  "Ovary position": "the ovary is above the point of petal and/or sepal  attachment",
+  "Petal and sepal arrangement": "the flower includes two cycles of petal- or sepal-like structures",
+  "Petal appearance": "the petals are thin and delicate, and pigmented (colored other than green or brown)",
+  "Petal fusion": "the perianth parts are fused to form a tube, cup, or bell shape",
+  "Sepal cilia (Ilex)": null,
+  "Stamen number": "5",
+  "Berry color": [
+    "orange",
+    "red",
+    "yellow"
+  ],
+  "Fruit type (general)": "the fruit is fleshy",
+  "Fruit type (specific)": "the fruit is a berry (fleshy, with the wall enclosing one or more sections, with two or more seeds)",
+  "Wings on fruit": "there are no wings on the fruit",
+  "Sap color": "the sap is clear and watery",
+  "Stalked glands on fruit (Rosa)": null,
+  "Growth form": [
+    "the plant is a liana (i.e., a woody plant with a vine-like growth form)",
+    "the plant is a shrub (i.e., a woody plant with several stems growing from the base)"
+  ],
+  "Hairs on upper side of leaf blade": "the upper side of the leaf is not hairy, or has very few hairs",
+  "Leaf blade base shape": "the base of the leaf blade is cuneate (wedge-shaped, tapers to the base with relatively straight, converging edges), or narrow",
+  "Leaf blade edges": "the edge of the leaf blade has no teeth or lobes",
+  "Leaf blade edges (Acer)": null,
+  "Leaf blade hairs": null,
+  "Leaf blade length": "20-30 mm",
+  "Leaf blade shape": [
+    "the leaf blade is elliptic (widest near the middle and tapering at both ends)",
+    "the leaf blade is lanceolate (lance-shaped; widest below the middle and tapering at both ends)",
+    "the leaf blade is oblong (rectangular but with rounded ends)"
+  ],
+  "Leaf blade width": "3-6 mm",
+  "Leaf duration": "the leaves drop off in winter (or they wither but persist on the plant)",
+  "Leaf lobe tips (Quercus)": null,
+  "Leaf stalk": "the leaves have leaf stalks",
+  "Leaf stalk nectaries": "there are no nectaries on the leaf stalk",
+  "Leaf teeth": "the edge of the leaf blade is entire (has no teeth or lobes)",
+  "Leaf teeth hairs (Carya)": null,
+  "Leaf type": "the leaf blade is simple (i.e., lobed or unlobed but not separated into leaflets)",
+  "Leaves per node": "there is one leaf per node along the stem",
+  "Specific leaf type": "the leaves are simple (i.e., lobed or unlobed but not separated into leaflets",
+  "Habitat": "terrestrial",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "edges of forests",
+    "forests",
+    "human-disturbed or -maintained habitats"
+  ],
+  "Plant odor": "the plant does not have much of an odor, or it has an unpleasant or repellant odor",
+  "Aerial roots": "the plant has no aerial roots",
+  "Bark texture": "the bark of an adult plant is thin and smooth",
+  "Branch brittleness (willows only)": null,
+  "First-year cane (Rubus)": null,
+  "Twig papillae (Vaccinium species only)": null,
+  "Twig winter color": [
+    "brown",
+    "gray"
+  ],
+  "Wings on branch": "the branch does not have wings on it",
+  "armature on plant": "the plant has spines, prickles, or thorns",
+  "scientific_name": "Lycium barbarum",
+  "url": "https://gobotany.nativeplanttrust.org/species/lycium/barbarum/",
+  "source": "web"
+}

@@ -1,0 +1,156 @@
+{
+  "Bud scale number": "there are three or more scales on the winter bud, and they overlap like shingles, with one edge covered and the other edge exposed",
+  "Bud scar shape (Fraxinus)": null,
+  "Collateral buds": "there are no collateral buds on the sides of the branches",
+  "Leaf scar arrangement": "there is one leaf scar per node on the stem or twig",
+  "Superposed buds": "there are no superposed buds on the branch",
+  "Terminal bud": "the branch has a terminal bud on it",
+  "Winter bud scale hairs": [
+    "the winter bud scales are hairy",
+    "the winter bud scales have no hairs on them"
+  ],
+  "Winter bud scales": "the winter bud is perulate (partially or completely covered with one or more scales)",
+  "Winter bud shape": [
+    "the winter buds are globose (spherical, globe-shaped)",
+    "the winter buds are ovoid (egg-shaped)"
+  ],
+  "Winter bud stalks": "the winter buds have no stalks",
+  "Carpels fused": "the carpels are fused to one another",
+  "Enlarged sterile flowers": "there are no enlarged sterile flowers on the plant",
+  "Flower petal color": null,
+  "Flower symmetry": "there are two or more ways to evenly divide the flower (the flower is radially symmetrical)",
+  "Hairs on ovary (Amelanchier)": null,
+  "Hypanthium present": "the flower does not have a hypanthium",
+  "Inflorescence position": "the inflorescences grow on the twigs",
+  "Inflorescence type": "the inflorescence is an ament (catkin; slender, usually pendulous inflorescence with crowded unisexual flowers)",
+  "Number of pistils": "1",
+  "Ovary position": "the ovary is below the point of petal and/or sepal attachment",
+  "Petal and sepal arrangement": [
+    "the flower includes only one cycle of petals or sepals",
+    "the flower lacks sepals and petals"
+  ],
+  "Petal appearance": null,
+  "Petal fusion": null,
+  "Sepal appearance": null,
+  "Sepal cilia (Ilex)": null,
+  "Sepal tip glands": null,
+  "Sepals fused only to sepals": null,
+  "Stamen number": [
+    "4",
+    "5",
+    "6"
+  ],
+  "Stamen position relative to petals": null,
+  "Stamens fused": "the stamens are not fused to one another",
+  "Berry color": null,
+  "Fruit tissue origin": "there are no flower parts that form part of the fruit",
+  "Fruit type (general)": [
+    "the fruit is dry and splits open when ripe",
+    "the fruit is dry but does not split open when ripe"
+  ],
+  "Fruit type (specific)": [
+    "the fruit is a drupe (fleshy, with a firm inner ovary wall that encloses a single seed)",
+    "the fruit is a nut (dry and indehiscent, with a hard wall, usually containing only one seed and usually subtended by an involucre)"
+  ],
+  "Nut with spines (Fagaceae)": null,
+  "Wings on fruit": "there are no wings on the fruit",
+  "Sap color": "the sap is clear and watery",
+  "Stalked glands on fruit (Rosa)": null,
+  "Growth form": "the plant is a tree",
+  "Hairs on underside of leaf blade": [
+    "the underside of the leaf has hairs on it",
+    "the underside of the leaf has no hairs"
+  ],
+  "Hairs on upper side of leaf blade": "the upper side of the leaf is not hairy, or has very few hairs",
+  "Leaf blade base shape": [
+    "the base of the leaf blade is attenuate (tapering very gradually to a prolonged tip)",
+    "the base of the leaf blade is cuneate (wedge-shaped, tapers to the base with relatively straight, converging edges), or narrow"
+  ],
+  "Leaf blade base symmetry": [
+    "the leaf blade base is asymmetrical",
+    "the leaf blade base is symmetrical"
+  ],
+  "Leaf blade bloom": "the underside of the leaf has no noticeable bloom",
+  "Leaf blade edges": "the edge of the leaf blade has teeth",
+  "Leaf blade edges (Acer)": null,
+  "Leaf blade flatness": "the leaf is flat (planar) at the edges",
+  "Leaf blade hairs": "at least some of the hairs on the leaf blade are branched",
+  "Leaf blade length": "200-600 mm",
+  "Leaf blade scales": [
+    "there are no scales on the leaf blades",
+    "there are scales on the leaf blades"
+  ],
+  "Leaf blade shape": [
+    "the leaf blade is elliptic (widest near the middle and tapering at both ends)",
+    "the leaf blade is oblanceolate (lance-shaped, but with the widest point above the middle of the leaf blade)",
+    "the leaf blade is oblong (rectangular but with rounded ends)",
+    "the leaf blade is obovate (egg-shaped, but with the widest point above the middle of the leaf blade)",
+    "the leaf blade is ovate (widest below the middle and broadly tapering at both ends)"
+  ],
+  "Leaf blade texture": [
+    "the leaf blade is coriaceous (has a firm, leathery texture)",
+    "the leaf blade is herbaceous (has a leafy texture)"
+  ],
+  "Leaf blade translucent dots": "there are no translucent dots on the leaf blade",
+  "Leaf blade vein pattern": "the main veins of the leaf blade are pinnate (the secondary veins branch off at intervals from the main central vein) and non-arcuate (not arched towards the leaf tip)",
+  "Leaf blade veins": "the leaf blade has one main vein running from the base toward the tip",
+  "Leaf duration": "the leaves drop off in winter (or they wither but persist on the plant)",
+  "Leaf form": "the plant is broad-leaved (with broadly flattened leaf blades)",
+  "Leaf lobe tips (Quercus)": null,
+  "Leaf midrib glands": "the midrib of the leaf blade lacks glands on the upper surface",
+  "Leaf stalk": "the leaves have leaf stalks",
+  "Leaf stalk attachment to leaf": "the petiole attaches at the basal margin of the leaf blade",
+  "Leaf stalk nectaries": "there are no nectaries on the leaf stalk",
+  "Leaf stalk shape": "the leaf stalk is not flattened",
+  "Leaf teeth": [
+    "the leaf blade margin has teeth, which themselves have smaller teeth on them",
+    "the leaf blade margin is serrulate (with forward-pointing) or denticulate (with outward-pointing) with tiny teeth"
+  ],
+  "Leaf teeth hairs (Carya)": "there are no tufts of hairs on the edges of the leaf blade",
+  "Leaf type": "the leaf blade is compound (i.e., made up of two or more discrete leaflets",
+  "Leaves per node": "there is one leaf per node along the stem",
+  "Specific leaf type": "the leaf is compound, with a single terminal leaflet and more than two additional leaflets",
+  "Stipules": "there are no stipules on the plant, or they fall off as the leaf expands",
+  "Habitat": "terrestrial",
+  "New England state": [
+    "Connecticut",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "forests",
+    "ridges or ledges",
+    "woodlands"
+  ],
+  "Plant odor": [
+    "the plant does not have much of an odor, or it has an unpleasant or repellant odor",
+    "the plant has a pleasantly aromatic odor"
+  ],
+  "Aerial roots": "the plant has no aerial roots",
+  "Bark texture": [
+    "the bark of an adult plant is ridged or plated",
+    "the bark of an adult plant is thin and smooth",
+    "the bark of an adult plant peels off easily or hangs off"
+  ],
+  "Branch brittleness (willows only)": null,
+  "Branch cross-section": "the branch is circular in cross-section, or it has five or more sides, so that there are no sharp angles",
+  "First-year cane (Rubus)": null,
+  "Lenticels on twigs": "there are clearly lenticels on the twigs",
+  "Pith type": "the pith inside the twig is solid, completely filled with spongy tissue",
+  "Short shoots": "there are no peg- or knob-like shoots present",
+  "Twig bloom": "there is no bloom on the twig",
+  "Twig hairs": "the twigs have few or no hairs on them",
+  "Twig papillae (Vaccinium species only)": null,
+  "Twig scales": "there are scales on the twig surface",
+  "Twig winter color": [
+    "brown",
+    "red"
+  ],
+  "Wings on branch": "the branch does not have wings on it",
+  "armature on plant": "the plant does not have spines, prickles, or thorns",
+  "scientific_name": "Carya glabra",
+  "url": "https://gobotany.nativeplanttrust.org/species/carya/glabra/",
+  "source": "web"
+}

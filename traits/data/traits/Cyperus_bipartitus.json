@@ -1,0 +1,93 @@
+{
+  "Anther length": "0.4-0.5 mm",
+  "Floral bristle color": null,
+  "Floral bristle number": "0",
+  "Floral bristle relative length": null,
+  "Floral bristles": null,
+  "Floral scale hairs": "there are no hairs on the floral scales",
+  "Floral scale length": "1.9-2.7 mm",
+  "Floral scale nerves": "2-5",
+  "Floral scale shape": [
+    "the floral scales are oblong (rectangular but with rounded ends)",
+    "the floral scales are ovate (roughly egg-shaped)"
+  ],
+  "Floral scale translucent": "the floral scales are opaque",
+  "Flower number per cluster": [
+    "2-5",
+    "5-20"
+  ],
+  "Inflorescence bract angle": "the bracts are vertical or angled only slightly outwards",
+  "Inflorescence bract number": "there are two to five bracts per inflorescence",
+  "Inflorescence bract position (Sparganium)": null,
+  "Inflorescence bracts": "there are at least two bracts, and they are either flat or folded or rolled in at the edges",
+  "Inflorescence branching": "the inflorescence is branched",
+  "Inflorescence crowding": [
+    "the inflorescence is at least somewhat spread out, with at least one branch coming from the main stem",
+    "the inflorescence is crowded together in one tight cluster"
+  ],
+  "Inflorescence position": "the inflorescence is at the tip of the plant",
+  "Inflorescence shape": "the aggregations within the inflorescence are at least somewhat flattened in cross-section",
+  "Inflorescence type": "there are two or more flowers, spikes or flower clusters on a branched inflorescence",
+  "Perianth composition": "there is no perianth on the plant",
+  "Stamen number": [
+    "2",
+    "3"
+  ],
+  "Stigma number": "2",
+  "Style division": "the top two thirds of the style is divided",
+  "floral bristle barbs": null,
+  "plantlets budding at flower bases": "no",
+  "Achene beak length": "0 mm",
+  "Achene surface texture": "the achene has very tiny pits or depressions on it",
+  "Achene tubercle relative width": null,
+  "Achene tubercle width": "0 mm",
+  "Capsule relative length": null,
+  "Fruit cross-section": "the fruit is lenticular (lens-shaped) in cross-section",
+  "Fruit length": "1-1.5 mm",
+  "Fruit type (general)": "the fruit is like a seed, and surrounded by scales",
+  "Fruit type (specific)": "the fruit is an achene (dry, seed-like fruit) without a tubercle (a swelling or projection, usually of a different color or texture)",
+  "Locules in capsule": null,
+  "Seed length": "0 mm",
+  "Seed tail relative length": "0 mm",
+  "Seed tails": null,
+  "Tubercle height": "0 mm",
+  "Lifespan": "the plant lives only a single year or less",
+  "Rhizome thickness": "0 mm",
+  "Underground organs": "there are only slender roots on the plant",
+  "Auricle length": "0 mm",
+  "Auricle texture": null,
+  "Auricles": "there are no auricles on the leaf sheath",
+  "Leaf blade cross-section": "the leaf blade is flat or rolled in at the edges",
+  "Leaf blade length": "10-80 mm",
+  "Leaf blade width": "1-2 mm",
+  "Leaf form": "all the leaves hold their form out of water",
+  "Leaf position on plant": "the attachment points of all the leaves are at or near the base of the plant",
+  "Leaf septa": "the leaf blades do not have transverse septa",
+  "Leaf sheath hairs": "the leaf sheathes are without hairs",
+  "Pedicel length (Typha)": "0 mm",
+  "Stem leaf blade ligules": "there are no ligules at the leaf blade bases",
+  "Stem leaf blades": "there are fully-developed leaves with leaf blades on the main stem",
+  "Width of seed-producing inflorescence": "7-14 mm",
+  "Habitat": "wetlands",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "edges of wetlands",
+    "shores of rivers or lakes"
+  ],
+  "Plant height": "3-30 cm",
+  "Stem shape in cross-section": [
+    "the stem is roughly triangular in cross-section",
+    "the stem is round or oval in cross-section"
+  ],
+  "Stem texture near tip": "the stem feels smooth near the tip",
+  "scientific_name": "Cyperus bipartitus",
+  "url": "https://gobotany.nativeplanttrust.org/species/cyperus/bipartitus/",
+  "source": "web"
+}

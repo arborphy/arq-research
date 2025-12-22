@@ -1,0 +1,59 @@
+{
+  "Life form": "the plant is herbaceous and terrestrial",
+  "Life stage": "the plant is visible as a typical leaf-bearing fern (sporophyte)",
+  "Spore-bearing leaflets": "the spore-bearing fronds are slightly different from the sterile fronds",
+  "Features of leaves": "there are no special features on the leaves",
+  "Leaf blade length": "15-70 cm",
+  "Leaf blade shape": [
+    "the leaf blades are long and very narrow (linear)",
+    "the leaf blades are widest above the base, then taper narrowly towards the tip (lanceolate)"
+  ],
+  "Leaf blade tip shape": "the tip of the leaf blade is a sharp point (acute)",
+  "Leaf blade width": "At least 4 cm",
+  "Leaf divisions": "the leaf blade is compound (divided into leaflets)",
+  "Leaf lifespan": "the leaves remain green all year round, or are green in winter",
+  "Leaf stalk color": "green",
+  "Leaf stalk hairs": "there are no hairs on the leaf stalk",
+  "Leaf stalk length": "86-227 mm",
+  "Leaf stalk relative length": [
+    "the leaf stalk is more than a quarter, but less than three quarters as long as the blade",
+    "the leaf stalk is up to a quarter as long as the blade"
+  ],
+  "Leaf stalk scale location": "the scales are present on both the lower and upper halves of the leaf stalk",
+  "Leaf stalk scales": "the leaf stalk has scales",
+  "Leaf stalk vessels": "3 to 9 bundles",
+  "Leaf vein branching": "the secondary veins of the leaf blade branch dichotomously (two equal branches at each branch point)",
+  "Leaf vein tips": "the veins go all the way to the edge of the leaf blade",
+  "Leaflet relative size": "the bottom leaflets are about half as long as, to slightly longer than, the leaflets from the middle of the frond",
+  "Leaflet stalks": "the leaflets are stalked",
+  "Lobe or leaflet length": "20-60 mm",
+  "Lobe or leaflet pairs": "10-35",
+  "Lobe or leaflet shape": [
+    "the lobe or leaflet is rectangular but with rounded ends (oblong)",
+    "the lobe or leaflet is widest below the middle and tapering at both ends; lance-shaped"
+  ],
+  "Lobe or leaflet width": "3-25 mm",
+  "Plant growth form": "the leaves grow from a rhizome growing at or below the ground",
+  "final leaf segment margin": "the topmost lobe or leaflet of the leaf blade has an edge with teeth tipped with bristles",
+  "Habitat": "terrestrial",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "forests",
+    "talus or rocky slopes"
+  ],
+  "Sorus features": "there are no special features on the sorus",
+  "Sorus shape": "the sori are circular or kidney-shaped",
+  "Sporangia location": "the spores are clustered on sori on the lower surface of the leaf blade",
+  "Sporangium type": "the sporangia are opaque without an annulus and usually without a stalk (leptosporangiate)",
+  "Spore forms": "there is only one type of spore present",
+  "scientific_name": "Polystichum acrostichoides",
+  "url": "https://gobotany.nativeplanttrust.org/species/polystichum/acrostichoides/",
+  "source": "web"
+}

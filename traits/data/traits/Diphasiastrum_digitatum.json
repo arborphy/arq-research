@@ -1,0 +1,66 @@
+{
+  "Gemma arrangement": null,
+  "Gemma shape": null,
+  "Gemma width": "0 mm",
+  "Leaf differences": "the vegetative leaves within a node differ in size and shape",
+  "Leaf length": "0.3-5.5 mm",
+  "Leaf orientation": [
+    "the vegetative leaves are pressed against the stem",
+    "the vegetative leaves spread away from the stem",
+    "the vegetative leaves spread slightly away from the stem, at a steep angle"
+  ],
+  "Leaf outline": [
+    "the  vegetative leaves are widest above the base, then taper narrowly towards the tip (lanceolate)",
+    "the vegetative leaves are long and very narrow (linear)",
+    "the vegetative leaves are roughly triangular, widest at the base where the leaf joins the stem"
+  ],
+  "Leaf ranks": "4",
+  "Leaf shape": "the vegetative leaves are short and scale-like",
+  "Pores on leaves": "there are pores, but only on the underside of the vegetative leaves",
+  "Spore leaf length": "1.7-2.6 mm",
+  "Teeth on leaf edges": "the edges of the vegetative leaves have no teeth",
+  "Habitat": "terrestrial",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "edges of forests",
+    "forests",
+    "human-disturbed or -maintained habitats",
+    "meadows or fields"
+  ],
+  "Cone base at stem": "the base of the spore-cone has a distinct stalk",
+  "Cone stalk branching": "the stalks bearing the spore cones are branched, with pairs of branches",
+  "Cone thickness": "0.6-1 mm",
+  "Cone width": "2-3 mm",
+  "Length of cone": "14-40 mm",
+  "Number of cones": "2-4",
+  "Quillwort itssue covering spores": null,
+  "Same or different spores": "there is only one type of spore present",
+  "Spore girdle": null,
+  "Spore leaf arrangement": "the sporophylls are located on spore cones at the tips of the shoots or branches",
+  "Spore leaf lifespan": "the sporophylls wither and fall off at the end of the growing season",
+  "Spore leaf orientation": "the sporophylls are pressed against the spore cone",
+  "Spore leaf shape": "the spore-bearing leaves are small and scale-like",
+  "Spore leaf teeth": "The edges of the spore-bearing leaves are smooth, and without teeth",
+  "Spore texture": "the spore surface has a net-like pattern on it (reticulate)",
+  "Sterile tip of cone": "there is a slender sterile tip on the end of the spore cone",
+  "Branch cross-section": "the outermost level of branches are approximately rectangular in cross-section",
+  "Branch form": "the branches are smaller than the main stem",
+  "Constriction zones": [
+    "there are constricted zones on the horizontal stem where the leaves are smaller smaller or closer together",
+    "there are constricted zones on the vertical stem where the leaves are smaller smaller or closer together"
+  ],
+  "Form of shoot": "the plant has an upright stem, with branches, those branches having further branches, and so on (tree-like)",
+  "Horizontal stem": "the horizontal stem is on the surface of the ground",
+  "Horizontal stem thickness": "1.3-2.7 mm",
+  "Stem height": "150-500 mm",
+  "scientific_name": "Diphasiastrum digitatum",
+  "url": "https://gobotany.nativeplanttrust.org/species/diphasiastrum/digitatum/",
+  "source": "web"
+}

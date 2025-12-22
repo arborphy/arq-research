@@ -1,0 +1,105 @@
+{
+  "Bud scale number": "there are three or more scales on the winter bud, and they overlap like shingles, with one edge covered and the other edge exposed",
+  "Bud scar shape (Fraxinus)": null,
+  "Collateral buds": "there are no collateral buds on the sides of the branches",
+  "Superposed buds": "there are no superposed buds on the branch",
+  "Carpels fused": "the carpels are fused to one another",
+  "Enlarged sterile flowers": "there are no enlarged sterile flowers on the plant",
+  "Flower petal color": [
+    "pink",
+    "white"
+  ],
+  "Flower symmetry": "there are two or more ways to evenly divide the flower (the flower is radially symmetrical)",
+  "Hairs on ovary (Amelanchier)": null,
+  "Hypanthium present": "the flower has a hypanthium",
+  "Inflorescence type": "the inflorescence is a corymb (with long lower branches and shorter upper branches, giving it a more or less flat-topped look)",
+  "Number of pistils": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ],
+  "Ovary position": "the ovary is above the point of petal and/or sepal  attachment",
+  "Petal and sepal arrangement": "the flower includes two cycles of petal- or sepal-like structures",
+  "Petal appearance": "the petals are thin and delicate, and pigmented (colored other than green or brown)",
+  "Petal fusion": "the perianth parts are separate",
+  "Sepal cilia (Ilex)": null,
+  "Stamen number": "13 or more",
+  "Berry color": null,
+  "Fruit type (general)": "the fruit is dry and splits open when ripe",
+  "Fruit type (specific)": [
+    "the fruit is a follicle (has one ovary that splits along one side to release the seeds)",
+    "the fruit is an aggregate (composed of multiple fused ovaries from one flower)"
+  ],
+  "Nut with spines (Fagaceae)": null,
+  "Wings on fruit": "there are no wings on the fruit",
+  "Sap color": "the sap is clear and watery",
+  "Stalked glands on fruit (Rosa)": null,
+  "Growth form": "the plant is a shrub (i.e., a woody plant with several stems growing from the base)",
+  "Hairs on upper side of leaf blade": [
+    "the upper side of the leaf is fuzzy or hairy",
+    "the upper side of the leaf is not hairy, or has very few hairs"
+  ],
+  "Leaf blade base shape": [
+    "the base of the leaf blade is cuneate (wedge-shaped, tapers to the base with relatively straight, converging edges), or narrow",
+    "the base of the leaf blade is truncate (ends abruptly in a more or less straight line as though cut off)"
+  ],
+  "Leaf blade edges": [
+    "the edge of the leaf blade has lobes, or it has both teeth and lobes",
+    "the edge of the leaf blade has teeth"
+  ],
+  "Leaf blade edges (Acer)": null,
+  "Leaf blade flatness": "the leaf is flat (planar) at the edges",
+  "Leaf blade hairs": "at least some of the hairs on the leaf blade are branched",
+  "Leaf blade length": "20-70 mm",
+  "Leaf blade scales": "there are no scales on the leaf blades",
+  "Leaf blade shape": [
+    "the leaf blade is orbicular (roughly circular, as wide as long)",
+    "the leaf blade is ovate (widest below the middle and broadly tapering at both ends)"
+  ],
+  "Leaf blade texture": "the leaf blade is herbaceous (has a leafy texture)",
+  "Leaf blade width": "40-70 mm",
+  "Leaf duration": "the leaves drop off in winter (or they wither but persist on the plant)",
+  "Leaf lobe tips (Quercus)": null,
+  "Leaf midrib glands": "the midrib of the leaf blade lacks glands on the upper surface",
+  "Leaf stalk": "the leaves have leaf stalks",
+  "Leaf teeth": "the leaf blade margin is serrate (with forward-pointing) or dentate (with outward-pointing) with medium-sized to coarse teeth",
+  "Leaf teeth hairs (Carya)": null,
+  "Leaf type": "the leaf blade is simple (i.e., lobed or unlobed but not separated into leaflets)",
+  "Leaves per node": "there is one leaf per node along the stem",
+  "Specific leaf type": "the leaves are simple (i.e., lobed or unlobed but not separated into leaflets",
+  "Habitat": "terrestrial",
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "edges of forests",
+    "forests",
+    "human-disturbed or -maintained habitats",
+    "river or stream floodplains",
+    "shores of rivers or lakes"
+  ],
+  "Plant odor": "the plant does not have much of an odor, or it has an unpleasant or repellant odor",
+  "Aerial roots": "the plant has no aerial roots",
+  "Bark texture": "the bark of an adult plant peels off easily or hangs off",
+  "Branch brittleness (willows only)": null,
+  "Branch cross-section": "the branch is circular in cross-section, or it has five or more sides, so that there are no sharp angles",
+  "First-year cane (Rubus)": null,
+  "Twig papillae (Vaccinium species only)": null,
+  "Twig winter color": [
+    "brown",
+    "gray",
+    "red"
+  ],
+  "Wings on branch": "the branch does not have wings on it",
+  "armature on plant": "the plant does not have spines, prickles, or thorns",
+  "scientific_name": "Physocarpus opulifolius",
+  "url": "https://gobotany.nativeplanttrust.org/species/physocarpus/opulifolius/",
+  "source": "web"
+}

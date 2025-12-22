@@ -1,0 +1,150 @@
+{
+  "Axillary bulblets": "there are no bulblets being produced in axils",
+  "Anther attachment": "the anther is attached by its base to the filament",
+  "Anther color": "the anthers show no hint of a pink, reddish or purplish tint",
+  "Bulblets replace flowers": "there are no bulblets where the flowers are located",
+  "Carpels fused": "the carpels are fused (the number of carpels equals the number of locules)",
+  "Flower bract length": "1-3 mm",
+  "Flower bracts": "there are bracts associated with the flower",
+  "Flower number": "1-18",
+  "Flower orientation": [
+    "the flowers curve or droop downwards",
+    "the flowers point upward or spread or curve outward"
+  ],
+  "Flower petal color": [
+    "green to brown",
+    "white"
+  ],
+  "Flower petal length": "0.5-2 mm",
+  "Flower shape": [
+    "the flower has a funnel-shaped corolla tube",
+    "the flower is bell-shaped",
+    "the flower is flattened or platter-shaped"
+  ],
+  "Flower symmetry": "there are two or more ways to evenly divide the flower (the flower is radially symmetrical)",
+  "Form of style": "the style is branched above the base",
+  "Fringed petal edges": "the petals are not fringed",
+  "Hairs on flower stalk": "the flower stalk has no hairs on it",
+  "Inflorescence hair glands": null,
+  "Inflorescence length": "20-300 mm",
+  "Inflorescence type": [
+    "the flowers grow out of the axil (point where a branch or leaf is attached to the main stem)",
+    "the inflorescence has only one flower on it",
+    "the inflorescence is a dichasial cyme (an axis with a terminal flower, below it a pair of branches, each with a terminal flower, these branches may in turn have a pair of branches and so on)",
+    "the inflorescence is a spike (a long unbranched stem with flowers along it that lack stalks)"
+  ],
+  "Length of flower stalk": "At least 0 mm",
+  "Length of peduncle": "20-300 mm",
+  "Marks on petals": "there are no noticeable marks on the petals",
+  "Nectar spur": "the flower has no nectar spurs",
+  "Number of carpels": "3",
+  "Number of pistils": "3",
+  "Number of sepals and/or petals": "there are six petals, sepals or tepals in the flower",
+  "Number of styles": "3",
+  "Ovary position": "the ovary is below the point of petal and/or sepal attachment",
+  "Petal and sepal arrangement": "the flower includes only one cycle of petals or sepals",
+  "Petal appearance": "the petals are thin and delicate, and pigmented (colored other than green or brown)",
+  "Petal base": "the petal narrows gradually or does not narrow at the base",
+  "Petal fusion": [
+    "the perianth parts are fused to form a tube, cup, or bell shape",
+    "the perianth parts are separate"
+  ],
+  "Petal hairs on inner/upper surface": "there are no hairs on the inner/upper petal surface",
+  "Petal nectaries": "there are nectaries at the petal bases",
+  "Sepal appearance": "the sepals resemble petals in color and texture",
+  "Sepal length": "0.5-2 mm",
+  "Sepal orientation": [
+    "the sepals are pressed against the plant, or jutting stiffly upward",
+    "the sepals are slightly curved outwards from the plant"
+  ],
+  "Sepals fused only to sepals": [
+    "the sepals are fused to each other (often along with the petals in monocots), at least near their bases",
+    "the sepals are separate from one another"
+  ],
+  "Spathe": "the plant does not have a spathe",
+  "Spathe form": null,
+  "Spathe length": "0 mm",
+  "Stamen number": "6",
+  "Stamen position relative to petals": null,
+  "Stamen types": "the stamens within a cycle are distinctly of two types",
+  "Stamens fused outwards": "the stamens are fused to the petals or tepals at or near their bases",
+  "Style petal-like": "the style is not broad and flattened like a petal",
+  "Tepals": "the petals and sepals are similar in size and color",
+  "Berry color": null,
+  "Capsule ridges": "there are three ribs or wings on the capsule",
+  "Fruit compartments": "there are three locules in the fruit",
+  "Fruit length": "10-30 mm",
+  "Fruit stalk orientation": "the fruits point upward or spread or curve outward",
+  "Fruit type (general)": "the fruit is dry and splits open when ripe",
+  "Fruit type (specific)": "the fruit is a capsule (splits along two or more seams, apical teeth or pores when dry, to release two or more seeds)",
+  "Fruit width": "10-35 mm",
+  "Other markings on berry": null,
+  "Sap": "the sap is clear and watery",
+  "Lifespan": "the plant lives more than two years",
+  "Root septa": "the roots do not have transverse septa",
+  "Underground organs": "the plant has a rhizome (a horizontal underground stem with roots growing from it)",
+  "Hairs on underside of leaf blade": [
+    "the underside of the leaf is fuzzy or hairy",
+    "the underside of the leaf is not hairy, or has very few hairs"
+  ],
+  "Hairs on upper side of leaf blade": "the upper side of the leaf is not hairy, or has very few hairs",
+  "Leaf arrangement": [
+    "alternate: there is one leaf per node along the stem",
+    "opposite: there are two leaves per node along the stem",
+    "whorled: there are three or more leaves per node along the stem"
+  ],
+  "Leaf blade basal lobes": "the leaf blades are lobed at their bases",
+  "Leaf blade base": "the leaf has a distinct leaf stalk (petiole)",
+  "Leaf blade base shape": [
+    "The base of the leaf blade is cordate (heart-shaped, with rounded lobes) or sagittate (arrow-shaped, with pointed, backward-facing lobes)",
+    "the base of the leaf blade is rounded",
+    "the base of the leaf blade is truncate (ends abruptly in a more or less straight line as though cut off)"
+  ],
+  "Leaf blade bloom": "the underside of the leaf blade has a noticeable waxy or powdery bloom",
+  "Leaf blade cross-section": "the leaf blade is more or less flat in cross-section",
+  "Leaf blade faces": "both surfaces of the leaf blade are exposed",
+  "Leaf blade form": "Fully-formed (i.e., expanded), +/- green leaf blades are found somewhere on the plant",
+  "Leaf blade length": "30-130 mm",
+  "Leaf blade orientation": "the upper surface of the leaf blade faces the stem of the plant",
+  "Leaf blade shape": [
+    "the leaf blade is cordate (heart-shaped with backward-facing rounded lobes), or sagittate (arrow-shaped with backward-facing pointed lobes)",
+    "the leaf blade is ovate (widest below the middle and broadly tapering at both ends)"
+  ],
+  "Leaf blade surface colors": "the upper side of the leaf blade is relatively uniform in color",
+  "Leaf blade tip": [
+    "the tip of the leaf blade is acuminate (tapers to a long, thin point)",
+    "the tip of the leaf blade is acute (sharply pointed)",
+    "the tip of the leaf blade is caudate (has  a very long tail-like projection ending in a point)"
+  ],
+  "Leaf blade veins": "the lateral veins are parallel or slightly arched in the direction of the tip",
+  "Leaf blade width": "20-130 mm",
+  "Leaf stalk length": "30-140 mm",
+  "Leaf type": "the leaves are simple (i.e., lobed or unlobed but not separated into leaflets",
+  "Leaflet number": "0",
+  "Stipule twining": null,
+  "Stipules": "there are no stipules on this plant",
+  "Habitat": [
+    "terrestrial",
+    "wetlands"
+  ],
+  "New England state": [
+    "Connecticut",
+    "Massachusetts",
+    "Rhode Island"
+  ],
+  "Specific habitat": [
+    "edges of wetlands",
+    "forests",
+    "river or stream floodplains"
+  ],
+  "Plant odor": "the leaves have no particular smell",
+  "Flowering stem growth form": "the flowering stem trails along the ground or on other vegetation, or floats in the water",
+  "Flowering stem leaves": "there is at least one fully-formed leaf on the flowering stem",
+  "Stem hairs": [
+    "the stem has hairs on it",
+    "the stem is nearly or completely hairless"
+  ],
+  "scientific_name": "Dioscorea villosa",
+  "url": "https://gobotany.nativeplanttrust.org/species/dioscorea/villosa/",
+  "source": "web"
+}

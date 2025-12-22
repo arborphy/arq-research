@@ -1,0 +1,106 @@
+{
+  "Anther number": "0-3",
+  "Awn on glume": "the glume has no awn",
+  "Bristles below spikelets": "no",
+  "Floret lower bract texture": "the lemma is hard and firm",
+  "Floret number": "1-2",
+  "Floret types within spikelet": [
+    "NA",
+    "there are at least two distinct forms of florets within one spikelet"
+  ],
+  "Glume relative length": [
+    "neither glume is quite as long as all of the florets",
+    "one or both glumes are as long or longer than all of the florets"
+  ],
+  "Glume shape": "the glume is flat or curved in cross-section",
+  "Glume veins": [
+    "1",
+    "3",
+    "5",
+    "7 or more"
+  ],
+  "Inflorescence arrangement": "the spikelets are uniform",
+  "Inflorescence axis orientation": "the inflorescence axis is straight",
+  "Inflorescence branches": "the flowers are attached to branches rather than to the main axis of the inflorescence",
+  "Inflorescence length": "30-120 mm",
+  "Inflorescence type (general)": "the spikelets are borne on stalks or on branches",
+  "Inflorescence type (specific)": "the inflorescence is branched, and the branches do NOT both grow from the same side of the plant AND look like spikes",
+  "Lemma awn base": null,
+  "Lemma awn coiled": null,
+  "Lemma awn length": "0 mm",
+  "Lemma awn number": "the lemma has no awn",
+  "Lemma awn orientation": null,
+  "Lemma cross-section": "the lemma is flat or rounded if you cut across the midpoint",
+  "Lemma hairs": [
+    "the lemma has fine hairs between the veins",
+    "the lemma is hairless between the veins"
+  ],
+  "Lemma surface": "the surface of the lemma is relatively smooth (not counting any longitudinal veins or hairs)",
+  "Lemma tip": "the lemma tip is a simple point, with or without an awn (long narrow extension ending in a point)",
+  "Lemma vein number": [
+    "3",
+    "5",
+    "7 or more"
+  ],
+  "One or more florets": [
+    "there is more than one floret per spikelet",
+    "there is one floret per spikelet"
+  ],
+  "Palea relative length": "palea is one half to fully as long as lemma",
+  "Spikelet axis tip": "there is no extension of the spikelet axis beyond the tip of the spikelet",
+  "Spikelet length": "1.5-2.5 mm",
+  "Spikelets spiny": "the spikelets do not appear spiny",
+  "Upper glume shape": "the upper glume is widest at or below the middle",
+  "Lifespan": "the plant lives more than two years",
+  "Roots": "the plant has a root mass with a hardened top",
+  "Basal leaves": "the plant has large or prominent tufts of leaves at the base of the flowering stem",
+  "Leaf auricles": "the leaves do not have auricles",
+  "Leaf blade base": [
+    "the leaf blade cuts in abruptly to the narrower base, or has rounded lobes on either side of the base (heart-shaped)",
+    "the leaf blade is rounded in to a narrower base, or the blade cuts in abruptly to the narrower base",
+    "the leaf is tapered gradually to the base"
+  ],
+  "Leaf blade width": "5-14 mm",
+  "Leaf ligule length": "0-1 mm",
+  "Leaf ligule type": "the leaf ligule is in the form of fine hairs",
+  "Leaf sheath closed around stem": "the margins of the leaf sheath are overlapping and not fused together except in the basal half (or less)",
+  "Leaf sheath hairs": [
+    "there are hairs on the surface of the leaf sheath",
+    "there are no hairs on the surface of the leaf sheath"
+  ],
+  "Orientation of topmost leaf": [
+    "the flag leaf is held outward at more than a 45 degree angle from the stem, or it curves downwards from the horizontal",
+    "the flag leaf is held upright, or at less than a 45 degree angle out from the stem"
+  ],
+  "Habitat": [
+    "terrestrial",
+    "wetlands"
+  ],
+  "New England state": [
+    "Connecticut",
+    "Maine",
+    "Massachusetts",
+    "New Hampshire",
+    "Rhode Island",
+    "Vermont"
+  ],
+  "Specific habitat": [
+    "bogs",
+    "cliffs, balds, or ledges",
+    "edges of wetlands",
+    "forests",
+    "human-disturbed or -maintained habitats",
+    "meadows or fields",
+    "shores of rivers or lakes",
+    "swamps",
+    "woodlands"
+  ],
+  "Hairs at nodes": [
+    "the stem nodes are hairless or they have very sparse hairs",
+    "the stem nodes have hairs that stand out at a shallow angle, or they curve downwards"
+  ],
+  "Stem spacing": "the stems grow close together in compact clusters or tufts",
+  "scientific_name": "Dichanthelium dichotomum",
+  "url": "https://gobotany.nativeplanttrust.org/species/dichanthelium/dichotomum/",
+  "source": "web"
+}
