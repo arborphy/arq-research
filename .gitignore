@@ -18,3 +18,5 @@ logs/
 metadata.json
 profiles.yml
 .user.yml
+
+.local
