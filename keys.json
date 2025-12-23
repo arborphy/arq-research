@@ -1,0 +1,78 @@
+{
+    "source": {
+            "title": "Newcomb's Wildflower Guide", 
+            "Link":  "https://lccn.loc.gov/77000047" ,
+            "Excerpt": "https://docs.google.com/document/d/1ohR_6L0dy45CLdoE2RFBeweMc-wv_rL--Zpi9P8fTqw/edit?usp=sharing"
+            
+        },
+
+    "key": {
+                "Flower Type": {
+                                        "Plant Type": {
+                                                       [
+
+                                                            "Wildflowers" : {
+                                                                                "Leaf Type"
+                                                            },
+                                                            "Shrubs",
+                                                            "Vines"
+                                                       ]
+                                                     }
+
+                                    }
+
+        "Flower Type Values": [
+                    "Irregular Flowers",
+                    "2 Regular Parts",
+                    "3 Regular Parts",
+                    "4 Regular Parts",
+                    "5 Regular Parts",
+                    "6 Regular Parts",
+                    "7 or More Regular Parts",
+                    "Parts Indistinguishable"
+                ]
+        "Leaf Type Values": [
+                                "No Apparent Leaves",
+                                "Basal Leaves Only",
+                                "Alternate Leaves",
+                                "Opposite or Whorled Leaves"
+                            ]
+        
+        
+        }
+} 
+
+
+
+
+{
+    "source": {
+            "title": "National Audobon Society Field Guide to Trees Eastern Region" ,
+            "Link":  https://archive.org/details/audubonsocietyfi00litt
+        },
+
+    "key": {
+        "Leaf Type Value Categories": [
+                    "Needle-leaf Conifers",
+                    "Scale-leaf Conifers",
+                    "Untoothed Simple Leaves",
+                    "Toothed Simple Leaves",
+                    "Compound Leaves",
+                    "Yuccas and Palmettos"
+                ]
+        "Leaf surface texture values: [
+                        "Smooth",
+                        "Hairy",
+                        "Other"
+        ],
+        "Leaf Type": {
+                        "Leaf Surface Texture" {
+                                                    "Surface Texture" {
+                                                                                "Leaf Vein Pattern 
+                                                                            }
+                                                 }
+
+                     }
+
+        }
+} 
