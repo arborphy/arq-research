@@ -1,0 +1,140 @@
+TASK #3 PHASE 1: UNDEFINED TERMS ANALYSIS
+Date: 2025-12-29
+================================================================================
+
+METHODOLOGY:
+Scanned all 87 definitions in synonymDefinitions across 3 trait categories
+Extracted botanical terms used within definitions
+Cross-referenced against existing defined terms in the document
+
+================================================================================
+UNDEFINED TERMS IDENTIFIED (Priority Order)
+================================================================================
+
+CRITICAL TERMS (used in multiple definitions):
+-----------------------------------------------
+1. **node** - Used in: opposite (line 684), whorled (line 689), trailing (line 586)
+   Context: "Arising in pairs at the same node", "Three or more organs arranged in a circle at one node", "not rooting at the nodes"
+   
+2. **axis** - Used in: alternate (line 661), verticil (line 702)
+   Context: "Inserted at different levels of the axis", "ring of similar parts arranged around an axis"
+   
+3. **stem** - Used in: herb (line 524), herbaceous (line 530), acaulescent (line 651), phyllotaxis (line 603), spiral (line 666), alternate spiral (line 670), distichous (line 674), opposite (line 684), twiner (line 594), scandent (line 590)
+   Context: Multiple uses - "stems dying back seasonally", "arrangement of leaves on a stem", "twining stems"
+   
+4. **whorl** - Used in: polymerous (line 470), multimerous (line 474), verticillate (line 693), verticil (line 702)
+   Context: "numerous members in each whorl", "parts in each floral whorl", "Arranged in a whorl"
+   Note: "verticil" is defined as "A whorl" but "whorl" itself is not defined
+   
+5. **organ** - Used in: bilateral symmetry (line 382), rosette (line 639), whorled (line 689), decussate (line 696)
+   Context: "two halves of an organ", "cluster of leaves or other organs", "Three or more organs"
+   
+6. **plane** - Used in: actinomorphic (line 371), zygomorphic (line 377), bilateral symmetry (line 382), bilaterally symmetrical (line 386), monosymmetric (line 390)
+   Context: "along any plane", "along only one plane", "single plane of symmetry"
+
+STRUCTURAL/ANATOMICAL TERMS:
+-----------------------------
+7. **inflorescence** - Used in: composite head (line 483), head (line 497)
+   Context: "A type of inflorescence (capitulum)", "Short dense inflorescence"
+   
+8. **bract** - Used in: capitulum (line 488)
+   Context: "surrounded by specialised bracts, the involucre"
+   
+9. **involucre** - Used in: capitulum (line 488)
+   Context: "surrounded by specialised bracts, the involucre"
+   
+10. **floret** - Used in: composite head (line 483), pseudanthium (line 493)
+    Context: "many small florets are densely packed", "multiple flowers (florets)"
+    
+11. **sessile** - Used in: capitulum (line 488)
+    Context: "A compact cluster of ± sessile flowers"
+    
+12. **root** - Used in: radical leaves (line 647)
+    Context: "Leaves arising from the root or root crown"
+
+MORPHOLOGICAL/GROWTH TERMS:
+----------------------------
+13. **prostrate** - Used in: trailing (line 586)
+    Context: "Prostrate but not rooting at the nodes"
+    
+14. **tendril** - Used in: scandent (line 590)
+    Context: "by means of hooks, tendrils, or twining stems"
+    
+15. **hook** - Used in: scandent (line 590)
+    Context: "by means of hooks, tendrils, or twining stems"
+    
+16. **twining** - Used in: liana (line 578), scandent (line 590), twiner (line 594)
+    Context: "woody climbing or twining plant", "twining stems", "twines its stem"
+    Note: "twiner" is defined but "twining" (the action) is not
+    
+17. **rooting** - Used in: trailing (line 586)
+    Context: "not rooting at the nodes"
+
+DESCRIPTIVE/DIRECTIONAL TERMS:
+-------------------------------
+18. **longitudinal** - Used in: actinomorphic (line 371)
+    Context: "any longitudinal plane passing through the axis"
+    
+19. **radial** / **radially** - Used in: actinomorphic (line 371), bilateral symmetry (line 382)
+    Context: "Radially symmetric", "radially symmetrical flower"
+    Note: "radial symmetry" is in synonymToSource but not defined in synonymDefinitions
+    
+20. **bilateral** / **bilaterally** - Used in: zygomorphic (line 377), bilateral symmetry (line 382)
+    Context: "bilaterally symmetric"
+    Note: "bilateral symmetry" is defined but "bilateral" as an adjective is not standalone
+    
+21. **mirror image** - Used in: actinomorphic (line 371), zygomorphic (line 377), bilateral symmetry (line 382)
+    Context: "produce a mirror image on either side", "divisible into mirror-image halves"
+
+PLANT PARTS/STRUCTURES:
+------------------------
+22. **flower parts** - Used in: dimerous (line 394), trimerous (line 409), tetramerous (line 424), pentamerous (line 439), hexamerous (line 454)
+    Context: "With flower parts in sets of..."
+    
+23. **petal** - Referenced in terminologyNotes (line 263) but not defined
+    Context: "5-petaled flower"
+    
+24. **support** - Used in: climber (line 573), climbing plant (line 582), twiner (line 594)
+    Context: "uses as supports", "for support", "around a support"
+
+ADDITIONAL TERMS:
+-----------------
+25. **cluster** - Used in: rosette (line 639), capitulum (line 488)
+    Context: "A cluster of leaves", "compact cluster"
+    
+26. **circle** - Used in: rosette (line 639), whorled (line 689)
+    Context: "arranged in a circle"
+    
+27. **row** - Used in: distichous (line 674)
+    Context: "In two opposite rows"
+    
+28. **pattern** - Used in: phyllotaxis (line 603), spiral (line 666), alternate spiral (line 670), scattered (line 679)
+    Context: "leaf arrangement patterns", "spiral pattern", "not in any obvious pattern"
+
+================================================================================
+SUMMARY STATISTICS
+================================================================================
+
+Total undefined terms identified: 28
+Critical (high priority): 6 terms
+Structural/anatomical: 6 terms
+Morphological/growth: 5 terms
+Descriptive/directional: 4 terms
+Plant parts/structures: 4 terms
+Additional: 3 terms
+
+Terms that are partially defined (need clarification):
+- whorl (defined as "verticil" but not standalone)
+- radial/radially (radial symmetry mentioned but not defined)
+- bilateral/bilaterally (bilateral symmetry defined but not adjective form)
+- twining (twiner defined but not the action)
+
+================================================================================
+RECOMMENDATIONS FOR PHASE 2
+================================================================================
+
+1. Prioritize the 6 critical terms first (node, axis, stem, whorl, organ, plane)
+2. Add structural terms needed for flower descriptions (inflorescence, bract, involucre, floret, sessile)
+3. Add morphological terms for growth forms (prostrate, tendril, hook, twining, rooting)
+4. Consider whether descriptive terms need formal definitions or can remain as common language
+5. Verify which terms are in KEW_GLOSSARY before proceeding to other sources

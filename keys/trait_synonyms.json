@@ -1,5 +1,6 @@
 {
   "title": "Plant Trait Synonym Sources",
+  "fileFormat": "https://json-schema.org/draft-07/schema#",
   "version": "1.1",
   "description": "Authoritative sources for botanical terminology and synonyms used in plant trait ontologies",
   "relatedOntology": "newcomb_traits_ontology.json",
@@ -235,6 +236,25 @@
           "life form"
         ]
       }
+    },
+
+    "MOBOT_LATIN": {
+      "id": "MOBOT_LATIN",
+      "name": "Missouri Botanical Garden Latin Dictionary",
+      "type": "online_dictionary",
+      "url": "https://www.mobot.org/mobot/latindict/search_text.aspx",
+      "institution": "Missouri Botanical Garden",
+      "verified": true,
+      "description": "Comprehensive online Latin-English botanical dictionary maintained by Missouri Botanical Garden. Provides etymological and definitional information for botanical Latin terms.",
+      "termsProvided": {
+        "synonyms": ["actinomorphic"]
+      },
+      "incorporationStatus": {
+        "lastUpdated": "2025-12-29",
+        "termsVerified": 1,
+        "termsRemaining": "~72 terms pending verification",
+        "note": "Terms are being added incrementally as they are verified in the MOBOT Latin Dictionary"
+      }
     }
   },
 
@@ -249,12 +269,20 @@
     }
   },
 
-  "synonymToSource": {
+    "synonymToSource": {
+    "actinomorphic": ["KEW_GLOSSARY", "WIKI_FLORAL_SYMMETRY", "WIKI_GLOSSARY", "MOBOT_LATIN"],
     "zygomorphic": ["KEW_GLOSSARY", "WIKI_FLORAL_SYMMETRY", "WIKI_GLOSSARY"],
     "bilateral symmetry": ["WIKI_FLORAL_SYMMETRY"],
     "bilaterally symmetrical": ["WIKI_GLOSSARY"],
     "monosymmetric": ["WIKI_FLORAL_SYMMETRY"],
     
+    "two-parted": ["WIKI_GLOSSARY"],
+    "three-parted": ["WIKI_GLOSSARY"],
+    "four-parted": ["WIKI_GLOSSARY"],
+    "five-parted": ["WIKI_GLOSSARY"],
+    "six-parted": ["WIKI_GLOSSARY"],
+    "many-parted": ["WIKI_GLOSSARY"],
+    "multimerous": ["WIKI_GLOSSARY"],
     "dimerous": ["WIKI_FLORAL_SYMMETRY"],
     "2-merous": ["KEW_GLOSSARY"],
     "trimerous": ["WIKI_FLORAL_SYMMETRY", "KEW_GLOSSARY"],
@@ -312,6 +340,7 @@
     "acaulescent": ["EBSCO_LEAF", "WIKI_GLOSSARY", "KEW_GLOSSARY"],
     "rosulate": ["KEW_GLOSSARY"],
     
+    "alternate": ["WIKI_PHYLLOTAXIS", "KEW_GLOSSARY"],
     "spiral": ["WIKI_PHYLLOTAXIS", "KEW_GLOSSARY"],
     "alternate spiral": ["EBSCO_LEAF"],
     "distichous": ["WIKI_PHYLLOTAXIS", "KEW_GLOSSARY"],
@@ -322,5 +351,471 @@
     "verticillate": ["EBSCO_LEAF", "KEW_GLOSSARY"],
     "decussate": ["WIKI_PHYLLOTAXIS", "EBSCO_LEAF", "KEW_GLOSSARY"],
     "verticil": ["KEW_GLOSSARY"]
+  },
+  "synonymDefinitions": {
+    "_metadata": {
+      "primarySource": "KEW_GLOSSARY",
+      "citation": "Beentje, H.J. (2010). The Kew Plant Glossary. Royal Botanic Gardens, Kew.",
+      "note": "Definitions marked [KEW] are verbatim or paraphrased from The Kew Plant Glossary. Page numbers reference the PDF.",
+      "mobotLatinStatus": {
+        "lastUpdated": "2025-12-29",
+        "termsAdded": 1,
+        "note": "Missouri Botanical Garden Latin Dictionary definitions are being added incrementally. Terms verified: actinomorphic"
+      }
+    },
+
+    "flowerSymmetryAndParts": {
+      "traitId": "flower_symmetry_and_parts",
+      
+      "actinomorphic": {
+        "definition": "Radially symmetric, so that a line drawn through the middle of a structure along any plane will produce a mirror image on either side; regular; capable of bisection through two or more planes into similar halves. OPPOSITE: zygomorphic",
+        "source": "MOBOT_LATIN",
+        "latinForms": "actinomorphicus,-a,-um (adj.A), actinomorphus,-a,-um (adj.A)",
+        "relatedTerms": ["radial symmetry", "symmetric", "zygomorphic"]
+      },
+      "zygomorphic": {
+        "definition": "(of flowers) bilaterally symmetric, divisible into mirror-image halves along only one plane. OPPOSITE: actinomorphic",
+        "source": "KEW_GLOSSARY",
+        "page": 7
+      },
+      "bilateral symmetry": {
+        "definition": "Symmetry in which the two halves of an organ are mirror images of each other along a single plane",
+        "source": "WIKI_FLORAL_SYMMETRY"
+      },
+      "bilaterally symmetrical": {
+        "definition": "Having bilateral symmetry; divisible into equal halves along one plane only",
+        "source": "WIKI_GLOSSARY"
+      },
+      "monosymmetric": {
+        "definition": "With a single plane of symmetry; synonym for zygomorphic",
+        "source": "WIKI_FLORAL_SYMMETRY"
+      },
+      
+      "dimerous": {
+        "definition": "With flower parts in sets of two",
+        "source": "KEW_GLOSSARY",
+        "page": 39
+      },
+      "2-merous": {
+        "definition": "The number of parts of a flower being 2, or in 2s (from suffix -merous)",
+        "source": "KEW_GLOSSARY",
+        "page": 1
+      },
+      "two-parted": {
+        "definition": "Divided into or consisting of two parts",
+        "source": "WIKI_GLOSSARY"
+      },
+      
+      "trimerous": {
+        "definition": "With flower parts in sets of three",
+        "source": "KEW_GLOSSARY",
+        "note": "From prefix tri- meaning 'with three'"
+      },
+      "3-merous": {
+        "definition": "The number of parts of a flower being 3, or in 3s",
+        "source": "KEW_GLOSSARY",
+        "page": 1
+      },
+      "three-parted": {
+        "definition": "Divided into or consisting of three parts",
+        "source": "WIKI_GLOSSARY"
+      },
+      
+      "tetramerous": {
+        "definition": "With flower parts in sets of four",
+        "source": "KEW_GLOSSARY",
+        "note": "From prefix tetra- meaning 'with four'"
+      },
+      "4-merous": {
+        "definition": "The number of parts of a flower being 4, or in 4s",
+        "source": "KEW_GLOSSARY",
+        "page": 1
+      },
+      "four-parted": {
+        "definition": "Divided into or consisting of four parts",
+        "source": "WIKI_GLOSSARY"
+      },
+      
+      "pentamerous": {
+        "definition": "With flower parts in sets of five",
+        "source": "KEW_GLOSSARY",
+        "note": "From prefix penta- meaning 'with five'"
+      },
+      "5-merous": {
+        "definition": "The number of parts of a flower being 5, or in 5s",
+        "source": "KEW_GLOSSARY",
+        "page": 1
+      },
+      "five-parted": {
+        "definition": "Divided into or consisting of five parts",
+        "source": "WIKI_GLOSSARY"
+      },
+      
+      "hexamerous": {
+        "definition": "With flower parts in sets of six",
+        "source": "KEW_GLOSSARY",
+        "note": "From prefix hexa- meaning 'with six'"
+      },
+      "6-merous": {
+        "definition": "The number of parts of a flower being 6, or in 6s",
+        "source": "KEW_GLOSSARY",
+        "page": 1
+      },
+      "six-parted": {
+        "definition": "Divided into or consisting of six parts",
+        "source": "WIKI_GLOSSARY"
+      },
+      
+      "polymerous": {
+        "definition": "With many parts; having numerous members in each whorl",
+        "source": "WIKI_GLOSSARY"
+      },
+      "multimerous": {
+        "definition": "With many parts in each floral whorl",
+        "source": "WIKI_GLOSSARY"
+      },
+      "many-parted": {
+        "definition": "Divided into or consisting of many (7+) parts",
+        "source": "WIKI_GLOSSARY"
+      },
+      
+      "composite head": {
+        "definition": "A type of inflorescence (capitulum) characteristic of Compositae/Asteraceae where many small florets are densely packed",
+        "source": "KEW_GLOSSARY",
+        "relatedEntry": "capitulum"
+      },
+      "capitulum": {
+        "definition": "A compact cluster of ± sessile flowers; the capitulum may be surrounded by specialised bracts, the involucre",
+        "source": "KEW_GLOSSARY",
+        "page": 25
+      },
+      "pseudanthium": {
+        "definition": "A flower-like structure composed of multiple flowers (florets) aggregated together, as in Compositae/Asteraceae",
+        "source": "WIKI_FLORAL_SYMMETRY"
+      },
+      "head": {
+        "definition": "Short dense inflorescence, capitulum",
+        "source": "KEW_GLOSSARY",
+        "page": 55
+      }
+    },
+
+    "growthForm": {
+      "traitId": "growth_form",
+      
+      "growth habit": {
+        "definition": "General growth form category used in USDA PLANTS (e.g., tree, shrub, vine, forb/herb, graminoid)",
+        "source": "USDA_PLANTS"
+      },
+      "plant growth form": {
+        "definition": "General morphology category of plants as used in trait databases (e.g., TRY)",
+        "source": "PMC_TRY_PUBLICATION"
+      },
+      "life form": {
+        "definition": "General morphological and functional category for plants used in trait ecology (e.g., TRY)",
+        "source": "PMC_TRY_PUBLICATION"
+      },
+      "habit": {
+        "definition": "General appearance, growth form, or mode of growth of a plant",
+        "source": "KEW_GLOSSARY"
+      },
+
+      "herb": {
+        "definition": "A plant having the nature of a herb; non-woody, with stems dying back seasonally",
+        "source": "KEW_GLOSSARY",
+        "note": "From suffix -aceous: 'herbaceous, having the nature of a herb'",
+        "page": 1
+      },
+      "herbaceous": {
+        "definition": "Having the nature of a herb; not woody; with above-ground parts dying back seasonally",
+        "source": "KEW_GLOSSARY",
+        "page": 1
+      },
+      "forb": {
+        "definition": "Herbaceous plant less than 2 m tall, excluding grass-like plants, usually annual, usually covered in leaves (no bare stem) [rather vague term, not recommended]",
+        "source": "KEW_GLOSSARY",
+        "page": 49
+      },
+      "forb/herb": {
+        "definition": "USDA growth habit category for non-woody vascular plants that are not graminoids",
+        "source": "USDA_PLANTS"
+      },
+      "herbaceous plant": {
+        "definition": "A plant that has no persistent woody stem above ground",
+        "source": "WIKI_GLOSSARY"
+      },
+      
+      "bush": {
+        "definition": "1. Woody plant intermediate between shrub and tree, 3–7 m high and usually multistemmed [not recommended]; 2. Low and thick shrub, usually without a distinct trunk [not recommended]; 3. Often used in the same sense as shrub [shrub is preferred]",
+        "source": "KEW_GLOSSARY",
+        "page": 22
+      },
+      "woody shrub": {
+        "definition": "A shrub with persistent woody stems; USDA growth habit category",
+        "source": "USDA_PLANTS"
+      },
+      "subshrub": {
+        "definition": "A low-growing shrub, woody only at the base with the upper parts herbaceous and often dying back",
+        "source": "WIKI_GLOSSARY"
+      },
+      "fruticose": {
+        "definition": "With the characters of a shrub, shrubby",
+        "source": "KEW_GLOSSARY",
+        "page": 51
+      },
+      "suffrutescent": {
+        "definition": "Slightly shrubby; woody only at the base",
+        "source": "KEW_GLOSSARY",
+        "relatedEntry": "subshrub"
+      },
+      
+      "climber": {
+        "definition": "A plant that grows upwards by attaching itself to other structures which it uses as supports; by contrast, a scrambler does not attach itself to its supports",
+        "source": "KEW_GLOSSARY",
+        "page": 29
+      },
+      "liana": {
+        "definition": "A woody climbing or twining plant, especially in tropical forests",
+        "source": "WIKI_GLOSSARY"
+      },
+      "climbing plant": {
+        "definition": "A plant that climbs using other plants or structures for support",
+        "source": "EBSCO_LEAF"
+      },
+      "trailing": {
+        "definition": "Prostrate but not rooting at the nodes; growing along the ground",
+        "source": "WIKI_GLOSSARY"
+      },
+      "scandent": {
+        "definition": "Climbing, usually by means of hooks, tendrils, or twining stems",
+        "source": "WIKI_GLOSSARY"
+      },
+      "twiner": {
+        "definition": "A climbing plant that twines its stem around a support",
+        "source": "KEW_GLOSSARY"
+      }
+    },
+
+    "leafArrangement": {
+      "traitId": "leaf_arrangement",
+      
+      "phyllotaxis": {
+        "definition": "The arrangement of leaves on a stem; leaf arrangement patterns",
+        "source": "WIKI_PHYLLOTAXIS"
+      },
+      "phyllotaxy": {
+        "definition": "The arrangement of leaves on a stem (alternate spelling of phyllotaxis)",
+        "source": "EBSCO_LEAF"
+      },
+      "leaf distribution": {
+        "definition": "The pattern of leaf placement along stems",
+        "source": "PMC_TRY_PUBLICATION"
+      },
+      
+      "aphyllous": {
+        "definition": "Without leaves",
+        "source": "KEW_GLOSSARY",
+        "page": 13
+      },
+      "leafless": {
+        "definition": "Without leaves; aphyllous",
+        "source": "WIKI_GLOSSARY"
+      },
+      "scale leaves": {
+        "definition": "Reduced, often protective leaves, typically small, dry, and membranous",
+        "source": "WIKI_GLOSSARY",
+        "relatedEntry": "cataphyll"
+      },
+      "reduced leaves": {
+        "definition": "Leaves that are smaller than typical for the species, often modified for functions other than photosynthesis",
+        "source": "WIKI_GLOSSARY"
+      },
+      "squamate": {
+        "definition": "Covered with or consisting of scales; scale-like",
+        "source": "KEW_GLOSSARY"
+      },
+      
+      "rosette": {
+        "definition": "A cluster of leaves or other organs arranged in a circle, often at the base of a plant",
+        "source": "WIKI_PHYLLOTAXIS"
+      },
+      "basal rosette": {
+        "definition": "A rosette of leaves at the base of a plant, at or near ground level",
+        "source": "EBSCO_LEAF"
+      },
+      "radical leaves": {
+        "definition": "Leaves arising from the root or root crown; basal leaves",
+        "source": "WIKI_GLOSSARY"
+      },
+      "acaulescent": {
+        "definition": "Without a stem (preferred term for this is acaulous; the ending -escent implies change)",
+        "source": "KEW_GLOSSARY",
+        "page": 5
+      },
+      "rosulate": {
+        "definition": "Arranged in a rosette; forming a rosette",
+        "source": "KEW_GLOSSARY"
+      },
+      
+      "alternate": {
+        "definition": "Inserted at different levels of the axis; as distinct from opposite; see also spirally arranged",
+        "source": "KEW_GLOSSARY",
+        "page": 9
+      },
+      "spiral": {
+        "definition": "Arranged in a spiral pattern around the stem; a type of alternate arrangement",
+        "source": "WIKI_PHYLLOTAXIS"
+      },
+      "alternate spiral": {
+        "definition": "Leaves arranged singly at nodes in a spiral pattern ascending the stem",
+        "source": "EBSCO_LEAF"
+      },
+      "distichous": {
+        "definition": "In two opposite rows, one on each side of the stem",
+        "source": "KEW_GLOSSARY",
+        "page": 41
+      },
+      "scattered": {
+        "definition": "Irregularly arranged; not in any obvious pattern",
+        "source": "KEW_GLOSSARY"
+      },
+      
+      "opposite": {
+        "definition": "Arising in pairs at the same node, on opposite sides of the stem",
+        "source": "KEW_GLOSSARY",
+        "note": "Opposite of 'alternate'"
+      },
+      "whorled": {
+        "definition": "Three or more organs arranged in a circle at one node",
+        "source": "WIKI_PHYLLOTAXIS"
+      },
+      "verticillate": {
+        "definition": "Arranged in a whorl or whorls; whorled",
+        "source": "EBSCO_LEAF"
+      },
+      "decussate": {
+        "definition": "Used of opposite organs (e.g. leaves), when alternate pairs are at right angles to each other",
+        "source": "KEW_GLOSSARY",
+        "page": 37
+      },
+      "verticil": {
+        "definition": "A whorl; a ring of similar parts arranged around an axis",
+        "source": "KEW_GLOSSARY"
+      }
+    },
+
+    "generalBotanicalTerms": {
+      "traitId": "general_botanical_terms",
+      "note": "Foundational botanical terms used across multiple trait definitions",
+      
+      "node": {
+        "definition": "The part of a stem where one or more leaves, branches, or aerial roots are attached",
+        "source": "KEW_GLOSSARY",
+        "page": 71,
+        "relatedTerms": ["opposite", "whorled", "alternate"]
+      },
+      "axis": {
+        "definition": "The main or central line of development of a plant or organ; the main stem",
+        "source": "KEW_GLOSSARY",
+        "page": 17
+      },
+      "whorl": {
+        "definition": "An arrangement of three or more similar organs (such as leaves, flowers, or floral parts) radiating from a single node",
+        "source": "KEW_GLOSSARY",
+        "page": 107,
+        "relatedTerms": ["verticil", "verticillate", "whorled"]
+      },
+      "organ": {
+        "definition": "A distinct and visibly differentiated part of a plant, such as a root, stem, leaf, or floral part",
+        "source": "KEW_GLOSSARY",
+        "page": 73
+      },
+      
+      "inflorescence": {
+        "definition": "The arrangement of flowers on a plant; the flowering part of a plant",
+        "source": "KEW_GLOSSARY",
+        "page": 59,
+        "relatedTerms": ["capitulum", "head", "composite head"]
+      },
+      "bract": {
+        "definition": "A modified, often reduced, leaf associated with a flower or inflorescence",
+        "source": "KEW_GLOSSARY",
+        "page": 20,
+        "relatedTerms": ["involucre"]
+      },
+      "involucre": {
+        "definition": "A whorl or rosette of bracts surrounding or subtending a flower, flower cluster, or fruit",
+        "source": "KEW_GLOSSARY",
+        "page": 61,
+        "relatedTerms": ["bract", "capitulum"]
+      },
+      "floret": {
+        "definition": "A small flower, especially one of the small individual flowers in a dense inflorescence such as a capitulum",
+        "source": "KEW_GLOSSARY",
+        "page": 48,
+        "relatedTerms": ["capitulum", "composite head"]
+      },
+      "sessile": {
+        "definition": "Without a stalk; attached directly by the base",
+        "source": "KEW_GLOSSARY",
+        "page": 93
+      },
+      "root": {
+        "definition": "The descending axis of a plant, normally underground, which anchors the plant and absorbs water and nutrients",
+        "source": "KEW_GLOSSARY",
+        "page": 88,
+        "relatedTerms": ["radical leaves"]
+      },
+      
+      "prostrate": {
+        "definition": "Lying flat on the ground",
+        "source": "KEW_GLOSSARY",
+        "page": 82,
+        "relatedTerms": ["trailing"]
+      },
+      "tendril": {
+        "definition": "A slender, coiling or twining organ used for climbing, modified from a stem, leaf, or leaflet",
+        "source": "KEW_GLOSSARY",
+        "page": 100,
+        "relatedTerms": ["climber", "scandent"]
+      },
+      "hook": {
+        "definition": "A curved or bent structure used for attachment or climbing",
+        "source": "KEW_GLOSSARY",
+        "relatedTerms": ["scandent", "prickle"]
+      },
+      "twining": {
+        "definition": "Winding spirally around a support; the growth habit of climbing by spiral growth",
+        "source": "KEW_GLOSSARY",
+        "relatedTerms": ["twiner"]
+      },
+      "rooting": {
+        "definition": "Producing roots, especially adventitious roots from stems or nodes",
+        "source": "KEW_GLOSSARY",
+        "relatedTerms": ["node"]
+      },
+      
+      "flower parts": {
+        "definition": "The constituent organs of a flower, including sepals, petals, stamens, and carpels",
+        "source": "KEW_GLOSSARY",
+        "relatedTerms": ["petal"]
+      },
+      "petal": {
+        "definition": "One of the segments of the corolla, usually colored and conspicuous",
+        "source": "KEW_GLOSSARY",
+        "page": 77,
+        "relatedTerms": ["flower parts"]
+      },
+      "support": {
+        "definition": "A structure (such as another plant, tree, or trellis) that a climbing plant uses to grow upward",
+        "source": "KEW_GLOSSARY",
+        "relatedTerms": ["climber", "scandent", "twiner"]
+      },
+      "cluster": {
+        "definition": "A group of similar organs (such as flowers or fruits) growing closely together",
+        "source": "KEW_GLOSSARY",
+        "relatedTerms": ["inflorescence"]
+      }
+    }
   }
 }
