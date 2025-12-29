@@ -1,0 +1,35 @@
+newcomb_traits_ontology.json (v1.3)
+═══════════════════════════════════
+
+Flower Symmetry and Parts
+├── irregular ⬤
+├── regular_2 through regular_7plus ⬤
+└── indistinguishable ⬤
+
+Growth Form
+├── wildflower ⬤
+│   ├── forb (broad-leaved herbs)
+│   └── graminoid (grasses, sedges, rushes)
+├── shrub ⬤
+│   ├── true_shrub (fully woody)
+│   └── subshrub (woody base only)
+└── vine ⬤
+    ├── climbing (upward, using supports)
+    ├── trailing (horizontal, along ground)
+    └── liana (woody climbing vine)
+
+Leaf Arrangement
+├── no_apparent_leaves ⬤
+│   ├── leafless (truly absent)
+│   └── reduced_leaves (scale-like)
+├── basal ⬤
+├── alternate ⬤
+│   ├── distichous (two-ranked, 180°)
+│   └── spiral (helical, ~137.5°)
+└── opposite_or_whorled ⬤
+    ├── opposite 
+    │   ├── simple_opposite
+    │   └── decussate (90° rotation)
+    └── whorled 
+
+⬤ = newcombOriginal: true (from Newcomb's key)

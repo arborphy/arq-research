@@ -1,0 +1,37 @@
+newcomb_traits_ontology.json (v1.2)
+═══════════════════════════════════
+
+metadata:
+├── title: "Newcomb's Wildflower Guide - Identification Traits Ontology"
+├── version: "1.2"
+├── description: "Botanical trait vocabulary..."
+├── synonymSourcesFile: "plant_trait_synonym_sources.json"
+└── source:
+    ├── title: "Newcomb's Wildflower Guide"
+    ├── author: "Lawrence Newcomb"
+    ├── lccn: https://lccn.loc.gov/77000047
+    └── excerpt: [Google Doc link]
+
+traits:
+├── Flower Symmetry and Parts
+│   ├── irregular (zygomorphic, bilateral symmetry...)
+│   ├── regular_2 (dimerous, 2-merous...)
+│   ├── regular_3 (trimerous, 3-merous...)
+│   ├── regular_4 (tetramerous, 4-merous...)
+│   ├── regular_5 (pentamerous, 5-merous...)
+│   ├── regular_6 (hexamerous, 6-merous...)
+│   ├── regular_7plus (polymerous, multimerous...)
+│   └── indistinguishable (capitulum, pseudanthium...)
+│
+├── Growth Form
+│   ├── wildflower (herb, herbaceous, forb...)
+│   ├── shrub (bush, subshrub, fruticose...)
+│   └── vine (climber, liana, scandent...)
+│
+└── Leaf Arrangement
+    ├── no_apparent_leaves (aphyllous, leafless...)
+    ├── basal (rosette, radical leaves...)
+    ├── alternate (spiral, distichous...)
+    └── opposite_or_whorled ← NESTED
+        ├── opposite (opposite, decussate)
+        └── whorled (verticillate, verticil)

@@ -1,0 +1,234 @@
+
+{
+  "metadata": {
+    "title": "Newcomb's Wildflower Guide - Identification Traits Ontology",
+    "version": "1.2",
+    "description": "Botanical trait vocabulary derived from Newcomb's Wildflower Guide identification key, with synonyms for cross-database matching",
+    "synonymSourcesFile": "plant_trait_synonym_sources.json",
+    "source": {
+      "title": "Newcomb's Wildflower Guide",
+      "author": "Lawrence Newcomb",
+      "lccn": "https://lccn.loc.gov/77000047",
+      "excerpt": "https://docs.google.com/document/d/1ohR_6L0dy45CLdoE2RFBeweMc-wv_rL--Zpi9P8fTqw/edit?usp=sharing"
+    }
+  },
+  "key": {
+    "Flower Symmetry and Parts": {
+      "id": "flower_symmetry_and_parts",
+      "description": "Symmetry type and number of petals or petal-like parts. Note: 'actinomorphic' (radial symmetry) and 'zygomorphic' (bilateral symmetry) describe symmetry type only, not petal count. The merosity terms (dimerous, trimerous, etc.) describe petal count only.",
+      "synonyms": [
+        "floral symmetry",
+        "perianth symmetry",
+        "merosity"
+      ],
+      "values": [
+        {
+          "id": "irregular",
+          "label": "Irregular Flowers",
+          "description": "Bilaterally symmetric flowers - can only be divided into mirror-image halves along one plane",
+          "synonyms": [
+            "zygomorphic",
+            "bilateral symmetry",
+            "bilaterally symmetrical",
+            "monosymmetric"
+          ]
+        },
+        {
+          "id": "regular_2",
+          "label": "2 Regular Parts",
+          "description": "Flowers with 2 petals or petal-like parts, radially arranged",
+          "synonyms": [
+            "dimerous",
+            "2-merous",
+            "two-parted"
+          ]
+        },
+        {
+          "id": "regular_3",
+          "label": "3 Regular Parts",
+          "description": "Flowers with 3 petals or petal-like parts, radially arranged",
+          "synonyms": [
+            "trimerous",
+            "3-merous",
+            "three-parted"
+          ]
+        },
+        {
+          "id": "regular_4",
+          "label": "4 Regular Parts",
+          "description": "Flowers with 4 petals or petal-like parts, radially arranged",
+          "synonyms": [
+            "tetramerous",
+            "4-merous",
+            "four-parted"
+          ]
+        },
+        {
+          "id": "regular_5",
+          "label": "5 Regular Parts",
+          "description": "Flowers with 5 petals or petal-like parts, radially arranged",
+          "synonyms": [
+            "pentamerous",
+            "5-merous",
+            "five-parted"
+          ]
+        },
+        {
+          "id": "regular_6",
+          "label": "6 Regular Parts",
+          "description": "Flowers with 6 petals or petal-like parts, radially arranged",
+          "synonyms": [
+            "hexamerous",
+            "6-merous",
+            "six-parted"
+          ]
+        },
+        {
+          "id": "regular_7plus",
+          "label": "7 or More Regular Parts",
+          "description": "Flowers with 7+ petals or petal-like parts, radially arranged",
+          "synonyms": [
+            "polymerous",
+            "multimerous",
+            "many-parted"
+          ]
+        },
+        {
+          "id": "indistinguishable",
+          "label": "Parts Indistinguishable",
+          "description": "Flower parts not clearly countable - often composite heads with many tiny florets",
+          "synonyms": [
+            "composite head",
+            "capitulum",
+            "pseudanthium",
+            "head"
+          ]
+        }
+      ]
+    },
+    "Growth Form": {
+      "id": "growth_form",
+      "description": "Overall growth habit of the plant",
+      "synonyms": [
+        "growth habit",
+        "plant growth form",
+        "life form",
+        "habit"
+      ],
+      "values": [
+        {
+          "id": "wildflower",
+          "label": "Wildflower",
+          "description": "Herbaceous flowering plant - non-woody stem that dies back seasonally",
+          "synonyms": [
+            "herb",
+            "herbaceous",
+            "forb",
+            "forb/herb",
+            "herbaceous plant"
+          ]
+        },
+        {
+          "id": "shrub",
+          "label": "Shrub",
+          "description": "Woody plant with multiple stems from base, typically under 5m tall",
+          "synonyms": [
+            "bush",
+            "woody shrub",
+            "subshrub",
+            "fruticose",
+            "suffrutescent"
+          ]
+        },
+        {
+          "id": "vine",
+          "label": "Vine",
+          "description": "Climbing or trailing plant that uses other structures for support",
+          "synonyms": [
+            "climber",
+            "liana",
+            "climbing plant",
+            "trailing",
+            "scandent",
+            "twiner"
+          ]
+        }
+      ]
+    },
+    "Leaf Arrangement": {
+      "id": "leaf_arrangement",
+      "description": "Pattern of leaf attachment along the stem",
+      "synonyms": [
+        "phyllotaxis",
+        "phyllotaxy",
+        "leaf distribution"
+      ],
+      "values": [
+        {
+          "id": "no_apparent_leaves",
+          "label": "No Apparent Leaves",
+          "description": "Leaves absent, highly reduced, or modified to scales",
+          "synonyms": [
+            "aphyllous",
+            "leafless",
+            "scale leaves",
+            "reduced leaves",
+            "squamate"
+          ]
+        },
+        {
+          "id": "basal",
+          "label": "Basal Leaves Only",
+          "description": "Leaves clustered at base of plant with no stem leaves",
+          "synonyms": [
+            "rosette",
+            "basal rosette",
+            "radical leaves",
+            "acaulescent",
+            "rosulate"
+          ]
+        },
+        {
+          "id": "alternate",
+          "label": "Alternate Leaves",
+          "description": "One leaf per node, arranged in alternating or spiral pattern along stem",
+          "synonyms": [
+            "spiral",
+            "alternate spiral",
+            "distichous",
+            "scattered"
+          ]
+        },
+        {
+          "id": "opposite_or_whorled",
+          "label": "Opposite or Whorled Leaves",
+          "description": "Two or more leaves arising from the same node",
+          "synonyms": [
+            "decussate"
+          ],
+          "values": [
+            {
+              "id": "opposite",
+              "label": "Opposite Leaves",
+              "description": "Two leaves arising from the same node, on opposite sides of the stem",
+              "synonyms": [
+                "opposite",
+                "decussate"
+              ]
+            },
+            {
+              "id": "whorled",
+              "label": "Whorled Leaves",
+              "description": "Three or more leaves arising from the same node, arranged in a circle",
+              "synonyms": [
+                "whorled",
+                "verticillate",
+                "verticil"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,326 @@
+{
+  "title": "Plant Trait Synonym Sources",
+  "version": "1.1",
+  "description": "Authoritative sources for botanical terminology and synonyms used in plant trait ontologies",
+  "relatedOntology": "newcomb_traits_ontology.json",
+  "lastVerified": "2025-12-29",
+
+  "sources": {
+    "NEWCOMB": {
+      "id": "NEWCOMB",
+      "name": "Newcomb's Wildflower Guide",
+      "author": "Lawrence Newcomb",
+      "type": "book",
+      "year": 1977,
+      "url": "https://lccn.loc.gov/77000047",
+      "verified": true,
+      "description": "Primary source for trait categories and values in the identification key. Uses a 3-digit numerical system combining flower type, plant type, and leaf type.",
+      "termsProvided": {
+        "traitCategories": [
+          "Flower Symmetry and Parts",
+          "Growth Form", 
+          "Leaf Arrangement"
+        ],
+        "traitValues": [
+          "Irregular Flowers",
+          "2 Regular Parts",
+          "3 Regular Parts",
+          "4 Regular Parts",
+          "5 Regular Parts",
+          "6 Regular Parts",
+          "7 or More Regular Parts",
+          "Parts Indistinguishable",
+          "Wildflower",
+          "Shrub",
+          "Vine",
+          "No Apparent Leaves",
+          "Basal Leaves Only",
+          "Alternate Leaves",
+          "Opposite or Whorled Leaves"
+        ]
+      }
+    },
+
+    "KEW_GLOSSARY": {
+      "id": "KEW_GLOSSARY",
+      "name": "The Kew Plant Glossary: An Illustrated Dictionary of Plant Terms",
+      "author": "Henk Beentje",
+      "illustrator": "Juliet Williamson",
+      "publisher": "Royal Botanic Gardens, Kew",
+      "type": "book",
+      "year": 2010,
+      "isbn": "978-1-84246-422-9",
+      "url": "https://staugorchidsociety.org/PDF/The-Kew-Plant-Glossary-an-Illustrated-Dictionary-of-Plant-Terms-by-Beentje-Henk-z-lib.org_.pdf",
+      "verified": true,
+      "description": "Comprehensive illustrated glossary with 4144 botanical terms. Based on Flora of Tropical East Africa glossary. Authoritative source from Royal Botanic Gardens, Kew.",
+      "termsProvided": {
+        "synonyms": [
+          "actinomorphic",
+          "zygomorphic",
+          "alternate",
+          "opposite",
+          "whorled",
+          "basal",
+          "rosette",
+          "caespitose",
+          "herbaceous",
+          "scandent",
+          "climber",
+          "liana",
+          "aphyllous",
+          "decussate",
+          "distichous",
+          "capitulum"
+        ]
+      },
+      "keyDefinitions": {
+        "actinomorphic": "regular, radially symmetric. OPPOSITE: zygomorphic",
+        "zygomorphic": "bilaterally symmetric, with only one plane of symmetry",
+        "alternate": "inserted at different levels of the axis; as distinct from opposite",
+        "caespitose": "growing in tight groups, the bases of the individual plants touching"
+      }
+    },
+
+    "WIKI_FLORAL_SYMMETRY": {
+      "id": "WIKI_FLORAL_SYMMETRY",
+      "name": "Wikipedia: Floral symmetry",
+      "type": "encyclopedia",
+      "url": "https://en.wikipedia.org/wiki/Floral_symmetry",
+      "verified": true,
+      "description": "Article on flower symmetry with scientific terminology. Notes that actinomorphic describes radial symmetry (divisible into 3+ identical sectors), while zygomorphic describes bilateral symmetry.",
+      "termsProvided": {
+        "synonyms": [
+          "actinomorphic",
+          "zygomorphic",
+          "bilateral symmetry",
+          "radial symmetry",
+          "monosymmetric",
+          "polysymmetric",
+          "regular",
+          "irregular",
+          "pseudanthium"
+        ]
+      }
+    },
+
+    "WIKI_PHYLLOTAXIS": {
+      "id": "WIKI_PHYLLOTAXIS",
+      "name": "Wikipedia: Phyllotaxis",
+      "type": "encyclopedia",
+      "url": "https://en.wikipedia.org/wiki/Phyllotaxis",
+      "verified": true,
+      "description": "Article on leaf arrangement patterns with mathematical basis (Fibonacci relationships)",
+      "termsProvided": {
+        "synonyms": [
+          "phyllotaxis",
+          "alternate",
+          "opposite",
+          "whorled",
+          "spiral",
+          "decussate",
+          "distichous",
+          "rosette"
+        ]
+      }
+    },
+
+    "WIKI_GLOSSARY": {
+      "id": "WIKI_GLOSSARY",
+      "name": "Wikipedia: Glossary of botanical terms",
+      "type": "encyclopedia",
+      "url": "https://en.wikipedia.org/wiki/Glossary_of_botanical_terms",
+      "verified": true,
+      "description": "Comprehensive alphabetical glossary with cross-references",
+      "termsProvided": {
+        "synonyms": [
+          "actinomorphic",
+          "zygomorphic",
+          "aphyllous",
+          "acaulescent",
+          "capitulum",
+          "herbaceous",
+          "forb",
+          "fruticose",
+          "liana",
+          "scandent",
+          "trailing",
+          "radical leaves",
+          "scale leaves"
+        ]
+      }
+    },
+
+    "EBSCO_LEAF": {
+      "id": "EBSCO_LEAF",
+      "name": "EBSCO Research Starters: Leaf arrangements",
+      "type": "reference_article",
+      "url": "https://www.ebsco.com/research-starters/anatomy-and-physiology/leaf-arrangements",
+      "verified": true,
+      "author": "Magrath, Lawrence K.",
+      "year": 2023,
+      "description": "Academic reference article on phyllotaxy. Distinguishes alternate spiral, opposite, and whorled/verticillate arrangements.",
+      "termsProvided": {
+        "synonyms": [
+          "phyllotaxy",
+          "alternate spiral",
+          "opposite",
+          "whorled",
+          "verticillate",
+          "rosette",
+          "basal rosette",
+          "decussate",
+          "acaulescent",
+          "caulescent"
+        ]
+      }
+    },
+
+    "PLANT_ONTOLOGY": {
+      "id": "PLANT_ONTOLOGY",
+      "name": "Plant Ontology (OBO Foundry)",
+      "type": "ontology",
+      "url": "https://obofoundry.org/ontology/po.html",
+      "repository": "https://github.com/Planteome/plant-ontology",
+      "verified": true,
+      "description": "Formal ontology linking plant anatomy, morphology and development to genomics. OBO Foundry compliant for semantic interoperability.",
+      "termsProvided": {
+        "synonyms": [
+          "plant structure",
+          "leaf",
+          "phyllome",
+          "vascular leaf"
+        ]
+      }
+    },
+
+    "USDA_PLANTS": {
+      "id": "USDA_PLANTS",
+      "name": "USDA PLANTS Database",
+      "type": "database",
+      "url": "https://plants.usda.gov",
+      "growthHabitSearch": "https://plants.usda.gov/home/growthHabitSearch",
+      "verified": true,
+      "description": "U.S. government database with standardized growth habit categories used in official plant species records",
+      "termsProvided": {
+        "synonyms": [
+          "forb/herb",
+          "forb",
+          "shrub",
+          "subshrub",
+          "vine",
+          "growth habit",
+          "woody shrub"
+        ]
+      }
+    },
+
+    "PMC_TRY_PUBLICATION": {
+      "id": "PMC_TRY_PUBLICATION",
+      "name": "TRY – a global database of plant traits (Kattge et al.)",
+      "type": "journal_article",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3627314/",
+      "doi": "10.1111/j.1365-2486.2011.02451.x",
+      "journal": "Global Change Biology",
+      "year": 2011,
+      "verified": true,
+      "description": "Foundational publication for TRY database trait vocabulary",
+      "termsProvided": {
+        "synonyms": [
+          "plant growth form",
+          "grass",
+          "herb",
+          "climber",
+          "shrub",
+          "tree",
+          "life form"
+        ]
+      }
+    }
+  },
+
+  "terminologyNotes": {
+    "actinomorphicVsMerosity": {
+      "note": "IMPORTANT: 'Actinomorphic' describes SYMMETRY TYPE (radial, can be divided into equal parts along multiple planes). The merosity terms (dimerous, trimerous, pentamerous, etc.) describe PETAL COUNT. These are independent characteristics - a 5-petaled flower can be actinomorphic (all petals equal) or zygomorphic (petals unequal). Per Kew Plant Glossary: actinomorphic = 'regular, radially symmetric'.",
+      "sources": ["KEW_GLOSSARY", "WIKI_FLORAL_SYMMETRY"]
+    },
+    "phyllotaxisSpelling": {
+      "note": "Both 'phyllotaxis' and 'phyllotaxy' are accepted spellings for leaf arrangement patterns.",
+      "sources": ["WIKI_PHYLLOTAXIS", "EBSCO_LEAF"]
+    }
+  },
+
+  "synonymToSource": {
+    "zygomorphic": ["KEW_GLOSSARY", "WIKI_FLORAL_SYMMETRY", "WIKI_GLOSSARY"],
+    "bilateral symmetry": ["WIKI_FLORAL_SYMMETRY"],
+    "bilaterally symmetrical": ["WIKI_GLOSSARY"],
+    "monosymmetric": ["WIKI_FLORAL_SYMMETRY"],
+    
+    "dimerous": ["WIKI_FLORAL_SYMMETRY"],
+    "2-merous": ["KEW_GLOSSARY"],
+    "trimerous": ["WIKI_FLORAL_SYMMETRY", "KEW_GLOSSARY"],
+    "3-merous": ["KEW_GLOSSARY"],
+    "tetramerous": ["WIKI_FLORAL_SYMMETRY", "KEW_GLOSSARY"],
+    "4-merous": ["KEW_GLOSSARY"],
+    "pentamerous": ["WIKI_FLORAL_SYMMETRY", "KEW_GLOSSARY"],
+    "5-merous": ["KEW_GLOSSARY"],
+    "hexamerous": ["WIKI_FLORAL_SYMMETRY", "KEW_GLOSSARY"],
+    "6-merous": ["KEW_GLOSSARY"],
+    "polymerous": ["WIKI_GLOSSARY", "KEW_GLOSSARY"],
+    
+    "composite head": ["WIKI_FLORAL_SYMMETRY"],
+    "capitulum": ["WIKI_GLOSSARY", "KEW_GLOSSARY"],
+    "pseudanthium": ["WIKI_FLORAL_SYMMETRY"],
+    "head": ["KEW_GLOSSARY"],
+    
+    "growth habit": ["USDA_PLANTS"],
+    "plant growth form": ["PMC_TRY_PUBLICATION"],
+    "life form": ["PMC_TRY_PUBLICATION"],
+    "habit": ["WIKI_GLOSSARY", "KEW_GLOSSARY"],
+    
+    "herb": ["PMC_TRY_PUBLICATION", "KEW_GLOSSARY"],
+    "herbaceous": ["WIKI_GLOSSARY", "KEW_GLOSSARY"],
+    "forb": ["USDA_PLANTS", "WIKI_GLOSSARY"],
+    "forb/herb": ["USDA_PLANTS"],
+    "herbaceous plant": ["KEW_GLOSSARY"],
+    
+    "bush": ["WIKI_GLOSSARY"],
+    "woody shrub": ["USDA_PLANTS"],
+    "subshrub": ["USDA_PLANTS", "KEW_GLOSSARY"],
+    "fruticose": ["WIKI_GLOSSARY", "KEW_GLOSSARY"],
+    "suffrutescent": ["KEW_GLOSSARY"],
+    
+    "climber": ["PMC_TRY_PUBLICATION", "KEW_GLOSSARY"],
+    "liana": ["WIKI_GLOSSARY", "KEW_GLOSSARY"],
+    "climbing plant": ["EBSCO_LEAF"],
+    "trailing": ["WIKI_GLOSSARY", "KEW_GLOSSARY"],
+    "scandent": ["WIKI_GLOSSARY", "KEW_GLOSSARY"],
+    "twiner": ["KEW_GLOSSARY"],
+    
+    "phyllotaxis": ["WIKI_PHYLLOTAXIS", "KEW_GLOSSARY"],
+    "phyllotaxy": ["EBSCO_LEAF"],
+    "leaf distribution": ["PMC_TRY_PUBLICATION"],
+    
+    "aphyllous": ["WIKI_GLOSSARY", "KEW_GLOSSARY"],
+    "leafless": ["WIKI_GLOSSARY", "KEW_GLOSSARY"],
+    "scale leaves": ["WIKI_GLOSSARY"],
+    "reduced leaves": ["WIKI_GLOSSARY"],
+    "squamate": ["KEW_GLOSSARY"],
+    
+    "rosette": ["WIKI_PHYLLOTAXIS", "EBSCO_LEAF", "KEW_GLOSSARY"],
+    "basal rosette": ["EBSCO_LEAF"],
+    "radical leaves": ["WIKI_GLOSSARY", "KEW_GLOSSARY"],
+    "acaulescent": ["EBSCO_LEAF", "WIKI_GLOSSARY", "KEW_GLOSSARY"],
+    "rosulate": ["KEW_GLOSSARY"],
+    
+    "spiral": ["WIKI_PHYLLOTAXIS", "KEW_GLOSSARY"],
+    "alternate spiral": ["EBSCO_LEAF"],
+    "distichous": ["WIKI_PHYLLOTAXIS", "KEW_GLOSSARY"],
+    "scattered": ["KEW_GLOSSARY"],
+    
+    "opposite": ["WIKI_PHYLLOTAXIS", "EBSCO_LEAF", "KEW_GLOSSARY"],
+    "whorled": ["WIKI_PHYLLOTAXIS", "EBSCO_LEAF", "KEW_GLOSSARY"],
+    "verticillate": ["EBSCO_LEAF", "KEW_GLOSSARY"],
+    "decussate": ["WIKI_PHYLLOTAXIS", "EBSCO_LEAF", "KEW_GLOSSARY"],
+    "verticil": ["KEW_GLOSSARY"]
+  }
+}
