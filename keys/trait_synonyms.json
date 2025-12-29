@@ -258,6 +258,57 @@
     }
   },
 
+  "highTrustSources": {
+    "note": "Curated subset of the most authoritative sources for botanical definitions. These sources are institutional, peer-reviewed, or government-maintained references.",
+    "sources": [
+      {
+        "id": "PLANTEOME",
+        "name": "Planteome",
+        "url": "https://planteome.org/",
+        "description": "Plant ontology consortium providing reference ontologies for plant biology. Integrates Plant Ontology (PO), Plant Trait Ontology (TO), and other plant-related ontologies.",
+        "qualification": "Consortium of leading botanical research institutions providing formal ontologies for plant science"
+      },
+      {
+        "id": "KEW_GLOSSARY",
+        "qualification": "World-leading botanical research institution (Royal Botanic Gardens, Kew). Comprehensive peer-reviewed glossary with 4144 terms."
+      },
+      {
+        "id": "MOBOT_LATIN",
+        "qualification": "Leading botanical research institution (Missouri Botanical Garden). Comprehensive Latin-English botanical dictionary with etymological information."
+      },
+      {
+        "id": "PLANT_ONTOLOGY",
+        "linkedTo": "https://planteome.org/",
+        "qualification": "Formal ontology from OBO Foundry, part of Planteome consortium. Authoritative for semantic interoperability and genomics applications."
+      },
+      {
+        "id": "NEWCOMB",
+        "qualification": "Foundational reference for this project's identification key structure and trait categories."
+      },
+      {
+        "id": "EBSCO_LEAF",
+        "qualification": "Peer-reviewed academic reference article (Magrath, 2023) on phyllotaxy."
+      },
+      {
+        "id": "PMC_TRY_PUBLICATION",
+        "qualification": "Peer-reviewed journal article (Global Change Biology, 2011) establishing TRY database trait vocabulary."
+      },
+      {
+        "id": "USDA_PLANTS",
+        "qualification": "U.S. government database with standardized terminology used in official plant species records."
+      }
+    ],
+    "excludedSources": {
+      "note": "The following sources are valuable references but not designated as high trust due to their crowdsourced or general encyclopedia nature",
+      "sources": ["WIKI_PHYLLOTAXIS", "WIKI_FLORAL_SYMMETRY", "WIKI_GLOSSARY"]
+    },
+    "usageGuidelines": {
+      "preferHighTrust": "When multiple sources define a term, prefer high trust sources for primary definitions",
+      "multipleDefinitions": "Include definitions from multiple high trust sources if they provide substantively different perspectives",
+      "sourceAttribution": "Always maintain source attribution for each definition"
+    }
+  },
+
   "terminologyNotes": {
     "actinomorphicVsMerosity": {
       "note": "IMPORTANT: 'Actinomorphic' describes SYMMETRY TYPE (radial, can be divided into equal parts along multiple planes). The merosity terms (dimerous, trimerous, pentamerous, etc.) describe PETAL COUNT. These are independent characteristics - a 5-petaled flower can be actinomorphic (all petals equal) or zygomorphic (petals unequal). Per Kew Plant Glossary: actinomorphic = 'regular, radially symmetric'.",
@@ -369,17 +420,20 @@
       
       "actinomorphic": {
         "definition": "Radially symmetric, so that a line drawn through the middle of a structure along any plane will produce a mirror image on either side; regular; capable of bisection through two or more planes into similar halves. OPPOSITE: zygomorphic",
+        "commonLanguageDefinition": "Having radial symmetry like a wheel or star - can be divided into equal halves in multiple directions. OPPOSITE: zygomorphic (bilateral)",
         "source": "MOBOT_LATIN",
         "latinForms": "actinomorphicus,-a,-um (adj.A), actinomorphus,-a,-um (adj.A)",
         "relatedTerms": ["radial symmetry", "symmetric", "zygomorphic"]
       },
       "zygomorphic": {
         "definition": "(of flowers) bilaterally symmetric, divisible into mirror-image halves along only one plane. OPPOSITE: actinomorphic",
+        "commonLanguageDefinition": "Having bilateral symmetry like a human face - can be divided into equal halves in only one direction (left and right). OPPOSITE: actinomorphic (radial)",
         "source": "KEW_GLOSSARY",
         "page": 7
       },
       "bilateral symmetry": {
         "definition": "Symmetry in which the two halves of an organ are mirror images of each other along a single plane",
+        "commonLanguageDefinition": "Symmetry where the two halves are mirror images of each other, like a human face or butterfly",
         "source": "WIKI_FLORAL_SYMMETRY"
       },
       "bilaterally symmetrical": {
@@ -481,20 +535,24 @@
       
       "composite head": {
         "definition": "A type of inflorescence (capitulum) characteristic of Compositae/Asteraceae where many small florets are densely packed",
+        "commonLanguageDefinition": "A flower head made of many tiny flowers packed together (like a sunflower or daisy)",
         "source": "KEW_GLOSSARY",
         "relatedEntry": "capitulum"
       },
       "capitulum": {
         "definition": "A compact cluster of ± sessile flowers; the capitulum may be surrounded by specialised bracts, the involucre",
+        "commonLanguageDefinition": "A compact cluster of flowers attached directly without individual stems, often surrounded by a ring of modified leaves",
         "source": "KEW_GLOSSARY",
         "page": 25
       },
       "pseudanthium": {
         "definition": "A flower-like structure composed of multiple flowers (florets) aggregated together, as in Compositae/Asteraceae",
+        "commonLanguageDefinition": "A structure that looks like a single flower but is actually many tiny flowers grouped together (like a daisy or sunflower)",
         "source": "WIKI_FLORAL_SYMMETRY"
       },
       "head": {
         "definition": "Short dense inflorescence, capitulum",
+        "commonLanguageDefinition": "A short, dense cluster of flowers (flower head)",
         "source": "KEW_GLOSSARY",
         "page": 55
       }
@@ -522,12 +580,14 @@
 
       "herb": {
         "definition": "A plant having the nature of a herb; non-woody, with stems dying back seasonally",
+        "commonLanguageDefinition": "A non-woody plant whose stems die back each season (like most garden flowers and vegetables)",
         "source": "KEW_GLOSSARY",
         "note": "From suffix -aceous: 'herbaceous, having the nature of a herb'",
         "page": 1
       },
       "herbaceous": {
         "definition": "Having the nature of a herb; not woody; with above-ground parts dying back seasonally",
+        "commonLanguageDefinition": "Non-woody; having soft stems that die back each season (opposite of woody plants like trees and shrubs)",
         "source": "KEW_GLOSSARY",
         "page": 1
       },
@@ -571,27 +631,33 @@
       
       "climber": {
         "definition": "A plant that grows upwards by attaching itself to other structures which it uses as supports; by contrast, a scrambler does not attach itself to its supports",
+        "commonLanguageDefinition": "A plant that grows upward by attaching itself to other plants, trees, or structures for support (like ivy or morning glory)",
         "source": "KEW_GLOSSARY",
         "page": 29
       },
       "liana": {
         "definition": "A woody climbing or twining plant, especially in tropical forests",
+        "commonLanguageDefinition": "A woody vine that climbs by wrapping around trees, especially common in tropical forests (like Tarzan's vines)",
         "source": "WIKI_GLOSSARY"
       },
       "climbing plant": {
         "definition": "A plant that climbs using other plants or structures for support",
+        "commonLanguageDefinition": "A plant that climbs using other plants or structures for support",
         "source": "EBSCO_LEAF"
       },
       "trailing": {
         "definition": "Prostrate but not rooting at the nodes; growing along the ground",
+        "commonLanguageDefinition": "Lying flat and growing along the ground without putting down roots at the leaf attachment points",
         "source": "WIKI_GLOSSARY"
       },
       "scandent": {
         "definition": "Climbing, usually by means of hooks, tendrils, or twining stems",
+        "commonLanguageDefinition": "Climbing by using hooks, coiling tendrils, or wrapping stems around supports",
         "source": "WIKI_GLOSSARY"
       },
       "twiner": {
         "definition": "A climbing plant that twines its stem around a support",
+        "commonLanguageDefinition": "A climbing plant that wraps its stem around a support in a spiral pattern (like pole beans)",
         "source": "KEW_GLOSSARY"
       }
     },
@@ -601,10 +667,12 @@
       
       "phyllotaxis": {
         "definition": "The arrangement of leaves on a stem; leaf arrangement patterns",
+        "commonLanguageDefinition": "The pattern of how leaves are arranged on a stem",
         "source": "WIKI_PHYLLOTAXIS"
       },
       "phyllotaxy": {
         "definition": "The arrangement of leaves on a stem (alternate spelling of phyllotaxis)",
+        "commonLanguageDefinition": "The pattern of how leaves are arranged on a stem (alternate spelling)",
         "source": "EBSCO_LEAF"
       },
       "leaf distribution": {
@@ -614,11 +682,13 @@
       
       "aphyllous": {
         "definition": "Without leaves",
+        "commonLanguageDefinition": "Without leaves",
         "source": "KEW_GLOSSARY",
         "page": 13
       },
       "leafless": {
         "definition": "Without leaves; aphyllous",
+        "commonLanguageDefinition": "Without leaves",
         "source": "WIKI_GLOSSARY"
       },
       "scale leaves": {
@@ -637,69 +707,84 @@
       
       "rosette": {
         "definition": "A cluster of leaves or other organs arranged in a circle, often at the base of a plant",
+        "commonLanguageDefinition": "A circular cluster of leaves arranged like the petals of a rose, often at the base of a plant (like a dandelion)",
         "source": "WIKI_PHYLLOTAXIS"
       },
       "basal rosette": {
         "definition": "A rosette of leaves at the base of a plant, at or near ground level",
+        "commonLanguageDefinition": "A circular cluster of leaves at the base of a plant, at or near ground level (like a dandelion or lettuce)",
         "source": "EBSCO_LEAF"
       },
       "radical leaves": {
         "definition": "Leaves arising from the root or root crown; basal leaves",
+        "commonLanguageDefinition": "Leaves that grow directly from the root area at the base of the plant",
         "source": "WIKI_GLOSSARY"
       },
       "acaulescent": {
         "definition": "Without a stem (preferred term for this is acaulous; the ending -escent implies change)",
+        "commonLanguageDefinition": "Without a visible stem; leaves appear to grow directly from the ground",
         "source": "KEW_GLOSSARY",
         "page": 5
       },
       "rosulate": {
         "definition": "Arranged in a rosette; forming a rosette",
+        "commonLanguageDefinition": "Arranged in a circular cluster like a rosette",
         "source": "KEW_GLOSSARY"
       },
       
       "alternate": {
         "definition": "Inserted at different levels of the axis; as distinct from opposite; see also spirally arranged",
+        "commonLanguageDefinition": "Leaves arranged one per node at different heights along the stem (not in pairs)",
         "source": "KEW_GLOSSARY",
         "page": 9
       },
       "spiral": {
         "definition": "Arranged in a spiral pattern around the stem; a type of alternate arrangement",
+        "commonLanguageDefinition": "Arranged in a spiral pattern winding around the stem",
         "source": "WIKI_PHYLLOTAXIS"
       },
       "alternate spiral": {
         "definition": "Leaves arranged singly at nodes in a spiral pattern ascending the stem",
+        "commonLanguageDefinition": "Leaves arranged one at a time in a spiral pattern going up the stem",
         "source": "EBSCO_LEAF"
       },
       "distichous": {
         "definition": "In two opposite rows, one on each side of the stem",
+        "commonLanguageDefinition": "Arranged in two opposite rows, one on each side of the stem (like corn leaves)",
         "source": "KEW_GLOSSARY",
         "page": 41
       },
       "scattered": {
         "definition": "Irregularly arranged; not in any obvious pattern",
+        "commonLanguageDefinition": "Irregularly arranged; not in any obvious pattern",
         "source": "KEW_GLOSSARY"
       },
       
       "opposite": {
         "definition": "Arising in pairs at the same node, on opposite sides of the stem",
+        "commonLanguageDefinition": "Leaves arranged in pairs at the same point on the stem, on opposite sides (like a cross when viewed from above)",
         "source": "KEW_GLOSSARY",
         "note": "Opposite of 'alternate'"
       },
       "whorled": {
         "definition": "Three or more organs arranged in a circle at one node",
+        "commonLanguageDefinition": "Three or more leaves arranged in a ring around the stem at the same point",
         "source": "WIKI_PHYLLOTAXIS"
       },
       "verticillate": {
         "definition": "Arranged in a whorl or whorls; whorled",
+        "commonLanguageDefinition": "Arranged in a ring or rings around the stem",
         "source": "EBSCO_LEAF"
       },
       "decussate": {
         "definition": "Used of opposite organs (e.g. leaves), when alternate pairs are at right angles to each other",
+        "commonLanguageDefinition": "Leaves in pairs that alternate at 90-degree angles, forming an X pattern when viewed from above",
         "source": "KEW_GLOSSARY",
         "page": 37
       },
       "verticil": {
         "definition": "A whorl; a ring of similar parts arranged around an axis",
+        "commonLanguageDefinition": "A ring of similar parts (like leaves) arranged around the stem",
         "source": "KEW_GLOSSARY"
       }
     },
@@ -710,58 +795,68 @@
       
       "node": {
         "definition": "The part of a stem where one or more leaves, branches, or aerial roots are attached",
+        "commonLanguageDefinition": "The point on a plant stem where leaves attach (like a joint on your finger)",
         "source": "KEW_GLOSSARY",
         "page": 71,
         "relatedTerms": ["opposite", "whorled", "alternate"]
       },
       "axis": {
         "definition": "The main or central line of development of a plant or organ; the main stem",
+        "commonLanguageDefinition": "The main stem or central line of a plant",
         "source": "KEW_GLOSSARY",
         "page": 17
       },
       "whorl": {
         "definition": "An arrangement of three or more similar organs (such as leaves, flowers, or floral parts) radiating from a single node",
+        "commonLanguageDefinition": "Three or more leaves (or flowers) arranged in a ring around the stem at the same point",
         "source": "KEW_GLOSSARY",
         "page": 107,
         "relatedTerms": ["verticil", "verticillate", "whorled"]
       },
       "organ": {
         "definition": "A distinct and visibly differentiated part of a plant, such as a root, stem, leaf, or floral part",
+        "commonLanguageDefinition": "A distinct part of a plant, such as a root, stem, leaf, or flower part",
         "source": "KEW_GLOSSARY",
         "page": 73
       },
       
       "inflorescence": {
         "definition": "The arrangement of flowers on a plant; the flowering part of a plant",
+        "commonLanguageDefinition": "The flowering part of a plant; how the flowers are arranged on the stem",
         "source": "KEW_GLOSSARY",
         "page": 59,
         "relatedTerms": ["capitulum", "head", "composite head"]
       },
       "bract": {
         "definition": "A modified, often reduced, leaf associated with a flower or inflorescence",
+        "commonLanguageDefinition": "A modified leaf near a flower, often smaller or different-colored than regular leaves",
         "source": "KEW_GLOSSARY",
         "page": 20,
         "relatedTerms": ["involucre"]
       },
       "involucre": {
         "definition": "A whorl or rosette of bracts surrounding or subtending a flower, flower cluster, or fruit",
+        "commonLanguageDefinition": "A ring of modified leaves (bracts) surrounding a flower or flower cluster",
         "source": "KEW_GLOSSARY",
         "page": 61,
         "relatedTerms": ["bract", "capitulum"]
       },
       "floret": {
         "definition": "A small flower, especially one of the small individual flowers in a dense inflorescence such as a capitulum",
+        "commonLanguageDefinition": "A small individual flower, especially one of many packed together in a flower head",
         "source": "KEW_GLOSSARY",
         "page": 48,
         "relatedTerms": ["capitulum", "composite head"]
       },
       "sessile": {
         "definition": "Without a stalk; attached directly by the base",
+        "commonLanguageDefinition": "Attached directly without a stem (like a button sewn flat onto fabric)",
         "source": "KEW_GLOSSARY",
         "page": 93
       },
       "root": {
         "definition": "The descending axis of a plant, normally underground, which anchors the plant and absorbs water and nutrients",
+        "commonLanguageDefinition": "The underground part of a plant that anchors it and absorbs water and nutrients from the soil",
         "source": "KEW_GLOSSARY",
         "page": 88,
         "relatedTerms": ["radical leaves"]
@@ -769,50 +864,59 @@
       
       "prostrate": {
         "definition": "Lying flat on the ground",
+        "commonLanguageDefinition": "Lying flat on the ground",
         "source": "KEW_GLOSSARY",
         "page": 82,
         "relatedTerms": ["trailing"]
       },
       "tendril": {
         "definition": "A slender, coiling or twining organ used for climbing, modified from a stem, leaf, or leaflet",
+        "commonLanguageDefinition": "A thin, coiling structure that plants use to climb and attach to supports (like a curly phone cord)",
         "source": "KEW_GLOSSARY",
         "page": 100,
         "relatedTerms": ["climber", "scandent"]
       },
       "hook": {
         "definition": "A curved or bent structure used for attachment or climbing",
+        "commonLanguageDefinition": "A curved structure that helps plants attach to things or climb",
         "source": "KEW_GLOSSARY",
         "relatedTerms": ["scandent", "prickle"]
       },
       "twining": {
         "definition": "Winding spirally around a support; the growth habit of climbing by spiral growth",
+        "commonLanguageDefinition": "Winding around a support in a spiral pattern (like a vine wrapping around a pole)",
         "source": "KEW_GLOSSARY",
         "relatedTerms": ["twiner"]
       },
       "rooting": {
         "definition": "Producing roots, especially adventitious roots from stems or nodes",
+        "commonLanguageDefinition": "Producing roots, especially from stems or the points where leaves attach",
         "source": "KEW_GLOSSARY",
         "relatedTerms": ["node"]
       },
       
       "flower parts": {
         "definition": "The constituent organs of a flower, including sepals, petals, stamens, and carpels",
+        "commonLanguageDefinition": "The different parts that make up a flower, including petals and reproductive structures",
         "source": "KEW_GLOSSARY",
         "relatedTerms": ["petal"]
       },
       "petal": {
         "definition": "One of the segments of the corolla, usually colored and conspicuous",
+        "commonLanguageDefinition": "One of the colored, often showy parts of a flower (the parts we usually think of as 'the flower')",
         "source": "KEW_GLOSSARY",
         "page": 77,
         "relatedTerms": ["flower parts"]
       },
       "support": {
         "definition": "A structure (such as another plant, tree, or trellis) that a climbing plant uses to grow upward",
+        "commonLanguageDefinition": "Something a climbing plant uses to grow upward, like another plant, tree, fence, or trellis",
         "source": "KEW_GLOSSARY",
         "relatedTerms": ["climber", "scandent", "twiner"]
       },
       "cluster": {
         "definition": "A group of similar organs (such as flowers or fruits) growing closely together",
+        "commonLanguageDefinition": "A group of similar parts (like flowers or fruits) growing close together",
         "source": "KEW_GLOSSARY",
         "relatedTerms": ["inflorescence"]
       }
