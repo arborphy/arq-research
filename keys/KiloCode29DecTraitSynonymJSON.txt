@@ -1,3 +1,11 @@
+============================================================================
+MODEL CONTEXT
+============================================================================
+Model Used: Claude Sonnet 4.5
+Total Cost: $26.05
+Total Tokens: 12.9M
+
+============================================================================
 TRAIT_SYNONYMS.JSON ENHANCEMENT TASKS
 Date: December 29, 2025
 Project: ArborQuest Research - Botanical Trait Synonyms
