@@ -1,0 +1,80 @@
+﻿BODY, TABLE, TD {FONT-WEIGHT: normal; FONT-FAMILY: Verdana, Arial, Sans-serif; FONT-SIZE: 10pt; TEXT-DECORATION: none; COLOR: #466e18}
+P {FONT-FAMILY: Verdana, Arial, Sans-serif; FONT-WEIGHT: normal; font-size: 10pt; color: #466e18}
+
+body {background-color: #f4e7df; margin: 0px; background-attachment:fixed; background-image:url('../zcomponents/ONwildflower_webBckgrnd.jpg'); 
+   background-repeat:repeat-x;}
+
+H1 {FONT-FAMILY: Verdana, Arial, Sans-serif; FONT-WEIGHT: normal; font-size: 18pt; color: #466e18; text-align: center}
+H2 {FONT-FAMILY: Verdana, Arial, Sans-serif; FONT-WEIGHT: normal; font-size: 16pt; color: #466e18; text-align: center}
+HR {color: #466e18}
+
+SPAN.Species_Photos {font-size:9pt; font-weight:normal}
+SPAN.Species_ItemTitle {font-size:9pt; font-weight:bold}
+SPAN.Species_ItemData {font-size:9pt; font-weight:normal}
+SPAN.Species_Supplementary_ItemData {font-size:8pt; font-weight:normal}
+SPAN.credit {font-size: 8pt; font-weight:normal}
+
+a.active  {COLOR: #466e18; TEXT-DECORATION: underline}
+a:link    {COLOR: #466e18; TEXT-DECORATION: underline}
+a:visited {COLOR: #466e18; TEXT-DECORATION: underline}
+a:hover   {COLOR: #000000; TEXT-DECORATION: underline}
+
+A.Links_RelatedPages:active  {COLOR: #466e18; TEXT-DECORATION: none}
+A.Links_RelatedPages:link    {COLOR: #466e18; TEXT-DECORATION: none}
+A.Links_RelatedPages:visited {COLOR: #466e18; TEXT-DECORATION: none}
+A.Links_RelatedPages:hover   {COLOR: #000000; TEXT-DECORATION: none;}
+
+A.Links_Group_Footer:active  {COLOR: #466e18; TEXT-DECORATION: none}
+A.Links_Group_Footer:link    {COLOR: #466e18; TEXT-DECORATION: none}
+A.Links_Group_Footer:visited {COLOR: #466e18; TEXT-DECORATION: none}
+A.Links_Group_Footer:hover   {COLOR: #E7C472; TEXT-DECORATION: none;}
+
+.search_input {font-size: 8pt; color=#000000; height: 18px;}
+TD.sitecolor {background-color: #efd4ab}
+TD.TDTOUR {background-color: #f4e7df}
+img.SpeciesPageThumb {border: 2px solid #000000; margin:0px 0px 10px 20px}
+TD.TDLinks_RelatedPages {background-color: #f4e7df;}
+p.TDLinks_RelatedPages {font-size: 10pt;}
+
+
+
+/* NEW VALUES */
+/*main body*/
+table.MainBody{background-color:#f4e7df}
+td.MainBody{background-color:#f4e7df}
+
+/*Top menu*/
+table.TopMenu {background-color:#e4d4c4}
+td.TopMenu {background-color:#e4d4c4}
+a.TopMenu:active  {COLOR: #466e18; TEXT-DECORATION: none; font-weight:bold; font-size: 10pt}
+a.TopMenu:link    {COLOR: #466e18; TEXT-DECORATION: none; font-weight:bold; font-size: 10pt}
+a.TopMenu:visited {COLOR: #466e18; TEXT-DECORATION: none; font-weight:bold; font-size: 10pt}
+a.TopMenu:hover   {COLOR: #000000; TEXT-DECORATION: none; font-weight:bold; font-size: 10pt}
+
+/* Left Side Menu*/
+table.LeftSideMenu {background-image: url('../zcomponents/ONwildflower_leftMenu.jpg'); background-color:#e4d4c4}
+td.LeftSideMenu {background-color:#e4d4c4}
+a.LeftSideMenu:active  {COLOR: #466e18; TEXT-DECORATION: none; font-size: 10pt} 
+a.LeftSideMenu:link    {COLOR: #466e18; TEXT-DECORATION: none; font-size: 10pt}
+a.LeftSideMenu:visited {COLOR: #466e18; TEXT-DECORATION: none; font-size: 10pt}
+a.LeftSideMenu:hover   {COLOR: #000000; TEXT-DECORATION: none; font-size: 10pt}
+a.LeftSideMenu_sub:active  {COLOR: #466e18; TEXT-DECORATION: none; font-size: 8pt} 
+a.LeftSideMenu_sub:link    {COLOR: #466e18; TEXT-DECORATION: none; font-size: 8pt}
+a.LeftSideMenu_sub:visited {COLOR: #466e18; TEXT-DECORATION: none; font-size: 8pt}
+a.LeftSideMenu_sub:hover   {COLOR: #000000; TEXT-DECORATION: none; font-size: 8pt}
+
+/*Footer*/
+table.Footer {background-color: #e4d4c4; border: 0;}
+table.FooterSiteLinks {background-color: #e4d4c4; border: 0;}
+td.Footer {background-color: #e4d4c4}
+td.FooterSites {height: 16px;}
+td.FooterSitesContainer {background-color: #e4d4c4;}
+a.Links_FooterSites:active  {COLOR: #466e18; TEXT-DECORATION: none; font-size: 8pt} 
+a.Links_FooterSites:link    {COLOR: #466e18; TEXT-DECORATION: none; font-size: 8pt}
+a.Links_FooterSites:visited {COLOR: #466e18; TEXT-DECORATION: none; font-size: 8pt}
+a.Links_FooterSites:hover   {COLOR: #000000; TEXT-DECORATION: none; font-size: 8pt}
+
+/* Ads */
+table.Ads {background-color:#e4d4c4}
+td.Ads {background-color:#e4d4c4}
+

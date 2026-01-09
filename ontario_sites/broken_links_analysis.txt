@@ -1,0 +1,236 @@
+
+======================================================================
+PHASE 1 VALIDATION - STEP 3: BROKEN INTERNAL LINKS
+======================================================================
+
+ontariotrees.com:
+  Files analyzed: 100
+  Total internal links: 390
+  Missing files referenced: 3111
+
+  SPECIES pages missing (139 unique):
+    - main/species.php?id=2004 (referenced 33 times)
+    - main/species.php?id=2003 (referenced 14 times)
+    - main/species.php?id=2006 (referenced 13 times)
+    - main/species.php?id=2179 (referenced 12 times)
+    - main/species.php?id=2021 (referenced 10 times)
+    - main/species.php?id=2002 (referenced 10 times)
+    - main/species.php?id=2182 (referenced 9 times)
+    - main/species.php?id=2037 (referenced 9 times)
+    - main/species.php?id=2180 (referenced 9 times)
+    - main/species.php?id=2218 (referenced 8 times)
+    ... and 129 more
+
+  FAMILY pages missing (25 unique):
+    - main/family.php?id=108 (referenced 12 times)
+    - main/family.php?id=178 (referenced 10 times)
+    - main/family.php?id=121 (referenced 8 times)
+    - main/family.php?id=81 (referenced 7 times)
+    - main/family.php?id=10 (referenced 7 times)
+    - main/family.php?id=145 (referenced 7 times)
+    - main/family.php?id=18 (referenced 6 times)
+    - main/family.php?id=32 (referenced 6 times)
+    - main/family.php?id=113 (referenced 6 times)
+    - main/family.php?id=107 (referenced 5 times)
+    ... and 15 more
+
+  GROUP pages missing (40 unique):
+    - main/group.php?id=30 (referenced 25 times)
+    - main/group.php?id=45 (referenced 17 times)
+    - main/group.php?id=31 (referenced 16 times)
+    - main/group.php?id=4 (referenced 14 times)
+    - main/group.php?id=28 (referenced 14 times)
+    - main/group.php?id=75 (referenced 13 times)
+    - main/group.php?id=7 (referenced 13 times)
+    - main/group.php?id=40 (referenced 12 times)
+    - main/group.php?id=43 (referenced 12 times)
+    - main/group.php?id=82 (referenced 12 times)
+    ... and 30 more
+
+  HABITAT pages missing (30 unique):
+    - main/habitat.php?type=2 (referenced 37 times)
+    - main/habitat.php?type=1 (referenced 34 times)
+    - main/habitat.php?type=3 (referenced 25 times)
+    - main/habitat.php?type=5 (referenced 21 times)
+    - main/habitat.php?type=11 (referenced 21 times)
+    - main/habitat.php?type=7 (referenced 15 times)
+    - main/habitat.php?type=14 (referenced 15 times)
+    - main/habitat.php?type=15 (referenced 15 times)
+    - main/habitat.php?type=24 (referenced 15 times)
+    - main/habitat.php?type=18 (referenced 10 times)
+    ... and 20 more
+
+  COLOUR pages missing (12 unique):
+    - main/colour.php?type=W (referenced 25 times)
+    - main/colour.php?type=Y (referenced 19 times)
+    - main/colour.php?type=G (referenced 11 times)
+    - main/colour.php?type=R (referenced 9 times)
+    - main/colour.php?type=B (referenced 7 times)
+    - main/colour_thumbs.php?type=W (referenced 7 times)
+    - main/colour.php?type=O (referenced 6 times)
+    - main/colour_thumbs.php?type=B (referenced 6 times)
+    - main/colour_thumbs.php?type=G (referenced 6 times)
+    - main/colour_thumbs.php?type=O (referenced 6 times)
+    ... and 2 more
+
+  SEASON pages missing (2 unique):
+    - main/season.php?type=1 (referenced 28 times)
+    - main/season.php?type=2 (referenced 22 times)
+
+  PETALS pages missing (8 unique):
+    - main/petals.php?type=5 (referenced 24 times)
+    - main/petals.php?type=6 (referenced 14 times)
+    - main/petals.php?type=X (referenced 11 times)
+    - main/petals.php?type=4 (referenced 10 times)
+    - main/petals.php?type=I (referenced 6 times)
+    - main/petals.php?type=2 (referenced 6 times)
+    - main/petals.php?type=3 (referenced 6 times)
+    - main/petals.php?type=7 (referenced 6 times)
+
+  TOUR pages missing (51 unique):
+    - main/species_tour.php?id=2078&TT=FAMILY&TC=107&offset=1 (referenced 2 times)
+    - main/species_tour.php?id=21&TT=PETALS&TC=6&offset=1 (referenced 2 times)
+    - main/species_tour.php?id=2179&TT=GROUP&TC=75&offset=0 (referenced 2 times)
+    - main/species_tour.php?id=2006&TT=FAMILY&TC=178&offset=1 (referenced 2 times)
+    - main/species_tour.php?id=2042&TT=GROUP&TC=39&offset=1 (referenced 2 times)
+    - main/species_tour.php?id=20&TT=GROUP&TC=4&offset=0 (referenced 2 times)
+    - main/species_tour.php?id=2242&TT=GROUP&TC=81&offset=0 (referenced 2 times)
+    - main/species_tour.php?id=72&TT=GROUP&TC=14&offset=0 (referenced 2 times)
+    - main/species_tour.php?id=2005&TT=PETALS&TC=5&offset=1 (referenced 2 times)
+    - main/species_tour.php?id=2002&TT=GROUP&TC=30&offset=0 (referenced 2 times)
+    ... and 41 more
+
+  OTHER pages missing (55 unique):
+    - mondaygarden/index.php (referenced 105 times)
+    - other/usephotos.php (referenced 103 times)
+    - booklist/index.php (referenced 100 times)
+    - humour/index.php (referenced 100 times)
+    - philosophical/index.php (referenced 100 times)
+    - other/links.php (referenced 100 times)
+    - other/sitemap.php (referenced 100 times)
+    - other/about.php (referenced 100 times)
+    - other/privacypolicy.php (referenced 100 times)
+    - other/usephotos.html (referenced 100 times)
+    ... and 45 more
+
+ontariowildflowers.com:
+  Files analyzed: 100
+  Total internal links: 346
+  Missing files referenced: 2157
+
+  SPECIES pages missing (144 unique):
+    - main/species.php?id=0025 (referenced 9 times)
+    - main/species.php?id=657 (referenced 6 times)
+    - main/species.php?id=25 (referenced 5 times)
+    - main/species.php?id=147 (referenced 4 times)
+    - main/species.php?id=107 (referenced 4 times)
+    - main/species.php?id=138 (referenced 3 times)
+    - main/species.php?id=372 (referenced 3 times)
+    - main/species.php?id=654 (referenced 3 times)
+    - main/species.php?id=718 (referenced 3 times)
+    - main/species.php?id=2069 (referenced 3 times)
+    ... and 134 more
+
+  FAMILY pages missing (47 unique):
+    - main/family.php?id=1 (referenced 15 times)
+    - main/family.php?id=67 (referenced 8 times)
+    - main/family.php?id=22 (referenced 8 times)
+    - main/family.php?id=84 (referenced 8 times)
+    - main/family.php?id=27 (referenced 7 times)
+    - main/family.php?id=174 (referenced 7 times)
+    - main/family.php?id=159 (referenced 7 times)
+    - main/family.php?id=7 (referenced 5 times)
+    - main/family.php?id=58 (referenced 5 times)
+    - main/family.php?id=11 (referenced 5 times)
+    ... and 37 more
+
+  GROUP pages missing (34 unique):
+    - main/group.php?id=1 (referenced 25 times)
+    - main/group.php?id=18 (referenced 24 times)
+    - main/group.php?id=2 (referenced 24 times)
+    - main/group.php?id=58 (referenced 16 times)
+    - main/group.php?id=46 (referenced 15 times)
+    - main/group.php?id=105 (referenced 15 times)
+    - main/group.php?id=54 (referenced 9 times)
+    - main/group.php?id=34 (referenced 9 times)
+    - main/group.php?id=93 (referenced 9 times)
+    - main/group.php?id=15 (referenced 6 times)
+    ... and 24 more
+
+  HABITAT pages missing (13 unique):
+    - main/habitat.php?type=2 (referenced 36 times)
+    - main/habitat.php?type=1 (referenced 21 times)
+    - main/habitat.php?type=3 (referenced 18 times)
+    - main/habitat.php?type=11 (referenced 8 times)
+    - main/habitat.php?type=13 (referenced 8 times)
+    - main/habitat.php?type=23 (referenced 5 times)
+    - main/habitat.php?type=17 (referenced 4 times)
+    - main/habitat.php?type=18 (referenced 3 times)
+    - main/habitat.php?type=15 (referenced 2 times)
+    - main/habitat.php?type=22 (referenced 1 times)
+    ... and 3 more
+
+  COLOUR pages missing (6 unique):
+    - main/colour.php?type=W (referenced 27 times)
+    - main/colour.php?type=Y (referenced 17 times)
+    - main/colour.php?type=B (referenced 14 times)
+    - main/colour.php?type=G (referenced 12 times)
+    - main/colour.php?type=R (referenced 4 times)
+    - main/colour.php?type=O (referenced 1 times)
+
+  SEASON pages missing (3 unique):
+    - main/season.php?type=2 (referenced 53 times)
+    - main/season.php?type=1 (referenced 15 times)
+    - main/season.php?type=3 (referenced 15 times)
+
+  PETALS pages missing (8 unique):
+    - main/petals.php?type=I (referenced 15 times)
+    - main/petals.php?type=X (referenced 12 times)
+    - main/petals.php?type=5 (referenced 11 times)
+    - main/petals.php?type=7 (referenced 10 times)
+    - main/petals.php?type=4 (referenced 7 times)
+    - main/petals.php?type=6 (referenced 4 times)
+    - main/petals.php?type=3 (referenced 2 times)
+    - main/petals.php?type=2 (referenced 1 times)
+
+  TOUR pages missing (25 unique):
+    - main/species_tour.php?id=173&TT=HABITAT&TC=23&offset=1 (referenced 2 times)
+    - main/species_tour.php?id=666&TT=FAMILY&TC=52&offset=0 (referenced 2 times)
+    - main/species_tour.php?id=222&TT=COLOUR&TC=W&offset=1 (referenced 2 times)
+    - main/species_tour.php?id=147&TT=GROUP&TC=22&offset=0 (referenced 2 times)
+    - main/species_tour.php?id=372&TT=FAMILY&TC=67&offset=0 (referenced 2 times)
+    - main/species_tour.php?id=718&TT=FAMILY&TC=63&offset=0 (referenced 2 times)
+    - main/species_tour.php?id=28&TT=FAMILY&TC=7&offset=1 (referenced 2 times)
+    - main/species_tour.php?id=227&TT=PETALS&TC=X&offset=1 (referenced 2 times)
+    - main/species_tour.php?id=18&TT=GROUP&TC=3&offset=0 (referenced 2 times)
+    - main/species_tour.php?id=163&TT=GROUP&TC=79&offset=0 (referenced 2 times)
+    ... and 15 more
+
+  OTHER pages missing (41 unique):
+    - booklist/index.php (referenced 100 times)
+    - sites/index.php (referenced 100 times)
+    - other/links.php (referenced 100 times)
+    - other/sitemap.php (referenced 100 times)
+    - other/guestbook.php (referenced 100 times)
+    - other/about.php (referenced 100 times)
+    - other/usephotos.php (referenced 100 times)
+    - other/privacypolicy.php (referenced 100 times)
+    - other/usephotos.html (referenced 100 times)
+    - main/book.php?type=N (referenced 50 times)
+    ... and 31 more
+
+----------------------------------------------------------------------
+SUMMARY:
+  Total internal links checked: 736
+  Total missing file references: 5268
+  Link integrity score: -615.8%
+
+======================================================================
+ASSESSMENT:
+======================================================================
+⚠️  WARNING: More than 10% broken links (5268/736)
+
+Recommendations:
+- Missing pages may be: out of scope, never existed, or deleted
+- Run targeted wget for specific missing page types if needed
+- Cross-reference with site index for expected pages

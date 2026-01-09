@@ -1,0 +1,38 @@
+
+======================================================================
+PHASE 1 VALIDATION - STEP 2: LINK TYPE ANALYSIS
+======================================================================
+
+ontariotrees.com:
+  Files analyzed: 30
+  Total links found: 3916
+  Link type breakdown:
+    - relative: 3039 (77.6%)
+    - same_domain: 1 (0.0%)
+    - external: 867 (22.1%)
+    - fragment/javascript: 9 (0.2%)
+
+ontariowildflowers.com:
+  Files analyzed: 30
+  Total links found: 4227
+  Link type breakdown:
+    - relative: 3210 (75.9%)
+    - external: 1006 (23.8%)
+    - fragment/javascript: 11 (0.3%)
+
+----------------------------------------------------------------------
+SUMMARY ACROSS ALL SITES:
+  Total links analyzed: 8143
+  Relative links: 6249 (76.7%)
+  Same-domain absolute: 1 (0.0%)
+  External absolute: 1873 (23.0%)
+  Fragment/JavaScript: 20 (0.2%)
+
+======================================================================
+ASSESSMENT:
+======================================================================
+⚠️  WARNING: Found 1 absolute links to same domain.
+   These should be converted to relative paths for portability.
+   Run convert_links.py to fix these links.
+✓ ACCEPTABLE: 70-90% of links are relative
+ℹ️  Note: 1873 external links found (these are expected)

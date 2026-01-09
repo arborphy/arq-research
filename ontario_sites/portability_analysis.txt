@@ -1,0 +1,59 @@
+
+======================================================================
+PHASE 1 VALIDATION - STEP 4: LINK PORTABILITY
+======================================================================
+
+ontariotrees.com:
+  Files analyzed: 621
+
+  ✓ No absolute file paths
+  ✓ No hardcoded home directory paths
+
+  ⚠️  WARNING: Same-domain absolute URLs (26):
+     id/index.php.html: href="http://ontariotrees.com/groups/44/pinequickguide.php"
+     main/colour.php?type=W.html: href="http://ontariotrees.com/main/book.php?type=P"
+     main/alien_native.php.html: href="http://ontariotrees.com/main/book.php?type=N"
+     main/group.php?id=44.html: href="http://ontariotrees.com/groups/44/pinequickguide.php"
+     main/colour.php?type=B.html: href="http://ontariotrees.com/main/book.php?type=P"
+     ... and 21 more
+
+  ℹ️  Fragment-only links: 575 (acceptable)
+
+  ✓ Relative links: 61093 (portable)
+
+ontariowildflowers.com:
+  Files analyzed: 1471
+
+  ✓ No absolute file paths
+  ✓ No hardcoded home directory paths
+
+  ⚠️  WARNING: Same-domain absolute URLs (34):
+     main/colour.php?type=W.html: href="http://ontariowildflowers.com/main/book.php?type=P"
+     main/alien_native.php.html: href="http://ontariowildflowers.com/main/book.php?type=N"
+     main/colour.php?type=B.html: href="http://ontariowildflowers.com/main/book.php?type=P"
+     main/group.php?id=25.html: src="http://ontariowildflowers.com/z/stopSIGN222smallcg5.jpg"
+     main/petals.php?type=I.html: href="http://ontariowildflowers.com/main/book.php?type=N"
+     ... and 29 more
+
+  ℹ️  Fragment-only links: 799 (acceptable)
+
+  ✓ Relative links: 144277 (portable)
+
+======================================================================
+PORTABILITY ASSESSMENT:
+======================================================================
+
+✅ PASS: Directory is portable!
+  - No absolute file paths
+  - No hardcoded home directory paths
+  - Links use relative paths
+  - Directory can be moved to any location
+  - Directory can be copied to another machine
+
+----------------------------------------------------------------------
+RECOMMENDATIONS:
+----------------------------------------------------------------------
+1. Keep directory structure intact when moving
+2. Relative links will work regardless of parent directory
+3. External http:// links require internet connection
+4. For offline use, ensure all pages are downloaded
