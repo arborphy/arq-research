@@ -1,0 +1,34 @@
+name: arborphy
+version: '1.0.0'
+profile: default
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+
+clean-targets:
+  - target
+  - dbt_packages
+
+seeds:
+  arborphy:
+    +schema: arborphy
+    observations:
+      +column_types:
+        id: varchar
+        uuid: varchar
+        latitude: float
+        longitude: float
+        positional_accuracy: float
+        user_id: varchar
+        taxon_id: varchar
+    newcomb_species_features_consolidated:
+      +column_types:
+        species_page: float
+        key_page_range_start: float
+        key_page_range_end: float
+
+models:
+  arborphy:
+    staging:
+      +schema: arborphy
+      +materialized: table

@@ -1,0 +1,119 @@
+version: 2
+
+models:
+  - name: trait_newcomb_metadata
+    description: "Metadata about the Newcomb wildflower trait ontology"
+    columns:
+      - name: title
+        description: "Title of the ontology"
+      - name: version
+        description: "Version of the ontology"
+      - name: description
+        description: "Description of the ontology purpose and scope"
+      - name: synonym_sources_file
+        description: "Reference to the synonym sources file"
+      - name: newcomb_original_note
+        description: "Note about items from Newcomb's original key"
+      - name: source_title
+        description: "Title of the source material"
+      - name: source_author
+        description: "Author of the source material"
+      - name: source_lccn
+        description: "Library of Congress Control Number"
+      - name: source_excerpt
+        description: "Link to excerpt of source material"
+      - name: loaded_at
+        description: "Timestamp when the data was loaded"
+
+  - name: trait_newcomb_traits
+    description: "Top-level trait categories from Newcomb ontology"
+    columns:
+      - name: trait_key
+        description: "Human-readable trait category name"
+        tests:
+          - not_null
+      - name: trait_id
+        description: "Machine-readable trait identifier"
+        tests:
+          - not_null
+          - unique
+      - name: description
+        description: "Description of the trait category"
+      - name: loaded_at
+        description: "Timestamp when the data was loaded"
+
+  - name: trait_newcomb_trait_synonyms
+    description: "Synonyms for trait categories"
+    columns:
+      - name: trait_key
+        description: "Human-readable trait category name"
+        tests:
+          - not_null
+      - name: trait_id
+        description: "Machine-readable trait identifier"
+        tests:
+          - not_null
+      - name: synonym
+        description: "Synonym term for the trait category"
+        tests:
+          - not_null
+      - name: loaded_at
+        description: "Timestamp when the data was loaded"
+
+  - name: trait_newcomb_values
+    description: "Trait values including nested subcategories (2 levels)"
+    columns:
+      - name: trait_key
+        description: "Human-readable trait category name"
+        tests:
+          - not_null
+      - name: trait_id
+        description: "Machine-readable trait identifier"
+        tests:
+          - not_null
+      - name: value_id
+        description: "Machine-readable value identifier"
+        tests:
+          - not_null
+      - name: label
+        description: "Human-readable value label"
+      - name: description
+        description: "Description of the trait value"
+      - name: newcomb_original
+        description: "Whether this value is from Newcomb's original key"
+      - name: parent_value_id
+        description: "Parent value ID for nested values (null for top-level)"
+      - name: nesting_level
+        description: "Nesting depth (1 or 2)"
+        tests:
+          - accepted_values:
+              values: [1, 2]
+      - name: loaded_at
+        description: "Timestamp when the data was loaded"
+
+  - name: trait_newcomb_value_synonyms
+    description: "Synonyms for trait values at all nesting levels"
+    columns:
+      - name: trait_key
+        description: "Human-readable trait category name"
+        tests:
+          - not_null
+      - name: trait_id
+        description: "Machine-readable trait identifier"
+        tests:
+          - not_null
+      - name: value_id
+        description: "Machine-readable value identifier"
+        tests:
+          - not_null
+      - name: synonym
+        description: "Synonym term for the trait value"
+        tests:
+          - not_null
+      - name: nesting_level
+        description: "Nesting depth (1 or 2)"
+        tests:
+          - accepted_values:
+              values: [1, 2]
+      - name: loaded_at
+        description: "Timestamp when the data was loaded"

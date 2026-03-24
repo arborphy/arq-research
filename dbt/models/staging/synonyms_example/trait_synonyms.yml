@@ -1,0 +1,92 @@
+version: 2
+
+models:
+  - name: trait_synonym_sources
+    description: "Reference sources for botanical trait terminology"
+    columns:
+      - name: source_id
+        description: "Unique identifier for the source"
+        tests:
+          - not_null
+          - unique
+      - name: source_name
+        description: "Full name of the source"
+        tests:
+          - not_null
+      - name: author
+        description: "Author(s) of the source"
+      - name: illustrator
+        description: "Illustrator of the source (for books)"
+      - name: publisher
+        description: "Publisher name"
+      - name: source_type
+        description: "Type of source (book, journal_article, database, etc.)"
+      - name: year
+        description: "Publication year"
+      - name: isbn
+        description: "ISBN for books"
+      - name: doi
+        description: "DOI for journal articles"
+      - name: journal
+        description: "Journal name for articles"
+      - name: url
+        description: "URL to the source"
+      - name: repository
+        description: "Code repository URL (for ontologies)"
+      - name: institution
+        description: "Institution maintaining the source"
+      - name: growth_habit_search
+        description: "URL for growth habit search (USDA PLANTS)"
+      - name: verified
+        description: "Whether the source has been verified"
+      - name: description
+        description: "Description of the source and its content"
+      - name: loaded_at
+        description: "Timestamp when the data was loaded"
+
+  - name: trait_synonym_mappings
+    description: "Mappings from synonyms to their source(s)"
+    columns:
+      - name: synonym
+        description: "Botanical term"
+        tests:
+          - not_null
+      - name: source_id
+        description: "Source where this term is defined"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('trait_synonym_sources')
+              field: source_id
+      - name: loaded_at
+        description: "Timestamp when the data was loaded"
+
+  - name: trait_synonym_definitions
+    description: "Detailed definitions for botanical terms by category"
+    columns:
+      - name: category
+        description: "Trait category (e.g., flowerSymmetryAndParts, growthForm)"
+        tests:
+          - not_null
+      - name: synonym
+        description: "Botanical term being defined"
+        tests:
+          - not_null
+      - name: definition
+        description: "Technical botanical definition"
+      - name: common_language_definition
+        description: "Plain language definition"
+      - name: source_id
+        description: "Primary source for this definition"
+        tests:
+          - relationships:
+              to: ref('trait_synonym_sources')
+              field: source_id
+      - name: page
+        description: "Page number in the source (if applicable)"
+      - name: latin_forms
+        description: "Latin forms of the term"
+      - name: note
+        description: "Additional notes or clarifications"
+      - name: loaded_at
+        description: "Timestamp when the data was loaded"
