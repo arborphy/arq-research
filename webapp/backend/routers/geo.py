@@ -1,5 +1,7 @@
 from fastapi import APIRouter, HTTPException, Query
 
+from webapp.backend.utils import h3_int_to_hex
+
 router = APIRouter(prefix="/geo", tags=["geo"])
 
 
@@ -20,8 +22,7 @@ def species_co_occurrence_cells(species_name: str):
     df = co_occurrence_cells_for_species(species_name)
     if df.empty:
         return {"data": [], "total": 0}
-    # Convert int64 H3 indexes to hex strings for h3-js compatibility
-    df["h3_index"] = df["h3_index"].apply(lambda x: format(x, "x"))
+    df["h3_index"] = df["h3_index"].map(h3_int_to_hex)
     return {"data": df.to_dict(orient="records"), "total": len(df)}
 
 
@@ -44,7 +45,7 @@ def list_cells(day_of_year: int = Query(None, ge=1, le=366)):
         if df.empty:
             return {"data": []}
         df.columns = ["h3_index", "observation_count"]
-        df["h3_index"] = df["h3_index"].apply(lambda x: format(x, "x"))
+        df["h3_index"] = df["h3_index"].map(h3_int_to_hex)
         return {"data": df.to_dict(orient="records")}
     else:
         from kg.queries.geography import all_h3_cells
@@ -52,7 +53,7 @@ def list_cells(day_of_year: int = Query(None, ge=1, le=366)):
         if df.empty:
             return {"data": []}
         df.columns = ["h3_index"]
-        df["h3_index"] = df["h3_index"].apply(lambda x: format(x, "x"))
+        df["h3_index"] = df["h3_index"].map(h3_int_to_hex)
         return {"data": [{"h3_index": h, "observation_count": 0} for h in df["h3_index"]]}
 
 

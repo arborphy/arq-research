@@ -16,14 +16,17 @@ from kg.model.core.h3cell import H3Cell
 
 def observations_for_species(species_name: str):
     """Return lat/lon/date/inat_id for all observations of a species."""
+    obs = Observation.ref()
+    s = Species.ref()
     return where(
-        Observation.species.name == species_name,
+        obs.species(s),
+        s.name == species_name,
     ).select(
-        Observation.latitude,
-        Observation.longitude,
-        Observation.date,
-        Observation.inat_id,
-        Observation.image_url,
+        obs.latitude,
+        obs.longitude,
+        obs.date,
+        obs.inat_id,
+        obs.image_url,
     ).to_df()
 
 
@@ -32,9 +35,11 @@ def co_occurrence_cells_for_species(species_name: str):
     obs1 = Observation.ref()
     obs2 = Observation.ref()
     cell = H3Cell.ref()
+    s1 = Species.ref()
     df = where(
         obs1.co_occurs_with(obs2),
-        obs1.species.name == species_name,
+        obs1.species(s1),
+        s1.name == species_name,
         obs1.h3cell(cell),
     ).select(
         cell.index,
@@ -51,9 +56,11 @@ def co_occurring_observations_for_species(species_name: str):
     obs1 = Observation.ref()
     obs2 = Observation.ref()
     s2 = Species.ref()
+    s1 = Species.ref()
     return where(
         obs1.co_occurs_with(obs2),
-        obs1.species.name == species_name,
+        obs1.species(s1),
+        s1.name == species_name,
         obs2.species(s2),
         s2.name != species_name,
     ).select(
@@ -66,22 +73,23 @@ def co_occurring_observations_for_species(species_name: str):
 
 
 def all_h3_cells():
-    """Return all H3 res-9 cell indexes."""
+    """Return all H3 res-13 cell indexes with observations."""
+    obs = Observation.ref()
+    cell = H3Cell.ref()
     return where(
-        H3Cell.resolution == 9,
+        obs.h3cell(cell),
     ).select(
-        H3Cell.index,
+        cell.index,
     ).to_df()
 
 
 def h3_cells_on_day(day_of_year: int):
-    """Return H3 res-9 cells that have observations on a given day of year."""
+    """Return H3 res-13 cells that have observations on a given day of year."""
     date = std.datetime.date
     obs = Observation.ref()
     cell = H3Cell.ref()
     return where(
         obs.h3cell(cell),
-        cell.resolution == 9,
         date.dayofyear(obs.date) == day_of_year,
     ).select(
         cell.index,
@@ -90,7 +98,7 @@ def h3_cells_on_day(day_of_year: int):
 
 
 def species_visible_at(h3_index: int, day_of_year: int):
-    """Species observed in a given H3 res-9 cell on a given day of year (any year)."""
+    """Species observed in a given H3 res-13 cell on a given day of year (any year)."""
     date = std.datetime.date
     obs = Observation.ref()
     cell = H3Cell.ref()
@@ -98,7 +106,6 @@ def species_visible_at(h3_index: int, day_of_year: int):
     df = where(
         obs.h3cell(cell),
         cell.index == h3_index,
-        cell.resolution == 9,
         date.dayofyear(obs.date) == day_of_year,
         obs.species(s),
     ).select(

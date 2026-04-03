@@ -81,6 +81,34 @@ export function HomePage() {
             </p>
           </div>
         </Link>
+        <Link to="/ecosites" style={{ textDecoration: "none" }}>
+          <div style={{
+            border: "2px solid #2d6a4f", borderRadius: "8px", padding: "1.5rem",
+            transition: "background 0.2s",
+          }}
+            onMouseEnter={e => e.currentTarget.style.background = "#f0faf4"}
+            onMouseLeave={e => e.currentTarget.style.background = "transparent"}
+          >
+            <h3 style={{ margin: "0 0 0.5rem", color: "#2d6a4f" }}>Ecosite Explorer</h3>
+            <p style={{ color: "#666", margin: 0 }}>
+              Select an ecosite and see its H3 res-12 cell coverage on a map.
+            </p>
+          </div>
+        </Link>
+        <Link to="/trails" style={{ textDecoration: "none" }}>
+          <div style={{
+            border: "2px solid #2d6a4f", borderRadius: "8px", padding: "1.5rem",
+            transition: "background 0.2s",
+          }}
+            onMouseEnter={e => e.currentTarget.style.background = "#f0faf4"}
+            onMouseLeave={e => e.currentTarget.style.background = "transparent"}
+          >
+            <h3 style={{ margin: "0 0 0.5rem", color: "#2d6a4f" }}>Trail Explorer</h3>
+            <p style={{ color: "#666", margin: 0 }}>
+              Select a trail to see species observations recorded along it, matched by res-13 H3 cells.
+            </p>
+          </div>
+        </Link>
       </div>
     </div>
   );

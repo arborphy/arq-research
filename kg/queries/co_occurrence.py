@@ -93,7 +93,6 @@ def co_occurrence_for_species(species_name: str, granularity: str = "day"):
     return where(
         obs1.h3cell(cell),
         obs2.h3cell(cell),
-        H3Cell.resolution(cell, 9),
         std.datetime.date.year(obs1.date) == std.datetime.date.year(obs2.date),
         date_fn(obs1.date) == date_fn(obs2.date),
         obs1.species(s1),

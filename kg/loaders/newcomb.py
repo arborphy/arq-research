@@ -14,8 +14,8 @@ from kg.model.core.features import Feature, FeatureValue
 from kg.model.core.keys.newcomb import NewcombKey
 from kg.model.core.provenance import DataSource
 
-DB = "chaker_temp"
-SCHEMA = "public_arborphy"
+DB = "RAI_DEMO"
+SCHEMA = "CB_WEBAPP"
 
 newcomb_table = m.Table(f"{DB}.{SCHEMA}.stg_newcomb_species", schema={
     "SPECIES_INAT": String,

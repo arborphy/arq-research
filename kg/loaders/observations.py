@@ -3,9 +3,9 @@
 Maps stg_observations columns to:
   - Observation (with all properties)
   - Species (linked via scientific_name)
-  - H3Cell at resolutions 7, 9, 12 (with parent hierarchy)
+  - H3Cell at resolutions 7, 9, 12, 13 (with parent hierarchy)
 """
-from relationalai.semantics import Bool, Date, Float, Int64, Integer, String, define, where
+from relationalai.semantics import Bool, Date, Float, Int128, Integer, String, define, where
 
 from kg.model import m
 from kg.model.core.taxonomy import Species
@@ -13,8 +13,8 @@ from kg.model.core.observations import Observation
 from kg.model.core.h3cell import H3Cell
 from kg.model.core.provenance import DataSource
 
-DB = "chaker_temp"
-SCHEMA = "public_arborphy"
+DB = "RAI_DEMO"
+SCHEMA = "CB_WEBAPP"
 
 obs_table = m.Table(f"{DB}.{SCHEMA}.stg_observations", schema={
     "ID": String,
@@ -39,9 +39,10 @@ obs_table = m.Table(f"{DB}.{SCHEMA}.stg_observations", schema={
     "SPECIES_GUESS": String,
     "DESCRIPTION": String,
     "LICENSE": String,
-    "H3_RES7": Int64,
-    "H3_RES9": Int64,
-    "H3_RES12": Int64,
+    "H3_RES7": Int128,
+    "H3_RES9": Int128,
+    "H3_RES12": Int128,
+    "H3_RES13": Int128,
 })
 
 # -- Data Source --
@@ -64,18 +65,22 @@ where(
 define(H3Cell.new(index=obs_table.H3_RES7))
 define(H3Cell.new(index=obs_table.H3_RES9))
 define(H3Cell.new(index=obs_table.H3_RES12))
+define(H3Cell.new(index=obs_table.H3_RES13))
 
 # -- H3 Cells (properties + parent hierarchy) --
-where(cell7 := H3Cell.filter_by(index=obs_table.H3_RES7)).define(
-    cell7.resolution(7),
-)
 where(cell9 := H3Cell.filter_by(index=obs_table.H3_RES9)).define(
     cell9.resolution(9),
     cell9.part_of(H3Cell.filter_by(index=obs_table.H3_RES7)),
 )
+
 where(cell12 := H3Cell.filter_by(index=obs_table.H3_RES12)).define(
     cell12.resolution(12),
     cell12.part_of(H3Cell.filter_by(index=obs_table.H3_RES9)),
+)
+
+where(cell13 := H3Cell.filter_by(index=obs_table.H3_RES13)).define(
+    cell13.resolution(13),
+    cell13.part_of(H3Cell.filter_by(index=obs_table.H3_RES12)),
 )
 
 # -- Observations (create) --
@@ -102,5 +107,5 @@ where(obs := Observation.filter_by(inat_id=obs_table.ID)).define(
     obs.license(obs_table.LICENSE),
     Observation.source(obs, DataSource.filter_by(name="iNaturalist")),
     Observation.species(obs, Species.filter_by(name=obs_table.SCIENTIFIC_NAME)),
-    Observation.h3cell(obs, H3Cell.filter_by(index=obs_table.H3_RES9)),
+    Observation.h3cell(obs, H3Cell.filter_by(index=obs_table.H3_RES13)),
 )

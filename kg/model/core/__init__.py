@@ -6,3 +6,4 @@ from .taxonomy import *
 from .observations import *
 from .h3cell import *
 from .keys import *
+# from .calendar import *  # temporarily disabled

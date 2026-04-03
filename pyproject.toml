@@ -1,6 +1,15 @@
 [project]
 name = "arborphy"
 version = "0.1.0"
+dependencies = [
+    "dbt-duckdb>=1.10",
+    "dbt-snowflake>=1.11",
+    "h3>=4",
+    "shapely>=2",
+    "pandas>=2",
+    "snowflake-connector-python>=3",
+    "pyyaml>=6",
+]
 
 [build-system]
 requires = ["setuptools"]

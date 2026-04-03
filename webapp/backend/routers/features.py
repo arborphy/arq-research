@@ -16,9 +16,9 @@ def list_features():
     results = {}
     for feature_name in ["flower_type", "plant_type", "leaf_type"]:
         df = where(
-            IdentificationKey.feature(Feature),
-            Feature.name == feature_name,
             IdentificationKey.feature_value(FeatureValue),
+            FeatureValue.feature(Feature),
+            Feature.name == feature_name,
             IdentificationKey.species(Species),
         ).select(
             FeatureValue.value,
@@ -33,9 +33,9 @@ def list_features():
 @router.get("/species")
 def species_by_feature(feature: str = Query(...), value: str = Query(...)):
     df = where(
-        IdentificationKey.feature(Feature),
-        Feature.name == feature,
         IdentificationKey.feature_value(FeatureValue),
+        FeatureValue.feature(Feature),
+        Feature.name == feature,
         FeatureValue.value == value,
         IdentificationKey.species(Species),
     ).select(

@@ -1,5 +1,10 @@
+import logging
+import os
 import sys
 from pathlib import Path
+
+logging.getLogger("relationalai").setLevel(logging.WARNING)
+logging.getLogger("v0.relationalai").setLevel(logging.WARNING)
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -10,9 +15,10 @@ if PROJECT_ROOT not in sys.path:
 
 app = FastAPI(title="Arborphy Co-Occurrence Explorer")
 
+_origins = os.environ.get("CORS_ORIGINS", "http://localhost:5173").split(",")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=_origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -22,9 +28,13 @@ from webapp.backend.routers.geo import router as geo_router  # noqa: E402
 from webapp.backend.routers.features import router as features_router  # noqa: E402
 from webapp.backend.routers.debug import router as debug_router  # noqa: E402
 from webapp.backend.routers.predicates import router as predicates_router  # noqa: E402
+from webapp.backend.routers.ecosites import router as ecosites_router  # noqa: E402
+from webapp.backend.routers.trails import router as trails_router  # noqa: E402
 
 app.include_router(co_occurrence_router, prefix="/api")
 app.include_router(geo_router, prefix="/api")
 app.include_router(features_router, prefix="/api")
 app.include_router(debug_router, prefix="/api")
 app.include_router(predicates_router, prefix="/api")
+app.include_router(ecosites_router, prefix="/api")
+app.include_router(trails_router, prefix="/api")

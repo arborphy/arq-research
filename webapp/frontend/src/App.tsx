@@ -7,6 +7,8 @@ import { FeaturesPage } from "./pages/FeaturesPage";
 import { FieldGuidePage } from "./pages/FieldGuidePage";
 import { CommunityPage } from "./pages/CommunityPage";
 import { PredicateExplorerPage } from "./pages/PredicateExplorerPage";
+import { EcositePage } from "./pages/EcositePage";
+import { TrailsPage } from "./pages/TrailsPage";
 import { DebugPanel } from "./components/DebugPanel";
 import "./App.css";
 
@@ -34,6 +36,8 @@ function App() {
               <Route path="/field-guide" element={<FieldGuidePage />} />
               <Route path="/community" element={<CommunityPage />} />
               <Route path="/predicates" element={<PredicateExplorerPage />} />
+              <Route path="/ecosites" element={<EcositePage />} />
+              <Route path="/trails" element={<TrailsPage />} />
               <Route path="/species/:name" element={<SpeciesDetailPage />} />
             </Routes>
           </main>

@@ -22,7 +22,6 @@ cell = H3Cell.ref()
 define(Observation.co_occurs_with(obs1, obs2)).where(
     Observation.h3cell(obs1, cell),
     Observation.h3cell(obs2, cell),
-    H3Cell.resolution(cell, 9),
     date.year(obs1.date) == date.year(obs2.date),
     date.dayofyear(obs1.date) == date.dayofyear(obs2.date),
     obs1 != obs2,
