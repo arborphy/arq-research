@@ -2,14 +2,13 @@ import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { createColumnHelper } from "@tanstack/react-table";
-import { getForSpecies, getSpeciesObservations, getSpeciesCoOccurrenceCells, getCoOccurringObservations, getSharedFeatures, getNewcombKey } from "../api/co_occurrence";
+import { getForSpecies, getSpeciesObservations, getSpeciesCoOccurrenceCells, getCoOccurringObservations, getNewcombKey, getSpeciesSources, getSpeciesFeatures } from "../api/co_occurrence";
 import { DataTable } from "../components/DataTable";
 import { LoadingState } from "../components/LoadingState";
 import { ObservationMap } from "../components/ObservationMap";
-import type { SpeciesCoOccurrence, SharedFeature } from "../types";
+import type { SpeciesCoOccurrence } from "../types";
 
 const col = createColumnHelper<SpeciesCoOccurrence>();
-const fcol = createColumnHelper<SharedFeature>();
 
 const columns = [
   col.accessor("co_occurring_species", {
@@ -22,11 +21,38 @@ const columns = [
   }),
 ];
 
-const featureColumns = [
-  fcol.accessor("feature", { header: "Feature" }),
-  fcol.accessor("value", { header: "Value" }),
-  fcol.accessor("species_count", { header: "Species with Trait" }),
-];
+function SpeciesFeaturesSection({ features }: { features: import("../types").SpeciesFeature[] }) {
+  const bySource: Record<string, Record<string, string[]>> = {};
+  for (const { source, feature, value } of features) {
+    if (!bySource[source]) bySource[source] = {};
+    if (!bySource[source][feature]) bySource[source][feature] = [];
+    if (!bySource[source][feature].includes(value)) bySource[source][feature].push(value);
+  }
+  return (
+    <div style={{ marginBottom: "1.5rem" }}>
+      <h3 style={{ marginBottom: "0.5rem" }}>Features</h3>
+      {Object.entries(bySource).map(([src, featureMap]) => (
+        <div key={src} style={{ marginBottom: "1rem" }}>
+          <div style={{
+            display: "inline-block", background: "#e8f4fd", border: "1px solid #b8d9f0",
+            borderRadius: "12px", padding: "0.15rem 0.7rem", fontSize: "0.75rem",
+            fontWeight: 600, marginBottom: "0.4rem", color: "#1a6fa3",
+          }}>{src}</div>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.85rem" }}>
+            <tbody>
+              {Object.entries(featureMap).map(([feat, vals]) => (
+                <tr key={feat} style={{ borderBottom: "1px solid #f0f0f0" }}>
+                  <td style={{ padding: "0.25rem 0.5rem", color: "#555", width: "40%" }}>{feat}</td>
+                  <td style={{ padding: "0.25rem 0.5rem" }}>{vals.join(", ")}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 const GRANULARITIES = [
   { value: "day", label: "Same Day" },
@@ -65,8 +91,8 @@ export function SpeciesDetailPage() {
   });
 
   const { data: featData } = useQuery({
-    queryKey: ["species-shared-features", decodedName],
-    queryFn: () => getSharedFeatures(decodedName),
+    queryKey: ["species-features", decodedName],
+    queryFn: () => getSpeciesFeatures(decodedName),
     enabled: !!decodedName,
   });
 
@@ -76,7 +102,14 @@ export function SpeciesDetailPage() {
     enabled: !!decodedName,
   });
 
+  const { data: sourcesData } = useQuery({
+    queryKey: ["species-sources", decodedName],
+    queryFn: () => getSpeciesSources(decodedName),
+    enabled: !!decodedName,
+  });
+
   const newcombKey = keyData?.data;
+  const sources = sourcesData?.data ?? [];
   const photos = (obsData?.data ?? []).filter((o) => o.image_url);
 
   if (isLoading) return <LoadingState message={`Loading co-occurrences for ${decodedName}...`} />;
@@ -107,6 +140,21 @@ export function SpeciesDetailPage() {
         </div>
       )}
 
+      {sources.length > 0 && (
+        <div style={{
+          display: "flex", gap: "0.5rem", alignItems: "center",
+          marginBottom: "1rem", fontSize: "0.8rem", color: "#555",
+        }}>
+          <span style={{ fontWeight: 600 }}>Sources:</span>
+          {sources.map((src) => (
+            <span key={src} style={{
+              background: "#e8f4fd", border: "1px solid #b8d9f0",
+              borderRadius: "12px", padding: "0.15rem 0.6rem",
+            }}>{src}</span>
+          ))}
+        </div>
+      )}
+
       <div style={{ display: "flex", gap: "1.5rem" }}>
         {/* Main content */}
         <div style={{ flex: 1, minWidth: 0 }}>
@@ -123,10 +171,7 @@ export function SpeciesDetailPage() {
           </div>
 
           {(featData?.data?.length ?? 0) > 0 && (
-            <>
-              <h3>Shared Traits Among Co-Occurring Species</h3>
-              <DataTable data={featData?.data ?? []} columns={featureColumns} />
-            </>
+            <SpeciesFeaturesSection features={featData!.data} />
           )}
 
           <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginTop: "2rem" }}>

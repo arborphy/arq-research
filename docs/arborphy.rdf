@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xmlns:arb="https://arborphy.ai/ontology#">
+
+  <!-- Ontology declaration -->
+  <owl:Ontology rdf:about="https://arborphy.ai/ontology">
+    <rdfs:label>Arborphy Ontology</rdfs:label>
+    <rdfs:comment>Knowledge graph for wildflower and botanical data, built on RelationalAI + Snowflake.</rdfs:comment>
+  </owl:Ontology>
+
+  <!-- ── Provenance ──────────────────────────────────────────────────────── -->
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#DataSource">
+    <rdfs:label>DataSource</rdfs:label>
+    <rdfs:comment>A versioned data load, identified by name and as-of date. All entities carry a source relationship.</rdfs:comment>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#DataSource_name">
+    <rdfs:label>name</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#DataSource"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#DataSource_asOfDate">
+    <rdfs:label>as_of_date</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#DataSource"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#DataSource_description">
+    <rdfs:label>description</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#DataSource"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <!-- ── Base ───────────────────────────────────────────────────────────── -->
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#Entity">
+    <rdfs:label>Entity</rdfs:label>
+    <rdfs:comment>Base concept for all named entities in the knowledge graph.</rdfs:comment>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Entity_name">
+    <rdfs:label>name</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Entity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#Entity_source">
+    <rdfs:label>source</rdfs:label>
+    <rdfs:comment>Inherited by all Entity subtypes. Links an entity to its DataSource.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Entity"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#DataSource"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#Entity_partOf">
+    <rdfs:label>part_of</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Entity"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#Entity"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#Entity_hasPart">
+    <rdfs:label>has_part</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Entity"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#Entity"/>
+  </owl:ObjectProperty>
+
+  <!-- ── Taxonomy ───────────────────────────────────────────────────────── -->
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#Domain">
+    <rdfs:label>Domain</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#Entity"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#Kingdom">
+    <rdfs:label>Kingdom</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#Domain"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#Phylum">
+    <rdfs:label>Phylum</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#Kingdom"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#TaxonClass">
+    <rdfs:label>TaxonClass</rdfs:label>
+    <rdfs:comment>Taxonomic class (mapped from Class to avoid reserved word conflict).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#Phylum"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#TaxonOrder">
+    <rdfs:label>TaxonOrder</rdfs:label>
+    <rdfs:comment>Taxonomic order (mapped from Order to avoid reserved word conflict).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#TaxonClass"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#Family">
+    <rdfs:label>Family</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#TaxonOrder"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#Genus">
+    <rdfs:label>Genus</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#Family"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#Species">
+    <rdfs:label>Species</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#Genus"/>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Species_commonName">
+    <rdfs:label>common_name</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Species"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Species_inatLink">
+    <rdfs:label>inat_link</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Species"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Species_inatTaxonId">
+    <rdfs:label>inat_taxon_id</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Species"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Species_iconicTaxon">
+    <rdfs:label>iconic_taxon</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Species"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#Species_coOccursWith">
+    <rdfs:label>co_occurs_with</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Species"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#Species"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#Species_featureValues">
+    <rdfs:label>feature_values</rdfs:label>
+    <rdfs:comment>Derived: all FeatureValues associated with this species via IdentificationKey.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Species"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#FeatureValue"/>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#Subspecies">
+    <rdfs:label>Subspecies</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#Species"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#TaxonVariety">
+    <rdfs:label>TaxonVariety</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#Species"/>
+  </owl:Class>
+
+  <!-- ── Features ───────────────────────────────────────────────────────── -->
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#Feature">
+    <rdfs:label>Feature</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#Entity"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#FeatureValue">
+    <rdfs:label>FeatureValue</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#Entity"/>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#FeatureValue_value">
+    <rdfs:label>value</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#FeatureValue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#FeatureValue_feature">
+    <rdfs:label>feature</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#FeatureValue"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#Feature"/>
+  </owl:ObjectProperty>
+
+  <!-- ── Identification Keys ────────────────────────────────────────────── -->
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#IdentificationKey">
+    <rdfs:label>IdentificationKey</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#Entity"/>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#IdentificationKey_value">
+    <rdfs:label>value</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#IdentificationKey"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#IdentificationKey_species">
+    <rdfs:label>identifies</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#IdentificationKey"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#Species"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#IdentificationKey_feature">
+    <rdfs:label>has_feature</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#IdentificationKey"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#Feature"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#IdentificationKey_featureValue">
+    <rdfs:label>has_feature_value</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#IdentificationKey"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#FeatureValue"/>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#NewcombKey">
+    <rdfs:label>NewcombKey</rdfs:label>
+    <rdfs:comment>Newcomb Wildflower Guide identification key. Group number encodes a 3-digit path: FlowerType, PlantType, LeafType.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#IdentificationKey"/>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#NewcombKey_groupNumber">
+    <rdfs:label>group_number</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#NewcombKey"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#NewcombKey_flowerCode">
+    <rdfs:label>flower_code</rdfs:label>
+    <rdfs:comment>First digit of group_number. 0 means not applicable.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#NewcombKey"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#NewcombKey_plantCode">
+    <rdfs:label>plant_code</rdfs:label>
+    <rdfs:comment>Second digit of group_number. 0 means not applicable.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#NewcombKey"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#NewcombKey_leafCode">
+    <rdfs:label>leaf_code</rdfs:label>
+    <rdfs:comment>Third digit of group_number. 0 means not applicable.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#NewcombKey"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#NewcombKey_flowerType">
+    <rdfs:label>flower_type</rdfs:label>
+    <rdfs:comment>Derived from flower_code via NewcombDigitMap.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#NewcombKey"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#NewcombKey_plantType">
+    <rdfs:label>plant_type</rdfs:label>
+    <rdfs:comment>Derived from plant_code via NewcombDigitMap.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#NewcombKey"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#NewcombKey_leafType">
+    <rdfs:label>leaf_type</rdfs:label>
+    <rdfs:comment>Derived from leaf_code via NewcombDigitMap.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#NewcombKey"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#NewcombDigitMap">
+    <rdfs:label>NewcombDigitMap</rdfs:label>
+    <rdfs:comment>Lookup table mapping (level, digit code) to a human-readable label. Level 1=FlowerType, 2=PlantType, 3=LeafType.</rdfs:comment>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#NewcombDigitMap_level">
+    <rdfs:label>level</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#NewcombDigitMap"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#NewcombDigitMap_code">
+    <rdfs:label>code</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#NewcombDigitMap"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#NewcombDigitMap_label">
+    <rdfs:label>label</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#NewcombDigitMap"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <!-- ── Observations ───────────────────────────────────────────────────── -->
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#Observation">
+    <rdfs:label>Observation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#Entity"/>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Observation_inatId">
+    <rdfs:label>inat_id</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Observation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Observation_uuid">
+    <rdfs:label>uuid</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Observation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Observation_date">
+    <rdfs:label>date</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Observation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Observation_latitude">
+    <rdfs:label>latitude</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Observation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Observation_longitude">
+    <rdfs:label>longitude</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Observation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Observation_qualityGrade">
+    <rdfs:label>quality_grade</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Observation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Observation_coordinatesObscured">
+    <rdfs:label>coordinates_obscured</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Observation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Observation_imageUrl">
+    <rdfs:label>image_url</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Observation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Observation_url">
+    <rdfs:label>url</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Observation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Observation_license">
+    <rdfs:label>license</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Observation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Observation_placeGuess">
+    <rdfs:label>place_guess</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Observation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Observation_description">
+    <rdfs:label>description</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Observation"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#Observation_species">
+    <rdfs:label>of_species</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Observation"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#Species"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#Observation_area">
+    <rdfs:label>located_in</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Observation"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#GeographicArea"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#Observation_h3cell">
+    <rdfs:label>falls_in</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Observation"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#H3Cell"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#Observation_coOccursWith">
+    <rdfs:label>co_occurs_with</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Observation"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#Observation"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#Observation_calendarDate">
+    <rdfs:label>has_calendar_date</rdfs:label>
+    <rdfs:comment>Derived from observation date.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Observation"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#CalendarDate"/>
+  </owl:ObjectProperty>
+
+  <!-- ── Geography ──────────────────────────────────────────────────────── -->
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#GeographicArea">
+    <rdfs:label>GeographicArea</rdfs:label>
+    <rdfs:comment>A named administrative or descriptive place (e.g. state, park, watershed) attached to an observation.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#Entity"/>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#GeographicArea_type">
+    <rdfs:label>type</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#GeographicArea"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#GeographicArea_environment">
+    <rdfs:label>has_environment</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#GeographicArea"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#EnvironmentValue"/>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#H3Cell">
+    <rdfs:label>H3Cell</rdfs:label>
+    <rdfs:comment>An Uber H3 hexagonal cell. Cells nest spatially via part_of.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#Entity"/>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#H3Cell_index">
+    <rdfs:label>index</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#H3Cell"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#H3Cell_resolution">
+    <rdfs:label>resolution</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#H3Cell"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#EcoSite">
+    <rdfs:label>EcoSite</rdfs:label>
+    <rdfs:comment>An ecological site with a defined spatial footprint expressed as H3 cells. Source: NRCS EDIT.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#Entity"/>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#EcoSite_ecositeId">
+    <rdfs:label>ecosite_id</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#EcoSite"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#EcoSite_h3Cells">
+    <rdfs:label>covers</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#EcoSite"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#H3Cell"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#EcoSite_compactedH3Cells">
+    <rdfs:label>has_compacted_coverage</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#EcoSite"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#H3Cell"/>
+  </owl:ObjectProperty>
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#Trail">
+    <rdfs:label>Trail</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#Entity"/>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Trail_osmId">
+    <rdfs:label>osm_id</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Trail"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Trail_highway">
+    <rdfs:label>highway</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Trail"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Trail_surface">
+    <rdfs:label>surface</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Trail"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#Trail_h3Cells">
+    <rdfs:label>passes_through</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Trail"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#H3Cell"/>
+  </owl:ObjectProperty>
+
+  <!-- ── Environment ────────────────────────────────────────────────────── -->
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#EnvironmentDescriptor">
+    <rdfs:label>EnvironmentDescriptor</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#Entity"/>
+  </owl:Class>
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#EnvironmentValue">
+    <rdfs:label>EnvironmentValue</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://arborphy.ai/ontology#Entity"/>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#EnvironmentValue_value">
+    <rdfs:label>value</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#EnvironmentValue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#EnvironmentValue_descriptor">
+    <rdfs:label>belongs_to</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#EnvironmentValue"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#EnvironmentDescriptor"/>
+  </owl:ObjectProperty>
+
+  <!-- ── Calendar ───────────────────────────────────────────────────────── -->
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#Month">
+    <rdfs:label>Month</rdfs:label>
+    <rdfs:comment>Calendar month, identified by number (1-12).</rdfs:comment>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Month_number">
+    <rdfs:label>number</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Month"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Month_name">
+    <rdfs:label>name</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Month"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#Season">
+    <rdfs:label>Season</rdfs:label>
+    <rdfs:comment>Meteorological season, hemisphere-aware. Naming convention: Season_hemisphere e.g. Spring_north.</rdfs:comment>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Season_name">
+    <rdfs:label>name</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Season"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Season_hemisphere">
+    <rdfs:label>hemisphere</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Season"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Season_startMonth">
+    <rdfs:label>start_month</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Season"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#Season_endMonth">
+    <rdfs:label>end_month</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#Season"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+
+  <owl:Class rdf:about="https://arborphy.ai/ontology#CalendarDate">
+    <rdfs:label>CalendarDate</rdfs:label>
+    <rdfs:comment>A specific date with derived year, month, quarter, and season. Materialised for each unique observation date.</rdfs:comment>
+  </owl:Class>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#CalendarDate_date">
+    <rdfs:label>date</rdfs:label>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#CalendarDate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#CalendarDate_year">
+    <rdfs:label>year</rdfs:label>
+    <rdfs:comment>Derived from date.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#CalendarDate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#CalendarDate_monthNum">
+    <rdfs:label>month_num</rdfs:label>
+    <rdfs:comment>Derived from date.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#CalendarDate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+
+  <owl:DatatypeProperty rdf:about="https://arborphy.ai/ontology#CalendarDate_quarter">
+    <rdfs:label>quarter</rdfs:label>
+    <rdfs:comment>Derived from date.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#CalendarDate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </owl:DatatypeProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#CalendarDate_month">
+    <rdfs:label>in_month</rdfs:label>
+    <rdfs:comment>Derived by joining on month number.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#CalendarDate"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#Month"/>
+  </owl:ObjectProperty>
+
+  <owl:ObjectProperty rdf:about="https://arborphy.ai/ontology#CalendarDate_season">
+    <rdfs:label>in_season</rdfs:label>
+    <rdfs:comment>Derived by month range, hemisphere-aware.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://arborphy.ai/ontology#CalendarDate"/>
+    <rdfs:range rdf:resource="https://arborphy.ai/ontology#Season"/>
+  </owl:ObjectProperty>
+
+</rdf:RDF>

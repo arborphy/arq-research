@@ -3,7 +3,6 @@ from relationalai.semantics import Bool, Date, Float, Integer, String
 from .entity import Entity
 from .taxonomy import Species
 from .environment import EnvironmentValue
-from .provenance import DataSource
 
 Observation = m.Concept("Observation", extends=[Entity])
 GeographicArea = m.Concept("GeographicArea", extends=[Entity])
@@ -32,7 +31,6 @@ GeographicArea.type = m.Property(f"{GeographicArea} has type {String:type}")
 
 # Relationships
 Observation.co_occurs_with = m.Relationship(f"{Observation} co-occurs with {Observation:co_occurs_with}")
-Observation.source = m.Relationship(f"{Observation} from source {DataSource:source}")
 Observation.species = m.Relationship(f"{Observation} of species {Species:species}")
 Observation.area = m.Relationship(f"{Observation} located in {GeographicArea:area}")
 GeographicArea.environment = m.Relationship(f"{GeographicArea} has environment {EnvironmentValue:environment}")

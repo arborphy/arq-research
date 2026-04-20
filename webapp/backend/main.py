@@ -23,6 +23,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+import kg.loaders.gobotany  # noqa: F401, E402
+
 from webapp.backend.routers.co_occurrence import router as co_occurrence_router  # noqa: E402
 from webapp.backend.routers.geo import router as geo_router  # noqa: E402
 from webapp.backend.routers.features import router as features_router  # noqa: E402

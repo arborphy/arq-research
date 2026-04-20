@@ -6,7 +6,7 @@ export PYTHONPATH="$ROOT"
 
 echo "Starting backend on :8000 and frontend on :5173..."
 
-uvicorn webapp.backend.main:app --reload --port 8000 &
+uv run uvicorn webapp.backend.main:app --reload --port 8000 &
 BACKEND_PID=$!
 
 cd "$ROOT/webapp/frontend"

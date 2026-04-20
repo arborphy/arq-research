@@ -194,6 +194,17 @@ def newcomb_key_for_species(species_name: str):
     ).to_df()
 
 
+def datasources_for_species(species_name: str):
+    """Return the datasources a species was loaded from."""
+    from kg.model.core.provenance import DataSource
+    return where(
+        Species.name == species_name,
+        Species.source(DataSource),
+    ).select(
+        DataSource.name,
+    ).to_df()
+
+
 def species_with_newcomb_keys():
     """Return all species with their NewcombKey group numbers."""
     return where(

@@ -1,0 +1,646 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix arb:  <https://arborphy.ai/ontology#> .
+
+# ── Ontology declaration ───────────────────────────────────────────────────────
+
+<https://arborphy.ai/ontology>
+    a owl:Ontology ;
+    rdfs:label "Arborphy Ontology" ;
+    rdfs:comment "Knowledge graph for wildflower and botanical data, built on RelationalAI + Snowflake." .
+
+
+# ── Provenance ─────────────────────────────────────────────────────────────────
+# DataSource is identified by (name, as_of_date) — not an Entity subtype.
+
+arb:DataSource
+    a owl:Class ;
+    rdfs:label "DataSource" ;
+    rdfs:comment "A versioned data load, identified by name and as-of date. All entities carry a source relationship." .
+
+arb:DataSource_name
+    a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    rdfs:domain arb:DataSource ;
+    rdfs:range xsd:string .
+
+arb:DataSource_asOfDate
+    a owl:DatatypeProperty ;
+    rdfs:label "as_of_date" ;
+    rdfs:domain arb:DataSource ;
+    rdfs:range xsd:string .
+
+arb:DataSource_description
+    a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    rdfs:domain arb:DataSource ;
+    rdfs:range xsd:string .
+
+
+# ── Base ───────────────────────────────────────────────────────────────────────
+
+arb:Entity
+    a owl:Class ;
+    rdfs:label "Entity" ;
+    rdfs:comment "Base concept for all named entities in the knowledge graph." .
+
+arb:Entity_name
+    a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    rdfs:domain arb:Entity ;
+    rdfs:range xsd:string .
+
+arb:Entity_source
+    a owl:ObjectProperty ;
+    rdfs:label "source" ;
+    rdfs:comment "Inherited by all Entity subtypes. Links an entity to its DataSource." ;
+    rdfs:domain arb:Entity ;
+    rdfs:range arb:DataSource .
+
+arb:Entity_partOf
+    a owl:ObjectProperty ;
+    rdfs:label "part_of" ;
+    rdfs:domain arb:Entity ;
+    rdfs:range arb:Entity .
+
+arb:Entity_hasPart
+    a owl:ObjectProperty ;
+    rdfs:label "has_part" ;
+    rdfs:domain arb:Entity ;
+    rdfs:range arb:Entity .
+
+
+# ── Taxonomy ───────────────────────────────────────────────────────────────────
+
+arb:Domain
+    a owl:Class ;
+    rdfs:label "Domain" ;
+    rdfs:subClassOf arb:Entity .
+
+arb:Kingdom
+    a owl:Class ;
+    rdfs:label "Kingdom" ;
+    rdfs:subClassOf arb:Domain .
+
+arb:Phylum
+    a owl:Class ;
+    rdfs:label "Phylum" ;
+    rdfs:subClassOf arb:Kingdom .
+
+arb:TaxonClass
+    a owl:Class ;
+    rdfs:label "TaxonClass" ;
+    rdfs:comment "Taxonomic class (mapped from 'Class' to avoid reserved word conflict)." ;
+    rdfs:subClassOf arb:Phylum .
+
+arb:TaxonOrder
+    a owl:Class ;
+    rdfs:label "TaxonOrder" ;
+    rdfs:comment "Taxonomic order (mapped from 'Order' to avoid reserved word conflict)." ;
+    rdfs:subClassOf arb:TaxonClass .
+
+arb:Family
+    a owl:Class ;
+    rdfs:label "Family" ;
+    rdfs:subClassOf arb:TaxonOrder .
+
+arb:Genus
+    a owl:Class ;
+    rdfs:label "Genus" ;
+    rdfs:subClassOf arb:Family .
+
+arb:Species
+    a owl:Class ;
+    rdfs:label "Species" ;
+    rdfs:subClassOf arb:Genus .
+
+arb:Species_commonName
+    a owl:DatatypeProperty ;
+    rdfs:label "common_name" ;
+    rdfs:domain arb:Species ;
+    rdfs:range xsd:string .
+
+arb:Species_inatLink
+    a owl:DatatypeProperty ;
+    rdfs:label "inat_link" ;
+    rdfs:domain arb:Species ;
+    rdfs:range xsd:string .
+
+arb:Species_inatTaxonId
+    a owl:DatatypeProperty ;
+    rdfs:label "inat_taxon_id" ;
+    rdfs:domain arb:Species ;
+    rdfs:range xsd:string .
+
+arb:Species_iconicTaxon
+    a owl:DatatypeProperty ;
+    rdfs:label "iconic_taxon" ;
+    rdfs:domain arb:Species ;
+    rdfs:range xsd:string .
+
+arb:Species_coOccursWith
+    a owl:ObjectProperty ;
+    rdfs:label "co_occurs_with" ;
+    rdfs:domain arb:Species ;
+    rdfs:range arb:Species .
+
+arb:Species_featureValues
+    a owl:ObjectProperty ;
+    rdfs:label "feature_values" ;
+    rdfs:comment "Derived: all FeatureValues associated with this species via IdentificationKey." ;
+    rdfs:domain arb:Species ;
+    rdfs:range arb:FeatureValue .
+
+arb:Subspecies
+    a owl:Class ;
+    rdfs:label "Subspecies" ;
+    rdfs:subClassOf arb:Species .
+
+arb:TaxonVariety
+    a owl:Class ;
+    rdfs:label "TaxonVariety" ;
+    rdfs:subClassOf arb:Species .
+
+
+# ── Features ───────────────────────────────────────────────────────────────────
+
+arb:Feature
+    a owl:Class ;
+    rdfs:label "Feature" ;
+    rdfs:subClassOf arb:Entity .
+
+arb:FeatureValue
+    a owl:Class ;
+    rdfs:label "FeatureValue" ;
+    rdfs:subClassOf arb:Entity .
+
+arb:FeatureValue_value
+    a owl:DatatypeProperty ;
+    rdfs:label "value" ;
+    rdfs:domain arb:FeatureValue ;
+    rdfs:range xsd:string .
+
+arb:FeatureValue_feature
+    a owl:ObjectProperty ;
+    rdfs:label "feature" ;
+    rdfs:domain arb:FeatureValue ;
+    rdfs:range arb:Feature .
+
+
+# ── Identification Keys ────────────────────────────────────────────────────────
+
+arb:IdentificationKey
+    a owl:Class ;
+    rdfs:label "IdentificationKey" ;
+    rdfs:subClassOf arb:Entity .
+
+arb:IdentificationKey_value
+    a owl:DatatypeProperty ;
+    rdfs:label "value" ;
+    rdfs:domain arb:IdentificationKey ;
+    rdfs:range xsd:string .
+
+arb:IdentificationKey_species
+    a owl:ObjectProperty ;
+    rdfs:label "identifies" ;
+    rdfs:domain arb:IdentificationKey ;
+    rdfs:range arb:Species .
+
+arb:IdentificationKey_feature
+    a owl:ObjectProperty ;
+    rdfs:label "has_feature" ;
+    rdfs:domain arb:IdentificationKey ;
+    rdfs:range arb:Feature .
+
+arb:IdentificationKey_featureValue
+    a owl:ObjectProperty ;
+    rdfs:label "has_feature_value" ;
+    rdfs:domain arb:IdentificationKey ;
+    rdfs:range arb:FeatureValue .
+
+arb:NewcombKey
+    a owl:Class ;
+    rdfs:label "NewcombKey" ;
+    rdfs:comment "Newcomb Wildflower Guide identification key. Group number encodes a 3-digit path: FlowerType · PlantType · LeafType." ;
+    rdfs:subClassOf arb:IdentificationKey .
+
+arb:NewcombKey_groupNumber
+    a owl:DatatypeProperty ;
+    rdfs:label "group_number" ;
+    rdfs:domain arb:NewcombKey ;
+    rdfs:range xsd:string .
+
+arb:NewcombKey_flowerCode
+    a owl:DatatypeProperty ;
+    rdfs:label "flower_code" ;
+    rdfs:comment "First digit of group_number. '0' means not applicable." ;
+    rdfs:domain arb:NewcombKey ;
+    rdfs:range xsd:string .
+
+arb:NewcombKey_plantCode
+    a owl:DatatypeProperty ;
+    rdfs:label "plant_code" ;
+    rdfs:comment "Second digit of group_number. '0' means not applicable." ;
+    rdfs:domain arb:NewcombKey ;
+    rdfs:range xsd:string .
+
+arb:NewcombKey_leafCode
+    a owl:DatatypeProperty ;
+    rdfs:label "leaf_code" ;
+    rdfs:comment "Third digit of group_number. '0' means not applicable." ;
+    rdfs:domain arb:NewcombKey ;
+    rdfs:range xsd:string .
+
+arb:NewcombKey_flowerType
+    a owl:DatatypeProperty ;
+    rdfs:label "flower_type" ;
+    rdfs:comment "Derived from flower_code via NewcombDigitMap." ;
+    rdfs:domain arb:NewcombKey ;
+    rdfs:range xsd:string .
+
+arb:NewcombKey_plantType
+    a owl:DatatypeProperty ;
+    rdfs:label "plant_type" ;
+    rdfs:comment "Derived from plant_code via NewcombDigitMap." ;
+    rdfs:domain arb:NewcombKey ;
+    rdfs:range xsd:string .
+
+arb:NewcombKey_leafType
+    a owl:DatatypeProperty ;
+    rdfs:label "leaf_type" ;
+    rdfs:comment "Derived from leaf_code via NewcombDigitMap." ;
+    rdfs:domain arb:NewcombKey ;
+    rdfs:range xsd:string .
+
+arb:NewcombDigitMap
+    a owl:Class ;
+    rdfs:label "NewcombDigitMap" ;
+    rdfs:comment "Lookup table mapping (level, digit code) to a human-readable label. Level 1=FlowerType, 2=PlantType, 3=LeafType." .
+
+arb:NewcombDigitMap_level
+    a owl:DatatypeProperty ;
+    rdfs:label "level" ;
+    rdfs:domain arb:NewcombDigitMap ;
+    rdfs:range xsd:integer .
+
+arb:NewcombDigitMap_code
+    a owl:DatatypeProperty ;
+    rdfs:label "code" ;
+    rdfs:domain arb:NewcombDigitMap ;
+    rdfs:range xsd:string .
+
+arb:NewcombDigitMap_label
+    a owl:DatatypeProperty ;
+    rdfs:label "label" ;
+    rdfs:domain arb:NewcombDigitMap ;
+    rdfs:range xsd:string .
+
+
+# ── Observations ───────────────────────────────────────────────────────────────
+
+arb:Observation
+    a owl:Class ;
+    rdfs:label "Observation" ;
+    rdfs:subClassOf arb:Entity .
+
+arb:Observation_inatId
+    a owl:DatatypeProperty ;
+    rdfs:label "inat_id" ;
+    rdfs:domain arb:Observation ;
+    rdfs:range xsd:string .
+
+arb:Observation_uuid
+    a owl:DatatypeProperty ;
+    rdfs:label "uuid" ;
+    rdfs:domain arb:Observation ;
+    rdfs:range xsd:string .
+
+arb:Observation_date
+    a owl:DatatypeProperty ;
+    rdfs:label "date" ;
+    rdfs:domain arb:Observation ;
+    rdfs:range xsd:date .
+
+arb:Observation_latitude
+    a owl:DatatypeProperty ;
+    rdfs:label "latitude" ;
+    rdfs:domain arb:Observation ;
+    rdfs:range xsd:float .
+
+arb:Observation_longitude
+    a owl:DatatypeProperty ;
+    rdfs:label "longitude" ;
+    rdfs:domain arb:Observation ;
+    rdfs:range xsd:float .
+
+arb:Observation_positionalAccuracy
+    a owl:DatatypeProperty ;
+    rdfs:label "positional_accuracy" ;
+    rdfs:domain arb:Observation ;
+    rdfs:range xsd:float .
+
+arb:Observation_coordinatesObscured
+    a owl:DatatypeProperty ;
+    rdfs:label "coordinates_obscured" ;
+    rdfs:domain arb:Observation ;
+    rdfs:range xsd:boolean .
+
+arb:Observation_qualityGrade
+    a owl:DatatypeProperty ;
+    rdfs:label "quality_grade" ;
+    rdfs:domain arb:Observation ;
+    rdfs:range xsd:string .
+
+arb:Observation_imageUrl
+    a owl:DatatypeProperty ;
+    rdfs:label "image_url" ;
+    rdfs:domain arb:Observation ;
+    rdfs:range xsd:string .
+
+arb:Observation_soundUrl
+    a owl:DatatypeProperty ;
+    rdfs:label "sound_url" ;
+    rdfs:domain arb:Observation ;
+    rdfs:range xsd:string .
+
+arb:Observation_url
+    a owl:DatatypeProperty ;
+    rdfs:label "url" ;
+    rdfs:domain arb:Observation ;
+    rdfs:range xsd:string .
+
+arb:Observation_license
+    a owl:DatatypeProperty ;
+    rdfs:label "license" ;
+    rdfs:domain arb:Observation ;
+    rdfs:range xsd:string .
+
+arb:Observation_captiveCultivated
+    a owl:DatatypeProperty ;
+    rdfs:label "captive_cultivated" ;
+    rdfs:domain arb:Observation ;
+    rdfs:range xsd:boolean .
+
+arb:Observation_placeGuess
+    a owl:DatatypeProperty ;
+    rdfs:label "place_guess" ;
+    rdfs:domain arb:Observation ;
+    rdfs:range xsd:string .
+
+arb:Observation_speciesGuess
+    a owl:DatatypeProperty ;
+    rdfs:label "species_guess" ;
+    rdfs:domain arb:Observation ;
+    rdfs:range xsd:string .
+
+arb:Observation_description
+    a owl:DatatypeProperty ;
+    rdfs:label "description" ;
+    rdfs:domain arb:Observation ;
+    rdfs:range xsd:string .
+
+arb:Observation_species
+    a owl:ObjectProperty ;
+    rdfs:label "of_species" ;
+    rdfs:domain arb:Observation ;
+    rdfs:range arb:Species .
+
+arb:Observation_area
+    a owl:ObjectProperty ;
+    rdfs:label "located_in" ;
+    rdfs:domain arb:Observation ;
+    rdfs:range arb:GeographicArea .
+
+arb:Observation_h3cell
+    a owl:ObjectProperty ;
+    rdfs:label "falls_in" ;
+    rdfs:domain arb:Observation ;
+    rdfs:range arb:H3Cell .
+
+arb:Observation_coOccursWith
+    a owl:ObjectProperty ;
+    rdfs:label "co_occurs_with" ;
+    rdfs:domain arb:Observation ;
+    rdfs:range arb:Observation .
+
+arb:Observation_calendarDate
+    a owl:ObjectProperty ;
+    rdfs:label "has_calendar_date" ;
+    rdfs:comment "Derived from observation date." ;
+    rdfs:domain arb:Observation ;
+    rdfs:range arb:CalendarDate .
+
+
+# ── Geography ──────────────────────────────────────────────────────────────────
+
+arb:GeographicArea
+    a owl:Class ;
+    rdfs:label "GeographicArea" ;
+    rdfs:comment "A named administrative or descriptive place (e.g. state, park, watershed) attached to an observation." ;
+    rdfs:subClassOf arb:Entity .
+
+arb:GeographicArea_type
+    a owl:DatatypeProperty ;
+    rdfs:label "type" ;
+    rdfs:domain arb:GeographicArea ;
+    rdfs:range xsd:string .
+
+arb:GeographicArea_environment
+    a owl:ObjectProperty ;
+    rdfs:label "has_environment" ;
+    rdfs:domain arb:GeographicArea ;
+    rdfs:range arb:EnvironmentValue .
+
+arb:H3Cell
+    a owl:Class ;
+    rdfs:label "H3Cell" ;
+    rdfs:comment "An Uber H3 hexagonal cell. Cells nest spatially via part_of." ;
+    rdfs:subClassOf arb:Entity .
+
+arb:H3Cell_index
+    a owl:DatatypeProperty ;
+    rdfs:label "index" ;
+    rdfs:domain arb:H3Cell ;
+    rdfs:range xsd:integer .
+
+arb:H3Cell_resolution
+    a owl:DatatypeProperty ;
+    rdfs:label "resolution" ;
+    rdfs:domain arb:H3Cell ;
+    rdfs:range xsd:integer .
+
+arb:EcoSite
+    a owl:Class ;
+    rdfs:label "EcoSite" ;
+    rdfs:comment "An ecological site with a defined spatial footprint expressed as H3 cells. Source: NRCS EDIT." ;
+    rdfs:subClassOf arb:Entity .
+
+arb:EcoSite_ecositeId
+    a owl:DatatypeProperty ;
+    rdfs:label "ecosite_id" ;
+    rdfs:domain arb:EcoSite ;
+    rdfs:range xsd:string .
+
+arb:EcoSite_h3Cells
+    a owl:ObjectProperty ;
+    rdfs:label "covers" ;
+    rdfs:domain arb:EcoSite ;
+    rdfs:range arb:H3Cell .
+
+arb:EcoSite_compactedH3Cells
+    a owl:ObjectProperty ;
+    rdfs:label "has_compacted_coverage" ;
+    rdfs:domain arb:EcoSite ;
+    rdfs:range arb:H3Cell .
+
+arb:Trail
+    a owl:Class ;
+    rdfs:label "Trail" ;
+    rdfs:subClassOf arb:Entity .
+
+arb:Trail_osmId
+    a owl:DatatypeProperty ;
+    rdfs:label "osm_id" ;
+    rdfs:domain arb:Trail ;
+    rdfs:range xsd:string .
+
+arb:Trail_highway
+    a owl:DatatypeProperty ;
+    rdfs:label "highway" ;
+    rdfs:domain arb:Trail ;
+    rdfs:range xsd:string .
+
+arb:Trail_surface
+    a owl:DatatypeProperty ;
+    rdfs:label "surface" ;
+    rdfs:domain arb:Trail ;
+    rdfs:range xsd:string .
+
+arb:Trail_h3Cells
+    a owl:ObjectProperty ;
+    rdfs:label "passes_through" ;
+    rdfs:domain arb:Trail ;
+    rdfs:range arb:H3Cell .
+
+
+# ── Environment ────────────────────────────────────────────────────────────────
+
+arb:EnvironmentDescriptor
+    a owl:Class ;
+    rdfs:label "EnvironmentDescriptor" ;
+    rdfs:subClassOf arb:Entity .
+
+arb:EnvironmentValue
+    a owl:Class ;
+    rdfs:label "EnvironmentValue" ;
+    rdfs:subClassOf arb:Entity .
+
+arb:EnvironmentValue_value
+    a owl:DatatypeProperty ;
+    rdfs:label "value" ;
+    rdfs:domain arb:EnvironmentValue ;
+    rdfs:range xsd:string .
+
+arb:EnvironmentValue_descriptor
+    a owl:ObjectProperty ;
+    rdfs:label "belongs_to" ;
+    rdfs:domain arb:EnvironmentValue ;
+    rdfs:range arb:EnvironmentDescriptor .
+
+
+# ── Calendar ───────────────────────────────────────────────────────────────────
+# Month, Season, CalendarDate are identified by value — not Entity subtypes.
+
+arb:Month
+    a owl:Class ;
+    rdfs:label "Month" ;
+    rdfs:comment "Calendar month, identified by number (1–12)." .
+
+arb:Month_number
+    a owl:DatatypeProperty ;
+    rdfs:label "number" ;
+    rdfs:domain arb:Month ;
+    rdfs:range xsd:integer .
+
+arb:Month_name
+    a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    rdfs:domain arb:Month ;
+    rdfs:range xsd:string .
+
+arb:Season
+    a owl:Class ;
+    rdfs:label "Season" ;
+    rdfs:comment "Meteorological season, hemisphere-aware. Naming: {Season}_{hemisphere} e.g. Spring_north." .
+
+arb:Season_name
+    a owl:DatatypeProperty ;
+    rdfs:label "name" ;
+    rdfs:domain arb:Season ;
+    rdfs:range xsd:string .
+
+arb:Season_hemisphere
+    a owl:DatatypeProperty ;
+    rdfs:label "hemisphere" ;
+    rdfs:domain arb:Season ;
+    rdfs:range xsd:string .
+
+arb:Season_startMonth
+    a owl:DatatypeProperty ;
+    rdfs:label "start_month" ;
+    rdfs:domain arb:Season ;
+    rdfs:range xsd:integer .
+
+arb:Season_endMonth
+    a owl:DatatypeProperty ;
+    rdfs:label "end_month" ;
+    rdfs:domain arb:Season ;
+    rdfs:range xsd:integer .
+
+arb:CalendarDate
+    a owl:Class ;
+    rdfs:label "CalendarDate" ;
+    rdfs:comment "A specific date with derived year, month, quarter, and season. Materialised for each unique observation date." .
+
+arb:CalendarDate_date
+    a owl:DatatypeProperty ;
+    rdfs:label "date" ;
+    rdfs:domain arb:CalendarDate ;
+    rdfs:range xsd:date .
+
+arb:CalendarDate_year
+    a owl:DatatypeProperty ;
+    rdfs:label "year" ;
+    rdfs:comment "Derived from date." ;
+    rdfs:domain arb:CalendarDate ;
+    rdfs:range xsd:integer .
+
+arb:CalendarDate_monthNum
+    a owl:DatatypeProperty ;
+    rdfs:label "month_num" ;
+    rdfs:comment "Derived from date." ;
+    rdfs:domain arb:CalendarDate ;
+    rdfs:range xsd:integer .
+
+arb:CalendarDate_quarter
+    a owl:DatatypeProperty ;
+    rdfs:label "quarter" ;
+    rdfs:comment "Derived from date." ;
+    rdfs:domain arb:CalendarDate ;
+    rdfs:range xsd:integer .
+
+arb:CalendarDate_month
+    a owl:ObjectProperty ;
+    rdfs:label "in_month" ;
+    rdfs:comment "Derived by joining on month number." ;
+    rdfs:domain arb:CalendarDate ;
+    rdfs:range arb:Month .
+
+arb:CalendarDate_season
+    a owl:ObjectProperty ;
+    rdfs:label "in_season" ;
+    rdfs:comment "Derived by month range, hemisphere-aware." ;
+    rdfs:domain arb:CalendarDate ;
+    rdfs:range arb:Season .

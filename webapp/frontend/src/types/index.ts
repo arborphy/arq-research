@@ -62,6 +62,17 @@ export interface NewcombKeyInfo {
   leaf_type: string;
 }
 
+export interface SpeciesFeature {
+  feature: string;
+  value: string;
+  source: string;
+}
+
+export interface SpeciesWithSources {
+  species: string;
+  sources: string[];
+}
+
 export interface ApiResponse<T> {
   data: T[];
   total: number;

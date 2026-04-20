@@ -1,4 +1,4 @@
-import { fetchJson } from "./client";
+import { fetchJson, postJson } from "./client";
 import type { ApiResponse, SpeciesCoOccurrenceCount, SpeciesCoOccurrence, ObservationPoint, CoOccurringObservation, SharedFeature, FeatureValueCount, H3CellInfo, DebugQuery } from "../types";
 
 export function getTopSpecies(limit = 50) {
@@ -46,7 +46,7 @@ export function getFeatures() {
 }
 
 export function getSpeciesByFeature(feature: string, value: string) {
-  return fetchJson<ApiResponse<{ species: string }>>(
+  return fetchJson<ApiResponse<import("../types").SpeciesWithSources>>(
     `/features/species?feature=${encodeURIComponent(feature)}&value=${encodeURIComponent(value)}`
   );
 }
@@ -63,6 +63,22 @@ export function getNewcombKey(name: string) {
   return fetchJson<{ data: import("../types").NewcombKeyInfo | null }>(
     `/features/newcomb-key/${encodeURIComponent(name)}`
   );
+}
+
+export function getSpeciesSources(name: string) {
+  return fetchJson<{ data: string[] }>(
+    `/features/sources/${encodeURIComponent(name)}`
+  );
+}
+
+export function getSpeciesFeatures(name: string) {
+  return fetchJson<{ data: import("../types").SpeciesFeature[] }>(
+    `/features/for-species/${encodeURIComponent(name)}`
+  );
+}
+
+export function filterSpeciesByFeatures(filters: { feature: string; value: string }[]) {
+  return postJson<{ data: import("../types").SpeciesWithSources[]; total: number }>("/features/filter", filters);
 }
 
 export function getCells(dayOfYear?: number) {
