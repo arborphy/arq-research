@@ -12,7 +12,7 @@ def summary():
 
 @router.get("/pairs")
 def pairs(
-    concept_type: str = Query("all", regex="^(all|species|genus|feature)$"),
+    concept_type: str = Query("all", pattern="^(all|species|genus|feature)$"),
     limit: int = Query(50, ge=1, le=500),
 ):
     from kg.queries.predicates import part_of_pairs

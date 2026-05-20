@@ -8,7 +8,7 @@ from relationalai.semantics import define, select, where
 
 from kg.model.core.provenance import DataSource
 from kg.model.core.taxonomy import Species
-from kg.model.core.keys.key import IdentificationKey
+from kg.model.core.keys.key import Description
 
 
 class TestDataSources:
@@ -59,16 +59,16 @@ class TestProvenanceTracking:
     def test_trace_species_to_source(self, blue_aster_hierarchy, newcomb_source):
         """Create a key and trace from species back to its data source."""
         define(
-            key := IdentificationKey.new(name="Provenance Test Key"),
-            key.species(blue_aster_hierarchy["species"]),
+            key := Description.new(name="Provenance Test Key", version="test"),
+            key.describes(blue_aster_hierarchy["species"]),
             key.source(newcomb_source),
         )
 
-        key_species = IdentificationKey.species
-        key_source = IdentificationKey.source
+        key_species = Description.describes
+        key_source = Description.source
         df = where(
             key_species.name == "Symphyotrichum laeve",
-            IdentificationKey.name == "Provenance Test Key",
+            Description.name == "Provenance Test Key",
         ).select(key_source.name, key_source.as_of_date).to_df()
         assert len(df) == 1
         assert df.iloc[0]["name"] == "Newcomb's Wildflower Guide"
@@ -77,13 +77,13 @@ class TestProvenanceTracking:
     def test_find_all_sources_for_species(self, blue_aster_hierarchy, inat_source):
         """Find all data sources linked to a species via identification keys."""
         define(
-            key_inat := IdentificationKey.new(name="iNat Key: Blue Aster"),
-            key_inat.species(blue_aster_hierarchy["species"]),
+            key_inat := Description.new(name="iNat Key: Blue Aster", version="test"),
+            key_inat.describes(blue_aster_hierarchy["species"]),
             key_inat.source(inat_source),
         )
 
-        key_species = IdentificationKey.species
-        key_source = IdentificationKey.source
+        key_species = Description.describes
+        key_source = Description.source
         df = where(
             key_species.name == "Symphyotrichum laeve",
         ).select(key_source.name).to_df()

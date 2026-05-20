@@ -1,19 +1,17 @@
-import relationalai.semantics as rai
+"""Derived name for Observation.
 
-# Derived relationships for observations
+Derives Entity.name by combining species_guess and inat_id, making
+Observation compatible with any Entity.name-based query (e.g. terminal_node).
 
+Result: "<species_guess> (#<inat_id>)"  e.g. "mapleleaf viburnum (#100857298)"
+"""
+from relationalai.semantics import define, std
 
-def define_derived_observation(m: rai.Model):
-    """Define derived relationships for observations.
+from kg.model.core.entity import Entity
+from kg.model.core.observations import Observation
 
-    Includes geographic relationships derived from observation coordinates,
-    such as hemisphere assignments based on latitude and longitude.
-    """
-    # Derived relationship: hemisphere based on latitude and longitude
-    m.Observation.hemisphere = m.Relationship("{Observation} is in {Hemisphere}")  # populated in derived/observation.py
-    rai.define(
-        m.Observation.hemisphere(m.Observation.latitude.hemisphere)
-    )
-    rai.define(
-        m.Observation.hemisphere(m.Observation.longitude.hemisphere)
-    )
+obs_name = std.strings.concat(
+    Observation.species_guess, " (#", Observation.inat_id, ")"
+)
+
+define(Entity.name(Observation, obs_name))

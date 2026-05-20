@@ -9,6 +9,7 @@ from relationalai.semantics import define, select, where
 from kg.model.core.taxonomy import (
     Domain, Kingdom, Phylum, Class, Order, Family, Genus, Species, Subspecies, TaxonVariety,
 )
+from kg.model.core.predicates import has_part
 
 
 class TestTaxonomyHierarchy:
@@ -103,12 +104,14 @@ class TestSubspecies:
         """Add and query a subspecies under Symphyotrichum laeve."""
         define(
             var_laeve := Subspecies.new(name="Symphyotrichum laeve var. laeve"),
-            blue_aster_hierarchy["species"].has_part(var_laeve),
+            has_part(blue_aster_hierarchy["species"], var_laeve),
         )
 
-        child = Species.has_part
+        s = Species.ref()
+        child = Subspecies.ref()
         df = where(
-            Species.name == "Symphyotrichum laeve",
+            s.name == "Symphyotrichum laeve",
+            has_part(s, child),
         ).select(child.name).to_df()
         assert len(df) >= 1
         names = df["name"].tolist()

@@ -1,11 +1,10 @@
 from kg.model import m
 from relationalai.semantics import Bool, Date, Float, Integer, String
-from .entity import Entity
+from .entity import Entity, Location
 from .taxonomy import Species
 from .environment import EnvironmentValue
 
 Observation = m.Concept("Observation", extends=[Entity])
-GeographicArea = m.Concept("GeographicArea", extends=[Entity])
 
 # Properties
 Observation.inat_id = m.Property(f"{Observation} has iNaturalist id {String:inat_id}")
@@ -27,10 +26,9 @@ Observation.place_guess = m.Property(f"{Observation} place guess is {String:plac
 Observation.species_guess = m.Property(f"{Observation} species guess is {String:species_guess}")
 Observation.description = m.Property(f"{Observation} has description {String:description}")
 Observation.license = m.Property(f"{Observation} has license {String:license}")
-GeographicArea.type = m.Property(f"{GeographicArea} has type {String:type}")
 
 # Relationships
 Observation.co_occurs_with = m.Relationship(f"{Observation} co-occurs with {Observation:co_occurs_with}")
 Observation.species = m.Relationship(f"{Observation} of species {Species:species}")
-Observation.area = m.Relationship(f"{Observation} located in {GeographicArea:area}")
-GeographicArea.environment = m.Relationship(f"{GeographicArea} has environment {EnvironmentValue:environment}")
+Observation.located_in = m.Relationship(f"{Observation} located in {Location}")
+Location.environment = m.Relationship(f"{Location} has environment {EnvironmentValue:environment}")

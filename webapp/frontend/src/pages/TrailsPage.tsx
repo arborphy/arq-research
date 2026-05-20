@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { MapContainer, TileLayer, CircleMarker, Polygon, Popup, useMap } from "react-leaflet";
 import { latLngBounds, type LatLngBoundsExpression } from "leaflet";
@@ -8,7 +9,8 @@ import {
   fetchTrails,
   fetchAllTrailCells, fetchAllTrailObservations, fetchAllTrailEcosites, fetchAllTrailEcositeCells,
   fetchTrailCells, fetchTrailObservations, fetchTrailEcosites, fetchTrailEcositeCells,
-  type TrailObservation, type EcositeCell,
+  fetchTrailSpecies, fetchTrailFeatures, filterTrailSpecies,
+  type TrailObservation, type EcositeCell, type FilterItem,
 } from "../api/trails";
 import { LoadingState } from "../components/LoadingState";
 import "leaflet/dist/leaflet.css";
@@ -123,6 +125,7 @@ function TrailMap({ cells, ecositeCells, observations }: {
 
 export function TrailsPage() {
   const [selectedOsmId, setSelectedOsmId] = useState<string>("");
+  const [filters, setFilters] = useState<FilterItem[]>([]);
   const isAll = selectedOsmId === ALL;
 
   const { data: trailsData, isLoading: loadingTrails } = useQuery({
@@ -172,11 +175,37 @@ export function TrailsPage() {
     enabled: !!selectedOsmId && !isAll,
   });
 
+  const { data: speciesData, isLoading: loadingSpecies, isFetching: fetchingSpecies } = useQuery({
+    queryKey: ["trail-species", selectedOsmId],
+    queryFn: () => fetchTrailSpecies(selectedOsmId),
+    enabled: !!selectedOsmId && !isAll,
+  });
+
+  const { data: featuresData, isLoading: loadingFeatures } = useQuery({
+    queryKey: ["trail-features", selectedOsmId],
+    queryFn: () => fetchTrailFeatures(selectedOsmId),
+    enabled: !!selectedOsmId && !isAll,
+  });
+
+  const { data: filteredData, isLoading: loadingFiltered } = useQuery({
+    queryKey: ["trail-species-filtered", selectedOsmId, filters],
+    queryFn: () => filterTrailSpecies(selectedOsmId, filters),
+    enabled: !!selectedOsmId && !isAll && filters.length > 0,
+  });
+
   const trails = trailsData?.data ?? [];
   const cells = isAll ? (allCellsData?.data ?? []) : (cellsData?.data ?? []);
-  const observations = isAll ? (allObsData?.data ?? []) : (obsData?.data ?? []);
+  const allObservations = isAll ? (allObsData?.data ?? []) : (obsData?.data ?? []);
   const ecosites = isAll ? (allEcositeData?.data ?? []) : (ecositeData?.data ?? []);
   const ecositeCells = isAll ? (allEcositeCellsData?.data ?? []) : (ecositeCellsData?.data ?? []);
+  const allSpecies = speciesData?.data ?? [];
+  const features = featuresData?.data ?? {};
+
+  const activeSpeciesSet = filters.length > 0 ? new Set(filteredData?.data ?? []) : null;
+  const species = activeSpeciesSet ? allSpecies.filter((n) => activeSpeciesSet.has(n)) : allSpecies;
+  const observations = activeSpeciesSet
+    ? allObservations.filter((o) => activeSpeciesSet.has(o.species))
+    : allObservations;
 
   // Build color map once for legend
   const colorMap = useMemo(() => buildColorMap(ecosites), [ecosites]);
@@ -186,7 +215,20 @@ export function TrailsPage() {
     loadingAllCells || fetchingAllCells || loadingAllObs || fetchingAllObs ||
     loadingAllEcosites || fetchingAllEcosites || loadingAllEcositeCells || fetchingAllEcositeCells ||
     loadingCells || loadingObs || loadingEcosites || loadingEcositeCells ||
-    fetchingCells || fetchingObs || fetchingEcosites || fetchingEcositeCells;
+    fetchingCells || fetchingObs || fetchingEcosites || fetchingEcositeCells ||
+    loadingSpecies || fetchingSpecies;
+
+  function isFilterActive(feature: string, value: string) {
+    return filters.some((f) => f.feature === feature && f.value === value);
+  }
+
+  function toggleFilter(feature: string, value: string) {
+    setFilters((prev) =>
+      isFilterActive(feature, value)
+        ? prev.filter((f) => !(f.feature === feature && f.value === value))
+        : [...prev, { feature, value }]
+    );
+  }
 
   return (
     <div>
@@ -205,7 +247,7 @@ export function TrailsPage() {
           <select
             id="trail-select"
             value={selectedOsmId}
-            onChange={(e) => setSelectedOsmId(e.target.value)}
+            onChange={(e) => { setSelectedOsmId(e.target.value); setFilters([]); }}
             style={{ padding: "0.4rem 0.75rem", borderRadius: "6px", border: "1px solid #ccc", fontSize: "0.95rem" }}
           >
             <option value="">— select a trail —</option>
@@ -259,6 +301,121 @@ export function TrailsPage() {
                         {id}
                       </span>
                     ))}
+                  </div>
+                </div>
+              )}
+
+              {Object.keys(features).length > 0 && (
+                <div style={{ marginTop: "1.5rem", paddingBottom: filters.length > 0 ? "33vh" : 0 }}>
+                  <h3 style={{ marginBottom: "0.5rem", fontSize: "1rem" }}>Filter by features</h3>
+                  {loadingFeatures ? (
+                    <LoadingState message="Loading features…" />
+                  ) : (
+                    <div style={{ display: "flex", flexDirection: "column", gap: "0.2rem" }}>
+                      {Object.entries(features).map(([feature, values]) => (
+                        <div key={feature} style={{ display: "flex", alignItems: "baseline", gap: "0.5rem", padding: "0.25rem 0", borderBottom: "1px solid #f0f0f0" }}>
+                          <span style={{ fontSize: "0.78rem", color: "#555", minWidth: "200px", flexShrink: 0 }}>{feature}</span>
+                          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.25rem" }}>
+                            {values.map((v) => {
+                              const active = isFilterActive(feature, v.value);
+                              return (
+                                <span
+                                  key={v.value}
+                                  onClick={() => toggleFilter(feature, v.value)}
+                                  style={{
+                                    cursor: "pointer", fontSize: "0.78rem", padding: "0.1rem 0.5rem",
+                                    borderRadius: "10px", border: "1px solid",
+                                    borderColor: active ? "#2d6a4f" : "#ddd",
+                                    background: active ? "#d8f3dc" : "#fafafa",
+                                    color: active ? "#1b4332" : "#333",
+                                    whiteSpace: "nowrap",
+                                  }}
+                                >
+                                  {v.value} <span style={{ color: "#999", fontSize: "0.7rem" }}>{v.species_count}</span>
+                                </span>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {species.length > 0 && filters.length === 0 && (
+                <div style={{ marginTop: "1.5rem" }}>
+                  <h3 style={{ marginBottom: "0.75rem", fontSize: "1rem" }}>
+                    Species observed on this trail ({species.length})
+                  </h3>
+                  <ul style={{ columns: 2, columnGap: "2rem", padding: 0, margin: 0, listStyle: "none", fontSize: "0.85rem" }}>
+                    {species.map((name) => (
+                      <li key={name} style={{ padding: "0.2rem 0", breakInside: "avoid" }}>
+                        <Link to={`/species/${encodeURIComponent(name)}`} style={{ fontStyle: "italic", color: "#2d6a4f" }}>
+                          {name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {filters.length > 0 && (
+                <div style={{
+                  position: "fixed", bottom: 0, left: 0, right: "25vw",
+                  height: "33vh",
+                  background: "#fff",
+                  borderTop: "2px solid #2d6a4f",
+                  boxShadow: "0 -4px 16px rgba(0,0,0,0.08)",
+                  display: "flex", flexDirection: "column",
+                  zIndex: 1000,
+                }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", padding: "0.4rem 1.5rem", borderBottom: "1px solid #e0e0e0", flexShrink: 0 }}>
+                    <span style={{ fontWeight: 600, fontSize: "0.85rem" }}>
+                      Matching species
+                      {filteredData && <span style={{ color: "#666", fontWeight: "normal" }}> ({filteredData.total})</span>}
+                    </span>
+                    <span style={{ color: "#bbb", margin: "0 0.25rem" }}>·</span>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "0.3rem", flex: 1 }}>
+                      {filters.map((f) => (
+                        <span
+                          key={`${f.feature}:${f.value}`}
+                          style={{
+                            display: "inline-flex", alignItems: "center", gap: "0.25rem",
+                            background: "#d8f3dc", border: "1px solid #2d6a4f",
+                            borderRadius: "10px", padding: "0.1rem 0.5rem",
+                            fontSize: "0.75rem", color: "#1b4332",
+                          }}
+                        >
+                          <span style={{ color: "#555", fontSize: "0.68rem" }}>{f.feature}:</span>{f.value}
+                          <button
+                            onClick={() => setFilters((prev) => prev.filter((x) => !(x.feature === f.feature && x.value === f.value)))}
+                            style={{ background: "none", border: "none", cursor: "pointer", padding: 0, color: "#2d6a4f", fontWeight: 700, fontSize: "0.85rem", lineHeight: 1 }}
+                          >×</button>
+                        </span>
+                      ))}
+                    </div>
+                    <button
+                      onClick={() => setFilters([])}
+                      style={{ fontSize: "0.75rem", color: "#888", background: "none", border: "none", cursor: "pointer", textDecoration: "underline", flexShrink: 0 }}
+                    >clear all</button>
+                  </div>
+                  <div style={{ flex: 1, overflowY: "auto", padding: "0.5rem 1.5rem" }}>
+                    {loadingFiltered ? (
+                      <LoadingState message="Filtering…" />
+                    ) : species.length === 0 ? (
+                      <p style={{ color: "#888", fontSize: "0.85rem", margin: 0 }}>No species match all selected filters.</p>
+                    ) : (
+                      <div style={{ columns: "4 180px", gap: "1rem" }}>
+                        {species.map((name) => (
+                          <div key={name} style={{ padding: "0.15rem 0", fontSize: "0.82rem", breakInside: "avoid" }}>
+                            <Link to={`/species/${encodeURIComponent(name)}`} style={{ fontStyle: "italic", color: "#2d6a4f" }}>
+                              {name}
+                            </Link>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
               )}

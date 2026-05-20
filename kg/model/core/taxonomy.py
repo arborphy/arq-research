@@ -2,16 +2,18 @@ from kg.model import m
 from relationalai.semantics import String
 from .entity import Entity
 
-Domain = m.Concept("Domain", extends=[Entity])
-Kingdom = m.Concept("Kingdom", extends=[Domain])
-Phylum = m.Concept("Phylum", extends=[Kingdom])
-Class = m.Concept("Class", extends=[Phylum])
-Order = m.Concept("Order", extends=[Class])
-Family = m.Concept("Family", extends=[Order])
-Genus = m.Concept("Genus", extends=[Family])
-Species = m.Concept("Species", extends=[Genus])
-Subspecies = m.Concept("Subspecies", extends=[Species])
-TaxonVariety = m.Concept("TaxonVariety", extends=[Species])
+Taxon = m.Concept("Taxon", extends=[Entity])
+
+Domain = m.Concept("Domain", extends=[Taxon])
+Kingdom = m.Concept("Kingdom", extends=[Taxon])
+Phylum = m.Concept("Phylum", extends=[Taxon])
+Class = m.Concept("Class", extends=[Taxon])
+Order = m.Concept("Order", extends=[Taxon])
+Family = m.Concept("Family", extends=[Taxon])
+Genus = m.Concept("Genus", extends=[Taxon])
+Species = m.Concept("Species", extends=[Taxon])
+Subspecies = m.Concept("Subspecies", extends=[Taxon])
+TaxonVariety = m.Concept("TaxonVariety", extends=[Taxon])
 
 # Species-specific properties
 Species.inat_link = m.Property(f"{Species} has iNaturalist link {String:inat_link}")

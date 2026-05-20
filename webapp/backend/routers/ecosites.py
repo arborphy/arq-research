@@ -36,3 +36,24 @@ def ecosite_cells_compacted(ecosite_id: str):
     df.columns = ["h3_index"]
     df["h3_index"] = df["h3_index"].map(h3_int_to_hex)
     return {"data": df["h3_index"].tolist(), "total": len(df)}
+
+
+@router.get("/with-observations")
+def ecosites_with_observations():
+    """Ecosite IDs that have at least one iNaturalist observation."""
+    from kg.queries.ecosite_species import ecosites_with_observations as _query
+    df = _query()
+    if df.empty:
+        return {"data": [], "total": 0}
+    ids = sorted(df["ecosite_id"].tolist())
+    return {"data": ids, "total": len(ids)}
+
+
+@router.get("/{ecosite_id}/species")
+def ecosite_species(ecosite_id: str):
+    """Species observed within a given ecosite."""
+    from kg.queries.ecosite_species import species_in_ecosite
+    df = species_in_ecosite(ecosite_id)
+    if df.empty:
+        return {"data": [], "total": 0}
+    return {"data": sorted(df["species"].tolist()), "total": len(df)}

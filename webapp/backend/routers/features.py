@@ -13,8 +13,8 @@ import kg.loaders.newcomb  # noqa: F401
 import kg.loaders.gobotany  # noqa: F401
 
 from kg.model.core.taxonomy import Species
-from kg.model.core.features import Feature, FeatureValue
-from kg.model.core.keys.key import IdentificationKey
+from kg.model.core.features import Feature, Category
+from kg.model.core.keys.key import Description
 from kg.model.core.provenance import DataSource
 
 router = APIRouter(prefix="/features", tags=["features"])
@@ -29,13 +29,13 @@ class FeatureFilter(BaseModel):
 def list_features():
     try:
         df = where(
-            IdentificationKey.feature_value(FeatureValue),
-            FeatureValue.feature(Feature),
-            IdentificationKey.species(Species),
+            Description.category(Category),
+            Category.feature(Feature),
+            Description.describes(Species),
         ).select(
             Feature.name,
-            FeatureValue.value,
-            count(Species).per(Feature, FeatureValue),
+            Category.value,
+            count(Species).per(Feature, Category),
         ).to_df()
     except Exception as e:
         if hasattr(e, "table_objects"):
@@ -55,11 +55,11 @@ def list_features():
 @router.get("/species")
 def species_by_feature(feature: str = Query(...), value: str = Query(...)):
     df = where(
-        IdentificationKey.feature_value(FeatureValue),
-        FeatureValue.feature(Feature),
+        Description.category(Category),
+        Category.feature(Feature),
         Feature.name == feature,
-        FeatureValue.value == value,
-        IdentificationKey.species(Species),
+        Category.value == value,
+        Description.describes(Species),
     ).select(
         Species.name,
     ).to_df()
@@ -69,11 +69,11 @@ def species_by_feature(feature: str = Query(...), value: str = Query(...)):
 
     # Fetch datasources per species and merge
     src_df = where(
-        IdentificationKey.feature_value(FeatureValue),
-        FeatureValue.feature(Feature),
+        Description.category(Category),
+        Category.feature(Feature),
         Feature.name == feature,
-        FeatureValue.value == value,
-        IdentificationKey.species(Species),
+        Category.value == value,
+        Description.describes(Species),
         Species.source(DataSource),
     ).select(
         Species.name,
@@ -102,15 +102,15 @@ def newcomb_key(species_name: str):
 @router.get("/for-species/{species_name:path}")
 def species_own_features(species_name: str):
     s = Species.ref()
-    fv = FeatureValue.ref()
+    fv = Category.ref()
     f = Feature.ref()
-    ik = IdentificationKey.ref()
+    ik = Description.ref()
     src = DataSource.ref()
     try:
         df = where(
             s.name == species_name,
-            ik.species(s),
-            ik.feature_value(fv),
+            ik.describes(s),
+            ik.category(fv),
             fv.feature(f),
             ik.source(src),
         ).select(
@@ -140,12 +140,12 @@ def filter_species_by_features(filters: List[FeatureFilter]):
     def _build_conditions(s_ref):
         conds = []
         for ff in filters:
-            fv = FeatureValue.ref()
+            fv = Category.ref()
             f = Feature.ref()
-            ik = IdentificationKey.ref()
+            ik = Description.ref()
             conds.extend([
-                ik.species(s_ref),
-                ik.feature_value(fv),
+                ik.describes(s_ref),
+                ik.category(fv),
                 fv.feature(f),
                 f.name == ff.feature,
                 fv.value == ff.value,

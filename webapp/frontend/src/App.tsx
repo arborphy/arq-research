@@ -9,6 +9,9 @@ import { CommunityPage } from "./pages/CommunityPage";
 import { PredicateExplorerPage } from "./pages/PredicateExplorerPage";
 import { EcositePage } from "./pages/EcositePage";
 import { TrailsPage } from "./pages/TrailsPage";
+import { SpatialPredicatePage } from "./pages/SpatialPredicatePage";
+import { TaxonomyPredicatePage } from "./pages/TaxonomyPredicatePage";
+import { EcositeSpeciesPage } from "./pages/EcositeSpeciesPage";
 import { DebugPanel } from "./components/DebugPanel";
 import "./App.css";
 
@@ -38,6 +41,9 @@ function App() {
               <Route path="/predicates" element={<PredicateExplorerPage />} />
               <Route path="/ecosites" element={<EcositePage />} />
               <Route path="/trails" element={<TrailsPage />} />
+              <Route path="/spatial" element={<SpatialPredicatePage />} />
+              <Route path="/taxonomy-predicates" element={<TaxonomyPredicatePage />} />
+              <Route path="/ecosite-species" element={<EcositeSpeciesPage />} />
               <Route path="/species/:name" element={<SpeciesDetailPage />} />
             </Routes>
           </main>

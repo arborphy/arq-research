@@ -42,7 +42,7 @@ def co_occurrence_cells_for_species(species_name: str):
         s1.name == species_name,
         obs1.h3cell(cell),
     ).select(
-        cell.index,
+    cell.index,
         count(obs2).per(cell),
     ).to_df()
     if df.empty:

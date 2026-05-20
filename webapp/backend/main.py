@@ -32,6 +32,8 @@ from webapp.backend.routers.debug import router as debug_router  # noqa: E402
 from webapp.backend.routers.predicates import router as predicates_router  # noqa: E402
 from webapp.backend.routers.ecosites import router as ecosites_router  # noqa: E402
 from webapp.backend.routers.trails import router as trails_router  # noqa: E402
+from webapp.backend.routers.spatial import router as spatial_router  # noqa: E402
+from webapp.backend.routers.taxonomy_predicates import router as taxonomy_predicates_router  # noqa: E402
 
 app.include_router(co_occurrence_router, prefix="/api")
 app.include_router(geo_router, prefix="/api")
@@ -40,3 +42,5 @@ app.include_router(debug_router, prefix="/api")
 app.include_router(predicates_router, prefix="/api")
 app.include_router(ecosites_router, prefix="/api")
 app.include_router(trails_router, prefix="/api")
+app.include_router(spatial_router, prefix="/api")
+app.include_router(taxonomy_predicates_router, prefix="/api")

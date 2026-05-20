@@ -1,4 +1,2 @@
 from .key import *
-from .newcomb import *
-from .newcomb_translation import *
-from .gobotany import *
+from .newcomb_translation import *  # NewcombDigitMap + parse_group_number

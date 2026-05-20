@@ -1,4 +1,4 @@
-import { fetchJson } from "./client";
+import { fetchJson, postJson } from "./client";
 
 export interface TrailMeta {
   osm_id: string;
@@ -55,4 +55,20 @@ export function fetchTrailCells(osmId: string): Promise<{ data: string[]; total:
 
 export function fetchTrailObservations(osmId: string): Promise<{ data: TrailObservation[]; total: number }> {
   return fetchJson(`/trails/${encodeURIComponent(osmId)}/observations`);
+}
+
+export function fetchTrailSpecies(osmId: string): Promise<{ data: string[]; total: number }> {
+  return fetchJson(`/trails/${encodeURIComponent(osmId)}/species`);
+}
+
+export type FeatureValues = Record<string, { value: string; species_count: number }[]>;
+
+export function fetchTrailFeatures(osmId: string): Promise<{ data: FeatureValues }> {
+  return fetchJson(`/trails/${encodeURIComponent(osmId)}/features`);
+}
+
+export type FilterItem = { feature: string; value: string };
+
+export function filterTrailSpecies(osmId: string, filters: FilterItem[]): Promise<{ data: string[]; total: number }> {
+  return postJson(`/trails/${encodeURIComponent(osmId)}/species/filter`, filters);
 }

@@ -1,15 +1,16 @@
-from kg.model import m
+"""Source descriptions linking taxa to feature-value pairs with provenance."""
 from relationalai.semantics import String
+
+from kg.model import m
 from kg.model.core.entity import Entity
-from kg.model.core.taxonomy import Species
-from kg.model.core.features import Feature, FeatureValue
+from kg.model.core.taxonomy import Taxon
+from kg.model.core.features import Feature, Category, Measurement
 
-IdentificationKey = m.Concept("IdentificationKey", extends=[Entity])
-
-# Properties
-IdentificationKey.value = m.Property(f"{IdentificationKey} has value {String:value}")
-
-# Relationships
-IdentificationKey.species = m.Relationship(f"{IdentificationKey} identifies {Species:species}")
-IdentificationKey.feature = m.Relationship(f"{IdentificationKey} has feature {Feature:feature}")
-IdentificationKey.feature_value = m.Relationship(f"{IdentificationKey} has feature value {FeatureValue:feature_value}")
+# Description: a versioned source record describing a taxon.
+# Identity: (name, version) — e.g. ("newcomb:Trillium grandiflorum", "1977")
+Description = m.Concept("Description", extends=[Entity])
+Description.version = m.Property(f"{Description} has version {String:version}")
+Description.describes = m.Relationship(f"{Description} describes {Taxon:describes}")
+Description.feature = m.Relationship(f"{Description} has feature {Feature:feature}")
+Description.category = m.Relationship(f"{Description} has category {Category:category}")
+Description.measurement = m.Relationship(f"{Description} has measurement {Measurement:measurement}")

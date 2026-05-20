@@ -90,14 +90,3 @@ export interface PredicatePair {
   concept_type: string;
 }
 
-export interface PredicateGraphNode {
-  id: string;
-  label: string;
-  concept_type: string;
-}
-
-export interface PredicateGraphEdge {
-  source: string;
-  target: string;
-  type?: string;
-}

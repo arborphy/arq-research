@@ -13,8 +13,8 @@ import kg.loaders.newcomb  # noqa: F401
 from kg.model.core.taxonomy import Species
 from kg.model.core.observations import Observation
 from kg.model.core.h3cell import H3Cell
-from kg.model.core.features import Feature, FeatureValue
-from kg.model.core.keys.key import IdentificationKey
+from kg.model.core.features import Feature, Category, Measurement
+from kg.model.core.keys.key import Description
 from kg.model.core.provenance import DataSource
 
 
@@ -37,16 +37,17 @@ def count_h3_cells():
 
 
 def count_features():
-    """Number of features and feature values."""
+    """Number of features, categories, and measurements."""
     return select(
         count(Feature),
-        count(FeatureValue),
+        count(Category),
+        count(Measurement),
     ).to_df()
 
 
 def count_identification_keys():
     """Number of identification keys."""
-    return select(count(IdentificationKey)).to_df()
+    return select(count(Description)).to_df()
 
 
 def count_data_sources():
@@ -77,7 +78,7 @@ def species_with_both_observations_and_keys():
     """Species that appear in both iNat observations and Newcomb keys."""
     return where(
         Observation.species(Species),
-        IdentificationKey.species(Species),
+        Description.describes(Species),
     ).select(
         count(Species),
     ).to_df()

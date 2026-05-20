@@ -13,8 +13,8 @@ import kg.model.derived.community  # noqa: F401
 
 from kg.model.core.observations import Observation
 from kg.model.core.taxonomy import Species
-from kg.model.core.features import Feature, FeatureValue
-from kg.model.core.keys.key import IdentificationKey
+from kg.model.core.features import Feature, Category
+from kg.model.core.keys.key import Description
 from kg.model.core.h3cell import H3Cell
 
 
@@ -90,11 +90,11 @@ def co_occurrence_for_species(species_name: str, granularity: str = "day"):
     s1 = Species.ref()
     s2 = Species.ref()
     cell = H3Cell.ref()
+    time_cond = date_fn(obs1.date) == date_fn(obs2.date)
     return where(
         obs1.h3cell(cell),
         obs2.h3cell(cell),
-        std.datetime.date.year(obs1.date) == std.datetime.date.year(obs2.date),
-        date_fn(obs1.date) == date_fn(obs2.date),
+        time_cond,
         obs1.species(s1),
         obs2.species(s2),
         s1.name == species_name,
@@ -111,16 +111,16 @@ def shared_features_for_co_occurring_species(species_name: str):
     obs2 = Observation.ref()
     s1 = Species.ref()
     s2 = Species.ref()
-    fv = FeatureValue.ref()
-    ik = IdentificationKey.ref()
+    fv = Category.ref()
+    ik = Description.ref()
     return where(
         obs1.co_occurs_with(obs2),
         obs1.species(s1),
         obs2.species(s2),
         s1.name == species_name,
         s1 != s2,
-        ik.species(s2),
-        ik.feature_value(fv),
+        ik.describes(s2),
+        ik.category(fv),
         ik.feature(Feature),
     ).select(
         Feature.name.alias("feature"),

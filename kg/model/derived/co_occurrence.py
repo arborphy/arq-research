@@ -6,13 +6,11 @@
 2. Species co-occurrence: two species co-occur if any of their
    observations co-occur.
 """
-from relationalai.semantics import define, std
+from relationalai.semantics import define
 
 from kg.model.core.observations import Observation
 from kg.model.core.taxonomy import Species
 from kg.model.core.h3cell import H3Cell
-
-date = std.datetime.date
 
 # -- Observation co-occurrence --
 obs1 = Observation.ref()
@@ -22,8 +20,7 @@ cell = H3Cell.ref()
 define(Observation.co_occurs_with(obs1, obs2)).where(
     Observation.h3cell(obs1, cell),
     Observation.h3cell(obs2, cell),
-    date.year(obs1.date) == date.year(obs2.date),
-    date.dayofyear(obs1.date) == date.dayofyear(obs2.date),
+    obs1.date == obs2.date,
     obs1 != obs2,
 )
 

@@ -14,8 +14,14 @@ from kg.model.core.taxonomy import Species
 graph = Graph(m, directed=False, weighted=False, node_concept=Species)
 Edge = graph.Edge
 
-# Populate edges from Species.co_occurs_with
-define(Edge.new(src=Species, dst=Species.co_occurs_with))
+# Populate edges from Species.co_occurs_with, one direction only to avoid multi-edges
+# in the undirected graph (co_occurs_with is symmetric so both (a,b) and (b,a) exist)
+s1 = Species.ref()
+s2 = Species.ref()
+define(Edge.new(src=s1, dst=s2)).where(
+    Species.co_occurs_with(s1, s2),
+    s1.name < s2.name,
+)
 
 # Compute WCC
 wcc = graph.weakly_connected_component()

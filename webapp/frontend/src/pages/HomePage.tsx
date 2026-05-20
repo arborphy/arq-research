@@ -109,6 +109,53 @@ export function HomePage() {
             </p>
           </div>
         </Link>
+        <Link to="/spatial" style={{ textDecoration: "none" }}>
+          <div style={{
+            border: "2px solid #2d6a4f", borderRadius: "8px", padding: "1.5rem",
+            transition: "background 0.2s",
+          }}
+            onMouseEnter={e => e.currentTarget.style.background = "#f0faf4"}
+            onMouseLeave={e => e.currentTarget.style.background = "transparent"}
+          >
+            <h3 style={{ margin: "0 0 0.5rem", color: "#2d6a4f" }}>Spatial Predicates</h3>
+            <p style={{ color: "#666", margin: 0 }}>
+              See how <code>located_in</code> and <code>within</code> relate entities across
+              H3 resolutions — direct placement vs. transitive closure.
+            </p>
+          </div>
+        </Link>
+        <Link to="/taxonomy-predicates" style={{ textDecoration: "none" }}>
+          <div style={{
+            border: "2px solid #2d6a4f", borderRadius: "8px", padding: "1.5rem",
+            transition: "background 0.2s",
+          }}
+            onMouseEnter={e => e.currentTarget.style.background = "#f0faf4"}
+            onMouseLeave={e => e.currentTarget.style.background = "transparent"}
+          >
+            <h3 style={{ margin: "0 0 0.5rem", color: "#2d6a4f" }}>Taxonomic Predicates</h3>
+            <p style={{ color: "#666", margin: 0 }}>
+              <code>within_clade</code> closes over <code>part_of</code> the way{" "}
+              <code>within</code> closes over <code>located_in</code> — same pattern,
+              taxonomic hierarchy instead of spatial.
+            </p>
+          </div>
+        </Link>
+        <Link to="/ecosite-species" style={{ textDecoration: "none" }}>
+          <div style={{
+            border: "2px solid #2d6a4f", borderRadius: "8px", padding: "1.5rem",
+            transition: "background 0.2s",
+          }}
+            onMouseEnter={e => e.currentTarget.style.background = "#f0faf4"}
+            onMouseLeave={e => e.currentTarget.style.background = "transparent"}
+          >
+            <h3 style={{ margin: "0 0 0.5rem", color: "#2d6a4f" }}>Species by Ecosite</h3>
+            <p style={{ color: "#666", margin: 0 }}>
+              See which species co-exist within the same ecosite, traced via{" "}
+              <strong>Species → Observation → H3Cell → EcoSite</strong>{" "}
+              multi-hop joins.
+            </p>
+          </div>
+        </Link>
       </div>
     </div>
   );

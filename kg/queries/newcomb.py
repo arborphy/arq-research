@@ -1,7 +1,7 @@
 """Sample queries for the Newcomb wildflower knowledge graph.
 
 These queries demonstrate common use cases achievable with
-Newcomb-loaded data. They rely on the derived Species.feature_values
+Newcomb-loaded data. They rely on the derived Species.categories
 rule from kg.model.derived.species_features.
 
 Usage:
@@ -11,12 +11,11 @@ Usage:
     species_features("Symphyotrichum laeve")
     identify_by_features({"Flower Type": "Irregular Flowers", "Plant Type": "Vines"})
 """
-from relationalai.semantics import select, where, count
+from relationalai.semantics import where, count
 
 from kg.model.core.taxonomy import Species
-from kg.model.core.features import Feature, FeatureValue
-from kg.model.core.keys.key import IdentificationKey
-from kg.model.core.keys.newcomb import NewcombKey
+from kg.model.core.features import Feature, Category
+from kg.model.core.keys.key import Description
 
 
 # ------------------------------------------------------------------
@@ -32,14 +31,16 @@ def species_features(species_name: str):
         # 1 Symphyotrichum laeve    Plant Type       Wildflowers ...
         # 2 Symphyotrichum laeve    Leaf Type        Leaves entire
     """
+    cat = Category.ref()
+    feat = Feature.ref()
     return where(
         Species.name == species_name,
-        Species.feature_values(FeatureValue),
-        feat := FeatureValue.feature.name,
+        Species.categories(cat),
+        Category.feature(cat, feat),
     ).select(
         Species.name,
-        feat,
-        FeatureValue.value,
+        feat.name.alias("feature"),
+        cat.value.alias("value"),
     ).to_df()
 
 
@@ -61,11 +62,13 @@ def identify_by_features(traits: dict[str, str]):
     """
     conditions = []
     for feature_name, value in traits.items():
-        fv = FeatureValue.ref()
+        cat = Category.ref()
+        feat = Feature.ref()
         conditions.extend([
-            Species.feature_values(fv),
-            fv.feature.name == feature_name,
-            fv.value == value,
+            Species.categories(cat),
+            Category.feature(cat, feat),
+            feat.name == feature_name,
+            cat.value == value,
         ])
     return where(*conditions).select(Species.name).to_df()
 
@@ -84,12 +87,15 @@ def species_count_per_value(feature_name: str):
         # 2 Asters (Aster)            62
         # ...
     """
+    cat = Category.ref()
+    feat = Feature.ref()
     return where(
-        FeatureValue.feature.name == feature_name,
-        Species.feature_values(FeatureValue),
+        Category.feature(cat, feat),
+        feat.name == feature_name,
+        Species.categories(cat),
     ).select(
-        FeatureValue.value,
-        count(Species).per(FeatureValue),
+        cat.value,
+        count(Species).per(cat),
     ).to_df()
 
 
@@ -114,17 +120,21 @@ def cross_feature_analysis(
         # 1 Leaves Toothed or Lobed   38
         # ...
     """
-    fv_src = FeatureValue.ref()
-    fv_tgt = FeatureValue.ref()
+    cat_src = Category.ref()
+    cat_tgt = Category.ref()
+    feat_src = Feature.ref()
+    feat_tgt = Feature.ref()
     return where(
-        Species.feature_values(fv_src),
-        fv_src.feature.name == source_feature,
-        fv_src.value == source_value,
-        Species.feature_values(fv_tgt),
-        fv_tgt.feature.name == target_feature,
+        Species.categories(cat_src),
+        Category.feature(cat_src, feat_src),
+        feat_src.name == source_feature,
+        cat_src.value == source_value,
+        Species.categories(cat_tgt),
+        Category.feature(cat_tgt, feat_tgt),
+        feat_tgt.name == target_feature,
     ).select(
-        fv_tgt.value,
-        count(Species).per(fv_tgt),
+        cat_tgt.value,
+        count(Species).per(cat_tgt),
     ).to_df()
 
 
@@ -134,10 +144,6 @@ def cross_feature_analysis(
 def species_sharing_features():
     """Find species pairs and how many feature values they share.
 
-    Uses IdentificationKey directly (avoids ref issues with the
-    derived shortcut). Species in the same Newcomb key group will
-    share all three top-level feature values.
-
     Example:
         species_sharing_features()
         #   species_1           species_2           shared_features
@@ -145,52 +151,30 @@ def species_sharing_features():
         # ...
     """
     s2 = Species.ref()
-    ik2 = IdentificationKey.ref()
+    desc2 = Description.ref()
     return where(
-        IdentificationKey.species(Species),
-        ik2.species(s2),
-        IdentificationKey.feature_value(FeatureValue),
-        ik2.feature_value(FeatureValue),
+        Description.describes(Species),
+        desc2.describes(s2),
+        Description.category(Category),
+        desc2.category(Category),
         Species.name < s2.name,
     ).select(
         Species.name,
         s2.name,
-        count(FeatureValue).per(Species, s2),
+        count(Category).per(Species, s2),
     ).to_df()
 
 
-# ------------------------------------------------------------------
-# 6. Coverage: How many species per key group?
-# ------------------------------------------------------------------
-def species_per_key_group():
-    """Count species per IdentificationKey group (Newcomb key value).
-
-    Example:
-        species_per_key_group()
-        #   value       species_count
-        # 0 Group 511   23
-        # 1 Group 522   18
-        # ...
-    """
-    return select(
-        IdentificationKey.value,
-        count(IdentificationKey.species).per(IdentificationKey.value),
-    ).to_df()
-
-
-# ------------------------------------------------------------------
-# 7. Newcomb key info for species
-# ------------------------------------------------------------------
 def newcomb_key_for_species(species_name: str):
-    """Return the NewcombKey group number and trait values for a species."""
+    """Return the raw Newcomb key entry (group number + 3 feature values) for a species."""
+    from kg.loaders.newcomb import newcomb_table
     return where(
-        NewcombKey.species(Species),
-        Species.name == species_name,
+        newcomb_table.SPECIES_INAT == species_name,
     ).select(
-        NewcombKey.group_number,
-        NewcombKey.flower_type,
-        NewcombKey.plant_type,
-        NewcombKey.leaf_type,
+        newcomb_table.KEY_GROUP_NUMBER,
+        newcomb_table.KEY_FLOWER_TYPE,
+        newcomb_table.KEY_PLANT_TYPE,
+        newcomb_table.KEY_LEAF_TYPE,
     ).to_df()
 
 
@@ -202,17 +186,4 @@ def datasources_for_species(species_name: str):
         Species.source(DataSource),
     ).select(
         DataSource.name,
-    ).to_df()
-
-
-def species_with_newcomb_keys():
-    """Return all species with their NewcombKey group numbers."""
-    return where(
-        NewcombKey.species(Species),
-    ).select(
-        Species.name,
-        NewcombKey.group_number,
-        NewcombKey.flower_type,
-        NewcombKey.plant_type,
-        NewcombKey.leaf_type,
     ).to_df()

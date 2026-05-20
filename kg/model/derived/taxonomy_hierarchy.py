@@ -6,6 +6,7 @@
 from relationalai.semantics import define, std, where
 
 from kg.model.core.taxonomy import Genus, Kingdom, Species
+from kg.model.core.predicates import part_of
 
 # --- Species part_of Genus ---
 # "Trillium grandiflorum" → Genus "Trillium"
@@ -14,7 +15,7 @@ genus_name = std.strings.split_part(Species.name, " ", 0)
 define(Genus.new(name=genus_name))
 
 where(g := Genus.filter_by(name=genus_name)).define(
-    Species.part_of(Species, g),
+    part_of(Species, g),
 )
 
 # --- Genus part_of Kingdom ---
@@ -25,5 +26,5 @@ where(
     k := Kingdom.filter_by(name=Species.iconic_taxon),
     g := Genus.filter_by(name=genus_name),
 ).define(
-    g.part_of(k),
+    part_of(g, k),
 )

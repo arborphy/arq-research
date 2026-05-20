@@ -1,4 +1,7 @@
+from typing import List
+
 from fastapi import APIRouter, HTTPException
+from pydantic import BaseModel
 
 from webapp.backend.utils import h3_int_to_hex
 
@@ -90,6 +93,49 @@ def trail_ecosites(osm_id: str):
         return {"data": [], "total": 0}
     df.columns = ["ecosite_id"]
     return {"data": sorted(df["ecosite_id"].tolist()), "total": len(df)}
+
+
+class FeatureFilter(BaseModel):
+    feature: str
+    value: str
+
+
+@router.get("/{osm_id}/features")
+def trail_features(osm_id: str):
+    from kg.queries.trails import features_for_trail
+    df = features_for_trail(osm_id)
+    if df.empty:
+        return {"data": {}}
+    df.columns = ["feature", "value", "species_count"]
+    results: dict = {}
+    for feature_name, group in df.groupby("feature"):
+        results[feature_name] = group[["value", "species_count"]].to_dict(orient="records")
+    return {"data": results}
+
+
+@router.post("/{osm_id}/species/filter")
+def filter_trail_species(osm_id: str, filters: List[FeatureFilter]):
+    from kg.queries.trails import filtered_species_on_trail
+    if not filters:
+        from kg.queries.trails import species_on_trail
+        df = species_on_trail(osm_id)
+    else:
+        df = filtered_species_on_trail(osm_id, [f.model_dump() for f in filters])
+    if df.empty:
+        return {"data": [], "total": 0}
+    df.columns = ["name"]
+    return {"data": sorted(df["name"].tolist()), "total": len(df)}
+
+
+@router.get("/{osm_id}/species")
+def trail_species(osm_id: str):
+    from kg.queries.trails import species_on_trail
+    df = species_on_trail(osm_id)
+    if df.empty:
+        return {"data": [], "total": 0}
+    df.columns = ["name"]
+    df = df.sort_values("name")
+    return {"data": df["name"].tolist(), "total": len(df)}
 
 
 @router.get("/{osm_id}/observations")

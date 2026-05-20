@@ -8,11 +8,12 @@ from relationalai.semantics import define
 from kg.model.core.taxonomy import (
     Domain, Kingdom, Phylum, Class, Order, Family, Genus, Species, Subspecies, TaxonVariety,
 )
-from kg.model.core.features import Feature, FeatureValue
-from kg.model.core.keys.key import IdentificationKey
+from kg.model.core.features import Feature, Category
+from kg.model.core.keys.key import Description  # noqa: F401
 from kg.model.core.observations import Observation, GeographicArea
 from kg.model.core.environment import EnvironmentDescriptor, EnvironmentValue
 from kg.model.core.provenance import DataSource
+from kg.model.core.predicates import part_of, has_part
 
 
 @pytest.fixture(scope="session")
@@ -38,13 +39,13 @@ def blue_aster_hierarchy():
             common_name="smooth blue aster",
             iconic_taxon="Plantae",
         ),
-        eukarya.has_part(plantae),
-        plantae.has_part(tracheophyta),
-        tracheophyta.has_part(magnoliopsida),
-        magnoliopsida.has_part(asterales),
-        asterales.has_part(asteraceae),
-        asteraceae.has_part(symphyotrichum),
-        symphyotrichum.has_part(s_laeve),
+        has_part(eukarya, plantae),
+        has_part(plantae, tracheophyta),
+        has_part(tracheophyta, magnoliopsida),
+        has_part(magnoliopsida, asterales),
+        has_part(asterales, asteraceae),
+        has_part(asteraceae, symphyotrichum),
+        has_part(symphyotrichum, s_laeve),
     )
 
     return {
@@ -75,17 +76,17 @@ def newcomb_features():
         leaf_type := Feature.new(name="Leaf Type"),
         leaf_arrangement := Feature.new(name="Leaf Arrangement"),
         # Plant Type values
-        pt_shrubs := FeatureValue.new(value="Shrubs"),
-        pt_vines := FeatureValue.new(value="Vines"),
-        pt_wildflowers := FeatureValue.new(value="Wildflowers"),
+        pt_shrubs := Category.new(value="Shrubs"),
+        pt_vines := Category.new(value="Vines"),
+        pt_wildflowers := Category.new(value="Wildflowers"),
         pt_shrubs.feature(plant_type),
         pt_vines.feature(plant_type),
         pt_wildflowers.feature(plant_type),
         # Leaf Type values
-        lt_none := FeatureValue.new(value="No apparent leaves"),
-        lt_entire := FeatureValue.new(value="Leaves entire"),
-        lt_toothed := FeatureValue.new(value="Leaves toothed or lobed"),
-        lt_divided := FeatureValue.new(value="Leaves divided"),
+        lt_none := Category.new(value="No apparent leaves"),
+        lt_entire := Category.new(value="Leaves entire"),
+        lt_toothed := Category.new(value="Leaves toothed or lobed"),
+        lt_divided := Category.new(value="Leaves divided"),
         lt_none.feature(leaf_type),
         lt_entire.feature(leaf_type),
         lt_toothed.feature(leaf_type),
@@ -132,7 +133,7 @@ def taxon_variety_fixture(blue_aster_hierarchy):
     define(
         subsp := Subspecies.new(name="Symphyotrichum laeve var. laeve"),
         variety := TaxonVariety.new(name="smooth"),
-        blue_aster_hierarchy["species"].has_part(subsp),
-        subsp.has_part(variety),
+        has_part(blue_aster_hierarchy["species"], subsp),
+        has_part(subsp, variety),
     )
     return {"subspecies": subsp, "variety": variety}

@@ -2,12 +2,15 @@
 
 Reads parquet files from the arq-refdata repo sibling directory and loads them
 into RAI_DEMO.CB_WEBAPP via Snowflake PUT + COPY INTO (parquet format).
-After upload, creates a denormalised view used by the RAI loader.
+
+Tables loaded (v2 uniform claim model):
+    gobotany_source_meta, gobotany_taxon, gobotany_feature,
+    gobotany_feature_value, gobotany_feature_value_definition,
+    gobotany_taxon_feature_value
 
 Usage:
-    python scripts/upload_gobotany.py                        # all tables + view
-    python scripts/upload_gobotany.py --tables gobotany_taxon gobotany_character
-    python scripts/upload_gobotany.py --no-view              # skip view creation
+    python scripts/upload_gobotany.py                        # all tables
+    python scripts/upload_gobotany.py --tables gobotany_taxon gobotany_feature
     python scripts/upload_gobotany.py --dry-run              # print ops, no execution
 """
 import argparse
@@ -25,11 +28,29 @@ SCHEMA = "CB_WEBAPP"
 
 # (parquet_path, [column_definitions])
 TABLES: dict[str, tuple[pathlib.Path, list[str]]] = {
+    "gobotany_source_meta": (
+        PARQUET_DIR / "gobotany_source_meta.parquet",
+        [
+            "source_id VARCHAR",
+            "source_title VARCHAR",
+            "source_type VARCHAR",
+            "source_url VARCHAR",
+            "api_base_url VARCHAR",
+            "pile_slug VARCHAR",
+            "extraction_method VARCHAR",
+            "extracted_at_utc VARCHAR",
+            "taxa_in_scope INTEGER",
+            "features_in_scope INTEGER",
+            "orphan_taxon_ids VARCHAR",
+            "orphan_taxon_assertion_count INTEGER",
+            "notes VARCHAR",
+        ],
+    ),
     "gobotany_taxon": (
         PARQUET_DIR / "gobotany_taxon.parquet",
         [
             "taxon_id INTEGER",
-            "pile_slug VARCHAR",
+            "source_taxon_id VARCHAR",
             "scientific_name VARCHAR",
             "common_name VARCHAR",
             "genus VARCHAR",
@@ -38,115 +59,60 @@ TABLES: dict[str, tuple[pathlib.Path, list[str]]] = {
             "species_url VARCHAR",
         ],
     ),
-    "gobotany_character": (
-        PARQUET_DIR / "gobotany_character.parquet",
+    "gobotany_feature": (
+        PARQUET_DIR / "gobotany_feature.parquet",
         [
-            "character_id INTEGER",
-            "pile_slug VARCHAR",
-            "character_short_name VARCHAR",
-            "friendly_name VARCHAR",
-            "character_group VARCHAR",
+            "feature_id VARCHAR",
+            "source_feature_name VARCHAR",
+            "display_name VARCHAR",
+            "feature_group VARCHAR",
             "question VARCHAR",
             "hint VARCHAR",
-            "image_url VARCHAR",
-            "unit VARCHAR",
             "value_type VARCHAR",
+            "unit VARCHAR",
+            "image_url VARCHAR",
+            "is_default_filter BOOLEAN",
+            "is_preview_character BOOLEAN",
         ],
     ),
-    "gobotany_character_value_label": (
-        PARQUET_DIR / "gobotany_character_value_label.parquet",
+    "gobotany_feature_value": (
+        PARQUET_DIR / "gobotany_feature_value.parquet",
         [
-            "pile_slug VARCHAR",
-            "character_short_name VARCHAR",
-            "value_type VARCHAR",
+            "feature_value_id VARCHAR",
+            "feature_id VARCHAR",
             "value_index INTEGER",
-            "choice VARCHAR",
+            "value_label VARCHAR",
             "display_label VARCHAR",
-            "friendly_text VARCHAR",
             "value_range_min FLOAT",
             "value_range_max FLOAT",
             "scalar FLOAT",
             "image_url VARCHAR",
-            "taxa_count_api INTEGER",
+            "taxa_count_in_bucket INTEGER",
         ],
     ),
-    "gobotany_taxon_character_value": (
-        PARQUET_DIR / "gobotany_taxon_character_value.parquet",
+    "gobotany_feature_value_definition": (
+        PARQUET_DIR / "gobotany_feature_value_definition.parquet",
+        [
+            "definition_id VARCHAR",
+            "feature_value_id VARCHAR",
+            "definition_text VARCHAR",
+            "definition_type VARCHAR",
+        ],
+    ),
+    "gobotany_taxon_feature_value": (
+        PARQUET_DIR / "gobotany_taxon_feature_value.parquet",
         [
             "taxon_id INTEGER",
-            "pile_slug VARCHAR",
-            "character_short_name VARCHAR",
-            "character_name VARCHAR",
-            "character_group VARCHAR",
-            "ease INTEGER",
-            "value_type VARCHAR",
+            "feature_id VARCHAR",
+            "feature_value_id VARCHAR",
             "value_index INTEGER",
-        ],
-    ),
-    "gobotany_pile": (
-        PARQUET_DIR / "gobotany_pile.parquet",
-        [
-            "pile_id INTEGER",
-            "pile_name VARCHAR",
-            "pile_slug VARCHAR",
-            "pile_friendly_name VARCHAR",
-            "description VARCHAR",
-            "character_group_count INTEGER",
-            "default_filter_count INTEGER",
-            "preview_character_count INTEGER",
-            "resource_uri VARCHAR",
-        ],
-    ),
-    "gobotany_pile_group": (
-        PARQUET_DIR / "gobotany_pile_group.parquet",
-        [
-            "pile_group_id INTEGER",
-            "pilegroup_name VARCHAR",
-            "pilegroup_friendly_name VARCHAR",
-            "key_characteristics VARCHAR",
-            "notable_exceptions VARCHAR",
-            "resource_uri VARCHAR",
-            "default_image VARCHAR",
-        ],
-    ),
-    "gobotany_character_discriminative_power": (
-        PARQUET_DIR / "gobotany_character_discriminative_power.parquet",
-        [
-            "pile_slug VARCHAR",
-            "character_short_name VARCHAR",
-            "character_name VARCHAR",
-            "character_group VARCHAR",
+            "value_type VARCHAR",
             "ease INTEGER",
-            "num_value_buckets INTEGER",
-            "total_taxa_covered FLOAT",
-            "max_bucket_taxa INTEGER",
-            "min_bucket_taxa INTEGER",
-            "shannon_entropy FLOAT",
-            "evenness_score FLOAT",
-            "discrimination_score FLOAT",
+            "character_group VARCHAR",
+            "is_cross_pile_taxon BOOLEAN",
         ],
     ),
 }
-
-# Denormalised view joining taxon + taxon_character_value + character_value_label.
-# Used by the RAI loader to avoid multi-table joins in Datalog.
-SPECIES_FEATURE_VALUES_VIEW = f"""
-CREATE OR REPLACE VIEW {DB}.{SCHEMA}.gobotany_species_feature_values AS
-SELECT
-    t.scientific_name,
-    tcv.pile_slug,
-    tcv.character_short_name,
-    tcv.value_index,
-    cvl.choice
-FROM {DB}.{SCHEMA}.gobotany_taxon t
-JOIN {DB}.{SCHEMA}.gobotany_taxon_character_value tcv
-    ON t.taxon_id = tcv.taxon_id
-JOIN {DB}.{SCHEMA}.gobotany_character_value_label cvl
-    ON  tcv.pile_slug            = cvl.pile_slug
-    AND tcv.character_short_name = cvl.character_short_name
-    AND tcv.value_index          = cvl.value_index
-WHERE cvl.choice IS NOT NULL
-"""
 
 
 def get_connection():
@@ -154,13 +120,14 @@ def get_connection():
     config = yaml.safe_load(config_path.read_text())
     conn_name = config.get("default_connection", "sf")
     sf = config["connections"][conn_name]
+    token = sf.get("token") or pathlib.Path(sf["token_file_path"]).read_text().strip()
     return snowflake.connector.connect(
         account=sf["account"],
         user=sf["user"],
         role=sf.get("role"),
         warehouse=sf.get("warehouse"),
         authenticator=sf.get("authenticator"),
-        token=sf.get("token"),
+        token=token,
         database=DB,
         schema=SCHEMA,
     )
@@ -202,23 +169,12 @@ def upload_table(cur, table: str, parquet_path: pathlib.Path, columns: list[str]
     print(f"  loaded: {cur.fetchone()[0]:,} rows")
 
 
-def create_view(cur, dry_run: bool = False):
-    print("\n[view] gobotany_species_feature_values")
-    if dry_run:
-        print(f"  sql: {SPECIES_FEATURE_VALUES_VIEW.strip()}")
-        return
-    cur.execute(SPECIES_FEATURE_VALUES_VIEW)
-    cur.execute(f"SELECT COUNT(*) FROM {DB}.{SCHEMA}.gobotany_species_feature_values")
-    print(f"  rows: {cur.fetchone()[0]:,}")
-
-
 def main():
     parser = argparse.ArgumentParser(description="Upload GoBotany parquets to Snowflake")
     parser.add_argument(
         "--tables", nargs="+", choices=list(TABLES.keys()), default=list(TABLES.keys()),
         metavar="TABLE", help="Tables to upload (default: all)",
     )
-    parser.add_argument("--no-view", action="store_true", help="Skip view creation")
     parser.add_argument("--dry-run", action="store_true", help="Print operations without executing")
     args = parser.parse_args()
 
@@ -227,8 +183,6 @@ def main():
         for name in args.tables:
             parquet_path, columns = TABLES[name]
             upload_table(None, name, parquet_path, columns, dry_run=True)
-        if not args.no_view:
-            create_view(None, dry_run=True)
         print("\nDone.")
         return
 
@@ -240,8 +194,6 @@ def main():
         for name in args.tables:
             parquet_path, columns = TABLES[name]
             upload_table(cur, name, parquet_path, columns)
-        if not args.no_view:
-            create_view(cur)
     finally:
         cur.close()
         conn.close()

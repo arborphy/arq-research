@@ -11,6 +11,7 @@ from kg.model import m
 from kg.model.core.taxonomy import Species
 from kg.model.core.observations import Observation
 from kg.model.core.h3cell import H3Cell
+from kg.model.core.location import Coordinate
 from kg.model.core.provenance import DataSource
 
 DB = "RAI_DEMO"
@@ -62,26 +63,16 @@ where(
 )
 
 # -- H3 Cells (create) --
-define(H3Cell.new(index=obs_table.H3_RES7))
-define(H3Cell.new(index=obs_table.H3_RES9))
-define(H3Cell.new(index=obs_table.H3_RES12))
 define(H3Cell.new(index=obs_table.H3_RES13))
 
-# -- H3 Cells (properties + parent hierarchy) --
-where(cell9 := H3Cell.filter_by(index=obs_table.H3_RES9)).define(
-    cell9.resolution(9),
-    cell9.part_of(H3Cell.filter_by(index=obs_table.H3_RES7)),
-)
+# -- Coordinates (create, keyed by lat/lon) --
+define(Coordinate.new(lat=obs_table.LATITUDE, lon=obs_table.LONGITUDE))
 
-where(cell12 := H3Cell.filter_by(index=obs_table.H3_RES12)).define(
-    cell12.resolution(12),
-    cell12.part_of(H3Cell.filter_by(index=obs_table.H3_RES9)),
-)
-
-where(cell13 := H3Cell.filter_by(index=obs_table.H3_RES13)).define(
-    cell13.resolution(13),
-    cell13.part_of(H3Cell.filter_by(index=obs_table.H3_RES12)),
-)
+# -- Coordinate → H3Cell --
+where(
+    coord := Coordinate.filter_by(lat=obs_table.LATITUDE, lon=obs_table.LONGITUDE),
+    cell  := H3Cell.filter_by(index=obs_table.H3_RES13),
+).define(Coordinate.h3cell(coord, cell))
 
 # -- Observations (create) --
 define(Observation.new(inat_id=obs_table.ID))
@@ -108,4 +99,5 @@ where(obs := Observation.filter_by(inat_id=obs_table.ID)).define(
     Observation.source(obs, DataSource.filter_by(name="iNaturalist")),
     Observation.species(obs, Species.filter_by(name=obs_table.SCIENTIFIC_NAME)),
     Observation.h3cell(obs, H3Cell.filter_by(index=obs_table.H3_RES13)),
+    Observation.coordinate(obs, Coordinate.filter_by(lat=obs_table.LATITUDE, lon=obs_table.LONGITUDE)),
 )

@@ -1,12 +1,12 @@
-"""Tests for feature and feature-value use cases.
+"""Tests for feature and category use cases.
 
 Verifies Newcomb's wildflower guide features (Flower Symmetry, Plant Type,
-Leaf Type, Leaf Arrangement) and their values using RAI queries.
+Leaf Type, Leaf Arrangement) and their categories using RAI queries.
 """
 
 from relationalai.semantics import define, select, where
 
-from kg.model.core.features import Feature, FeatureValue
+from kg.model.core.features import Feature, Category
 
 
 class TestNewcombFeatures:
@@ -28,15 +28,17 @@ class TestNewcombFeatures:
         assert df.iloc[0]["name"] == "Plant Type"
 
 
-class TestFeatureValues:
-    """Verify feature values and their relationships to features."""
+class TestCategories:
+    """Verify categories and their relationships to features."""
 
     def test_plant_type_values(self, newcomb_features):
-        """Plant Type should have Shrubs, Vines, Wildflowers values."""
-        feature = FeatureValue.feature
+        """Plant Type should have Shrubs, Vines, Wildflowers categories."""
+        feat = Feature.ref()
+        cat = Category.ref()
         df = where(
-            feature.name == "Plant Type",
-        ).select(FeatureValue.value).to_df()
+            feat.name == "Plant Type",
+            Category.feature(cat, feat),
+        ).select(cat.value).to_df()
         values = df["value"].tolist()
         assert "Shrubs" in values
         assert "Vines" in values
@@ -44,11 +46,13 @@ class TestFeatureValues:
         assert len(values) == 3
 
     def test_leaf_type_values(self, newcomb_features):
-        """Leaf Type should have four values."""
-        feature = FeatureValue.feature
+        """Leaf Type should have four categories."""
+        feat = Feature.ref()
+        cat = Category.ref()
         df = where(
-            feature.name == "Leaf Type",
-        ).select(FeatureValue.value).to_df()
+            feat.name == "Leaf Type",
+            Category.feature(cat, feat),
+        ).select(cat.value).to_df()
         values = df["value"].tolist()
         assert "No apparent leaves" in values
         assert "Leaves entire" in values
@@ -57,24 +61,28 @@ class TestFeatureValues:
         assert len(values) == 4
 
     def test_value_belongs_to_one_feature(self, newcomb_features):
-        """Each value should belong to exactly one feature."""
-        feature = FeatureValue.feature
+        """Each category value should belong to exactly one feature."""
+        feat = Feature.ref()
+        cat = Category.ref()
         df = where(
-            FeatureValue.value == "Shrubs",
-        ).select(feature.name).to_df()
+            cat.value == "Shrubs",
+            Category.feature(cat, feat),
+        ).select(feat.name).to_df()
         assert len(df) == 1
         assert df.iloc[0]["name"] == "Plant Type"
 
-    def test_add_new_feature_value(self, newcomb_features):
-        """Add a new value to an existing feature and query it."""
+    def test_add_new_category(self, newcomb_features):
+        """Add a new category to an existing feature and query it."""
         define(
-            pt_trees := FeatureValue.new(value="Trees"),
+            pt_trees := Category.new(value="Trees"),
             pt_trees.feature(newcomb_features["plant_type"]),
         )
 
-        feature = FeatureValue.feature
+        feat = Feature.ref()
+        cat = Category.ref()
         df = where(
-            feature.name == "Plant Type",
-        ).select(FeatureValue.value).to_df()
+            feat.name == "Plant Type",
+            Category.feature(cat, feat),
+        ).select(cat.value).to_df()
         values = df["value"].tolist()
         assert "Trees" in values

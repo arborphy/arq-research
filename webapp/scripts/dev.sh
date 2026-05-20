@@ -4,9 +4,18 @@ set -e
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 export PYTHONPATH="$ROOT"
 
-echo "Starting backend on :8000 and frontend on :5173..."
+DEBUG=0
+for arg in "$@"; do
+  [ "$arg" = "--debug" ] && DEBUG=1
+done
 
-uv run uvicorn webapp.backend.main:app --reload --port 8000 &
+if [ "$DEBUG" = "1" ]; then
+  echo "Starting backend in debug mode (pdb-compatible) on :8000 and frontend on :5173..."
+  uv run python -m uvicorn webapp.backend.main:app --port 8000 &
+else
+  echo "Starting backend on :8000 and frontend on :5173..."
+  uv run uvicorn webapp.backend.main:app --reload --port 8000 &
+fi
 BACKEND_PID=$!
 
 cd "$ROOT/webapp/frontend"

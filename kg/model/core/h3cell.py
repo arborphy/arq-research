@@ -1,9 +1,11 @@
 from kg.model import m
 from relationalai.semantics import Int128, Integer, String
-from .entity import Entity
+
+from kg.model.core.location import Coordinate
+from .entity import Location
 from .observations import Observation
 
-H3Cell = m.Concept("H3Cell", extends=[Entity])
+H3Cell = m.Concept("H3Cell", extends=[Location])
 
 # Properties
 H3Cell.index = m.Property(f"{H3Cell} has index {Int128:index}")
@@ -13,9 +15,12 @@ H3Cell.resolution = m.Property(f"{H3Cell} at resolution {Integer:resolution}")
 
 # Relationships
 Observation.h3cell = m.Relationship(f"{Observation} falls in {H3Cell:h3cell}")
+Observation.coordinate = m.Relationship(f"{Observation} has coordinates {Coordinate}")    
+
+Coordinate.h3cell = m.Relationship(f"{Coordinate} in {H3Cell:h3cell}")
 
 # -- EcoSite --
-EcoSite = m.Concept("EcoSite", extends=[Entity])
+EcoSite = m.Concept("EcoSite", extends=[Location])
 
 EcoSite.ecosite_id = m.Property(f"{EcoSite} has ecosite id {String:ecosite_id}")
 EcoSite.h3_cells = m.Relationship(f"{EcoSite} covers {H3Cell:h3_cells}")

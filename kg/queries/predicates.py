@@ -1,6 +1,6 @@
 """Queries demonstrating global predicates across concept types.
 
-The key insight: select(Child.name, Parent.name) where Child.part_of(Parent)
+The key insight: select(Child.name, Parent.name) where part_of(Child, Parent)
 — same query shape, just swap the Concepts.
 """
 from relationalai.semantics import count, select, where
@@ -9,14 +9,15 @@ import kg.loaders.newcomb  # noqa: F401
 import kg.loaders.observations  # noqa: F401
 import kg.model.derived  # noqa: F401
 
-from kg.model.core.features import Feature, FeatureValue
-from kg.model.core.taxonomy import Genus, Kingdom, Species
+from kg.model.core.features import Feature, Category
+from kg.model.core.taxonomy import Family, Genus, Species
+from kg.model.core.predicates import part_of
 
 # (label, child_concept, parent_concept)
 CONCEPT_PAIRS = [
     ("Species → Genus", Species, Genus),
-    ("Genus → Kingdom", Genus, Kingdom),
-    ("FeatureValue → Feature", FeatureValue, Feature),
+    ("Genus → Family", Genus, Family),
+    ("Category → Feature", Category, Feature),
 ]
 
 
@@ -24,14 +25,14 @@ def _part_of_query(child_cls, parent_cls):
     """Query part_of between two concept types."""
     c = child_cls.ref()
     p = parent_cls.ref()
-    return where(c.part_of(p)).select(c.name, p.name).to_df()
+    return where(part_of(c, p)).select(c.name, p.name).to_df()
 
 
 def _part_of_count(child_cls, parent_cls):
     """Count part_of pairs between two concept types."""
     c = child_cls.ref()
     p = parent_cls.ref()
-    df = where(c.part_of(p)).select(count(c)).to_df()
+    df = where(part_of(c, p)).select(count(c)).to_df()
     return int(df.iloc[0, 0]) if not df.empty else 0
 
 
@@ -76,15 +77,15 @@ def part_of_pairs(concept_type: str = "all", limit: int = 50):
 
 
 def predicate_graph():
-    """Build graph data for part_of + feature_values visualization."""
+    """Build graph data for part_of + categories visualization."""
     nodes = {}
     edges = []
 
     # part_of edges
     graph_pairs = [
         ("Species", "Genus", Species, Genus),
-        ("Genus", "Kingdom", Genus, Kingdom),
-        ("FeatureValue", "Feature", FeatureValue, Feature),
+        ("Genus", "Family", Genus, Family),
+        ("Category", "Feature", Category, Feature),
     ]
 
     for child_type, parent_type, child_cls, parent_cls in graph_pairs:
@@ -99,22 +100,22 @@ def predicate_graph():
                 nodes[parent_id] = {"id": parent_id, "label": str(row["parent"]), "concept_type": parent_type}
                 edges.append({"source": child_id, "target": parent_id, "type": "part_of"})
 
-    # Species → FeatureValue edges (hasFeature) via refs
+    # Species → Category edges (hasFeature) via refs
     species_in_graph = {nid.split(":", 1)[1] for nid, n in nodes.items() if n["concept_type"] == "Species"}
     if species_in_graph:
         try:
             s = Species.ref()
-            fv = FeatureValue.ref()
-            df = where(s.feature_values(fv)).select(s.name, fv.value).to_df()
+            cat = Category.ref()
+            df = where(s.categories(cat)).select(s.name, cat.value).to_df()
             if not df.empty:
-                df.columns = ["species", "feature_value"]
+                df.columns = ["species", "category"]
                 for _, row in df.iterrows():
                     if row["species"] in species_in_graph:
                         s_id = f"species:{row['species']}"
-                        fv_id = f"featurevalue:{row['feature_value']}"
-                        if fv_id not in nodes:
-                            nodes[fv_id] = {"id": fv_id, "label": str(row["feature_value"]), "concept_type": "FeatureValue"}
-                        edges.append({"source": s_id, "target": fv_id, "type": "hasFeature"})
+                        cat_id = f"category:{row['category']}"
+                        if cat_id not in nodes:
+                            nodes[cat_id] = {"id": cat_id, "label": str(row["category"]), "concept_type": "Category"}
+                        edges.append({"source": s_id, "target": cat_id, "type": "hasFeature"})
         except Exception:
             pass  # hasFeature edges are optional — don't break the graph
 

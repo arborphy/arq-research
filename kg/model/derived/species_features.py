@@ -1,20 +1,33 @@
-"""Derived rule: Species → FeatureValue shortcut.
+"""Derived rules: Taxon → Category and Measurement shortcuts.
 
-Traverses the IdentificationKey chain to derive a direct
-Species.feature_values relationship, so queries don't need
-to go through IdentificationKey every time.
+Collapses the Description hop so queries can go directly from a Taxon to
+its categorical or quantitative feature observations.
 
-    IdentificationKey.species → Species
-    IdentificationKey.feature_value → FeatureValue
-    ⟹  Species.feature_values → FeatureValue
+    Description.describes → Taxon
+    Description.category  → Category   ⟹  Taxon.categories  → Category
+    Description.measurement → Measurement  ⟹  Taxon.measurements → Measurement
 """
 from relationalai.semantics import define
 
-from kg.model.core.taxonomy import Species
-from kg.model.core.features import FeatureValue
-from kg.model.core.keys.key import IdentificationKey
+from kg.model import m
+from kg.model.core.taxonomy import Taxon
+from kg.model.core.features import Category, Measurement
+from kg.model.core.keys.key import Description
 
-define(Species.feature_values(Species, FeatureValue)).where(
-    IdentificationKey.species(Species),
-    IdentificationKey.feature_value(FeatureValue),
+# Declare as multi-valued relationships (no :field_name — a taxon has MANY measurements/categories)
+Taxon.categories = m.Relationship(f"{Taxon} has categories {Category}")
+Taxon.measurements = m.Relationship(f"{Taxon} has measurements {Measurement}")
+
+taxon = Taxon.ref()
+category = Category.ref()
+measurement = Measurement.ref()
+
+define(Taxon.categories(taxon, category)).where(
+    Description.describes(taxon),
+    Description.category(category),
+)
+
+define(Taxon.measurements(taxon, measurement)).where(
+    Description.describes(taxon),
+    Description.measurement(measurement),
 )

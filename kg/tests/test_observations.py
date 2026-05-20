@@ -13,6 +13,7 @@ from relationalai.semantics import define, select, where
 from kg.model.core.taxonomy import Species
 from kg.model.core.observations import Observation, GeographicArea
 from kg.model.core.environment import EnvironmentDescriptor, EnvironmentValue
+from kg.model.core.predicates import located_in
 
 
 @pytest.fixture
@@ -24,7 +25,7 @@ def observation_data(blue_aster_hierarchy):
         marsh_billings := GeographicArea.new(
             name="Marsh-Billings-Rockefeller NHP", type="park",
         ),
-        marsh_billings.part_of(vermont),
+        located_in(marsh_billings, vermont),
         # Environment
         habitat := EnvironmentDescriptor.new(name="Habitat"),
         meadow := EnvironmentValue.new(value="Meadow"),

@@ -1,14 +1,17 @@
 """Queries for Trail data."""
-from relationalai.semantics import where
+from relationalai.semantics import count, where
 
 import kg.loaders.trails  # noqa: F401
 import kg.loaders.observations  # noqa: F401
 import kg.loaders.ecosites  # noqa: F401
+import kg.loaders.gobotany  # noqa: F401
 
 from kg.model.core.trails import Trail
 from kg.model.core.h3cell import H3Cell, EcoSite
 from kg.model.core.observations import Observation
 from kg.model.core.taxonomy import Species
+from kg.model.core.features import Feature, Category
+from kg.model.core.keys.key import Description
 
 
 def list_trails():
@@ -119,6 +122,23 @@ def all_trail_ecosites():
     )
 
 
+def species_on_trail(osm_id: str):
+    """Return distinct species observed on a trail."""
+    species = Species.ref()
+    return (
+        where(
+            Trail.osm_id == osm_id,
+
+            Trail.h3_cells(H3Cell),
+
+            Observation.h3cell(H3Cell),
+            Observation.species(species),
+        )
+        .select(species.name)
+        .to_df()
+    )
+
+
 def observations_on_trail(osm_id: str):
     """Return observations whose res-13 H3 cell overlaps with the trail."""
     trail = Trail.ref()
@@ -135,3 +155,47 @@ def observations_on_trail(osm_id: str):
         .select(obs.inat_id, obs.latitude, obs.longitude, obs.date, obs.image_url, species.name)
         .to_df()
     )
+
+
+def features_for_trail(osm_id: str):
+    """Return feature/value pairs (with species count) for species observed on a trail."""
+    species = Species.ref()
+    desc = Description.ref()
+    cat = Category.ref()
+    feat = Feature.ref()
+    return (
+        where(
+            Trail.osm_id == osm_id,
+            Trail.h3_cells(H3Cell),
+            Observation.h3cell(H3Cell),
+            Observation.species(species),
+            desc.describes(species),
+            desc.category(cat),
+            cat.feature(feat),
+        )
+        .select(feat.name, cat.value, count(species).per(feat, cat))
+        .to_df()
+    )
+
+
+def filtered_species_on_trail(osm_id: str, filters: list[dict]):
+    """Return species on a trail that match all given feature filters."""
+    species = Species.ref()
+    conds: list = [
+        Trail.osm_id == osm_id,
+        Trail.h3_cells(H3Cell),
+        Observation.h3cell(H3Cell),
+        Observation.species(species),
+    ]
+    for f in filters:
+        desc = Description.ref()
+        cat = Category.ref()
+        feat = Feature.ref()
+        conds.extend([
+            desc.describes(species),
+            desc.category(cat),
+            cat.feature(feat),
+            feat.name == f["feature"],
+            cat.value == f["value"],
+        ])
+    return where(*conds).select(species.name).to_df()

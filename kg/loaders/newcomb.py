@@ -2,16 +2,16 @@
 
 Maps stg_newcomb_species columns to:
   - Species (linked via species_inat)
-  - Feature / FeatureValue (flower_type, plant_type, leaf_type)
-  - NewcombKey (identified by flower_type + plant_type + leaf_type)
+  - Feature / Category (flower_type, plant_type, leaf_type)
+  - Description (one per species, version="1977", describes the species)
   - DataSource (Newcomb's Wildflower Guide)
 """
 from relationalai.semantics import String, define, where
 
 from kg.model import m
 from kg.model.core.taxonomy import Species
-from kg.model.core.features import Feature, FeatureValue
-from kg.model.core.keys.newcomb import NewcombKey
+from kg.model.core.features import Feature, Category
+from kg.model.core.keys.key import Description
 from kg.model.core.provenance import DataSource
 
 DB = "RAI_DEMO"
@@ -42,40 +42,34 @@ where(species := Species.filter_by(name=newcomb_table.SPECIES_INAT)).define(
     Species.source(species, DataSource.filter_by(name="Newcomb's Wildflower Guide")),
 )
 
-# -- FeatureValues --
-define(FeatureValue.new(value=newcomb_table.KEY_FLOWER_TYPE))
-define(FeatureValue.new(value=newcomb_table.KEY_PLANT_TYPE))
-define(FeatureValue.new(value=newcomb_table.KEY_LEAF_TYPE))
+# -- Categories (categorical feature values) --
+define(Category.new(value=newcomb_table.KEY_FLOWER_TYPE))
+define(Category.new(value=newcomb_table.KEY_PLANT_TYPE))
+define(Category.new(value=newcomb_table.KEY_LEAF_TYPE))
 
-where(fv := FeatureValue.filter_by(value=newcomb_table.KEY_FLOWER_TYPE)).define(
-    fv.name(newcomb_table.KEY_FLOWER_TYPE),
-    FeatureValue.feature(fv, Feature.filter_by(name="flower_type")),
+where(cat := Category.filter_by(value=newcomb_table.KEY_FLOWER_TYPE)).define(
+    cat.name(newcomb_table.KEY_FLOWER_TYPE),
+    Category.feature(cat, Feature.filter_by(name="flower_type")),
 )
-where(fv := FeatureValue.filter_by(value=newcomb_table.KEY_PLANT_TYPE)).define(
-    fv.name(newcomb_table.KEY_PLANT_TYPE),
-    FeatureValue.feature(fv, Feature.filter_by(name="plant_type")),
+where(cat := Category.filter_by(value=newcomb_table.KEY_PLANT_TYPE)).define(
+    cat.name(newcomb_table.KEY_PLANT_TYPE),
+    Category.feature(cat, Feature.filter_by(name="plant_type")),
 )
-where(fv := FeatureValue.filter_by(value=newcomb_table.KEY_LEAF_TYPE)).define(
-    fv.name(newcomb_table.KEY_LEAF_TYPE),
-    FeatureValue.feature(fv, Feature.filter_by(name="leaf_type")),
+where(cat := Category.filter_by(value=newcomb_table.KEY_LEAF_TYPE)).define(
+    cat.name(newcomb_table.KEY_LEAF_TYPE),
+    Category.feature(cat, Feature.filter_by(name="leaf_type")),
 )
 
-# -- NewcombKey (identified by the 3 trait values) --
-define(NewcombKey.new(
-    flower_type=newcomb_table.KEY_FLOWER_TYPE,
-    plant_type=newcomb_table.KEY_PLANT_TYPE,
-    leaf_type=newcomb_table.KEY_LEAF_TYPE,
-))
+# -- Description: one per species, linking to its three feature categories --
+define(Description.new(name=newcomb_table.SPECIES_INAT, version="1977"))
 
-where(key := NewcombKey.filter_by(
-    flower_type=newcomb_table.KEY_FLOWER_TYPE,
-    plant_type=newcomb_table.KEY_PLANT_TYPE,
-    leaf_type=newcomb_table.KEY_LEAF_TYPE,
-)).define(
-    key.group_number(newcomb_table.KEY_GROUP_NUMBER),
-    NewcombKey.species(key, Species.filter_by(name=newcomb_table.SPECIES_INAT)),
-    NewcombKey.source(key, DataSource.filter_by(name="Newcomb's Wildflower Guide")),
-    NewcombKey.feature_value(key, FeatureValue.filter_by(value=newcomb_table.KEY_FLOWER_TYPE)),
-    NewcombKey.feature_value(key, FeatureValue.filter_by(value=newcomb_table.KEY_PLANT_TYPE)),
-    NewcombKey.feature_value(key, FeatureValue.filter_by(value=newcomb_table.KEY_LEAF_TYPE)),
+where(
+    desc    := Description.filter_by(name=newcomb_table.SPECIES_INAT, version="1977"),
+    species := Species.filter_by(name=newcomb_table.SPECIES_INAT),
+).define(
+    desc.describes(species),
+    Description.source(desc, DataSource.filter_by(name="Newcomb's Wildflower Guide")),
+    Description.category(desc, Category.filter_by(value=newcomb_table.KEY_FLOWER_TYPE)),
+    Description.category(desc, Category.filter_by(value=newcomb_table.KEY_PLANT_TYPE)),
+    Description.category(desc, Category.filter_by(value=newcomb_table.KEY_LEAF_TYPE)),
 )
