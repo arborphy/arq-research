@@ -9,6 +9,7 @@ from kg.model.core.trails import Trail
 from kg.model.core.h3cell import H3Cell, EcoSite
 from kg.model.core.observations import Observation
 from kg.model.core.taxonomy import Species
+from kg.model.core.provenance import DataSource
 
 
 def list_trails():
@@ -35,13 +36,15 @@ def all_trail_observations():
     cell = H3Cell.ref()
     obs = Observation.ref()
     species = Species.ref()
+    datasource = DataSource.ref()
     return (
         where(
             trail.h3_cells(cell),
             obs.h3cell(cell),
             Observation.species(obs, species),
+            Observation.source(obs, datasource),
         )
-        .select(obs.inat_id, obs.latitude, obs.longitude, obs.date, obs.image_url, species.name)
+        .select(obs.inat_id, obs.latitude, obs.longitude, obs.date, obs.image_url, species.name, datasource.name)
         .to_df()
     )
 
@@ -125,13 +128,15 @@ def observations_on_trail(osm_id: str):
     cell = H3Cell.ref()
     obs = Observation.ref()
     species = Species.ref()
+    datasource = DataSource.ref()
     return (
         where(
             trail.osm_id == osm_id,
             trail.h3_cells(cell),
             obs.h3cell(cell),
             Observation.species(obs, species),
+            Observation.source(obs, datasource),
         )
-        .select(obs.inat_id, obs.latitude, obs.longitude, obs.date, obs.image_url, species.name)
+        .select(obs.inat_id, obs.latitude, obs.longitude, obs.date, obs.image_url, species.name, datasource.name)
         .to_df()
     )

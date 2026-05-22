@@ -22,7 +22,7 @@ def all_observations():
     df = all_trail_observations()
     if df.empty:
         return {"data": [], "total": 0}
-    df.columns = ["inat_id", "latitude", "longitude", "date", "image_url", "species"]
+    df.columns = ["inat_id", "latitude", "longitude", "date", "image_url", "species", "source"]
     df["date"] = df["date"].astype(str)
     df = df.fillna("")
     return {"data": df.to_dict(orient="records"), "total": len(df)}
@@ -98,7 +98,7 @@ def trail_observations(osm_id: str):
     df = observations_on_trail(osm_id)
     if df.empty:
         return {"data": [], "total": 0}
-    df.columns = ["inat_id", "latitude", "longitude", "date", "image_url", "species"]
+    df.columns = ["inat_id", "latitude", "longitude", "date", "image_url", "species", "source"]
     df["date"] = df["date"].astype(str)
     df = df.fillna("")
     return {"data": df.to_dict(orient="records"), "total": len(df)}

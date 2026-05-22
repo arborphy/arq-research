@@ -15,7 +15,12 @@ if PROJECT_ROOT not in sys.path:
 
 app = FastAPI(title="Arborphy Co-Occurrence Explorer")
 
-_origins = os.environ.get("CORS_ORIGINS", "http://localhost:5173").split(",")
+_origins = os.environ.get(
+    "CORS_ORIGINS",
+    # Default: all three Vite dev servers in the arborphy stack.
+    # arq-visualization=5173, arq-research/webapp/frontend=5174, arq-mobile=5176
+    "http://localhost:5173,http://localhost:5174,http://localhost:5176",
+).split(",")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=_origins,
@@ -30,6 +35,7 @@ from webapp.backend.routers.debug import router as debug_router  # noqa: E402
 from webapp.backend.routers.predicates import router as predicates_router  # noqa: E402
 from webapp.backend.routers.ecosites import router as ecosites_router  # noqa: E402
 from webapp.backend.routers.trails import router as trails_router  # noqa: E402
+from webapp.backend.routers.gobotany import router as gobotany_router  # noqa: E402
 
 app.include_router(co_occurrence_router, prefix="/api")
 app.include_router(geo_router, prefix="/api")
@@ -38,3 +44,4 @@ app.include_router(debug_router, prefix="/api")
 app.include_router(predicates_router, prefix="/api")
 app.include_router(ecosites_router, prefix="/api")
 app.include_router(trails_router, prefix="/api")
+app.include_router(gobotany_router, prefix="/api")

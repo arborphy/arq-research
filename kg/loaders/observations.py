@@ -39,14 +39,16 @@ obs_table = m.Table(f"{DB}.{SCHEMA}.stg_observations", schema={
     "SPECIES_GUESS": String,
     "DESCRIPTION": String,
     "LICENSE": String,
+    "SOURCE": String,   # 'inat' | 'arborphy' — added by stg_observations.py
     "H3_RES7": Int128,
     "H3_RES9": Int128,
     "H3_RES12": Int128,
     "H3_RES13": Int128,
 })
 
-# -- Data Source --
+# -- Data Sources --
 define(DataSource.new(name="iNaturalist"))
+define(DataSource.new(name="arborphy"))
 
 # -- Species (create) --
 define(Species.new(name=obs_table.SCIENTIFIC_NAME))
@@ -54,6 +56,7 @@ define(Species.new(name=obs_table.SCIENTIFIC_NAME))
 # -- Species (properties) --
 where(
     species := Species.filter_by(name=obs_table.SCIENTIFIC_NAME),
+    obs_table.SOURCE == "inat",
 ).define(
     species.common_name(obs_table.COMMON_NAME),
     species.inat_taxon_id(obs_table.TAXON_ID),
@@ -105,7 +108,17 @@ where(obs := Observation.filter_by(inat_id=obs_table.ID)).define(
     obs.species_guess(obs_table.SPECIES_GUESS),
     obs.description(obs_table.DESCRIPTION),
     obs.license(obs_table.LICENSE),
-    Observation.source(obs, DataSource.filter_by(name="iNaturalist")),
     Observation.species(obs, Species.filter_by(name=obs_table.SCIENTIFIC_NAME)),
     Observation.h3cell(obs, H3Cell.filter_by(index=obs_table.H3_RES13)),
 )
+
+# -- Observation.source: route to the correct DataSource by SOURCE column --
+where(
+    obs := Observation.filter_by(inat_id=obs_table.ID),
+    obs_table.SOURCE == "inat",
+).define(Observation.source(obs, DataSource.filter_by(name="iNaturalist")))
+
+where(
+    obs := Observation.filter_by(inat_id=obs_table.ID),
+    obs_table.SOURCE == "arborphy",
+).define(Observation.source(obs, DataSource.filter_by(name="arborphy")))
