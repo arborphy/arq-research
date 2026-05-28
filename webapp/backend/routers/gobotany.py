@@ -46,7 +46,13 @@ def _load_tables():
 # ---------------------------------------------------------------------------
 
 def _features_for_taxon(taxon_id: int) -> pd.DataFrame:
-    """Return enriched feature assertions for a taxon as a flat DataFrame."""
+    """Return enriched feature assertions for a taxon as a flat DataFrame.
+
+    GoBotany records an explicit "NA" CharacterValue for every character that
+    does not apply to a given taxon (e.g. "Leaf blade edges (Acer)" = "NA" for
+    all non-Acer species).  These are inapplicability markers, not real feature
+    assertions, so we drop them before returning.
+    """
     t = _load_tables()
 
     facts = (
@@ -67,6 +73,11 @@ def _features_for_taxon(taxon_id: int) -> pd.DataFrame:
             how="left",
         )
     )
+
+    # Drop GoBotany inapplicability markers ("NA" value = character not relevant
+    # to this taxon, e.g. genus-scoped characters like "Leaf blade edges (Acer)").
+    facts = facts[facts["display_label"].str.upper().str.strip() != "NA"]
+
     return facts
 
 
