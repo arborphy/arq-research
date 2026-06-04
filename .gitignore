@@ -21,3 +21,9 @@ profiles.yml
 
 .local.DS_Store
 **/.DS_Store
+
+# Field-capture local store (observations JSONL + uploaded photos)
+webapp/backend/_field_data/
+
+.history/
+spans.jsonl
