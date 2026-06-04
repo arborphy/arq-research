@@ -47,8 +47,17 @@ obs_table = m.Table(f"{DB}.{SCHEMA}.stg_observations", schema={
 })
 
 # -- Data Sources --
+# DEMON: Every value the SOURCE column can take MUST have a matching
+# DataSource.new(...) here AND a corresponding where(...SOURCE==X).define(
+# Observation.source(...)) block below. If you add a new source value
+# without both pieces, queries that join through `Observation.source(...)`
+# (e.g. kg/queries/trails.py:52) will silently exclude those observations.
+# Known source values: 'inat' (bulk dbt load), 'arborphy' (manual import
+# via scripts/upload_stg_observations.py), 'gbif' (on-demand API fetch via
+# webapp/backend/routers/observations.py).
 define(DataSource.new(name="iNaturalist"))
 define(DataSource.new(name="arborphy"))
+define(DataSource.new(name="gbif"))
 
 # -- Species (create) --
 define(Species.new(name=obs_table.SCIENTIFIC_NAME))
@@ -122,3 +131,8 @@ where(
     obs := Observation.filter_by(inat_id=obs_table.ID),
     obs_table.SOURCE == "arborphy",
 ).define(Observation.source(obs, DataSource.filter_by(name="arborphy")))
+
+where(
+    obs := Observation.filter_by(inat_id=obs_table.ID),
+    obs_table.SOURCE == "gbif",
+).define(Observation.source(obs, DataSource.filter_by(name="gbif")))

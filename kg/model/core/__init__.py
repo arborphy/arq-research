@@ -5,5 +5,6 @@ from .features import *
 from .taxonomy import *
 from .observations import *
 from .h3cell import *
+from .instance import *
 from .keys import *
 # from .calendar import *  # temporarily disabled
