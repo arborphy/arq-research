@@ -11,6 +11,7 @@ import kg.model.derived  # noqa: F401
 
 from kg.model.core.features import Feature, FeatureValue
 from kg.model.core.taxonomy import Genus, Kingdom, Species
+from webapp.backend.cache import ttl_cache
 
 # (label, child_concept, parent_concept)
 CONCEPT_PAIRS = [
@@ -35,6 +36,7 @@ def _part_of_count(child_cls, parent_cls):
     return int(df.iloc[0, 0]) if not df.empty else 0
 
 
+@ttl_cache(ttl_seconds=600, namespace="ref")
 def predicate_summary():
     """Count part_of pairs per concept type."""
     import pandas as pd
@@ -50,6 +52,7 @@ def predicate_summary():
     return pd.DataFrame(rows)
 
 
+@ttl_cache(ttl_seconds=600, namespace="ref")
 def part_of_pairs(concept_type: str = "all", limit: int = 50):
     """Return part_of pairs for a concept type."""
     import pandas as pd
@@ -75,6 +78,7 @@ def part_of_pairs(concept_type: str = "all", limit: int = 50):
     return pd.DataFrame(columns=["child", "parent", "concept_type"])
 
 
+@ttl_cache(ttl_seconds=600, namespace="ref")
 def predicate_graph():
     """Build graph data for part_of + feature_values visualization."""
     nodes = {}

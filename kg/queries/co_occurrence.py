@@ -2,6 +2,17 @@
 
 Usage:
     python -m kg.queries.co_occurrence
+
+DEMON: This module (and its siblings ecosites/geography/newcomb/predicates/
+trails) imports `webapp.backend.cache.ttl_cache` for query memoization.
+This inverts the natural layering — `kg/` is supposed to be the lower
+layer that `webapp/` builds on, not vice versa. Concrete consequence:
+  * Running `python -m kg.queries.co_occurrence` outside the webapp
+    Python path will ImportError.
+  * Any future CLI / batch script that uses kg/ standalone needs the
+    webapp tree on PYTHONPATH.
+When this becomes painful, move webapp/backend/cache.py to kg/cache.py
+(or a neutral arq_common/) and have webapp re-export it. See docs/DEMONS.md.
 """
 from relationalai.semantics import select, where, count, std
 
@@ -16,8 +27,10 @@ from kg.model.core.taxonomy import Species
 from kg.model.core.features import Feature, FeatureValue
 from kg.model.core.keys.key import IdentificationKey
 from kg.model.core.h3cell import H3Cell
+from webapp.backend.cache import ttl_cache
 
 
+@ttl_cache(ttl_seconds=300, namespace="co_occurrence")
 def species_co_occurrence():
     """Each species with how many distinct species it co-occurs with."""
     obs1 = Observation.ref()
@@ -39,6 +52,7 @@ def species_co_occurrence():
     return df.sort_values("co_occurring_count", ascending=False).reset_index(drop=True)
 
 
+@ttl_cache(ttl_seconds=300, namespace="co_occurrence")
 def species_co_occurrence_graph():
     """All species co-occurrence pairs (edges for a graph)."""
     obs1 = Observation.ref()
@@ -56,6 +70,7 @@ def species_co_occurrence_graph():
     ).to_df()
 
 
+@ttl_cache(ttl_seconds=300, namespace="co_occurrence")
 def species_co_occurrence_in_cell(h3_index: int):
     """All species observed in a specific H3 res-9 cell."""
     obs = Observation.ref()
@@ -79,6 +94,7 @@ GRANULARITIES = {
 }
 
 
+@ttl_cache(ttl_seconds=300, namespace="co_occurrence")
 def co_occurrence_for_species(species_name: str, granularity: str = "day"):
     """What species co-occur with a given species at a given temporal granularity?"""
     date_fn = GRANULARITIES.get(granularity)
@@ -105,6 +121,7 @@ def co_occurrence_for_species(species_name: str, granularity: str = "day"):
     ).to_df()
 
 
+@ttl_cache(ttl_seconds=300, namespace="co_occurrence")
 def shared_features_for_co_occurring_species(species_name: str):
     """Feature values of co-occurring species, with count of how many share each trait."""
     obs1 = Observation.ref()
@@ -129,6 +146,7 @@ def shared_features_for_co_occurring_species(species_name: str):
     ).to_df()
 
 
+@ttl_cache(ttl_seconds=300, namespace="co_occurrence")
 def species_communities():
     """Species grouped by WCC community."""
     s = Species.ref()
@@ -141,6 +159,7 @@ def species_communities():
     ).to_df()
 
 
+@ttl_cache(ttl_seconds=300, namespace="co_occurrence")
 def community_summary():
     """Count of species per community."""
     s = Species.ref()

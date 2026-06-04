@@ -17,11 +17,16 @@ from kg.model.core.taxonomy import Species
 from kg.model.core.features import Feature, FeatureValue
 from kg.model.core.keys.key import IdentificationKey
 from kg.model.core.keys.newcomb import NewcombKey
+from webapp.backend.cache import ttl_cache
 
+
+# All Newcomb queries are over static reference data (1977 field guide).
+# Long TTL — these don't change when new observations land.
 
 # ------------------------------------------------------------------
 # 1. Lookup: What features does a species have?
 # ------------------------------------------------------------------
+@ttl_cache(ttl_seconds=3600, namespace="ref")
 def species_features(species_name: str):
     """Return all feature-value pairs for a given species.
 
@@ -46,6 +51,7 @@ def species_features(species_name: str):
 # ------------------------------------------------------------------
 # 2. Identification: Find species matching a set of traits
 # ------------------------------------------------------------------
+@ttl_cache(ttl_seconds=3600, namespace="ref")
 def identify_by_features(traits: dict[str, str]):
     """Find species that match ALL given {feature_name: value} pairs.
 
@@ -73,6 +79,7 @@ def identify_by_features(traits: dict[str, str]):
 # ------------------------------------------------------------------
 # 3. Aggregation: How many species per feature value?
 # ------------------------------------------------------------------
+@ttl_cache(ttl_seconds=3600, namespace="ref")
 def species_count_per_value(feature_name: str):
     """Count species for each value of a given feature.
 
@@ -97,6 +104,7 @@ def species_count_per_value(feature_name: str):
 # 4. Cross-feature: What values of feature B co-occur with a value
 #    of feature A?
 # ------------------------------------------------------------------
+@ttl_cache(ttl_seconds=3600, namespace="ref")
 def cross_feature_analysis(
     source_feature: str,
     source_value: str,
@@ -131,6 +139,7 @@ def cross_feature_analysis(
 # ------------------------------------------------------------------
 # 5. Similarity: Species pairs sharing feature values
 # ------------------------------------------------------------------
+@ttl_cache(ttl_seconds=3600, namespace="ref")
 def species_sharing_features():
     """Find species pairs and how many feature values they share.
 
@@ -162,6 +171,7 @@ def species_sharing_features():
 # ------------------------------------------------------------------
 # 6. Coverage: How many species per key group?
 # ------------------------------------------------------------------
+@ttl_cache(ttl_seconds=3600, namespace="ref")
 def species_per_key_group():
     """Count species per IdentificationKey group (Newcomb key value).
 
@@ -181,6 +191,7 @@ def species_per_key_group():
 # ------------------------------------------------------------------
 # 7. Newcomb key info for species
 # ------------------------------------------------------------------
+@ttl_cache(ttl_seconds=3600, namespace="ref")
 def newcomb_key_for_species(species_name: str):
     """Return the NewcombKey group number and trait values for a species."""
     return where(
@@ -194,6 +205,7 @@ def newcomb_key_for_species(species_name: str):
     ).to_df()
 
 
+@ttl_cache(ttl_seconds=3600, namespace="ref")
 def species_with_newcomb_keys():
     """Return all species with their NewcombKey group numbers."""
     return where(

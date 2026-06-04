@@ -12,8 +12,10 @@ import kg.model.derived.co_occurrence  # noqa: F401
 from kg.model.core.observations import Observation
 from kg.model.core.taxonomy import Species
 from kg.model.core.h3cell import H3Cell
+from webapp.backend.cache import ttl_cache
 
 
+@ttl_cache(ttl_seconds=300, namespace="geo")
 def observations_for_species(species_name: str):
     """Return lat/lon/date/inat_id for all observations of a species."""
     obs = Observation.ref()
@@ -30,6 +32,7 @@ def observations_for_species(species_name: str):
     ).to_df()
 
 
+@ttl_cache(ttl_seconds=300, namespace="geo")
 def co_occurrence_cells_for_species(species_name: str):
     """Return H3 res-9 cell indexes where this species co-occurs with others."""
     obs1 = Observation.ref()
@@ -51,6 +54,7 @@ def co_occurrence_cells_for_species(species_name: str):
     return df
 
 
+@ttl_cache(ttl_seconds=300, namespace="geo")
 def co_occurring_observations_for_species(species_name: str):
     """Return lat/lon/date/inat_id/species of observations that co-occur with a species."""
     obs1 = Observation.ref()
@@ -72,6 +76,7 @@ def co_occurring_observations_for_species(species_name: str):
     ).to_df()
 
 
+@ttl_cache(ttl_seconds=300, namespace="geo")
 def all_h3_cells():
     """Return all H3 res-13 cell indexes with observations."""
     obs = Observation.ref()
@@ -83,6 +88,7 @@ def all_h3_cells():
     ).to_df()
 
 
+@ttl_cache(ttl_seconds=300, namespace="geo")
 def h3_cells_on_day(day_of_year: int):
     """Return H3 res-13 cells that have observations on a given day of year."""
     date = std.datetime.date
@@ -97,6 +103,7 @@ def h3_cells_on_day(day_of_year: int):
     ).to_df()
 
 
+@ttl_cache(ttl_seconds=300, namespace="geo")
 def species_visible_at(h3_index: int, day_of_year: int):
     """Species observed in a given H3 res-13 cell on a given day of year (any year)."""
     date = std.datetime.date
